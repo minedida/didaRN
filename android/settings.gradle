@@ -1,0 +1,3 @@
+rootProject.name = 'dida_RN'
+
+include ':app'
