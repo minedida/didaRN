@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, Button} from 'react-native';
 import axios from 'axios'
 import {inject, observer} from 'mobx-react';
 import {CounterStore} from "./store/CounterStore";
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 type Props = {
   counter?: CounterStore
@@ -69,6 +70,7 @@ export default class Child extends Component<Props, State> {
         {/*<Text style={styles.instructions}>{JSON.stringify(this.state.result ? this.state.result.token_type : this.state.result)}</Text>*/}
         <Text
           style={styles.instructions}>{JSON.stringify(showResult)}</Text>
+        <Icon name="github" size={30} color="#333" />
       </View>
     );
   }
