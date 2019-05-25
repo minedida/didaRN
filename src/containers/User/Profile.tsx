@@ -16,7 +16,7 @@ class Profile extends React.PureComponent<Props>{
   }
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'space-around', alignItems: 'center' }}>
+      <View style={{ flex: 1, justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#fff' }}>
         <Text onPress={() => this.onPress('setting')}>Profile</Text>
         <Text onPress={() => this.onPress('logout')}>logout</Text>
       </View>
