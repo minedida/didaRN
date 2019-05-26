@@ -1,6 +1,7 @@
 # dida_RN
 
-- 用rn写的滴答清单客户端
+>  用rn写的滴答清单客户端
+
 ### 处理navigationbar组件
 - 考虑iphonex的适配，iphonex下切换页面连带状态栏(应不应该连带呢)
     - 需要SafeAreaView配合，永远不插入上面部分视图，上面部分的视图由navigationbar添加
@@ -13,3 +14,33 @@
     - 上述组件没有在onConfigurationChange回调方法监听高度变化
     - 考虑onConfigurationChange回调方法监听，减少bug //TODO
     - 考虑增加`isNotch`方法 //TODO
+### 制作icon
+- 根据反编译资源制作icon素材
+    - apk解包后将logo.xxxhdpi.png文件用ps打开
+    - 选择导出为图片，设置尺寸为1024
+    - 将1024的logo用[appicon](https://icon.wuruihong.com)进行制作，得到通用icon
+- 制作仿滴答icon素材
+    - 滴答官网给出了[icon素材](https://s3.cn-north-1.amazonaws.com.cn/appest-public/download/press.zip)
+    - 将500*500的icon用ps打开，选择导出为图片；勾选透明度，图像宽高900，画布宽高1024
+    - 此时得到效果较好的ios下的icon，android可以使用adaptive icon制作图标
+- 制作iOS的icon
+    - [参考](https://www.jianshu.com/p/2e6756c4c7be)：选中项目、target、项目、general、下拉到appicon、点击右箭头，拖动对应的icon
+- 制作android的icon
+    - 由于滴答已经实现了adaptive icon，可以直接反编译后将icon拿来用。下面是adaptive icon的制作
+    - command+shft+A 快捷键，并输入Image Asset，选择path为icon的前景色，选择背景色为白色，然后就好了
+### 制作启动图
+- [在线制作](https://icon.wuruihong.com/splash)启动图素材
+    - 上传滴答logo，调整大小和坐标至合适
+    - 取消掉横屏设备，下载图片。删除无用资源（iOS下ipad的splash）
+- 制作iOS启动图
+    - xcode中appicon处，选择launch screen，然后将LaunchImage.launchimage文件替换即可
+    - 将 `launch screen file`这里删掉，留空
+    - 卸载app，重新运行
+- 制作Android的启动图
+    - 这里借助[react-native-splash-screen](https://github.com/crazycodeboy/react-native-splash-screen)
+
+
+
+
+### todo
+- 1.在`onConfigurationChanged`方法中监听刘海儿是否存在，将正确的状态栏信息发送到js侧，从而app能刘海正确根据响应

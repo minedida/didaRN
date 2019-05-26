@@ -1,6 +1,7 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Platform } from "react-native";
 import { NavigationPops } from "../navigation/utils";
+import SplashScreen from 'react-native-splash-screen'
 
 type Props = {
   navigation: NavigationPops
@@ -8,33 +9,24 @@ type Props = {
 
 class Splash extends React.PureComponent<Props, {}> {
   timer: any
+
   constructor(props) {
     super(props)
     this.goNext = this.goNext.bind(this)
   }
+
   componentDidMount(): void {
-    // const random = Math.random() * 10 + 1 > 5
-    // this.goNext(random ? 'Auth' : 'App')
-    this.goNext('Auth')
+    Platform.OS === 'android' && SplashScreen.hide();
+    // this.goNext(Math.random() * 10 + 1 > 5 ? 'Auth' : 'App')
+    this.goNext('App')
   }
 
   goNext(routeName: string) {
-    this.timer = setTimeout(() => {
-      this.props.navigation.navigate(routeName)
-    }, 1000)
-  }
-  componentWillUnmount(): void {
-    this.timer && clearTimeout(this.timer)
+    this.props.navigation.navigate(routeName)
   }
 
   render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'yellowgreen' }}>
-        <Text>
-          Splash
-        </Text>
-      </View>
-    )
+    return null
   }
 }
 
