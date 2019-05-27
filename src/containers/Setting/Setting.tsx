@@ -1,8 +1,10 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import NavigationBar from "../../components/NavigationBar";
+import {NavigationBar} from "../../components/";
+import { SettingNavigationOptions } from "../../navigation/NavigationOptions";
 
 class Setting extends React.PureComponent {
+  static navigationOptions = SettingNavigationOptions;
   render() {
     return (
       <View style={{ flex: 1 }}>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import NavigationBar from "../../components/NavigationBar";
+import {NavigationBar} from "../../components/";
 
 class User extends React.PureComponent {
   render() {

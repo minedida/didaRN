@@ -2,7 +2,8 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import { inject, observer } from "mobx-react";
 import { DrawerStore } from "../../store/DrawerStore";
-import NavigationBar from "../../components/NavigationBar";
+import { IconsPreview, NavigationBar } from "../../components/";
+import { TodoNavigationOptions } from "../../navigation/NavigationOptions";
 
 type Props = {
   drawer: DrawerStore
@@ -10,6 +11,8 @@ type Props = {
 
 @inject('drawer') @observer
 class Todo extends React.Component<Props> {
+  static navigationOptions = TodoNavigationOptions;
+
   render() {
     return (
       <View style={{ flex: 1 }}>
@@ -18,6 +21,7 @@ class Todo extends React.Component<Props> {
           <Text onPress={this.props.drawer.toggleMenu}>
             Todo
           </Text>
+          <IconsPreview/>
         </View>
       </View>
     )

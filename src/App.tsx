@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import stores from './store'
 import { observer, Provider } from "mobx-react";
 import AppNavigator from "./navigation/AppNavigator";
-import SafeAreaView from "./components/SafeAreaView";
+import {SafeAreaView} from "./components/";
 import { addDrawer } from "./helper/hoc/addDrawer";
 import { onNavigationStateChange } from "./navigation/utils";
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import { NavigationPops } from "../../navigation/utils";
-import NavigationBar from "../../components/NavigationBar";
+import {NavigationBar} from "../../components/";
 
 type Props = {
   navigation: NavigationPops
