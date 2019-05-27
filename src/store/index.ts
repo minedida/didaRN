@@ -1,6 +1,8 @@
-import {counter} from './CounterStore'
+import { counter } from './CounterStore'
+import { drawer } from './DrawerStore'
 
 export default {
-  counter
+  counter,
+  drawer
 }
 

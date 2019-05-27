@@ -3,7 +3,7 @@ import { View, Text, Platform, StatusBar, StyleSheet, TouchableNativeFeedback } 
 import { d, isIphoneX, t } from "../helper/utils/ScreenUtil";
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import { goBack } from "../navigation";
-import DeviceConstants from "../helper/Constant/DeviceConstants";
+import DeviceConstants from "../helper/constant/DeviceConstants";
 import ButtonContainer from "./ButtonContainer/";
 
 const isAndroid = Platform.OS === 'android'

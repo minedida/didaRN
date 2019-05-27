@@ -65,7 +65,7 @@ export function push(routeName: string, params?: NavigationParams) {
   }
 }
 
-export function getCurrentRouteName(): string {
+export function getCurrentSwitchName(): string {
   if (!navigationContainer) {
     return '';
   }
@@ -107,7 +107,7 @@ export default {
   navigate,
   navigateReset,
   goBack,
-  getCurrentRouteName,
+  getCurrentSwitchName,
   pop,
   tabNeedAuth,
   replacePrevious,

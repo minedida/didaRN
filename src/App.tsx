@@ -1,18 +1,24 @@
 import React, { Component } from 'react'
 import stores from './store'
-import { Provider } from "mobx-react";
+import { observer, Provider } from "mobx-react";
 import AppNavigator from "./navigation/AppNavigator";
 import SafeAreaView from "./components/SafeAreaView";
+import { addDrawer } from "./helper/hoc/addDrawer";
+import { onNavigationStateChange } from "./navigation/utils";
 
-// how to typesafe inject store? https://github.com/mobxjs/mobx/issues/1778
-export default class App extends Component {
+
+// how to type-safe inject store? https://github.com/mobxjs/mobx/issues/1778
+@observer @addDrawer
+export default class App extends Component<any> {
   render() {
-    return <Provider {...stores}>
-      <SafeAreaView >
-        {/*<StatusBar barStyle={'default'} backgroundColor="transparent" translucent/>*/}
-        <AppNavigator/>
-      </SafeAreaView>
-    </Provider>
+    return (
+      <Provider {...stores}>
+        <SafeAreaView>
+          <AppNavigator
+            onNavigationStateChange={onNavigationStateChange}/>
+        </SafeAreaView>
+      </Provider>
+    )
   }
 }
 
