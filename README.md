@@ -39,8 +39,14 @@
 - 制作Android的启动图
     - 这里借助[react-native-splash-screen](https://github.com/crazycodeboy/react-native-splash-screen)
 
+### 关于[typography](react-native-typography)
+- 项目中坚持使用[typography](react-native-typography)指定文字
+- 该库保证所有文字看起来的效果在两个平台下极其一致
 
-
+### 关于[modal-translucent](react-native-modal-translucent)
+- 项目中使用了[modal-translucent](react-native-modal-translucent)来去除安卓平台下，弹出modal时尴尬的状态栏
+- 在每次重新安装依赖时，注意运行修复脚本`yarn fix-modal`
 
 ### todo
 - 1.在`onConfigurationChanged`方法中监听刘海儿是否存在，将正确的状态栏信息发送到js侧，从而app能刘海正确根据响应
+- 2.处理安卓平台下抽屉组件，手势拖出

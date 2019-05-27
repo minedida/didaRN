@@ -3,6 +3,7 @@ package com.dida_rn;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import me.listenzz.modal.TranslucentModalReactPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import ca.jaysoo.extradimensions.ExtraDimensionsPackage;
 import com.facebook.react.ReactNativeHost;
@@ -26,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+          new TranslucentModalReactPackage(),
           new SplashScreenReactPackage(),
           new ExtraDimensionsPackage(),
           new VectorIconsPackage()

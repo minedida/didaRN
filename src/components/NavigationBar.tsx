@@ -2,9 +2,11 @@ import React, { PureComponent } from 'react'
 import { View, Text, Platform, StatusBar, StyleSheet, TouchableNativeFeedback } from 'react-native'
 import { d, isIphoneX, t } from "../helper/utils/ScreenUtil";
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import { goBack } from "../navigation";
 import DeviceConstants from "../helper/constant/DeviceConstants";
 import { ButtonContainer } from "./";
+import { material } from 'react-native-typography'
 
 const isAndroid = Platform.OS === 'android'
 
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
   navBar: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: isAndroid ? 'flex-start' : 'center',
     alignItems: 'center',
     height: isAndroid ? NAV_BAR_HEIGHT_ANDROID : NAV_BAR_HEIGHT_IOS
   },
@@ -71,7 +73,7 @@ class NavigationBar extends PureComponent<Props, State> {
     title: '标题',
     statusBarStyle: 'default',
     statusBarHidden: false,
-    navBarBackgroundColor: '#4a65c6',
+    navBarBackgroundColor: '#fff',
     navBarContentColor: '#333',
     backBtnColor: '#62646c'
   }
@@ -85,16 +87,17 @@ class NavigationBar extends PureComponent<Props, State> {
 
   private getLeftButton(leftButton: any) {
     return (
-      <View style={[styles.center, { height: '100%', width: d(44), position: 'absolute', left: d(12) }]}>
+      <View style={[styles.center, { height: '100%', position: 'absolute', left: d(10) }]}>
         {
           leftButton !== undefined ? leftButton :
             <ButtonContainer
+              style={{  width: d(44), justifyContent: 'center', alignItems: 'center' }}
               onPress={goBack}
-              background={TouchableNativeFeedback.SelectableBackgroundBorderless()} >
-              <FeatherIcon
-                color={this.props.navBarContentColor}
-                name={isAndroid ? 'arrow-left' : 'chevron-left'}
-                size={isAndroid ? t(20) : t(26)}/>
+              background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
+              {
+                isAndroid ? <FeatherIcon color={this.props.navBarContentColor} name={'arrow-left'} size={24}/> :
+                <IoniconsIcon color={this.props.navBarContentColor} name={'ios-arrow-back'} size={26}/>
+              }
             </ButtonContainer>
         }
       </View>
@@ -102,12 +105,21 @@ class NavigationBar extends PureComponent<Props, State> {
   }
 
   getTitleView(title: any) {
-    const { titleView, navBarContentColor } = this.props
-    return !title ? titleView :
-      <Text
-        numberOfLines={1}
-        allowFontScaling={false}
-        style={[styles.title, { color: navBarContentColor }]}>{title}</Text>
+    const { titleView, leftButton } = this.props
+    const paddingLeft = isAndroid ? (
+      leftButton === null ? d(15) : d(60)
+    ) : 0
+    return (
+      <View style={{paddingLeft}}>
+        {
+          !title ? titleView :
+            <Text
+              style={[material.titleObject]}
+              numberOfLines={1}
+              allowFontScaling={false}>{title}</Text>
+        }
+      </View>
+    )
   }
 
   render() {

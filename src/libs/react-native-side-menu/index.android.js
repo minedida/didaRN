@@ -100,7 +100,6 @@ export default class SideMenu extends React.Component {
       hiddenMenuOffsetPercentage,
       hiddenMenuOffset: deviceScreen.width * hiddenMenuOffsetPercentage,
       left,
-      animation: new Animated.Value(0)
     };
 
     this.state.left.addListener(
@@ -199,8 +198,6 @@ export default class SideMenu extends React.Component {
   }
 
   openMenu(isOpen: boolean): void {
-    Animated.timing(this.state.animation, {toValue: isOpen ? 1 : 0, duration: 200}).start()
-
     const {hiddenMenuOffset, openMenuOffset} = this.state;
     this.moveLeft(isOpen ? openMenuOffset : hiddenMenuOffset);
     this.isOpen = isOpen;
@@ -324,7 +321,7 @@ SideMenu.defaultProps = {
   animationFunction: (prop, value) => Animated.spring(prop, {
     toValue: value,
     friction: 10,
-  }),
+  },{useNativeDriver: true}),
   onAnimationComplete: () => {
   },
   isOpen: false,

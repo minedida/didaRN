@@ -1,27 +1,69 @@
 import React from 'react'
-import { View } from 'react-native'
+import { View, ScrollView, Text, Dimensions } from 'react-native'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
+import FeatherIcon from 'react-native-vector-icons/Feather';
+import MaterialIconsIcon from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIconsIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import SimpleLineIconsIcon from 'react-native-vector-icons/SimpleLineIcons';
+import { material } from 'react-native-typography'
 
-class IconsPreview extends React.Component {
+const Item = ({ title, children }) => (
+  <View style={{ width, marginTop: 20 }}>
+    <Text style={[{ paddingHorizontal: 20 }, material.headline]}>{title}</Text>
+    <View style={{ flexDirection: 'row', flexWrap: 'wrap', paddingHorizontal: 20, justifyContent: 'space-around' }}>
+      {
+        !children.length ? children :
+          children.map((child, key) => <View key={`${title}${key}`} style={{ paddingRight: 20 }}>{child}</View>)
+      }
+    </View>
+  </View>
+)
+const { width } = Dimensions.get('window')
+
+class IconsPreview extends React.PureComponent {
 
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' }}>
-        <IoniconsIcon color={'#6680d7'} name={'ios-checkbox'} size={40}/>
-        <IoniconsIcon color={'#6680d7'} name={'md-checkbox'} size={40}/>
+      <ScrollView style={{ flex: 1, backgroundColor: '#fff' }}>
 
-        <EntypoIcon color={'#6680d7'} name={'calendar'} size={40}/>
-        <FontAwesome5Icon color={'#6680d7'} name={'calendar'} size={40}/>
-        <MaterialCommunityIconsIcon color={'#6680d7'} name={'calendar-blank'} size={40}/>
+        <Item title={'back'}>
+          <FeatherIcon color={'#333'} name={'chevron-left'} size={40}/>
+          <IoniconsIcon color={'#333'} name={'ios-arrow-back'} size={40}/>
+          <IoniconsIcon color={'#333'} name={'md-arrow-back'} size={40}/>
+          <IoniconsIcon color={'#333'} name={'md-arrow-round-back'} size={40}/>
+          <MaterialIconsIcon color={'#333'} name={'arrow-back'} size={40}/>
+          <MaterialIconsIcon color={'#333'} name={'keyboard-backspace'} size={40}/>
+          <FeatherIcon color={'#333'} name={'arrow-left'} size={40}/>
+        </Item>
 
+        <Item title={'check'}>
+          <IoniconsIcon color={'#6680d7'} name={'ios-checkbox'} size={40}/>
+          <IoniconsIcon color={'#6680d7'} name={'md-checkbox'} size={40}/>
+        </Item>
 
-        <IoniconsIcon color={'#6680d7'} name={'md-settings'} size={40}/>
-        <MaterialCommunityIconsIcon color={'#6680d7'} name={'settings'} size={40}/>
-        <IoniconsIcon color={'#6680d7'} name={'ios-settings'} size={40}/>
-      </View>
+        <Item title={'calendar'}>
+          <EntypoIcon color={'#6680d7'} name={'calendar'} size={40}/>
+          <FontAwesome5Icon color={'#6680d7'} name={'calendar'} size={40}/>
+          <MaterialCommunityIconsIcon color={'#6680d7'} name={'calendar-blank'} size={40}/>
+        </Item>
+
+        <Item title={'setting'}>
+          <IoniconsIcon color={'#6680d7'} name={'md-settings'} size={40}/>
+          <MaterialCommunityIconsIcon color={'#6680d7'} name={'settings'} size={40}/>
+          <IoniconsIcon color={'#6680d7'} name={'ios-settings'} size={40}/>
+        </Item>
+
+        <Item title={'menu'}>
+          <EntypoIcon color={'#6680d7'} name={'menu'} size={40}/>
+          <FeatherIcon color={'#6680d7'} name={'menu'} size={40}/>
+          <IoniconsIcon color={'#6680d7'} name={'ios-menu'} size={40}/>
+          <IoniconsIcon color={'#6680d7'} name={'md-menu'} size={40}/>
+          <MaterialCommunityIconsIcon color={'#6680d7'} name={'menu'} size={40}/>
+          <SimpleLineIconsIcon color={'#6680d7'} name={'menu'} size={40}/>
+        </Item>
+      </ScrollView>
     )
   }
 }

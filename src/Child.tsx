@@ -66,7 +66,7 @@ export default class Child extends Component<Props, State> {
           <Button title={'加机关枪'} onPress={this.addGun}/>
           <Button title={'减机关枪'} onPress={this.removeGun}/>
         </View>
-        <Button title={'登陆'} onPress={this.proofAxios}/>
+        <Button title={'登录'} onPress={this.proofAxios}/>
         {/*<Text style={styles.instructions}>{JSON.stringify(this.state.result ? this.state.result.token_type : this.state.result)}</Text>*/}
         <Text
           style={styles.instructions}>{JSON.stringify(showResult)}</Text>
