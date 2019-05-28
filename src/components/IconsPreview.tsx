@@ -7,7 +7,10 @@ import FeatherIcon from 'react-native-vector-icons/Feather';
 import MaterialIconsIcon from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIconsIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import SimpleLineIconsIcon from 'react-native-vector-icons/SimpleLineIcons';
+import AntDesignIcon from 'react-native-vector-icons/AntDesign';
+import OcticonsIcon from 'react-native-vector-icons/Octicons';
 import { material } from 'react-native-typography'
+import { Space } from "./";
 
 const Item = ({ title, children }) => (
   <View style={{ width, marginTop: 20 }}>
@@ -63,6 +66,26 @@ class IconsPreview extends React.PureComponent {
           <MaterialCommunityIconsIcon color={'#6680d7'} name={'menu'} size={40}/>
           <SimpleLineIconsIcon color={'#6680d7'} name={'menu'} size={40}/>
         </Item>
+
+        <Item title={'more'}>
+          <FeatherIcon color={'#6680d7'} name={'more-vertical'} size={40}/>
+          <FeatherIcon color={'#6680d7'} name={'more-horizontal'} size={40}/>
+          <IoniconsIcon color={'#6680d7'} name={'ios-more'} size={40}/>
+          <IoniconsIcon color={'#6680d7'} name={'md-more'} size={40}/>
+        </Item>
+
+        <Item title={'search'}>
+          <AntDesignIcon color={'#6680d7'} name={'search1'} size={40}/>
+          <FeatherIcon color={'#6680d7'} name={'search'} size={40}/>
+          <OcticonsIcon color={'#6680d7'} name={'search'} size={40}/>
+        </Item>
+
+        <Item title={'同心圆'}>
+          <MaterialCommunityIconsIcon color={'#6680d7'} name={'radiobox-marked'} size={40}/>
+
+        </Item>
+
+        <Space height={120}/>
       </ScrollView>
     )
   }

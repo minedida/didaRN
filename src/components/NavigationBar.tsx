@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { View, Text, Platform, StatusBar, StyleSheet, TouchableNativeFeedback } from 'react-native'
-import { d, isIphoneX, t } from "../helper/utils/ScreenUtil";
+import { d, t } from "../helper/utils/ScreenUtil";
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import { goBack } from "../navigation";
@@ -12,7 +12,7 @@ const isAndroid = Platform.OS === 'android'
 
 const NAV_BAR_HEIGHT_IOS = d(44)
 const NAV_BAR_HEIGHT_ANDROID = d(50)
-const STATUS_BAR_HEIGHT = DeviceConstants.status_bar_height
+const {status_bar_height, fake_status_bar_padding_for_ios, fake_status_bar_height_for_android} = DeviceConstants
 
 interface Props {
   title?: string,
@@ -37,11 +37,10 @@ const styles = StyleSheet.create({
   container: {
     ...Platform.select({
       ios: {
-        paddingTop: isIphoneX() ? d(44) : d(20),
-        height: isIphoneX() ? NAV_BAR_HEIGHT_IOS + d(44) : NAV_BAR_HEIGHT_IOS + d(20),
+        height: NAV_BAR_HEIGHT_IOS + status_bar_height,
       },
       android: {
-        height: NAV_BAR_HEIGHT_ANDROID + STATUS_BAR_HEIGHT
+        height: NAV_BAR_HEIGHT_ANDROID + status_bar_height
       }
     })
   },
@@ -80,8 +79,9 @@ class NavigationBar extends PureComponent<Props, State> {
 
   private getRightBotton(rightView: any) {
     return (
-      rightView ? rightView :
-        <View/>
+      <View style={[styles.center, { height: '100%', position: 'absolute', right: d(12) }]}>
+        {rightView && rightView}
+      </View>
     )
   }
 
@@ -140,7 +140,7 @@ class NavigationBar extends PureComponent<Props, State> {
       <View style={[styles.container, { backgroundColor: navBarBackgroundColor }, this.props.style]}>
         <StatusBar barStyle={statusBarStyle} hidden={statusBarHidden}
                    animated={true} backgroundColor="transparent" translucent/>
-        <View style={{ height: STATUS_BAR_HEIGHT, width: '100%' }}/>
+        <View style={{ height: fake_status_bar_height_for_android, width: '100%', paddingTop: fake_status_bar_padding_for_ios }}/>
         {content}
       </View>
     )

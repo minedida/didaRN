@@ -1,23 +1,34 @@
 import React, { Component } from 'react'
 import stores from './store'
-import { observer, Provider } from "mobx-react";
-import AppNavigator from "./navigation/AppNavigator";
-import {SafeAreaView} from "./components/";
-import { addDrawer } from "./helper/hoc/addDrawer";
-import { onNavigationStateChange } from "./navigation/utils";
+import { observer, Provider as StoreProvider } from "mobx-react";
+import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
+import { SafeAreaView } from "./components/";
+import AppNavigatorCmp from "./navigation/AppNavigatorCmp";
 
 
 // how to type-safe inject store? https://github.com/mobxjs/mobx/issues/1778
-@observer @addDrawer
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'tomato',
+    accent: 'yellow',
+  },
+}
+@observer
 export default class App extends Component<any> {
   render() {
+    // @ts-ignore
+    const { drawer: { showDrawer, onMenuStateChange, disableGestures } } = stores
     return (
-      <Provider {...stores}>
-        <SafeAreaView>
-          <AppNavigator
-            onNavigationStateChange={onNavigationStateChange}/>
-        </SafeAreaView>
-      </Provider>
+      <SafeAreaView>
+        <StoreProvider {...stores}>
+          <PaperProvider theme={theme}>
+            <AppNavigatorCmp/>
+          </PaperProvider>
+        </StoreProvider>
+      </SafeAreaView>
     )
   }
 }

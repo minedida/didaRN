@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from 'react-navigation';
-import TodoList from '../containers/Todo/Todo';
 import Settings from '../containers/Setting/Setting';
 import Calendar from "../containers/Calendar/Calendar";
+import Todo from "../containers/Todo/Todo";
 
 const tabBarOptions = {
   safeAreaInset: { bottom: 'never', top: 'never' },
@@ -17,7 +17,7 @@ const tabBarOptions = {
 } as any
 
 const routeConfigMap = {
-  TodoMain: TodoList,
+  TodoMain: Todo,
   CalendarMain: Calendar,
   SettingMain: Settings,
 } as any

@@ -1,45 +1,28 @@
 import React from 'react'
-import { View, TouchableNativeFeedback, Platform } from 'react-native'
 import { inject, observer } from "mobx-react";
-import { DrawerStore } from "../../store/DrawerStore";
-import { ButtonContainer, IconsPreview, NavigationBar } from "../../components/";
+import { DrawerItems, DrawerStore } from "../../store/DrawerStore";
 import { TodoNavigationOptions } from "../../navigation/NavigationOptions";
-import IoniconsIcon from 'react-native-vector-icons/Ionicons';
-import { d, t } from "../../helper/utils/ScreenUtil";
+import InboxTodo from "../Drawer/InboxTodo";
+import TodayTodo from "../Drawer/TodayTodo";
 
 
 type Props = {
   drawer: DrawerStore
 }
-const isAndroid = Platform.OS === 'android'
+
+const DrawerItemComponents = {
+  InboxTodo,
+  TodayTodo
+}
 
 @inject('drawer') @observer
 class Todo extends React.Component<Props> {
   static navigationOptions = TodoNavigationOptions;
 
-  renderLeftBtn() {
-    return (
-      <ButtonContainer
-        style={{ width: d(44), justifyContent: 'center', alignItems: 'center' }}
-        onPress={this.props.drawer.toggleMenu}
-        background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
-        <IoniconsIcon
-          size={isAndroid ? t(20): t(20)}
-          name={isAndroid ? 'md-menu' : 'ios-menu'}
-          color={'#333'} />
-      </ButtonContainer>
-    )
-  }
-
   render() {
-    return (
-      <View style={{ flex: 1 }}>
-        <NavigationBar leftButton={this.renderLeftBtn()} title={'todo'}/>
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' }}>
-          <IconsPreview/>
-        </View>
-      </View>
-    )
+    const SelectedItem: DrawerItems = this.props.drawer!.selectedItem
+    const DrawerItemComponent = DrawerItemComponents[SelectedItem] as any;
+    return <DrawerItemComponent/>
   }
 }
 
