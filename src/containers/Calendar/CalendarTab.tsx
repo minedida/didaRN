@@ -1,18 +1,18 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import {NavigationBar} from "../../components/";
-import { CalendarNavigationOptions } from "../../navigation/NavigationOptions";
+import { CalendarTabNavigationOptions } from "../../navigation/TabBarNavigationOptions";
 import { material } from 'react-native-typography'
 
-class Calendar extends React.PureComponent {
-  static navigationOptions = CalendarNavigationOptions
+class CalendarTab extends React.PureComponent {
+  static navigationOptions = CalendarTabNavigationOptions
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <NavigationBar leftButton={null} title={'Calendar'}/>
+        <NavigationBar leftButton={null} title={'CalendarTab'}/>
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' }}>
           <Text style={material.body2}>
-            Calendar
+            CalendarTab
           </Text>
         </View>
       </View>
@@ -20,4 +20,4 @@ class Calendar extends React.PureComponent {
   }
 }
 
-export default Calendar
+export default CalendarTab

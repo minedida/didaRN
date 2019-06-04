@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, TouchableNativeFeedback, Platform } from 'react-native'
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
-import { ButtonContainer, NavigationBar, Space } from "../../components/";
+import { ButtonContainer, NavigationBar } from "../../components/";
 import { material } from "react-native-typography";
 import { d, t } from "../../helper/utils/ScreenUtil";
 import { inject, observer } from "mobx-react";
@@ -31,19 +31,24 @@ class TodayTodo extends React.Component<Props> {
   }
   renderRightBtn() {
     return (
-      <ButtonContainer
-        style={{ width: d(44),height: (44), justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}
-        background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
-        <MaterialCommunityIconsIcon
-          size={isAndroid ? t(20): t(20)}
-          name={'radiobox-marked'}
-          color={'#333'}/>
-          <Space width={40}/>
-        <IoniconsIcon
-          size={isAndroid ? t(20): t(20)}
-          name={isAndroid ? 'md-more' : 'ios-more'}
-          color={'#333'} />
-      </ButtonContainer>
+      <View style={{  justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
+        <ButtonContainer
+          style={{ width: d(44),height: (44), justifyContent: 'center', alignItems: 'center' }}
+          background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
+          <MaterialCommunityIconsIcon
+            size={isAndroid ? t(20): t(20)}
+            name={'radiobox-marked'}
+            color={'#333'}/>
+        </ButtonContainer>
+        <ButtonContainer
+          style={{ width: d(44),height: (44), justifyContent: 'center', alignItems: 'center'}}
+          background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
+          <IoniconsIcon
+            size={isAndroid ? t(20): t(20)}
+            name={isAndroid ? 'md-more' : 'ios-more'}
+            color={'#333'} />
+        </ButtonContainer>
+      </View>
     )
   }
   render() {

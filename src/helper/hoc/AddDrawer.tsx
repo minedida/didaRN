@@ -1,4 +1,5 @@
 import React from 'react'
+// @ts-ignore
 import SideMenu from 'react-native-side-menu'
 import stores from "../../store";
 import DrawerPanel from "../../containers/Drawer/DrawerPanel";
@@ -8,10 +9,10 @@ export function addDrawer(WrappedComponent: any) {
     render() {
       const {
         drawer: {
-          showDrawer, onMenuItemSelected,
+          showDrawer,
           onMenuStateChange, disableGestures
         } } = stores
-      const menu = <DrawerPanel onItemSelected={onMenuItemSelected}/>
+      const menu = <DrawerPanel/>
       return (
         <SideMenu
           disableGestures={disableGestures}

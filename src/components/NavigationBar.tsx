@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { View, Text, Platform, StatusBar, StyleSheet, TouchableNativeFeedback } from 'react-native'
+import { View, Text, Platform, StatusBar, StyleSheet, TouchableNativeFeedback, StyleProp, ViewStyle } from 'react-native'
 import { d, t } from "../helper/utils/ScreenUtil";
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
@@ -23,13 +23,9 @@ interface Props {
   backBtnColor?: string,
   titleView?: JSX.Element,
   rightButton?: JSX.Element,
-  leftButton?: any,
-  style?: any
-}
-
-interface State {
-  title: string,
-  hide: boolean
+  leftButton?: JSX.Element,
+  style?: StyleProp<ViewStyle>
+  onBackPress?: (e) => void
 }
 
 
@@ -67,7 +63,7 @@ const styles = StyleSheet.create({
   }
 })
 
-class NavigationBar extends PureComponent<Props, State> {
+class NavigationBar extends PureComponent<Props> {
   static defaultProps = {
     title: '标题',
     statusBarStyle: 'default',
@@ -92,7 +88,7 @@ class NavigationBar extends PureComponent<Props, State> {
           leftButton !== undefined ? leftButton :
             <ButtonContainer
               style={{  width: d(44), justifyContent: 'center', alignItems: 'center' }}
-              onPress={goBack}
+              onPress={this.props.onBackPress ? this.props.onBackPress : goBack}
               background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
               {
                 isAndroid ? <FeatherIcon color={this.props.navBarContentColor} name={'arrow-left'} size={24}/> :
@@ -107,7 +103,7 @@ class NavigationBar extends PureComponent<Props, State> {
   getTitleView(title: any) {
     const { titleView, leftButton } = this.props
     const paddingLeft = isAndroid ? (
-      leftButton === null ? d(15) : d(60)
+      leftButton === null ? d(15) : d(72)
     ) : 0
     return (
       <View style={{paddingLeft}}>

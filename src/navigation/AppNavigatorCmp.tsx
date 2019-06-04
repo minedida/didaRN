@@ -2,7 +2,7 @@ import React from 'react'
 import { onNavigationStateChange } from "./utils";
 import AppNavigator from "./AppNavigator";
 import { observer } from "mobx-react";
-import { addDrawer } from "../helper/hoc/AddDrawer";
+import { addDrawer } from "../helper/hoc";
 
 
 @observer

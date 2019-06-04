@@ -3,6 +3,8 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:windowIsTranslucent">true</item>
+        <!--在RN项目中，可以用来修改ScrollView中overscroll的颜色-->
+        <item name="colorPrimary">@color/red</item>
     </style>
     <style name="SplashScreenTheme" parent="SplashScreen_SplashTheme">
         <item name="colorPrimaryDark">@color/status_bar_color</item>

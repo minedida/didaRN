@@ -3,6 +3,7 @@ import SafeAreaView from './SafeAreaView'
 import NavigationBar from './NavigationBar'
 import ButtonContainer from './ButtonContainer'
 import Space from './Space'
+import {SettingListItem, SettingListGroup, SettingHeader} from './SettingListItem'
 
 
 export {
@@ -10,5 +11,8 @@ export {
   SafeAreaView,
   NavigationBar,
   ButtonContainer,
-  Space
+  Space,
+  SettingListItem,
+  SettingListGroup,
+  SettingHeader
 }

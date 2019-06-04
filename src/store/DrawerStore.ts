@@ -1,12 +1,12 @@
 import { action, observable } from 'mobx'
-import { navigate } from "../navigation";
+import { push } from "../navigation";
 
 export type DrawerItems = 'InboxTodo' |
   'TodayTodo' | 'AddTodo' | 'ManageTodo'
 
 class DrawerStore {
   @observable showDrawer: boolean = false
-  @observable selectedItem: DrawerItems = 'InboxTodo'
+  @observable selectedItem: DrawerItems = 'TodayTodo'
   @observable disableGestures: boolean = true
   @observable bounceBackOnOverdraw: boolean = false
 
@@ -20,7 +20,7 @@ class DrawerStore {
   onMenuItemSelected(item: DrawerItems) {
     this.showDrawer = false
     if (item === 'AddTodo' || item === 'ManageTodo'){
-      navigate(item)
+      push(item)
       return
     }
     //todo 这里需要改进抽屉切换动画

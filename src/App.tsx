@@ -12,8 +12,9 @@ const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: 'tomato',
+    primary: '#6071e2',
     accent: 'yellow',
+    placeholder: '#c3c3c3'
   },
 }
 @observer

@@ -1,7 +1,6 @@
 import React from 'react'
 import { View, TouchableNativeFeedback, Platform } from 'react-native'
 import { ButtonContainer, IconsPreview, NavigationBar } from "../../components/";
-import { TodoNavigationOptions } from "../../navigation/NavigationOptions";
 import { d, t } from "../../helper/utils/ScreenUtil";
 import { DrawerStore } from "../../store/DrawerStore";
 import { inject, observer } from "mobx-react";
@@ -15,7 +14,6 @@ const isAndroid = Platform.OS === 'android'
 
 @inject('drawer') @observer
 class InboxTodo extends React.Component<Props> {
-  static navigationOptions = TodoNavigationOptions;
 
   renderLeftBtn() {
     return (

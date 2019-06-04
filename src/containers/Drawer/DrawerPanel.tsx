@@ -4,14 +4,15 @@ import {
   StyleSheet,
   ScrollView,
   View,
-  Text
+  Text,
+  Image, TouchableNativeFeedback
 } from 'react-native';
 import { inject, observer } from "mobx-react";
-import { DrawerStore } from "../../store/DrawerStore";
+import { DrawerItems, DrawerStore } from "../../store/DrawerStore";
 import DeviceConstants from "../../helper/constant/DeviceConstants";
 import { d } from "../../helper/utils/ScreenUtil";
 import { material } from 'react-native-typography'
-import { Drawer, Avatar } from 'react-native-paper';
+import { Drawer } from 'react-native-paper';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import { ButtonContainer, Space } from "../../components";
@@ -64,6 +65,18 @@ type Props = {
   drawer?: DrawerStore
 }
 
+type ConfigItem = { label: string, icon: string, id: DrawerItems }
+const configs: Array<Array<ConfigItem>> = [
+  [
+    { label: '今天', icon: 'event-available', id: 'TodayTodo' },
+    { label: '收集箱', icon: 'inbox', id: 'InboxTodo' },
+  ],
+  [
+    { label: '添加清单', icon: 'add', id: 'AddTodo' },
+    { label: '管理清单和标签', icon: 'assignment', id: 'ManageTodo' }
+  ]
+]
+
 // 852,87 -> 284,30
 // 410 -> 136
 // 169 -> 56 头像半径
@@ -75,14 +88,32 @@ class DrawerPanel extends React.Component<Props> {
     return (
       <View style={styles.topView}>
         <View style={styles.topIconView}>
+
           <View style={{ flex: 1, justifyContent: 'center', paddingLeft: d(18) }}>
-            <Avatar.Image source={{ uri }} style={{ backgroundColor: '#f2f2f2' }}/>
+            <ButtonContainer
+              style={{ width: d(64), height: d(64), borderRadius: d(64 / 2), backgroundColor: '#f2f2f2' }}
+              background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
+              <Image
+                source={{ uri }}
+                style={{ width: d(64), height: d(64), borderRadius: d(64) / 2 }}/>
+            </ButtonContainer>
           </View>
+
           <View style={styles.avatarView}>
-            <View style={{ paddingRight: d(22) }}>
+            <ButtonContainer background={TouchableNativeFeedback.SelectableBackgroundBorderless()} style={{
+              marginRight: d(22),
+              width: d(26),
+              height: d(26),
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
               <FeatherIcon color={'#fff'} name={'search'} size={24}/>
-            </View>
-            <IoniconsIcon color={'#fff'} name={'md-settings'} size={24}/>
+            </ButtonContainer>
+
+            <ButtonContainer background={TouchableNativeFeedback.SelectableBackgroundBorderless()}
+                             style={{ width: d(26), height: d(26), justifyContent: 'center', alignItems: 'center' }}>
+              <IoniconsIcon color={'#fff'} name={'md-settings'} size={24}/>
+            </ButtonContainer>
           </View>
         </View>
         <ButtonContainer
@@ -98,33 +129,17 @@ class DrawerPanel extends React.Component<Props> {
     const currentItem = this.props.drawer!.selectedItem
     return (
       <View>
-        <Drawer.Section>
-          <Space height={d(6)}/>
-          <Drawer.Item
-            label="今天"
-            icon={'event-available'}
-            active={currentItem === 'TodayTodo'}
-            onPress={() => this.props.drawer!.onMenuItemSelected('TodayTodo')}
-          />
-          <Drawer.Item
-            label="收集箱"
-            icon={'inbox'}
-            active={currentItem === 'InboxTodo'}
-            onPress={() => this.props.drawer!.onMenuItemSelected('InboxTodo')}
-          />
-        </Drawer.Section>
-        <Drawer.Item
-          label="添加清单"
-          icon={'add'}
-          active={currentItem === 'AddTodo'}
-          onPress={() => this.props.drawer!.onMenuItemSelected('AddTodo')}
-        />
-        <Drawer.Item
-          label="管理清单和标签"
-          icon={'assignment'}
-          active={currentItem === 'ManageTodo'}
-          onPress={() => this.props.drawer!.onMenuItemSelected('ManageTodo')}
-        />
+        {
+          configs.map((g, i) =>
+            <Drawer.Section key={i}>
+              {
+                g.map(v =>
+                  <Drawer.Item onPress={() => this.props.drawer!.onMenuItemSelected(v.id)}
+                               key={v.id} active={currentItem === v.id} {...v}/>)
+              }
+            </Drawer.Section>
+          )
+        }
       </View>
     )
   }
@@ -134,6 +149,7 @@ class DrawerPanel extends React.Component<Props> {
       <ScrollView scrollsToTop={false} style={styles.container}>
         <View style={styles.statusBar}/>
         {this.renderTopView()}
+        <Space height={d(6)}/>
         {this.renderDrawerItem()}
       </ScrollView>
     )
