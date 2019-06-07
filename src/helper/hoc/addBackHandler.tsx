@@ -31,7 +31,7 @@ export function addBackHandler(WrappedComponent: any, params: 'Auth' | 'App') {
     onBackAndroid() {
       const currentSwitch = getCurrentSwitchName();
 
-      if ('Auth' === params && 'Login' !== currentSwitch ) {
+      if ('Auth' === params && 'Auth' !== currentSwitch ) {
         // pop view
         return false;
       }
