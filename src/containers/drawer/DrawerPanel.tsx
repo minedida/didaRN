@@ -98,20 +98,8 @@ class DrawerPanel extends React.Component<Props> {
           </View>
 
           <View style={styles.avatarView}>
-            <ButtonContainer background={TouchableNativeFeedback.SelectableBackgroundBorderless()} style={{
-              marginRight: d(22),
-              width: d(26),
-              height: d(26),
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}>
-              <Icon type={'Feather'} color={'#fff'} name={'search'} size={24}/>
-            </ButtonContainer>
-
-            <ButtonContainer background={TouchableNativeFeedback.SelectableBackgroundBorderless()}
-                             style={{ width: d(26), height: d(26), justifyContent: 'center', alignItems: 'center' }}>
+              <Icon type={'Feather'} color={'#fff'} name={'search'} size={24} style={{marginRight: d(22)}}/>
               <Icon type={'Ionicons'} color={'#fff'} name={'md-settings'} size={24}/>
-            </ButtonContainer>
           </View>
         </View>
         <ButtonContainer

@@ -2,8 +2,8 @@ import React from 'react'
 import { inject, observer } from "mobx-react";
 import { DrawerItems, DrawerStore } from "../../store/DrawerStore";
 import { TodoTabNavigationOptions } from "../../navigation/TabBarNavigationOptions";
-import InboxTodo from "../Drawer/InboxTodo";
-import TodayTodo from "../Drawer/TodayTodo";
+import InboxTodo from "../drawer/InboxTodo";
+import TodayTodo from "../drawer/TodayTodo";
 
 type Props = {
   drawer: DrawerStore

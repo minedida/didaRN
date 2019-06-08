@@ -15,13 +15,11 @@ const theme = {
     primary: '#6071e2',
     accent: 'yellow',
     placeholder: '#c3c3c3'
-  },
+  }
 }
 @observer
 export default class App extends Component<any> {
   render() {
-    // @ts-ignore
-    const { drawer: { showDrawer, onMenuStateChange, disableGestures } } = stores
     return (
       <SafeAreaView>
         <StoreProvider {...stores}>

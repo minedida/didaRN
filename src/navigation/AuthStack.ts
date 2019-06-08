@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation';
-import Auth from "../containers/Auth/Auth";
-import MailAuth from "../containers/Auth/MailAuth";
+import Auth from "../containers/auth/Auth";
+import MailAuth from "../containers/auth/MailAuth";
 
 export default createStackNavigator(
   {

@@ -6,7 +6,7 @@ import { addBackHandler } from "../helper/hoc";
 
 export default createSwitchNavigator(
   {
-    // Auth: addBackHandler(AuthStackNav, 'Auth'),
+    // auth: addBackHandler(AuthStackNav, 'auth'),
     App: addBackHandler(AppStackNav, 'App'),
     Splash,
   },

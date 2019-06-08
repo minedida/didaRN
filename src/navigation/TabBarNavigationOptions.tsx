@@ -13,18 +13,18 @@ type tabBarIconParams = {
 export const TodoTabNavigationOptions = (_navigationOptionsParams : NavigationOptionsParams) => {
   return {
     tabBarIcon: (params: tabBarIconParams) =>
-      <Icon type={'Ionicons'} color={params.tintColor} name={'md-checkbox'} size={t(26)}/>
+      <Icon type={'Ionicons'} color={params.tintColor} name={'md-checkbox'} size={t(24)}/>
   }
 }
 export const CalendarTabNavigationOptions = (_navigationOptionsParams : NavigationOptionsParams) => {
   return {
     tabBarIcon: (params: tabBarIconParams) =>
-      <Icon type={'Entypo'} color={params.tintColor} name={'calendar'} size={t(26)}/>
+      <Icon type={'Entypo'} color={params.tintColor} name={'calendar'} size={t(24)}/>
   }
 }
 export const SettingTabNavigationOptions = (_navigationOptionsParams : NavigationOptionsParams) => {
   return {
     tabBarIcon: (params: tabBarIconParams) =>
-      <Icon type={'Ionicons'}  color={params.tintColor} name={'md-settings'} size={t(26)}/>
+      <Icon type={'Ionicons'}  color={params.tintColor} name={'md-settings'} size={t(24)}/>
   }
 }

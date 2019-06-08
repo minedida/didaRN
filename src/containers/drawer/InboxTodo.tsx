@@ -3,7 +3,7 @@ import { View, TouchableNativeFeedback, Platform } from 'react-native'
 import { ButtonContainer, NavigationBar } from "../../components/";
 import { d, t } from "../../helper/utils/ScreenUtil";
 import { DrawerStore } from "../../store/DrawerStore";
-import IconsPreview from '../Todo/IconsPreview'
+import IconsPreview from '../todo/IconsPreview'
 import { inject, observer } from "mobx-react";
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 

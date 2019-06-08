@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {StyleSheet, Text, View, Button} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import axios from 'axios'
-import {inject, observer} from 'mobx-react';
-import {CounterStore} from "./store/CounterStore";
+import { inject, observer } from 'mobx-react';
+import { CounterStore } from "./store/CounterStore";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 type Props = {
@@ -31,8 +31,8 @@ export default class Child extends Component<Props, State> {
       "password": "111111",
       "phone": "13020051580"
     }
-    const result : any = await axios.post('http://dev-3.seiue.com:8080/auth/login', data)
-    this.setState({result})
+    const result: any = await axios.post('http://dev-3.seiue.com:8080/auth/login', data)
+    this.setState({ result })
     /*const result = await fetch('http://dev-3.seiue.com:8080/auth/login', {
       method:'post',
       headers: {
@@ -54,15 +54,15 @@ export default class Child extends Component<Props, State> {
 
   render() {
     // const {counter: {count}} = this.props
-    const {counter} = this.props
+    const { counter } = this.props
     const count = counter!.count
-    const {result} = this.state
+    const { result } = this.state
 
     const showResult = result ? result.data.token_type : null
     return (
       <View style={styles.container}>
-        <Text style={{fontSize: 30}}>机关枪:{count}把</Text>
-        <View style={{flexDirection: 'row'}}>
+        <Text style={{ fontSize: 30 }}>机关枪:{count}把</Text>
+        <View style={{ flexDirection: 'row' }}>
           <Button title={'加机关枪'} onPress={this.addGun}/>
           <Button title={'减机关枪'} onPress={this.removeGun}/>
         </View>
@@ -70,7 +70,7 @@ export default class Child extends Component<Props, State> {
         {/*<Text style={styles.instructions}>{JSON.stringify(this.state.result ? this.state.result.token_type : this.state.result)}</Text>*/}
         <Text
           style={styles.instructions}>{JSON.stringify(showResult)}</Text>
-        <Icon name="github" size={30} color="#333" />
+        <Icon name="github" size={30} color="#333"/>
       </View>
     );
   }

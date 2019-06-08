@@ -1,8 +1,7 @@
 import React from 'react'
-import { View, Text, ScrollView } from 'react-native'
-import { NavigationBar, SettingHeader, Space, Icon } from "../../components/";
+import { View, ScrollView } from 'react-native'
+import { NavigationBar, SettingHeader, Icon } from "../../components/";
 import { SettingTabNavigationOptions } from "../../navigation/TabBarNavigationOptions";
-import { material } from "react-native-typography";
 import { navigate } from "../../navigation";
 import { d, t } from "../../helper/utils/ScreenUtil";
 import { SettingListItem, SettingListGroup } from "../../components/";
@@ -54,8 +53,8 @@ class SettingTab extends React.PureComponent {
   }
 
   onSettingListItemPress(type: string) {
-    type === 'setting' && navigate('User')
-    type === 'logout' && navigate('Auth')
+    type === 'settings' && navigate('User')
+    type === 'header' && navigate('Auth')
     console.log(type)
   }
 
@@ -64,7 +63,7 @@ class SettingTab extends React.PureComponent {
       <View style={{ flex: 1, backgroundColor: '#fff' }}>
         <NavigationBar leftButton={null} title={'设置'}/>
         <ScrollView endFillColor={'cyan'} style={{ flex: 1, backgroundColor: '#fff' }}>
-          <SettingHeader/>
+          <SettingHeader onPress={() => this.onSettingListItemPress('header')}/>
 
           {configs.map(
             (g, i) =>
@@ -75,11 +74,6 @@ class SettingTab extends React.PureComponent {
               }
             </SettingListGroup>
           )}
-
-
-          <Text onPress={() => this.onSettingListItemPress('setting')} style={material.button}>SettingTab</Text>
-          <Space height={20}/>
-          <Text onPress={() => this.onSettingListItemPress('logout')} style={material.button}>Logout</Text>
         </ScrollView>
       </View>
     )

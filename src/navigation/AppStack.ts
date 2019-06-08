@@ -1,10 +1,12 @@
 import { createStackNavigator } from 'react-navigation';
 import AppTabBar from './AppTabBar';
-import User from "../containers/Setting/User";
-import AddTodo from "../containers/Drawer/AddTodo";
-import InboxTodo from "../containers/Drawer/InboxTodo";
-import ManageTodo from "../containers/Drawer/ManageTodo";
-import TodayTodo from "../containers/Drawer/TodayTodo";
+import User from "../containers/setting/User";
+import AddTodo from "../containers/drawer/AddTodo";
+import InboxTodo from "../containers/drawer/InboxTodo";
+import ManageTodo from "../containers/drawer/ManageTodo";
+import TodayTodo from "../containers/drawer/TodayTodo";
+import Auth from "../containers/auth/Auth";
+import MailAuth from "../containers/auth/MailAuth";
 
 export default createStackNavigator(
   {
@@ -13,7 +15,9 @@ export default createStackNavigator(
     AddTodo,
     InboxTodo,
     ManageTodo,
-    TodayTodo
+    TodayTodo,
+    Auth,
+    MailAuth,
   },
   {
     headerMode: 'none',

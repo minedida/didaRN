@@ -54,12 +54,12 @@ const SettingListGroup = (props: any) =>
     </View>
   </View>
 
-const SettingHeader = () =>
+const SettingHeader = props =>
   <View style={{ width: '100%', height: d(90) }}>
     <TouchableRipple
       rippleColor={Platform.OS === 'ios' ? "rgba(215,77,167,0.32)" : "rgba(0, 0, 0, .12)"}
       style={{ paddingLeft: d(4), height: d(76), justifyContent: 'center' }}
-      onPress={() => console.log('Pressed')}>
+      onPress={props.onPress}>
       <List.Item
         style={{ justifyContent: 'center' }}
         left={_props => <Avatar.Icon size={52} style={{ backgroundColor: '#62d6c5' }} icon="folder"/>}

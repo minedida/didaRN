@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from 'react-navigation';
-import SettingTab from '../containers/Setting/SettingTab';
-import CalendarTab from "../containers/Calendar/CalendarTab";
-import TodoTab from "../containers/Todo/TodoTab";
+import SettingTab from '../containers/setting/SettingTab';
+import CalendarTab from "../containers/calendar/CalendarTab";
+import TodoTab from "../containers/todo/TodoTab";
 
 const tabBarOptions = {
   safeAreaInset: { bottom: 'never', top: 'never' },

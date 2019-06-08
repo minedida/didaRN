@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   TouchableNativeFeedback,
-  View,
+  View, ViewStyle,
 } from 'react-native';
 
 import getIconType from './getIconType';
@@ -16,7 +16,7 @@ type Props = {
   size: number
   color?: string
   onPress?: Function
-
+  style?: ViewStyle
 }
 
 const Icon = (props: Props) => {
@@ -26,6 +26,7 @@ const Icon = (props: Props) => {
     size,
     color,
     onPress,
+    style
   } = props;
 
   const IconComponent = getIconType(type);
@@ -34,7 +35,7 @@ const Icon = (props: Props) => {
     { background: TouchableNativeFeedback.SelectableBackgroundBorderless() } : {}
 
   return (
-    <Component onPress={onPress} {...ComponentProps}>
+    <Component style={style} onPress={onPress} {...ComponentProps}>
       <IconComponent
         testID="iconIcon"
         size={size}
