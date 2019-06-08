@@ -1,8 +1,9 @@
 import React from 'react'
 import { View, TouchableNativeFeedback, Platform } from 'react-native'
-import { ButtonContainer, IconsPreview, NavigationBar } from "../../components/";
+import { ButtonContainer, NavigationBar } from "../../components/";
 import { d, t } from "../../helper/utils/ScreenUtil";
 import { DrawerStore } from "../../store/DrawerStore";
+import IconsPreview from '../Todo/IconsPreview'
 import { inject, observer } from "mobx-react";
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 

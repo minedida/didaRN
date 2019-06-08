@@ -6,7 +6,7 @@ export type DrawerItems = 'InboxTodo' |
 
 class DrawerStore {
   @observable showDrawer: boolean = false
-  @observable selectedItem: DrawerItems = 'TodayTodo'
+  @observable selectedItem: DrawerItems = 'InboxTodo'
   @observable disableGestures: boolean = true
   @observable bounceBackOnOverdraw: boolean = false
 

@@ -1,12 +1,12 @@
 import { createSwitchNavigator } from 'react-navigation';
 import Splash from '../containers/Splash';
 import AppStackNav from './AppStackNav';
-import AuthStackNav from './AuthStackNav';
+// import AuthStackNav from './AuthStackNav';
 import { addBackHandler } from "../helper/hoc";
 
 export default createSwitchNavigator(
   {
-    Auth: addBackHandler(AuthStackNav, 'Auth'),
+    // Auth: addBackHandler(AuthStackNav, 'Auth'),
     App: addBackHandler(AppStackNav, 'App'),
     Splash,
   },

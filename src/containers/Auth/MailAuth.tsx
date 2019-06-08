@@ -35,7 +35,7 @@ type Props = {
   auth: AuthStore
 }
 type State = {
-  animation: any
+  animation: Animated.Value
 }
 
 @inject('auth')

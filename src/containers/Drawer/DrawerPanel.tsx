@@ -13,9 +13,7 @@ import DeviceConstants from "../../helper/constant/DeviceConstants";
 import { d } from "../../helper/utils/ScreenUtil";
 import { material } from 'react-native-typography'
 import { Drawer } from 'react-native-paper';
-import FeatherIcon from 'react-native-vector-icons/Feather';
-import IoniconsIcon from 'react-native-vector-icons/Ionicons';
-import { ButtonContainer, Space } from "../../components";
+import { ButtonContainer, Space, Icon } from "../../components";
 
 const { fake_status_bar_padding_for_ios, fake_status_bar_height_for_android } = DeviceConstants
 const window = Dimensions.get('window');
@@ -107,12 +105,12 @@ class DrawerPanel extends React.Component<Props> {
               justifyContent: 'center',
               alignItems: 'center'
             }}>
-              <FeatherIcon color={'#fff'} name={'search'} size={24}/>
+              <Icon type={'Feather'} color={'#fff'} name={'search'} size={24}/>
             </ButtonContainer>
 
             <ButtonContainer background={TouchableNativeFeedback.SelectableBackgroundBorderless()}
                              style={{ width: d(26), height: d(26), justifyContent: 'center', alignItems: 'center' }}>
-              <IoniconsIcon color={'#fff'} name={'md-settings'} size={24}/>
+              <Icon type={'Ionicons'} color={'#fff'} name={'md-settings'} size={24}/>
             </ButtonContainer>
           </View>
         </View>
