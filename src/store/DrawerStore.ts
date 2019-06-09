@@ -1,5 +1,5 @@
 import { action, observable } from 'mobx'
-import { push } from "../navigation";
+import { navigate } from "../navigation";
 
 export type DrawerItems = 'InboxTodo' |
   'TodayTodo' | 'AddTodo' | 'ManageTodo'
@@ -10,6 +10,7 @@ class DrawerStore {
   @observable disableGestures: boolean = true
   @observable bounceBackOnOverdraw: boolean = false
 
+  timer: any
 
   @action.bound
   onMenuStateChange(isOpen: boolean) {
@@ -20,10 +21,13 @@ class DrawerStore {
   onMenuItemSelected(item: DrawerItems) {
     this.showDrawer = false
     if (item === 'AddTodo' || item === 'ManageTodo'){
-      push(item)
+      this.timer = setTimeout(() => navigate(item), 250)
       return
     }
     //todo 这里需要改进抽屉切换动画
+    // 目前有两种改进方案：
+    //  1。在跳转前加200毫秒左右的延时，类似twitter
+    //  2。在跳转前，用无动画的方式收回抽屉
     this.selectedItem = item
 
   }

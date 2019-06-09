@@ -5,6 +5,7 @@ import { SettingTabNavigationOptions } from "../../navigation/TabBarNavigationOp
 import { navigate } from "../../navigation";
 import { d, t } from "../../helper/utils/ScreenUtil";
 import { SettingListItem, SettingListGroup } from "../../components/";
+import { NavigationParams } from "react-navigation";
 
 type ConfigItem = {
   id: string,
@@ -44,7 +45,7 @@ const configs: Array<Array<ConfigItem>> = [
   ],
 ]
 
-class SettingTab extends React.PureComponent {
+class SettingTab extends React.PureComponent<NavigationParams> {
   static navigationOptions = SettingTabNavigationOptions;
 
   constructor(props) {
@@ -59,9 +60,11 @@ class SettingTab extends React.PureComponent {
   }
 
   render() {
+    const params = this.props.navigation.state.params
+    const leftButton = params && params.from && params.from === 'drawer' ? undefined : null
     return (
       <View style={{ flex: 1, backgroundColor: '#fff' }}>
-        <NavigationBar leftButton={null} title={'设置'}/>
+        <NavigationBar leftButton={leftButton} title={'设置'}/>
         <ScrollView endFillColor={'cyan'} style={{ flex: 1, backgroundColor: '#fff' }}>
           <SettingHeader onPress={() => this.onSettingListItemPress('header')}/>
 

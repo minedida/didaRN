@@ -1,10 +1,4 @@
-import { addBackHandler } from "./addBackHandler";
-import { addDrawer } from "./AddDrawer";
-import { listenKeyboardHOC } from "./listenKeyboard";
+export { addBackHandler } from './addBackHandler';
+export { addDrawer } from './AddDrawer';
+export { listenKeyboardHOC } from './listenKeyboard';
 
-
-export {
-  addBackHandler,
-  addDrawer,
-  listenKeyboardHOC
-}

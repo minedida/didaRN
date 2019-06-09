@@ -7,6 +7,7 @@ import ManageTodo from "../containers/drawer/ManageTodo";
 import TodayTodo from "../containers/drawer/TodayTodo";
 import Auth from "../containers/auth/Auth";
 import MailAuth from "../containers/auth/MailAuth";
+import SettingTab from "../containers/setting/SettingTab";
 
 export default createStackNavigator(
   {
@@ -18,6 +19,7 @@ export default createStackNavigator(
     TodayTodo,
     Auth,
     MailAuth,
+    SettingTab,
   },
   {
     headerMode: 'none',

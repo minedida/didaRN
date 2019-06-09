@@ -1,7 +1,8 @@
 import React from 'react'
-import { View, ScrollView, Text, Dimensions } from 'react-native'
+import { View, ScrollView, Text, Dimensions, Image } from 'react-native'
 import { material } from 'react-native-typography'
 import { Space, Icon } from "../../components";
+import { Images } from "../../assets";
 
 const Item = ({ title, children }) => (
   <View style={{ width, marginTop: 20 }}>
@@ -135,6 +136,11 @@ class IconsPreview extends React.PureComponent {
             <Icon type={'Ionicons'} color={'#333'} name={'ios-mail'} size={40}/>
             <Icon type={'Ionicons'} color={'#333'} name={'md-mail'} size={40}/>
             <Icon type={'MaterialCommunityIcons'} color={'#333'} name={'email'} size={40}/>
+          </Item>
+
+          <Item title={'日历'}>
+            {Object.keys(Images.icon).map((item, index) =>
+              <Image key={index} source={Images.icon[`${item}`]}/>)}
           </Item>
 
           <Space height={120}/>

@@ -1,18 +1,6 @@
-import SafeAreaView from './SafeAreaView'
-import NavigationBar from './NavigationBar'
-import ButtonContainer from './button-container'
-import Space from './Space'
-import {SettingListItem, SettingListGroup, SettingHeader} from './SettingListItem'
-import Icon from './icon/Icon'
-
-
-export {
-  SafeAreaView,
-  NavigationBar,
-  ButtonContainer,
-  Space,
-  SettingListItem,
-  SettingListGroup,
-  SettingHeader,
-  Icon
-}
+export { default as SafeAreaView } from './SafeAreaView';
+export { default as NavigationBar } from './NavigationBar';
+export { default as Space } from './Space';
+export { default as ButtonContainer } from './button-container';
+export { default as Icon } from './icon/Icon';
+export { SettingListItem, SettingListGroup, SettingHeader } from './SettingListItem';

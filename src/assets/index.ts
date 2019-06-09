@@ -1,5 +1,1 @@
-import Images from './Images'
-
-export {
-  Images
-}
+export {default as Images} from './Images'

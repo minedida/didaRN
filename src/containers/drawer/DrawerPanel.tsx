@@ -14,6 +14,7 @@ import { d } from "../../helper/utils/ScreenUtil";
 import { material } from 'react-native-typography'
 import { Drawer } from 'react-native-paper';
 import { ButtonContainer, Space, Icon } from "../../components";
+import { navigate } from "../../navigation";
 
 const { fake_status_bar_padding_for_ios, fake_status_bar_height_for_android } = DeviceConstants
 const window = Dimensions.get('window');
@@ -81,6 +82,19 @@ const configs: Array<Array<ConfigItem>> = [
 @inject('drawer')
 @observer
 class DrawerPanel extends React.Component<Props> {
+  constructor(props) {
+    super(props)
+    this.onPress = this.onPress.bind(this)
+  }
+
+  onPress(type: 'avatar' | 'btn' | 'setting') {
+    this.props.drawer!.showDrawer = false
+    setTimeout(() => {
+      'avatar' === type && navigate('Auth')
+      'btn' === type && navigate('Auth')
+      'setting' === type && navigate('SettingTab', { 'from': 'drawer' })
+    }, 250)
+  }
 
   renderTopView() {
     return (
@@ -89,6 +103,7 @@ class DrawerPanel extends React.Component<Props> {
 
           <View style={{ flex: 1, justifyContent: 'center', paddingLeft: d(18) }}>
             <ButtonContainer
+              onPress={() => this.onPress('avatar')}
               style={{ width: d(64), height: d(64), borderRadius: d(64 / 2), backgroundColor: '#f2f2f2' }}
               background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
               <Image
@@ -98,11 +113,15 @@ class DrawerPanel extends React.Component<Props> {
           </View>
 
           <View style={styles.avatarView}>
-              <Icon type={'Feather'} color={'#fff'} name={'search'} size={24} style={{marginRight: d(22)}}/>
-              <Icon type={'Ionicons'} color={'#fff'} name={'md-settings'} size={24}/>
+            <Icon type={'Feather'} color={'#fff'}
+                  name={'search'} size={24} style={{ marginRight: d(22) }}/>
+            <Icon onPress={() => this.onPress('setting')}
+                  type={'Ionicons'} color={'#fff'}
+                  name={'md-settings'} size={24}/>
           </View>
         </View>
         <ButtonContainer
+          onPress={() => this.onPress('btn')}
           activeOpacity={0.6}
           style={styles.btn}>
           <Text style={[material.button, { color: '#fff' }]}>登录或注册</Text>

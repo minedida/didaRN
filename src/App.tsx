@@ -23,7 +23,7 @@ export default class App extends Component<any> {
     return (
       <SafeAreaView>
         <StoreProvider {...stores}>
-          <PaperProvider theme={theme}>
+          <PaperProvider {...theme}>
             <AppNavigatorCmp/>
           </PaperProvider>
         </StoreProvider>
