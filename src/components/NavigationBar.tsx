@@ -26,7 +26,7 @@ const {
 
 interface Props {
   title?: string,
-  statusBarStyle?: 'light-content' | 'default',
+  statusBarStyle?: 'light-content' | 'dark-content',
   navBarBackgroundColor?: string, // nav背景色
   navBarContentColor?: string, // nav中内容的颜色
   statusBarHidden?: boolean,
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
 class NavigationBar extends PureComponent<Props> {
   static defaultProps = {
     title: '标题',
-    statusBarStyle: 'default',
+    statusBarStyle: 'dark-content',
     statusBarHidden: false,
     navBarBackgroundColor: '#fff',
     navBarContentColor: '#333',
@@ -148,8 +148,8 @@ class NavigationBar extends PureComponent<Props> {
     )
     return (
       <View style={[styles.container, { backgroundColor: navBarBackgroundColor }, this.props.style]}>
-        <StatusBar barStyle={statusBarStyle} hidden={statusBarHidden}
-                   animated={true} backgroundColor="transparent" translucent/>
+        <StatusBar barStyle={statusBarStyle} backgroundColor="transparent" translucent
+                   animated={true}  hidden={statusBarHidden} />
         <View style={{
           height: fake_status_bar_height_for_android,
           width: '100%',
