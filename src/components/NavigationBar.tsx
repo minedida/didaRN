@@ -100,7 +100,7 @@ class NavigationBar extends PureComponent<Props> {
         {
           leftButton !== undefined ? leftButton :
             <ButtonContainer
-              style={{ width: d(44), justifyContent: 'center', alignItems: 'center' }}
+              style={{ width: d(32), justifyContent: 'center', alignItems: 'center' }}
               onPress={this.props.onBackPress ? this.props.onBackPress : goBack}
               background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
               <Icon

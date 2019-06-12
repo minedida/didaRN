@@ -26,7 +26,7 @@ export default createBottomTabNavigator(
   routeConfigMap,
   {
     tabBarOptions,
-    initialRouteName: 'CalendarMain',
+    initialRouteName: 'SettingMain',
     lazy: true,
     animationEnabled: false,
     swipeEnabled: false,

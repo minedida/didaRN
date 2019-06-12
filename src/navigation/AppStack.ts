@@ -8,6 +8,8 @@ import TodayTodo from "../containers/drawer/TodayTodo";
 import Auth from "../containers/auth/Auth";
 import MailAuth from "../containers/auth/MailAuth";
 import SettingTab from "../containers/setting/SettingTab";
+import Webview from "../containers/webview/Webview";
+import { paramsToProps } from "./utils";
 
 export default createStackNavigator(
   {
@@ -20,6 +22,7 @@ export default createStackNavigator(
     Auth,
     MailAuth,
     SettingTab,
+    Webview: paramsToProps(Webview),
   },
   {
     headerMode: 'none',

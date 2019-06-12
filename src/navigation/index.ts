@@ -39,7 +39,7 @@ export function navigateReset(routeName: string, params?: NavigationParams) {
 export function navigate(
   routeName: string,
   params?: NavigationParams,
-  key: string = '',
+  key: any = '',
 ) {
   if (navigationContainer && lastNavigateTime + 500 < Date.now()) {
     navigationContainer.dispatch(
