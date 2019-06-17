@@ -10,7 +10,8 @@ const Item = ({ title, children }) => (
     <View style={{ flexDirection: 'row', flexWrap: 'wrap', paddingHorizontal: 20, justifyContent: 'space-around' }}>
       {
         !children.length ? children :
-          children.map((child, key) => <View key={`${title}${key}`} style={{ paddingRight: 20 }}>{child}</View>)
+          children.map((child, key) =>
+            <View key={`${title}${key}`} style={{ paddingRight: 20 }}>{child}</View>)
       }
     </View>
   </View>
@@ -141,6 +142,11 @@ class IconsPreview extends React.PureComponent {
           <Item title={'日历'}>
             {Object.keys(Images.icon).map((item, index) =>
               <Image key={index} source={Images.icon[`${item}`]}/>)}
+          </Item>
+
+          <Item title={'番茄'}>
+            <Icon type={'MaterialCommunityIcons'} color={'#333'} name={'spa'} size={40}/>
+            <Icon type={'MaterialCommunityIcons'} color={'#333'} name={'tennis-ball'} size={40}/>
           </Item>
 
           <Space height={120}/>

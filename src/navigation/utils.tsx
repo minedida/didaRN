@@ -37,7 +37,7 @@ function onNavigationStateChange(prevState: any, currentState: any) {
   const currentScreen = getCurrentRouteName(currentState);
   const prevScreen = getCurrentRouteName(prevState);
   if (prevScreen !== currentScreen) {
-    stores.drawer.disableGestures = 'TodoMain' !== currentScreen;
+    stores.drawer.disableGestures = 'TodoTab' !== currentScreen;
   }
 }
 

@@ -17,8 +17,6 @@ class Splash extends React.PureComponent<Props, {}> {
 
   componentDidMount(): void {
     Platform.OS === 'android' && SplashScreen.hide();
-    // this.goNext(Math.random() * 10 + 1 > 5 ? 'auth' : 'App')
-    // this.goNext('auth')
     this.goNext('App')
   }
 

@@ -10,6 +10,7 @@ import MailAuth from "../containers/auth/MailAuth";
 import SettingTab from "../containers/setting/SettingTab";
 import Webview from "../containers/webview/Webview";
 import { paramsToProps } from "./utils";
+import Dashboard from "../containers/setting/Dashboard";
 
 export default createStackNavigator(
   {
@@ -23,6 +24,7 @@ export default createStackNavigator(
     MailAuth,
     SettingTab,
     Webview: paramsToProps(Webview),
+    Dashboard,
   },
   {
     headerMode: 'none',

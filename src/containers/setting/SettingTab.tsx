@@ -7,6 +7,7 @@ import { d, t } from "../../helper/utils/ScreenUtil";
 import { SettingListItem, SettingListGroup } from "../../components/";
 import { NavigationParams } from "react-navigation";
 import { Html } from "../../assets";
+import { observer } from "mobx-react";
 
 type ConfigItem = {
   id: string,
@@ -70,7 +71,8 @@ const configs: Array<Array<ConfigItem>> = [
   ],
 ]
 
-class SettingTab extends React.PureComponent<NavigationParams> {
+@observer
+class SettingTab extends React.Component<NavigationParams> {
   static navigationOptions = SettingTabNavigationOptions;
 
   constructor(props) {
@@ -81,13 +83,18 @@ class SettingTab extends React.PureComponent<NavigationParams> {
   onSettingListItemPress(type: string) {
     type === 'settings' && navigate('User')
     type === 'header' && navigate('Auth')
-    type === 'wechat' && navigate('Webview', { title: '玩转微信公众号', html: Html.play })
+
+    type === 'wechat' && navigate('Webview',
+      { title: '玩转微信公众号', html: Html.play })
+
+    type === 'dashboard' && navigate('Dashboard')
     console.log(type)
   }
 
   render() {
     const params = this.props.navigation.state.params
     const leftButton = params && params.from && params.from === 'drawer' ? undefined : null
+
     return (
       <View style={{ flex: 1, backgroundColor: '#fff' }}>
         <NavigationBar leftButton={leftButton} title={'设置'}/>

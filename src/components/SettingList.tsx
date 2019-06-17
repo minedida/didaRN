@@ -22,13 +22,17 @@ const styles = StyleSheet.create({
   }
 })
 
+function ListIcon({leftIcon}) {
+  return <View style={styles.icon} pointerEvents="box-none">{leftIcon}</View>
+}
+
 class SettingListItem extends React.PureComponent<Props> {
   render() {
     const {
       onPress, title, id,
       leftIcon, rightView: rightViewProp
     } = this.props
-    const leftView = _props => <View style={styles.icon} pointerEvents="box-none">{leftIcon}</View>
+    const leftView = _props => <ListIcon leftIcon={leftIcon}/>
     const rightView = _props => rightViewProp
     return (
       <View>
@@ -71,5 +75,6 @@ const SettingHeader = props =>
 export {
   SettingListItem,
   SettingListGroup,
-  SettingHeader
+  SettingHeader,
+  ListIcon
 }

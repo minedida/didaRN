@@ -28,3 +28,21 @@ export const SettingTabNavigationOptions = (_navigationOptionsParams : Navigatio
       <Icon type={'Ionicons'}  color={params.tintColor} name={'md-settings'} size={t(24)}/>
   }
 }
+export const TomatoTabNavigationOptions = (_navigationOptionsParams : NavigationOptionsParams) => {
+  return {
+    tabBarIcon: (params: tabBarIconParams) =>
+      <Icon type={'MaterialCommunityIcons'} color={params.tintColor} name={'tennis-ball'} size={24}/>
+  }
+}
+export const ClockInTabNavigationOptions = (_navigationOptionsParams : NavigationOptionsParams) => {
+  return {
+    tabBarIcon: (params: tabBarIconParams) =>
+      <Icon type={'Feather'} color={params.tintColor} name={'clock'} size={24}/>
+  }
+}
+export const SearchTabNavigationOptions = (_navigationOptionsParams : NavigationOptionsParams) => {
+  return {
+    tabBarIcon: (params: tabBarIconParams) =>
+      <Icon type={'Feather'} color={params.tintColor} name={'search'} size={24}/>
+  }
+}
