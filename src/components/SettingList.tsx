@@ -8,8 +8,10 @@ type Props = {
   id?: string,
   onPress: any,
   title: string,
-  leftIcon: React.ReactNode,
+  leftIcon?: React.ReactNode,
   rightView?: React.ReactNode
+  description?: string
+  itemHeight?: number
 }
 
 const styles = StyleSheet.create({
@@ -27,12 +29,17 @@ function ListIcon({leftIcon}) {
 }
 
 class SettingListItem extends React.PureComponent<Props> {
+
+  static defaultProps = {
+    itemHeight: d(52)
+  }
+
   render() {
     const {
-      onPress, title, id,
+      onPress, title, id, description, itemHeight,
       leftIcon, rightView: rightViewProp
     } = this.props
-    const leftView = _props => <ListIcon leftIcon={leftIcon}/>
+    const leftView = _props => leftIcon && <ListIcon leftIcon={leftIcon}/>
     const rightView = _props => rightViewProp
     return (
       <View>
@@ -40,10 +47,12 @@ class SettingListItem extends React.PureComponent<Props> {
           rippleColor={Platform.OS === 'ios' ? "rgba(215,77,167,0.32)" : "rgba(0, 0, 0, .12)"}
           onPress={() => onPress(id)}>
           <List.Item
-            style={{ height: d(52), alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}
+            style={{ height: itemHeight, alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}
             title={title}
             left={leftView}
-            right={rightView}/>
+            right={rightView}
+            description={description}
+          />
         </TouchableRipple>
       </View>
     )
@@ -52,10 +61,11 @@ class SettingListItem extends React.PureComponent<Props> {
 
 const SettingListGroup = (props: any) =>
   <View>
-    <Divider style={{ backgroundColor: '#333', opacity: 0.4, marginLeft: d(18) }}/>
     <View style={{ paddingVertical: d(12) }}>
       {props.children}
     </View>
+
+    {!props.last && <Divider style={{ backgroundColor: '#333', opacity: 0.4, marginLeft: d(18) }}/>}
   </View>
 
 const SettingHeader = props =>
@@ -70,6 +80,7 @@ const SettingHeader = props =>
         titleStyle={[material.title, { fontSize: 18, paddingLeft: d(8) }]}
         title="登录或注册"/>
     </TouchableRipple>
+    <Divider style={{ backgroundColor: '#333', opacity: 0.4, marginLeft: d(18) }}/>
   </View>
 
 export {

@@ -81,13 +81,16 @@ class SettingTab extends React.Component<NavigationParams> {
   }
 
   onSettingListItemPress(type: string) {
-    type === 'settings' && navigate('User')
     type === 'header' && navigate('Auth')
-
     type === 'wechat' && navigate('Webview',
       { title: '玩转微信公众号', html: Html.play })
 
     type === 'dashboard' && navigate('Dashboard')
+    type === 'alarm' && navigate('SoundAndNotify')
+    type === 'addtask' && navigate('AddTaskInstantly')
+
+
+    type === 'settings' && navigate('MoreSetting')
     console.log(type)
   }
 
@@ -103,7 +106,7 @@ class SettingTab extends React.Component<NavigationParams> {
 
           {configs.map(
             (g, i) =>
-              <SettingListGroup key={i}>
+              <SettingListGroup key={i} last={i === configs.length -1}>
                 {
                   g.map(v =>
                     <SettingListItem key={v.id} onPress={this.onSettingListItemPress} {...v}/>)

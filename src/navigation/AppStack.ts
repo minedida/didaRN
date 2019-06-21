@@ -1,6 +1,5 @@
 import { createStackNavigator } from 'react-navigation';
 import AppTabBar from './AppTabBar';
-import User from "../containers/setting/User";
 import AddTodo from "../containers/drawer/AddTodo";
 import InboxTodo from "../containers/drawer/InboxTodo";
 import ManageTodo from "../containers/drawer/ManageTodo";
@@ -11,11 +10,14 @@ import SettingTab from "../containers/setting/SettingTab";
 import Webview from "../containers/webview/Webview";
 import { paramsToProps } from "./utils";
 import Dashboard from "../containers/setting/Dashboard";
+import SoundAndNotify from "../containers/setting/SoundAndNotify";
+import AddTaskInstantly from "../containers/setting/AddTaskInstantly";
+import IntelligentRecognition from "../containers/setting/IntelligentRecognition";
+import MoreSetting from "../containers/setting/MoreSetting";
 
 export default createStackNavigator(
   {
     AppTabBar,
-    User,
     AddTodo,
     InboxTodo,
     ManageTodo,
@@ -25,6 +27,10 @@ export default createStackNavigator(
     SettingTab,
     Webview: paramsToProps(Webview),
     Dashboard,
+    SoundAndNotify,
+    AddTaskInstantly,
+    IntelligentRecognition,
+    MoreSetting,
   },
   {
     headerMode: 'none',

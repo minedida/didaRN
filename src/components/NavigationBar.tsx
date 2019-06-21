@@ -118,7 +118,7 @@ class NavigationBar extends PureComponent<Props> {
   getTitleView(title: any) {
     const { titleView, leftButton } = this.props
     const paddingLeft = isAndroid ? (
-      leftButton === null ? d(15) : d(72)
+      leftButton === null ? d(15) : d(52)
     ) : 0
     return (
       <View style={{ paddingLeft }}>
