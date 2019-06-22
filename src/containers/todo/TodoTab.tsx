@@ -4,6 +4,9 @@ import { DrawerItems, DrawerStore } from "../../store/DrawerStore";
 import { TodoTabNavigationOptions } from "../../navigation/TabBarNavigationOptions";
 import InboxTodo from "../drawer/InboxTodo";
 import TodayTodo from "../drawer/TodayTodo";
+import AddTodo from "../drawer/AddTodo";
+import ManageTodo from "../drawer/ManageTodo";
+import IconsPreview from "./IconsPreview";
 
 type Props = {
   drawer: DrawerStore
@@ -11,7 +14,10 @@ type Props = {
 
 const DrawerItemComponents = {
   InboxTodo,
-  TodayTodo
+  TodayTodo,
+  AddTodo,
+  ManageTodo,
+  IconsPreview
 }
 
 @inject('drawer') @observer

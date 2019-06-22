@@ -1,8 +1,9 @@
 import React from 'react'
 import { View, Platform, StyleSheet } from 'react-native'
 import { Avatar, Divider, List, TouchableRipple } from "react-native-paper";
-import { d } from "../helper/utils/ScreenUtil";
+import { d, t } from "../helper/utils/ScreenUtil";
 import { material } from "react-native-typography";
+import { Icon } from "./index";
 
 type Props = {
   id?: string,
@@ -21,6 +22,7 @@ const styles = StyleSheet.create({
     width: d(40),
     alignItems: 'center',
     justifyContent: 'center',
+    alignSelf:'center'
   }
 })
 
@@ -83,9 +85,12 @@ const SettingHeader = props =>
     <Divider style={{ backgroundColor: '#333', opacity: 0.4, marginLeft: d(18) }}/>
   </View>
 
+const SettingIcon = ({type, name, color='#757575', size=t(24)}) =>
+  <Icon type={type} color={color} name={name} size={size}/>
+
 export {
   SettingListItem,
   SettingListGroup,
   SettingHeader,
-  ListIcon
+  SettingIcon
 }

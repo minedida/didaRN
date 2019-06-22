@@ -1,29 +1,63 @@
 import React from 'react'
-import { View, ScrollView, Text, Dimensions, Image } from 'react-native'
+import { View, ScrollView, Text, Image, StyleSheet, TouchableNativeFeedback, Platform } from 'react-native'
 import { material } from 'react-native-typography'
-import { Space, Icon } from "../../components";
+import { Space, Icon, NavigationBar, ButtonContainer } from "../../components";
 import { Images } from "../../assets";
+import { Divider } from "react-native-paper";
+import { d, t } from "../../helper/utils/ScreenUtil";
+import IoniconsIcon from 'react-native-vector-icons/Ionicons';
+import { inject, observer } from "mobx-react";
+import { DrawerStore } from "../../store/DrawerStore";
+
+const styles = StyleSheet.create({
+  itemView: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    paddingHorizontal: 20,
+    justifyContent: 'space-around'
+  }
+})
 
 const Item = ({ title, children }) => (
-  <View style={{ width, marginTop: 20 }}>
-    <Text style={[{ paddingHorizontal: 20 }, material.headline]}>{title}</Text>
-    <View style={{ flexDirection: 'row', flexWrap: 'wrap', paddingHorizontal: 20, justifyContent: 'space-around' }}>
+  <View>
+    <Text style={[{ margin: 20 }, material.headline]}>{title}</Text>
+    <View style={styles.itemView}>
       {
         !children.length ? children :
           children.map((child, key) =>
             <View key={`${title}${key}`} style={{ paddingRight: 20 }}>{child}</View>)
       }
     </View>
+    <Space height={10}/>
+    <Divider/>
   </View>
 )
-const { width } = Dimensions.get('window')
+const isAndroid = Platform.OS === 'android'
 
-class IconsPreview extends React.PureComponent {
+type Props = {
+  drawer: DrawerStore
+}
+@inject('drawer') @observer
+class IconsPreview extends React.Component<Props> {
   scrollView: any
 
+  renderLeftBtn() {
+    return (
+      <ButtonContainer
+        style={{ width: d(26), height: d(26), justifyContent: 'center', alignItems: 'center' }}
+        onPress={this.props.drawer.toggleMenu}
+        background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
+        <IoniconsIcon
+          size={isAndroid ? t(20): t(20)}
+          name={isAndroid ? 'md-menu' : 'ios-menu'}
+          color={'#333'} />
+      </ButtonContainer>
+    )
+  }
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: '#fff' }}>
+        <NavigationBar title={'Icon预览'} leftButton={this.renderLeftBtn()}/>
         <ScrollView ref={ref => this.scrollView = ref}
                     onContentSizeChange={_ => this.scrollView.scrollToEnd({ animated: false })}>
           <Item title={'back'}>
@@ -147,6 +181,55 @@ class IconsPreview extends React.PureComponent {
           <Item title={'番茄'}>
             <Icon type={'MaterialCommunityIcons'} color={'#333'} name={'spa'} size={40}/>
             <Icon type={'MaterialCommunityIcons'} color={'#333'} name={'tennis-ball'} size={40}/>
+          </Item>
+
+          <Item title={'标签'}>
+            <Icon type={'AntDesign'} color={'#333'} name={'tags'} size={40}/>
+            <Icon type={'AntDesign'} color={'#333'} name={'tagso'} size={40}/>
+            <Icon type={'FontAwesome'} color={'#333'} name={'tags'} size={40}/>
+            <Icon type={'FontAwesome5'} color={'#333'} name={'tags'} size={40}/>
+            <Icon type={'MaterialCommunityIcons'} color={'#333'} name={'tag-multiple'} size={40}/>
+          </Item>
+
+          <Item title={'加号'}>
+            <Icon type={'Ionicons'} color={'#333'} name={'ios-add'} size={40}/>
+            <Icon type={'Ionicons'} color={'#333'} name={'md-add'} size={40}/>
+            <Icon type={'MaterialIcons'} color={'#333'} name={'add'} size={40}/>
+          </Item>
+
+          <Item title={'所有'}>
+            <Icon type={'Ionicons'} color={'#333'} name={'ios-wallet'} size={40}/>
+            <Icon type={'MaterialCommunityIcons'} color={'#333'} name={'folder-open'} size={40}/>
+            <Icon type={'Entypo'} color={'#333'} name={'folder'} size={40}/>
+          </Item>
+
+          <Item title={'明天'}>
+            <Icon type={'MaterialCommunityIcons'} color={'#333'} name={'bell-ring'} size={40}/>
+            <Icon type={'MaterialCommunityIcons'} color={'#333'} name={'led-on'} size={40}/>
+          </Item>
+
+          <Item title={'最近7天'}>
+            <Icon type={'FontAwesome5'} color={'#333'} name={'calendar-week'} size={40}/>
+          </Item>
+
+          <Item title={'分配给我'}>
+            <Icon type={'FontAwesome5'} color={'#333'} name={'user-alt'} size={40}/>
+            <Icon type={'FontAwesome'} color={'#333'} name={'user-circle-o'} size={40}/>
+            <Icon type={'FontAwesome'} color={'#333'} name={'user-circle'} size={40}/>
+          </Item>
+
+          <Item title={'事件'}>
+            <Icon type={'Zocial'} color={'#333'} name={'rss'} size={40}/>
+            <Icon type={'FontAwesome'} color={'#333'} name={'rss-square'} size={40}/>
+            <Icon type={'FontAwesome5'} color={'#333'} name={'rss-square'} size={40}/>
+          </Item>
+
+          <Item title={'已完成'}>
+            <Icon type={'FontAwesome'} color={'#333'} name={'check-square-o'} size={40}/>
+          </Item>
+
+          <Item title={'垃圾桶'}>
+            <Icon type={'FontAwesome5'} color={'#333'} name={'trash'} size={40}/>
           </Item>
 
           <Space height={120}/>

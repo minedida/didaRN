@@ -2,7 +2,7 @@ import { action, observable } from 'mobx'
 import { navigate } from "../navigation";
 
 export type DrawerItems = 'InboxTodo' |
-  'TodayTodo' | 'AddTodo' | 'ManageTodo'
+  'TodayTodo' | 'AddTodo' | 'ManageTodo'| 'IconsPreview'
 
 class DrawerStore {
   @observable showDrawer: boolean = false

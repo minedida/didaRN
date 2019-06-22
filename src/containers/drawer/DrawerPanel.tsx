@@ -69,6 +69,7 @@ const configs: Array<Array<ConfigItem>> = [
   [
     { label: '今天', icon: 'event-available', id: 'TodayTodo' },
     { label: '收集箱', icon: 'inbox', id: 'InboxTodo' },
+    { label: 'Icon预览', icon: 'text-fields', id: 'IconsPreview' },
   ],
   [
     { label: '添加清单', icon: 'add', id: 'AddTodo' },

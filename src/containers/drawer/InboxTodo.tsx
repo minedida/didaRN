@@ -1,11 +1,11 @@
 import React from 'react'
-import { View, TouchableNativeFeedback, Platform } from 'react-native'
+import { View, TouchableNativeFeedback, Platform, Text } from 'react-native'
 import { ButtonContainer, NavigationBar } from "../../components/";
 import { d, t } from "../../helper/utils/ScreenUtil";
 import { DrawerStore } from "../../store/DrawerStore";
-import IconsPreview from '../todo/IconsPreview'
 import { inject, observer } from "mobx-react";
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
+import { material } from "react-native-typography";
 
 
 type Props = {
@@ -46,7 +46,9 @@ class InboxTodo extends React.Component<Props> {
       <View style={{ flex: 1 }}>
         <NavigationBar title={'收集箱'} leftButton={this.renderLeftBtn()} rightButton={this.renderRightBtn()}/>
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' }}>
-          <IconsPreview/>
+          <Text style={material.button}>
+            InboxTodo
+          </Text>
         </View>
       </View>
     )

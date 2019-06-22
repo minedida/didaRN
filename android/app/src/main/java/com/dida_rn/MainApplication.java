@@ -3,6 +3,8 @@ package com.dida_rn;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import com.swmansion.reanimated.ReanimatedPackage;
 import com.reactnativecommunity.webview.RNCWebViewPackage;
 import me.listenzz.modal.TranslucentModalReactPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
@@ -28,6 +30,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+          new RNGestureHandlerPackage(),
+          new ReanimatedPackage(),
           new RNCWebViewPackage(),
           new TranslucentModalReactPackage(),
           new SplashScreenReactPackage(),

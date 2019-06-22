@@ -1,13 +1,13 @@
 import React from 'react'
 import { View, ScrollView } from 'react-native'
-import { NavigationBar, SettingHeader, Icon } from "../../components/";
+import { observer } from "mobx-react";
 import { SettingTabNavigationOptions } from "../../navigation/TabBarNavigationOptions";
 import { navigate } from "../../navigation";
 import { d, t } from "../../helper/utils/ScreenUtil";
-import { SettingListItem, SettingListGroup } from "../../components/";
+import { SettingListItem, SettingListGroup, NavigationBar, SettingHeader, SettingIcon }
+from "../../components/";
 import { NavigationParams } from "react-navigation";
 import { Html } from "../../assets";
-import { observer } from "mobx-react";
 
 type ConfigItem = {
   id: string,
@@ -15,58 +15,76 @@ type ConfigItem = {
   leftIcon: React.ReactNode,
   rightView?: React.ReactNode,
 }
+const themeRightView =
+  <View style={{
+    width: d(24),
+    height: d(24),
+    backgroundColor: '#6071e2',
+    borderRadius: d(24),
+    alignSelf: 'center',
+    marginRight: d(10)
+  }}/>
+
 const configs: Array<Array<ConfigItem>> = [
   [
     {
       id: 'dashboard',
       title: '选项卡',
-      leftIcon: <Icon type={'MaterialIcons'} color={'#757575'} name={'dashboard'} size={24}/>
+      leftIcon: <SettingIcon type={'MaterialIcons'} name={'dashboard'}/>
     },
     {
       id: 'checkerboard', title: '主题',
-      leftIcon: <Icon type={'MaterialCommunityIcons'} color={'#757575'} name={'checkerboard'} size={24}/>,
-      rightView: <View style={{ width: d(24), height: d(24), backgroundColor: 'pink', borderRadius: d(24) }}/>
+      leftIcon: <SettingIcon type={'MaterialCommunityIcons'} name={'checkerboard'}/>,
+      rightView: themeRightView
     },
-    { id: 'alarm', title: '声音与提醒', leftIcon: <Icon type={'Ionicons'} color={'#757575'} name={'ios-alarm'} size={24}/> },
+    {
+      id: 'alarm',
+      title: '声音与提醒',
+      leftIcon: <SettingIcon type={'Ionicons'} name={'ios-alarm'}/>
+    },
     {
       id: 'addtask',
       title: '快速添加任务',
-      leftIcon: <Icon type={'MaterialCommunityIcons'} color={'#757575'} name={'playlist-plus'} size={24}/>
+      leftIcon: <SettingIcon type={'MaterialCommunityIcons'} name={'playlist-plus'}/>
     },
     {
       id: 'settings',
       title: '更多设置',
-      leftIcon: <Icon type={'Ionicons'} color={'#757575'} name={'md-settings'} size={t(24)}/>
+      leftIcon: <SettingIcon type={'Ionicons'} name={'md-settings'} size={t(24)}/>
     },
   ],
   [
     {
       id: 'wechat',
       title: '玩转微信公众号',
-      leftIcon: <Icon type={'MaterialCommunityIcons'} color={'#757575'} name={'wechat'} size={24}/>
+      leftIcon: <SettingIcon type={'MaterialCommunityIcons'} name={'wechat'}/>
     },
   ],
   [
     {
       id: 'rocket',
       title: '进入引导',
-      leftIcon: <Icon type={'Ionicons'} color={'#757575'} name={'ios-rocket'} size={24}/>
+      leftIcon: <SettingIcon type={'Ionicons'} name={'ios-rocket'}/>
     },
     {
       id: 'help',
       title: '帮助中心',
-      leftIcon: <Icon type={'Ionicons'} color={'#757575'} name={'md-help-buoy'} size={24}/>
+      leftIcon: <SettingIcon type={'Ionicons'} name={'md-help-buoy'}/>
     },
     {
       id: 'feedback',
       title: '反馈与建议',
-      leftIcon: <Icon type={'MaterialIcons'} color={'#757575'} name={'feedback'} size={24}/>
+      leftIcon: <SettingIcon type={'MaterialIcons'} name={'feedback'}/>
     },
-    { id: 'like', title: '推荐滴答清单', leftIcon: <Icon type={'AntDesign'} color={'#757575'} name={'like1'} size={24}/> },
+    {
+      id: 'like',
+      title: '推荐滴答清单',
+      leftIcon: <SettingIcon type={'AntDesign'} name={'like1'}/>
+    },
     {
       id: 'info',
       title: '关于',
-      leftIcon: <Icon type={'Ionicons'} color={'#757575'} name={'md-information-circle'} size={24}/>
+      leftIcon: <SettingIcon type={'Ionicons'} name={'md-information-circle'}/>
     },
   ],
 ]
@@ -106,7 +124,7 @@ class SettingTab extends React.Component<NavigationParams> {
 
           {configs.map(
             (g, i) =>
-              <SettingListGroup key={i} last={i === configs.length -1}>
+              <SettingListGroup key={i} last={i === configs.length - 1}>
                 {
                   g.map(v =>
                     <SettingListItem key={v.id} onPress={this.onSettingListItemPress} {...v}/>)
