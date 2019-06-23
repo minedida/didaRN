@@ -3,7 +3,6 @@ import { observer, Provider as StoreProvider } from "mobx-react";
 import { Provider as PaperProvider } from 'react-native-paper';
 import AppNavigatorCmp from "./navigation/AppNavigatorCmp";
 import { SafeAreaView } from "./components/";
-import { theme} from './theme'
 import stores from './store'
 
 // how to type-safe inject store? https://github.com/mobxjs/mobx/issues/1778
@@ -12,6 +11,7 @@ import stores from './store'
 @observer
 export default class App extends Component<any> {
   render() {
+    const theme = stores.app.appTheme
     return (
       <SafeAreaView>
         <StoreProvider {...stores}>

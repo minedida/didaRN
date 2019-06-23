@@ -37,7 +37,7 @@ const Icon = (props: Props) => {
     justifyContent: 'center',
     alignItems: 'center',
     width: size * 1.2,
-    height: size * 1.2
+    height: size * 1.2,
   } as any
   return (
     <Component style={[containerStyle, style]} onPress={onPress} {...ComponentProps}>

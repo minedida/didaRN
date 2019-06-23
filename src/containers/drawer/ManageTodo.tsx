@@ -1,13 +1,18 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import { NavigationBar } from "../../components/";
+import { material } from "react-native-typography";
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+import { Theme, withTheme } from 'react-native-paper'
+import { NavigationBar } from "../../components/";
 import CommonList from "./CommonList";
 import SmartList from "./SmartList";
 import Label from "./Label";
-import { material } from "react-native-typography";
 
-class ManageTodo extends React.PureComponent {
+type Props = {
+  theme: Theme
+}
+
+class ManageTodo extends React.PureComponent<Props> {
   state = {
     index: 0,
     routes: [
@@ -23,10 +28,11 @@ class ManageTodo extends React.PureComponent {
       Label,
     })
 
+    const {theme: {colors: {primary}}} = this.props
     const Tab = props =>
       <TabBar
         {...props}
-        indicatorStyle={{ backgroundColor: '#6071e2' }}
+        indicatorStyle={{ backgroundColor: primary }}
         style={{ backgroundColor: '#fff' }}
         pressColor={'rgba(0, 0, 0, .2)'}
         renderLabel={props =>
@@ -50,4 +56,4 @@ class ManageTodo extends React.PureComponent {
   }
 }
 
-export default ManageTodo
+export default withTheme(ManageTodo)

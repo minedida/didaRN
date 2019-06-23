@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, ScrollView, StyleSheet } from 'react-native'
-import { NavigationBar, SettingListItem } from "../../components";
-import { List, Switch } from 'react-native-paper';
+import { NavigationBar, SettingListItem, Switch } from "../../components";
+import { List } from 'react-native-paper';
 import { d } from "../../helper/utils/ScreenUtil";
 
 

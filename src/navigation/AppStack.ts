@@ -14,6 +14,7 @@ import SoundAndNotify from "../containers/setting/SoundAndNotify";
 import AddTaskInstantly from "../containers/setting/AddTaskInstantly";
 import IntelligentRecognition from "../containers/setting/IntelligentRecognition";
 import MoreSetting from "../containers/setting/MoreSetting";
+import ThemeSetting from "../containers/setting/ThemeSetting";
 
 export default createStackNavigator(
   {
@@ -31,6 +32,7 @@ export default createStackNavigator(
     AddTaskInstantly,
     IntelligentRecognition,
     MoreSetting,
+    ThemeSetting,
   },
   {
     headerMode: 'none',

@@ -4,3 +4,4 @@ export { default as Space } from './Space';
 export { default as ButtonContainer } from './button-container';
 export { default as Icon } from './icon/Icon';
 export { SettingListItem, SettingListGroup, SettingHeader, SettingIcon } from './SettingList';
+export {default as Switch} from './Switch'

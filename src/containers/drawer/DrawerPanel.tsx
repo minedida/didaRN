@@ -9,13 +9,13 @@ import {
 } from 'react-native';
 import { inject, observer } from "mobx-react";
 import { DrawerItems, DrawerStore } from "../../store/DrawerStore";
+import { Drawer, withTheme, Theme } from 'react-native-paper';
 import DeviceConstants from "../../helper/constant/DeviceConstants";
 import { d } from "../../helper/utils/ScreenUtil";
 import { material } from 'react-native-typography'
-import { Drawer } from 'react-native-paper';
 import { ButtonContainer, Space, Icon } from "../../components";
 import { navigate } from "../../navigation";
-
+import color from 'color';
 const { fake_status_bar_padding_for_ios, fake_status_bar_height_for_android } = DeviceConstants
 const window = Dimensions.get('window');
 const uri = 'https://pickaface.net/gallery/avatar/Opi51c74d0125fd4.png';
@@ -31,12 +31,10 @@ const styles = StyleSheet.create({
     height: fake_status_bar_height_for_android,
     width: '100%',
     paddingTop: fake_status_bar_padding_for_ios,
-    backgroundColor: '#06ce90'
   },
   topView: {
     width: '100%',
     height: d(136),
-    backgroundColor: '#06ce90',
     alignItems: 'center'
   },
   topIconView: {
@@ -55,13 +53,14 @@ const styles = StyleSheet.create({
     width: d(284),
     height: d(32),
     borderRadius: d(6),
-    backgroundColor: '#8de9cc',
+    // backgroundColor: '#8de9cc',
     justifyContent: 'center',
     alignItems: 'center'
   }
 });
 type Props = {
   drawer?: DrawerStore
+  theme: Theme
 }
 
 type ConfigItem = { label: string, icon: string, id: DrawerItems }
@@ -98,8 +97,16 @@ class DrawerPanel extends React.Component<Props> {
   }
 
   renderTopView() {
+    const {
+      theme: {colors: {primary}}
+    } = this.props
+    const green = primary
+    const light_green = color(green)
+    .rgb()
+    .lighten(0.27)
+    .string()
     return (
-      <View style={styles.topView}>
+      <View style={[styles.topView, { backgroundColor: green }]}>
         <View style={styles.topIconView}>
 
           <View style={{ flex: 1, justifyContent: 'center', paddingLeft: d(18) }}>
@@ -110,6 +117,7 @@ class DrawerPanel extends React.Component<Props> {
               <Image
                 source={{ uri }}
                 style={{ width: d(64), height: d(64), borderRadius: d(64) / 2 }}/>
+
             </ButtonContainer>
           </View>
 
@@ -124,7 +132,7 @@ class DrawerPanel extends React.Component<Props> {
         <ButtonContainer
           onPress={() => this.onPress('btn')}
           activeOpacity={0.6}
-          style={styles.btn}>
+          style={[styles.btn, { backgroundColor: light_green}]}>
           <Text style={[material.button, { color: '#fff' }]}>登录或注册</Text>
         </ButtonContainer>
       </View>
@@ -151,9 +159,12 @@ class DrawerPanel extends React.Component<Props> {
   }
 
   render() {
+    const {
+      theme: {colors: {primary}}
+    } = this.props
     return (
       <ScrollView scrollsToTop={false} style={styles.container}>
-        <View style={styles.statusBar}/>
+        <View style={[styles.statusBar, {backgroundColor: primary}]}/>
         {this.renderTopView()}
         <Space height={d(6)}/>
         {this.renderDrawerItem()}
@@ -162,4 +173,4 @@ class DrawerPanel extends React.Component<Props> {
   }
 }
 
-export default DrawerPanel
+export default withTheme(DrawerPanel)

@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Platform, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import { Avatar, Divider, List, TouchableRipple } from "react-native-paper";
 import { d, t } from "../helper/utils/ScreenUtil";
 import { material } from "react-native-typography";
@@ -22,11 +22,21 @@ const styles = StyleSheet.create({
     width: d(40),
     alignItems: 'center',
     justifyContent: 'center',
-    alignSelf:'center'
+    alignSelf: 'center'
+  },
+  divider: {
+    backgroundColor: '#333',
+    opacity: 0.4,
+    marginLeft: d(18)
+  },
+  headerView: {
+    paddingLeft: d(4),
+    height: d(76),
+    justifyContent: 'center'
   }
 })
 
-function ListIcon({leftIcon}) {
+function ListIcon({ leftIcon }) {
   return <View style={styles.icon} pointerEvents="box-none">{leftIcon}</View>
 }
 
@@ -46,7 +56,7 @@ class SettingListItem extends React.PureComponent<Props> {
     return (
       <View>
         <TouchableRipple
-          rippleColor={Platform.OS === 'ios' ? "rgba(215,77,167,0.32)" : "rgba(0, 0, 0, .12)"}
+          rippleColor={"rgba(0, 0, 0, .12)"}
           onPress={() => onPress(id)}>
           <List.Item
             style={{ height: itemHeight, alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}
@@ -67,14 +77,14 @@ const SettingListGroup = (props: any) =>
       {props.children}
     </View>
 
-    {!props.last && <Divider style={{ backgroundColor: '#333', opacity: 0.4, marginLeft: d(18) }}/>}
+    {!props.last && <Divider style={styles.divider}/>}
   </View>
 
 const SettingHeader = props =>
   <View style={{ width: '100%', height: d(90) }}>
     <TouchableRipple
-      rippleColor={Platform.OS === 'ios' ? "rgba(215,77,167,0.32)" : "rgba(0, 0, 0, .12)"}
-      style={{ paddingLeft: d(4), height: d(76), justifyContent: 'center' }}
+      rippleColor={"rgba(0, 0, 0, .12)"}
+      style={styles.headerView}
       onPress={props.onPress}>
       <List.Item
         style={{ justifyContent: 'center' }}
@@ -82,11 +92,11 @@ const SettingHeader = props =>
         titleStyle={[material.title, { fontSize: 18, paddingLeft: d(8) }]}
         title="登录或注册"/>
     </TouchableRipple>
-    <Divider style={{ backgroundColor: '#333', opacity: 0.4, marginLeft: d(18) }}/>
+    <Divider style={styles.divider}/>
   </View>
 
-const SettingIcon = ({type, name, color='#757575', size=t(24)}) =>
-  <Icon type={type} color={color} name={name} size={size}/>
+const SettingIcon = ({ type, name, color = '#757575', size = t(24) }) =>
+  <Icon type={type} color={color} name={name} size={size} style={{ alignSelf: 'center' }}/>
 
 export {
   SettingListItem,
