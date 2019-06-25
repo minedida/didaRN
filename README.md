@@ -67,3 +67,9 @@
 
 
 
+
+### 组件
+- toast组件，带有原生质感。
+    - [react-native-simple-toast](https://github.com/vonovak/react-native-simple-toast.git)星星更多一些，但是配置简单，自定义能力弱
+    - [react-native-toast-native](https://github.com/onemolegames/react-native-toast-native)星星相对少一些，但是自定义能力强大
+- 目前使用了`simple-toast`，若后续发现toast能力不足可以切换

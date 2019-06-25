@@ -1,5 +1,6 @@
 import React from 'react'
-import { BackHandler, Platform, ToastAndroid } from "react-native";
+import { BackHandler, Platform } from "react-native";
+import Toast from "react-native-simple-toast";
 import { getCurrentSwitchName } from "../../navigation";
 import AppStack from "../../navigation/AppStack";
 import AuthStack from "../../navigation/AuthStack";
@@ -53,7 +54,7 @@ export function addBackHandler(WrappedComponent: any, params: 'Auth' | 'App') {
       }
 
       this.lastBackPressed = Date.now();
-      ToastAndroid.showWithGravity('再按一次退出', ToastAndroid.SHORT, ToastAndroid.BOTTOM)
+      Toast.show('再次点击退出程序')
 
       return true;
     }

@@ -29,7 +29,6 @@ const isIphoneX=() =>
  * StatusBar高度大于28及表示为全面屏
  */
 function isNotch() {
-  // @ts-ignore
   return Platform.OS === 'android' && StatusBar.currentHeight && StatusBar.currentHeight > 28
 }
 

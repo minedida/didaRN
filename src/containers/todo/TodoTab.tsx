@@ -28,7 +28,6 @@ class TodoTab extends React.Component<Props> {
     const SelectedItem: DrawerItems = this.props.drawer!.selectedItem
     const DrawerItemComponent = DrawerItemComponents[SelectedItem] as any;
     return <DrawerItemComponent/>
-    // return <IconsPreview/>
   }
 }
 

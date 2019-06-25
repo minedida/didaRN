@@ -1,11 +1,12 @@
 import React from 'react'
 import { View, TouchableNativeFeedback, Platform, Text } from 'react-native'
+import { inject, observer } from "mobx-react";
+import Toast from 'react-native-simple-toast';
+import IoniconsIcon from 'react-native-vector-icons/Ionicons';
+import { material } from "react-native-typography";
 import { ButtonContainer, NavigationBar } from "../../components/";
 import { d, t } from "../../helper/utils/ScreenUtil";
 import { DrawerStore } from "../../store/DrawerStore";
-import { inject, observer } from "mobx-react";
-import IoniconsIcon from 'react-native-vector-icons/Ionicons';
-import { material } from "react-native-typography";
 
 
 type Props = {
@@ -15,7 +16,10 @@ const isAndroid = Platform.OS === 'android'
 
 @inject('drawer') @observer
 class InboxTodo extends React.Component<Props> {
-
+  constructor(props) {
+    super(props)
+    this.onPress = this.onPress.bind(this)
+  }
   renderLeftBtn() {
     return (
       <ButtonContainer
@@ -41,12 +45,15 @@ class InboxTodo extends React.Component<Props> {
       </ButtonContainer>
     )
   }
+  onPress() {
+    Toast.show('alert')
+  }
   render() {
     return (
       <View style={{ flex: 1 }}>
         <NavigationBar title={'收集箱'} leftButton={this.renderLeftBtn()} rightButton={this.renderRightBtn()}/>
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' }}>
-          <Text style={material.button}>
+          <Text style={material.button} onPress={this.onPress}>
             InboxTodo
           </Text>
         </View>

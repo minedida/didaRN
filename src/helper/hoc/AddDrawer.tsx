@@ -1,5 +1,4 @@
 import React from 'react'
-// @ts-ignore
 import SideMenu from 'react-native-side-menu'
 import stores from "../../store";
 import DrawerPanel from "../../containers/drawer/DrawerPanel";

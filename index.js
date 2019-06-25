@@ -1,6 +1,6 @@
 import {AppRegistry, YellowBox} from 'react-native';
 import App from './src/App';
-import TabViewExampleList from './demo/react-native-tab-view/TabViewExampleList';
+import Demo from './demo/Demo'
 import {name as appName} from './app.json';
 
 
@@ -14,4 +14,4 @@ YellowBox.ignoreWarnings(ignores)
 
 
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => Demo);

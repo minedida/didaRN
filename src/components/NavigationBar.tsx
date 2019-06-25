@@ -83,7 +83,7 @@ class NavigationBar extends PureComponent<Props> {
     backBtnColor: '#62646c'
   }
 
-  private getRightBotton(rightView: any) {
+  private getRightButton(rightView: any) {
     return (
       <View style={[styles.center, { height: '100%', position: 'absolute', right: d(12) }]}>
         {rightView && rightView}
@@ -143,7 +143,7 @@ class NavigationBar extends PureComponent<Props> {
       <View style={[styles.navBar]}>
         {this.getTitleView(title)}
         {this.getLeftButton(leftButton)}
-        {this.getRightBotton(rightButton)}
+        {this.getRightButton(rightButton)}
       </View>
     )
     return (
