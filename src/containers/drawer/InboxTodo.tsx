@@ -1,10 +1,8 @@
 import React from 'react'
-import { View, TouchableNativeFeedback, Platform, Dimensions } from 'react-native'
+import { View, TouchableNativeFeedback, Platform, TextInput, Dimensions } from 'react-native'
 import { inject, observer } from "mobx-react";
-import Toast from 'react-native-simple-toast';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
-import { TextInput } from 'react-native-paper'
-import { ButtonContainer, NavigationBar, CombineTodoList } from "../../components/";
+import { ButtonContainer, NavigationBar, CombineTodoList, Toast } from "../../components/";
 import { d, t } from "../../helper/utils/ScreenUtil";
 import { DrawerStore } from "../../store/DrawerStore";
 import { TodoStore } from "../../store/TodoStore";
@@ -17,12 +15,13 @@ type Props = {
 const isAndroid = Platform.OS === 'android'
 
 @inject('drawer', 'todo') @observer
-class InboxTodo extends React.Component<Props, {value: string}> {
+class InboxTodo extends React.Component<Props, {value: string, open: boolean}> {
   constructor(props) {
     super(props)
     this.onPress = this.onPress.bind(this)
     this.state = {
-      value: ''
+      value: '',
+      open: false
     }
   }
 
@@ -56,7 +55,6 @@ class InboxTodo extends React.Component<Props, {value: string}> {
   onPress() {
     Toast.show('alert')
   }
-
 
   render() {
     const { todo: { checkedList, uncheckedList } } = this.props

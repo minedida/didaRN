@@ -112,7 +112,6 @@ class SettingTab extends React.Component<NavigationParams> {
 
     type === 'settings' && navigate('MoreSetting')
     type === 'theme' && navigate('ThemeSetting')
-    console.log(type)
   }
 
   render() {

@@ -1,18 +1,12 @@
 import {
-  NavigationActions,
-  NavigationContainerComponent,
-  NavigationParams,
+  NavigationActions, NavigationContainerComponent, NavigationParams,
   StackActions,
 } from 'react-navigation';
 
 let navigationContainer: NavigationContainerComponent;
 let lastNavigateTime = Date.now();
 
-export function tabNeedAuth(routeName: string) {
-  return /Todo/.test(routeName);
-}
-
-export function setNavigator(container: NavigationContainerComponent) {
+export function setNavigator(container: any) {
   navigationContainer = container;
 }
 
@@ -103,12 +97,9 @@ export function replacePrevious(routeName: string, params?: NavigationParams) {
 
 export default {
   setNavigator,
-  setNavigationParams,
   navigate,
   navigateReset,
   goBack,
-  getCurrentSwitchName,
   pop,
-  tabNeedAuth,
   replacePrevious,
 };

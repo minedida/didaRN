@@ -1,10 +1,10 @@
 import React from 'react'
 import { BackHandler, Platform } from "react-native";
-import Toast from "react-native-simple-toast";
 import { getCurrentSwitchName } from "../../navigation";
 import AppStack from "../../navigation/AppStack";
 import AuthStack from "../../navigation/AuthStack";
 import stores from '../../store'
+import { Toast } from "../../components";
 
 export function addBackHandler(WrappedComponent: any, params: 'Auth' | 'App') {
   return class extends React.Component {

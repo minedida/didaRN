@@ -6,3 +6,4 @@ export { default as Icon } from './icon/Icon';
 export { SettingListItem, SettingListGroup, SettingHeader, SettingIcon } from './SettingList';
 export {default as Switch} from './Switch'
 export {default as CombineTodoList} from './todo/CombineTodoList'
+export {default as Toast} from './Toast'
