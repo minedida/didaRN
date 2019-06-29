@@ -59,6 +59,10 @@
     - 当打开抽屉时，选择B的item，此时抽屉回收，显示B页面。这里A、B页面只是做了replace
     - 当打开抽屉时，选择C的item，要求抽屉不回收，push一个C页面，从C页面返回能看到抽屉打开的状态。
     - 但是目前的行为是push 一个C页面，该页面不能覆盖抽屉，只是右侧内容区域发生了变化
+- 4.抽屉组件的备选方案
+    - 1.react-native-slide-menu
+    - 2.react-native-paper的Drawer
+    - 3.react-native-gesture-handler的Drawer
 
 ### todo
 - 1.在`onConfigurationChanged`方法中监听刘海儿是否存在，将正确的状态栏信息发送到js侧，从而app能刘海正确根据响应

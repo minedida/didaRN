@@ -151,8 +151,8 @@ export default class Row extends Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     return this.props.disabled !== nextProps.disabled ||
-           this.props.children !== nextProps.children ||
-           !shallowEqual(this.props.style, nextProps.style);
+      this.props.children !== nextProps.children ||
+      !shallowEqual(this.props.style, nextProps.style);
   }
 
   moveBy({dx = 0, dy = 0, animated = false}) {
@@ -222,9 +222,9 @@ export default class Row extends Component {
   }
 
   _isDisabled() {
-      return this.props.disabled ||
-        this._isAnimationRunning;
-    }
+    return this.props.disabled ||
+      this._isAnimationRunning;
+  }
 
   _isTouchInsideElement({nativeEvent}) {
     return this._layout &&
@@ -239,11 +239,11 @@ export default class Row extends Component {
   };
 
   _onLayout = (e) => {
-      this._layout = e.nativeEvent.layout;
+    this._layout = e.nativeEvent.layout;
 
-      if (this.props.onLayout) {
-          this.props.onLayout(e);
-      }
+    if (this.props.onLayout) {
+      this.props.onLayout(e);
+    }
   };
 }
 

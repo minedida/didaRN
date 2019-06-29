@@ -31,6 +31,7 @@ export default class SortableList extends Component {
     manuallyActivateRows: PropTypes.bool,
 
     renderRow: PropTypes.func.isRequired,
+    renderSeparator: PropTypes.func,
     renderHeader: PropTypes.func,
     renderFooter: PropTypes.func,
 
@@ -168,7 +169,7 @@ export default class SortableList extends Component {
 
     for (const rowKey of order) {
       if (rowKey === key) {
-          break;
+        break;
       }
 
       keyX += rowsLayouts[rowKey].width;
@@ -231,7 +232,7 @@ export default class SortableList extends Component {
   }
 
   _renderRows() {
-    const {horizontal, rowActivationTime, sortingEnabled, renderRow} = this.props;
+    const {horizontal, rowActivationTime, sortingEnabled, renderRow, renderSeparator} = this.props;
     const {animated, order, data, activeRowKey, releasedRowKey, rowsLayouts} = this.state;
 
 
@@ -282,6 +283,7 @@ export default class SortableList extends Component {
             active,
             index,
           })}
+          {index !== order.length && renderSeparator && renderSeparator()}
         </Row>
       );
     });
@@ -622,7 +624,7 @@ export default class SortableList extends Component {
   };
 
   _onScroll = ({nativeEvent: {contentOffset}}) => {
-      this._contentOffset = contentOffset;
+    this._contentOffset = contentOffset;
   };
 
   _onRefContainer = (component) => {

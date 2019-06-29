@@ -8,7 +8,7 @@ import {
   Image,
   View,
   Dimensions,
-  Platform,
+  Platform
 } from 'react-native';
 import SortableList from 'react-native-sortable-list';
 
@@ -62,7 +62,6 @@ export default class SortableListExample extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>React Native Sortable List</Text>
         <SortableList
           style={styles.list}
           contentContainerStyle={styles.contentContainer}
@@ -131,13 +130,12 @@ class Row extends Component<any> {
     const {data} = this.props;
 
     return (
-      <Animated.View style={[
+      <View style={[
         styles.row,
-        this._style,
       ]}>
         <Image source={{uri: data.image}} style={styles.image} />
         <Text style={styles.text}>{data.text}</Text>
-      </Animated.View>
+      </View>
     );
   }
 }
@@ -148,12 +146,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#eee',
-
-    ...Platform.select({
-      ios: {
-        paddingTop: 20,
-      },
-    }),
   },
 
   title: {
@@ -169,15 +161,15 @@ const styles = StyleSheet.create({
   contentContainer: {
     width: window.width,
 
-    ...Platform.select({
-      ios: {
-        paddingHorizontal: 30,
-      },
-
-      android: {
-        paddingHorizontal: 0,
-      }
-    })
+    // ...Platform.select({
+    //   ios: {
+    //     paddingHorizontal: 30,
+    //   },
+    //
+    //   android: {e
+    //     paddingHorizontal: 0,
+    //   }
+    // })
   },
 
   row: {
@@ -192,21 +184,21 @@ const styles = StyleSheet.create({
     borderRadius: 4,
 
 
-    ...Platform.select({
-      ios: {
-        width: window.width - 30 * 2,
-        shadowColor: 'rgba(0,0,0,0.2)',
-        shadowOpacity: 1,
-        shadowOffset: {height: 2, width: 2},
-        shadowRadius: 2,
-      },
-
-      android: {
-        width: window.width - 30 * 2,
-        elevation: 0,
-        marginHorizontal: 30,
-      },
-    })
+    // ...Platform.select({
+    //   ios: {
+    //     width: window.width - 30 * 2,
+    //     shadowColor: 'rgba(0,0,0,0.2)',
+    //     shadowOpacity: 1,
+    //     shadowOffset: {height: 2, width: 2},
+    //     shadowRadius: 2,
+    //   },
+    //
+    //   android: {
+    //     width: window.width - 30 * 2,
+    //     elevation: 0,
+    //     marginHorizontal: 30,
+    //   },
+    // })
   },
 
   image: {
