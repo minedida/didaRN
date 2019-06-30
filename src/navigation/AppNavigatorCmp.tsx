@@ -7,7 +7,7 @@ import { addDrawer } from "../helper/hoc";
 
 @observer
 @addDrawer
-class AppNavigatorCmp extends React.Component{
+class AppNavigatorCmp extends React.Component {
   render() {
     return <AppNavigator onNavigationStateChange={onNavigationStateChange}/>
   }

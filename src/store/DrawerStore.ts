@@ -1,5 +1,6 @@
-import { action, observable } from 'mobx'
+import { action, computed, observable } from 'mobx'
 import { navigate } from "../navigation";
+import { app } from "./AppStore";
 
 export type DrawerItems = 'InboxTodo' |
   'TodayTodo' | 'AddTodo' | 'ManageTodo'| 'IconsPreview'
@@ -7,10 +8,14 @@ export type DrawerItems = 'InboxTodo' |
 class DrawerStore {
   @observable showDrawer: boolean = false
   @observable selectedItem: DrawerItems = 'InboxTodo'
-  @observable disableGestures: boolean = true
   @observable bounceBackOnOverdraw: boolean = false
 
   timer: any
+
+
+  @computed get disableGestures() : boolean {
+    return 'TodoTab' !== app.currentScreen
+  }
 
   @action.bound
   onMenuStateChange(isOpen: boolean) {

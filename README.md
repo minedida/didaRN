@@ -77,3 +77,30 @@
     - [react-native-simple-toast](https://github.com/vonovak/react-native-simple-toast.git)星星更多一些，但是配置简单，自定义能力弱
     - [react-native-toast-native](https://github.com/onemolegames/react-native-toast-native)星星相对少一些，但是自定义能力强大
 - 目前使用了`simple-toast`，若后续发现toast能力不足可以切换
+
+
+
+## Mobx
+### 改变store中某一数据，观察该store的React组件会发生怎样的变化
+#### 情况1：2个页面作为父子组件在页面中
+```jsx harmony
+ withAppStore(App.tsx)
+   withAppStore(DashBoard.tsx)
+     withAppStore(ThemeSetting.tsx)
+```
+- 在`DashBoard`页面中修改AppStore的值，此时只有DashBoard.tsx重新渲染
+- 在`ThemeSetting`页面中修改AppStore的值，此时只有App.tsx重新渲染
+
+#### 情况2：2个页面作为兄弟组件在页面中
+```jsx harmony
+ withAppStore(App.tsx)
+   withAppStore(DashBoard.tsx)
+   withAppStore(ThemeSetting.tsx)
+```
+- 在`DashBoard`页面中修改AppStore的值，此时DashBoard.tsx重新渲染
+- 在`ThemeSetting`页面中修改AppStore的值，此时只有App.tsx重新渲染
+
+## 已知BUg🐛
+- `onNavigationStateChange` 和 动态Tab有冲突
+
+

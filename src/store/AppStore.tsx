@@ -13,7 +13,9 @@ class AppStore {
   constructor() {
     //  autorun 可以检测到自己的store发生变化
     // autorun(()=> console.log(`AppStore changed: ${JSON.stringify(this.appTabs)}`));
+    // observe(this, 'currentScreen', change => console.log(change))
   }
+
   @observable appTabs: Array<{ index: number, cmp: any, show: boolean }> = [
     { index: 0, cmp: TodoTab, show: true },
     { index: 1, cmp: CalendarTab, show: true },
@@ -25,9 +27,9 @@ class AppStore {
 
 
   // {[index: string]: any} 动态索引签名
-  @computed get tabMap(): {[index: string]: any} {
+  @computed get tabMap(): { [index: string]: any } {
     return this.appTabs.reduce((p, c) => {
-      if (c.show === true) {
+      if (c.show) {
         // get injected component by mobx displayName
         if (c.cmp.displayName.indexOf('inject') > -1) {
           const displayName = c.cmp.displayName.split('-')[1]
@@ -42,7 +44,19 @@ class AppStore {
   }
 
   @observable appTheme: Theme = theme
-  @observable fabVisible: boolean = true
+  @observable currentScreen: string = ''
+
+  @action.bound
+  setCurrentScreen(currentScreen) {
+    this.currentScreen = currentScreen
+  }
+
+
+  @computed get fabVisible(): boolean {
+    const fabVisibleScreenArrays = ['TodoTab', 'CalendarTab', 'ClockInTab', 'SearchTab']
+
+    return fabVisibleScreenArrays.findIndex(v => v === this.currentScreen) > -1;
+  }
 
   @action.bound
   changeThemeColor(color: string) {

@@ -28,6 +28,7 @@ class Dashboard extends React.Component<Props> {
   }
 
   render() {
+    console.log('Dashboard-render')
     let [, CalendarItem, TomatoItem,
       ClockInItem, SearchItem, SettingItem]
       = this.props.app.appTabs
@@ -63,7 +64,6 @@ class Dashboard extends React.Component<Props> {
                  left={_ => <SettingIcon type={'Ionicons'} name={'md-settings'} />}
                  right={_ => <Switch value={SettingItem.show} onValueChange={() => this.change(5)} style={{ alignSelf: 'center' }}/>}
       />
-
     </View>
   }
 }
