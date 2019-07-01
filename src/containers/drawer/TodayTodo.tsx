@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, TouchableNativeFeedback, Platform } from 'react-native'
-import { ButtonContainer, NavigationBar, Icon } from "../../components/";
+import { ButtonContainer, NavigationBar, Icon, Tips } from "../../components/";
 import { material } from "react-native-typography";
 import { d, t } from "../../helper/utils/ScreenUtil";
 import { inject, observer } from "mobx-react";
@@ -56,7 +56,9 @@ class TodayTodo extends React.Component<Props> {
     return (
       <View style={{ flex: 1 }}>
         <NavigationBar title={'今天'} leftButton={this.renderLeftBtn()} rightButton={this.renderRightBtn()}/>
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' }}>
+        <View style={{ flex: 1,  backgroundColor: '#fff' }}>
+          <Tips type={'today'}/>
+
           <Text style={material.button}>
             TodayTodo
           </Text>

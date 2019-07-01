@@ -1,12 +1,11 @@
 import React from 'react'
-import { View, Text, UIManager, LayoutAnimation, Dimensions } from 'react-native'
+import { View, Text, UIManager, LayoutAnimation } from 'react-native'
 import { material } from "react-native-typography";
 import { Divider } from 'react-native-paper'
 import SortableList from '../../libs/react-native-sortable-list/src/SortableList';
 import SwipeabTodoItem from "./SwipeabTodoItem";
 import { TodoStore } from "../../store/TodoStore";
 import { inject, observer } from "mobx-react";
-import { ITEM_HEIGHT } from "./Row";
 
 type Props = {
   todo?: TodoStore
@@ -75,12 +74,13 @@ class TodoList extends React.Component<Props, { headerClick: boolean }> {
   }*/
 
   renderList() {
+    // todo 改造为多条目
     const { data } = this.props
     return (
       <SortableList
         data={data}
         sortingEnabled={true}
-        style={{ width: Dimensions.get('window').width, height: data.length * ITEM_HEIGHT }}
+        // style={{ width: Dimensions.get('window').width, height: data.length * ITEM_HEIGHT }}
         onActivateRow={this.onActivateRow}
         onReleaseRow={this.onReleaseRow}
         renderSeparator={this.renderSeparator}

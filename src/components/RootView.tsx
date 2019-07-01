@@ -1,8 +1,9 @@
 import React from 'react'
-import { FAB, Portal } from "react-native-paper";
+import { Portal } from "react-native-paper";
 import { d } from "../helper/utils/ScreenUtil";
 import { inject, observer } from "mobx-react";
 import { AppStore } from "../store/AppStore";
+import { FabGroup } from "./paper/Fab";
 
 type Props = {
   app?: AppStore
@@ -15,7 +16,8 @@ class RootView extends React.Component<Props> {
   }
   render() {
     return <Portal>
-      <FAB.Group
+      <FabGroup
+        color={'#fff'}
         visible={this.props.app!.fabVisible}
         fabStyle={{marginBottom: d(56)}}
         open={this.state.open}

@@ -104,3 +104,11 @@
 - `onNavigationStateChange` 和 动态Tab有冲突
 
 
+
+## 添加自定义字体
+> ref： https://medium.com/@danielskripnik/how-to-add-and-remove-custom-fonts-in-react-native-b2830084b0e4
+### IOS
+- 选中`fonts`文件夹，拖拽到Xcode下项目名字处，
+- 如果是拖拽到整个文件夹，选择`Create groups`
+- 编辑`Info.plist`，增加item，value就是fonts文件夹下所有ttf的名字
+Roboto.ttf

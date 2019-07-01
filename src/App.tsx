@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
+import {SafeAreaView} from 'react-navigation'
 import { observer, Provider as StoreProvider } from "mobx-react";
 import { Provider as PaperProvider } from 'react-native-paper';
-import { SafeAreaView } from "./components/";
 import stores from './store'
-import RootView from "./components/RootView";
 import AppNavigatorCmp from "./navigation/AppNavigatorCmp";
+import {RootView} from "./components/";
 
 // how to type-safe inject store? https://github.com/mobxjs/mobx/issues/1778
 // how to detect a store change? https://mobx.js.org/refguide/observe.html#observe
@@ -20,7 +20,7 @@ export default class App extends Component<any> {
   render() {
     const theme = stores.app.appTheme
     return (
-      <SafeAreaView>
+      <SafeAreaView style={{ flex: 1 }} forceInset={{ top: 'never' }}>
         <StoreProvider {...stores}>
           <PaperProvider theme={theme}>
             <AppNavigatorCmp/>
@@ -32,3 +32,9 @@ export default class App extends Component<any> {
   }
 }
 
+
+// 1。用RN原生提供的SafeView，他自动将每一个页面的top和bottom都加入了SafeView，
+//    不可以灵活的动态决定何时加入top何时加入bottom
+// 2。用react-navigation提供的SafeView，可以动态决定加入top和bottom，但是在加入bottom后，
+//    底部元素的0位置就是在bottom的SafeView开始计算
+// 3。用自己的SafeView，元素从底部0位置开始布局时，会被截去一块，效果不好

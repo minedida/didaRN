@@ -1,9 +1,8 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { inject, observer } from "mobx-react";
-import { Space } from "../index";
+import { Space, Checkbox } from "../";
 import { d } from "../../helper/utils/ScreenUtil";
-import { Checkbox } from "react-native-paper";
 import { material } from "react-native-typography";
 import { TodoStore } from "../../store/TodoStore";
 
@@ -42,7 +41,7 @@ export class Row extends React.Component<RowProps>{
       <View style={[styles.container]}>
         <Space height={d(6)}/>
         <View style={styles.topView}>
-          <Checkbox.Android status={checkboxStatus} onPress={() => this.props.todo!.checkTodo(item.id)}/>
+          <Checkbox status={checkboxStatus} onPress={() => this.props.todo!.checkTodo(item.id)}/>
           <Text numberOfLines={1} style={material.body1}>{item.title}</Text>
         </View>
         <Text numberOfLines={1} style={[material.body1, { paddingLeft: d(34), includeFontPadding: false }]}>6月29日</Text>
@@ -51,3 +50,9 @@ export class Row extends React.Component<RowProps>{
   }
 }
 export default Row
+
+/**
+ 这里的row有两种高度
+  当正文显示一行时，高度 d(50)
+  当正文显示两行时，高度 d(66)
+**/

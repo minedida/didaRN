@@ -5,7 +5,7 @@ class TodoStore {
   @observable todoList: Array<TodoModel> = [
     { id: uuidv1(), title: '标题1', checked: false, createAt: 1561473966283 },
     { id: uuidv1(), title: '标题2', checked: false, createAt: 1561473966284 },
-    { id: uuidv1(), title: '标题3', checked: true, createAt: 1561473966285 },
+    { id: uuidv1(), title: '标题3', checked: false, createAt: 1561473966285 },
   ]
 
   @observable todoItemSortableEnable: boolean = false

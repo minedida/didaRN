@@ -232,6 +232,18 @@ class IconsPreview extends React.Component<Props> {
             <Icon type={'FontAwesome5'} color={'#333'} name={'trash'} size={40}/>
           </Item>
 
+          <Item title={'今天ICON'}>
+            <Icon type={'FontAwesome5'} color={'#333'} name={'calendar-alt'} size={40}/>
+          </Item>
+
+          <Item title={'收集箱ICON'}>
+            <Icon type={'Feather'} color={'#333'} name={'inbox'} size={40}/>
+          </Item>
+
+          <Item title={'日历ICON'}>
+            <Icon type={'MaterialCommunityIcons'} color={'#333'} name={'calendar-text'} size={40}/>
+          </Item>
+
           <Space height={120}/>
         </ScrollView>
       </View>

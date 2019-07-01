@@ -19,18 +19,15 @@ export default class SafeAreaView extends Component<Props> {
   render() {
     return <View style={[styles.container]}>
       {this.props.children}
-      {this.getBottomArea()}
     </View>
   }
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1
-  },
-  topArea: {
-    height: d(44),
+    flex: 1,
+    paddingBottom: d(34)
   },
   bottomArea: {
-    height: d(34),
+    height: d(34)
   },
 })

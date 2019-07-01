@@ -10,6 +10,15 @@ import SortableListViewExample from './react-native-sortable-list/example/Sortab
 import DragableListExample from './react-native-sortable-list/example/DragableListExample';
 // @ts-ignore
 import SwipeableExample from './react-native-swipeable/Example'
+// @ts-ignore
+import HumanShowcaseScreen from './react-native-typography/HumanShowcaseScreen'
+// @ts-ignore
+import MaterialShowcaseScreen from './react-native-typography/MaterialShowcaseScreen'
+// @ts-ignore
+import TypographyExample from './react-native-typography/TypographyExample'
+// @ts-ignore
+import PaperHeader from './Header/PaperHeader'
+import ToolbarHeader from './Header/ToolbarHeader'
 
 import SplashScreen from "react-native-splash-screen";
 
@@ -20,7 +29,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <SortableListExample/>
+    return <ToolbarHeader/>
   }
 }
 

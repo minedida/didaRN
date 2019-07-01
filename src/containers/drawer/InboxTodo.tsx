@@ -2,7 +2,7 @@ import React from 'react'
 import { View, TouchableNativeFeedback, Platform, TextInput, Dimensions } from 'react-native'
 import { inject, observer } from "mobx-react";
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
-import { ButtonContainer, NavigationBar, CombineTodoList, Toast } from "../../components/";
+import { ButtonContainer, NavigationBar, CombineTodoList, Toast, Tips } from "../../components/";
 import { d, t } from "../../helper/utils/ScreenUtil";
 import { DrawerStore } from "../../store/DrawerStore";
 import { TodoStore } from "../../store/TodoStore";
@@ -21,7 +21,7 @@ class InboxTodo extends React.Component<Props, {value: string, open: boolean}> {
     this.onPress = this.onPress.bind(this)
     this.state = {
       value: '',
-      open: false
+      open: false,
     }
   }
 
@@ -64,6 +64,9 @@ class InboxTodo extends React.Component<Props, {value: string, open: boolean}> {
                        rightButton={this.renderRightBtn()}/>
 
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
+
+          <Tips type={'inbox'}/>
+
           <CombineTodoList
             checkedList={checkedList}
             uncheckedList={uncheckedList}/>
