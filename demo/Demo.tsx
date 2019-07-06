@@ -17,8 +17,7 @@ import MaterialShowcaseScreen from './react-native-typography/MaterialShowcaseSc
 // @ts-ignore
 import TypographyExample from './react-native-typography/TypographyExample'
 // @ts-ignore
-import PaperHeader from './Header/PaperHeader'
-import ToolbarHeader from './Header/ToolbarHeader'
+import Header from './Header/'
 
 import SplashScreen from "react-native-splash-screen";
 
@@ -29,7 +28,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <ToolbarHeader/>
+    return <Header/>
   }
 }
 

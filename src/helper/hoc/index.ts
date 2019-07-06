@@ -1,4 +1,4 @@
-export { addBackHandler } from './addBackHandler';
-export { addDrawer } from './AddDrawer';
-export { listenKeyboardHOC } from './listenKeyboard';
+export { default as withBackHandler } from './withBackHandler';
+export { default as withDrawer } from './withDrawer';
+export { default as listenKeyboardHOC } from './listenKeyboard';
 

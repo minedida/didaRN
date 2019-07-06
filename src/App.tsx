@@ -37,4 +37,5 @@ export default class App extends Component<any> {
 //    不可以灵活的动态决定何时加入top何时加入bottom
 // 2。用react-navigation提供的SafeView，可以动态决定加入top和bottom，但是在加入bottom后，
 //    底部元素的0位置就是在bottom的SafeView开始计算
-// 3。用自己的SafeView，元素从底部0位置开始布局时，会被截去一块，效果不好
+// 3。用自己的SafeView，由于实现方式是在底部加入一块有高度的view，所以在使用时元素从底部0位置开始布局时，会被截去一块，效果不好。
+//    所以底部的视图需要用paddingBottom来实现

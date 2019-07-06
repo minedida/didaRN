@@ -6,7 +6,7 @@ import AuthStack from "../../navigation/AuthStack";
 import stores from '../../store'
 import { Toast } from "../../components";
 
-export function addBackHandler(WrappedComponent: any, params: 'Auth' | 'App') {
+export default function withBackHandler(WrappedComponent: any, params: 'Auth' | 'App') {
   return class extends React.Component {
     static router = params === 'Auth' ? AuthStack.router : AppStack.router
 

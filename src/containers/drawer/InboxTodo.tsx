@@ -1,9 +1,8 @@
-import React from 'react'
-import { View, TouchableNativeFeedback, Platform, TextInput, Dimensions } from 'react-native'
+import React, { RefObject } from 'react'
+import { View, Platform, TextInput, Dimensions, findNodeHandle, UIManager } from 'react-native'
 import { inject, observer } from "mobx-react";
-import IoniconsIcon from 'react-native-vector-icons/Ionicons';
-import { ButtonContainer, NavigationBar, CombineTodoList, Toast, Tips } from "../../components/";
-import { d, t } from "../../helper/utils/ScreenUtil";
+import { NavigationBar, CombineTodoList, Tips, Icon, Toast } from "../../components/";
+import { t } from "../../helper/utils/ScreenUtil";
 import { DrawerStore } from "../../store/DrawerStore";
 import { TodoStore } from "../../store/TodoStore";
 
@@ -14,46 +13,57 @@ type Props = {
 }
 const isAndroid = Platform.OS === 'android'
 
+// how to pass ref as props: https://stackoverflow.com/questions/37647061/how-do-i-access-refs-of-a-child-component-in-the-parent-component
+
 @inject('drawer', 'todo') @observer
-class InboxTodo extends React.Component<Props, {value: string, open: boolean}> {
+class InboxTodo extends React.Component<Props, { value: string, open: boolean }> {
+  menu: RefObject<View>
+
   constructor(props) {
     super(props)
-    this.onPress = this.onPress.bind(this)
     this.state = {
       value: '',
       open: false,
     }
+    this.onMenuPress = this.onMenuPress.bind(this)
+    this.menu = React.createRef<View>();
+  }
+
+  onMenuPress() {
+    if (!isAndroid) {
+      return
+    }
+    const node = findNodeHandle(this.menu.current) as any;
+    UIManager.showPopupMenu(
+      node,
+      ['显示详细', '隐藏已完成', '排序', '分享', '编辑多个任务'],
+      () => {},
+      (item: string, index: number | undefined) =>
+        Toast.show(`item:${item}\nindex:${index}`)
+    )
   }
 
   renderLeftBtn() {
     return (
-      <ButtonContainer
-        style={{ width: d(26), height: d(26), justifyContent: 'center', alignItems: 'center' }}
+      <Icon
         onPress={this.props.drawer.toggleMenu}
-        background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
-        <IoniconsIcon
-          size={isAndroid ? t(20) : t(20)}
-          name={isAndroid ? 'md-menu' : 'ios-menu'}
-          color={'#333'}/>
-      </ButtonContainer>
+        size={isAndroid ? t(20) : t(20)}
+        name={isAndroid ? 'md-menu' : 'ios-menu'}
+        type={'Ionicons'} color={'#333'}
+      />
     )
   }
 
   renderRightBtn() {
     return (
-      <ButtonContainer
-        style={{ width: d(44), height: (44), justifyContent: 'center', alignItems: 'center' }}
-        background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
-        <IoniconsIcon
-          size={isAndroid ? t(20) : t(20)}
-          name={isAndroid ? 'md-more' : 'ios-more'}
-          color={'#333'}/>
-      </ButtonContainer>
+      <Icon
+        ref={this.menu}
+        onPress={this.onMenuPress}
+        size={isAndroid ? t(20) : t(20)}
+        name={isAndroid ? 'md-more' : 'ios-more'}
+        type={'Ionicons'} color={'#333'}
+      />
     )
-  }
-
-  onPress() {
-    Toast.show('alert')
   }
 
   render() {
@@ -72,8 +82,8 @@ class InboxTodo extends React.Component<Props, {value: string, open: boolean}> {
             uncheckedList={uncheckedList}/>
 
           <TextInput value={this.state.value} placeholder={'添加待办事项'}
-                     style={{ position: 'absolute', bottom: 0, left: 0, width: Dimensions.get('window').width}}
-                     onSubmitEditing={()=> {
+                     style={{ position: 'absolute', bottom: 0, left: 0, width: Dimensions.get('window').width }}
+                     onSubmitEditing={() => {
                        this.props.todo.addTodo(this.state.value)
                        this.setState({ value: '' })
                      }}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Platform, Keyboard, LayoutAnimation, UIManager } from 'react-native'
 
-export function listenKeyboardHOC(WrappedComponent: any) {
+export default function listenKeyboardHOC(WrappedComponent: any) {
   return class ListenKeyboardHOC extends React.PureComponent {
     keyboardWillShowSub: any
     keyboardWillHideSub: any

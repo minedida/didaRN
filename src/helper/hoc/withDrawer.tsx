@@ -3,7 +3,7 @@ import SideMenu from 'react-native-side-menu'
 import stores from "../../store";
 import DrawerPanel from "../../containers/drawer/DrawerPanel";
 
-export function addDrawer(WrappedComponent: any) {
+export default function addDrawer(WrappedComponent: any) {
   return class AddDrawerHOC extends React.Component {
     render() {
       const {
