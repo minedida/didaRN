@@ -8,7 +8,9 @@
     "and": "react-native run-android",
     "ios": "react-native run-ios",
     "fix-modal": "node node_modules/react-native-modal-translucent/scripts/translucent-modal.js",
-    "and-release": "cd android && ./gradlew assembleRelease"
+    "and-release": "cd android && ./gradlew assembleRelease && cd ..",
+    "and-clean": "cd android && ./gradlew clean && cd ..",
+    "and-install-release": "cd android && ./gradlew installRelease && cd .."
   },
   "dependencies": {
     "moment": "^2.22.1",
@@ -17,8 +19,6 @@
     "react-native-cli": "^2.0.1",
     "axios": "^0.18.0",
     "color": "^3.1.2",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.13.1",
     "format-json": "^1.0.3",
     "immutable": "^4.0.0-rc.12",
     "jest-fetch-mock": "^2.1.2",
@@ -64,6 +64,8 @@
     "@types/react-native": "^0.57.58",
     "@types/react-navigation": "2.13.4",
     "@types/react-test-renderer": "^16.8.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.1",
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.54.1",

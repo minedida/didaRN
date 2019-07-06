@@ -4860,9 +4860,9 @@ mobx-react@^5.4.3:
     react-lifecycles-compat "^3.0.2"
 
 mobx@^5.9.4:
-  version "5.9.4"
-  resolved "https://registry.npm.taobao.org/mobx/download/mobx-5.9.4.tgz#1dee92aba33f67b7baeeb679e3bd376a12e55812"
-  integrity sha1-He6Sq6M/Z7e67rZ54703ahLlWBI=
+  version "5.11.0"
+  resolved "https://registry.npm.taobao.org/mobx/download/mobx-5.11.0.tgz#58c64769bc2408ccde35fc2bac4cd5b8ae7b28a6"
+  integrity sha1-WMZHabwkCMzeNfwrrEzVuK57KKY=
 
 moment@^2.22.1:
   version "2.24.0"

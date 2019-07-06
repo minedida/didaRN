@@ -24,7 +24,7 @@ class Dashboard extends React.Component<Props> {
 
   change = (index) => {
     this.props.app.changeTabs(index)
-    this.setState({})
+    // this.setState({})
   }
 
   render() {

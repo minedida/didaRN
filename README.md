@@ -112,3 +112,9 @@
 - 如果是拖拽到整个文件夹，选择`Create groups`
 - 编辑`Info.plist`，增加item，value就是fonts文件夹下所有ttf的名字
 Roboto.ttf
+
+
+## Release包出现的问题
+- AppStore中遍历获取组件的名字，在Debug时取displayName没有问题，但是再Release时必须通过这样的方式获取`const name = c.cmp.displayName || c.cmp.name`
+- Release包动态Tab的最大数量只能是4个。查看日志发现，release包中，component的名字被uglify了，碰巧的是有3个组件uglify后的名字相同。
+     所以暂时[关闭uglify的开关](https://stackoverflow.com/questions/48184447/disable-minification-and-uglify-in-react-native-release-build-for-android)

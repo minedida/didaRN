@@ -4,7 +4,6 @@ import { AppStore } from '../store/AppStore'
 import { inject, observer } from "mobx-react";
 import { onNavigationStateChange } from "./utils";
 
-
 const tabBarOptions = {
   safeAreaInset: { bottom: 'never', top: 'never' },
   activeTintColor: '#6680d7',
@@ -23,7 +22,6 @@ const tabBarOptions = {
 class AppTabBarNav extends React.Component<{ app: AppStore }> {
 
   render() {
-    console.log('AppTabBarNav-render')
     const Tab: NavigationContainer = createBottomTabNavigator(
       this.props.app.tabMap,
       {

@@ -1,11 +1,6 @@
 import { action, computed, observable } from 'mobx'
 import { Theme } from 'react-native-paper'
-import TodoTab from "../containers/todo/TodoTab";
-import CalendarTab from "../containers/calendar/CalendarTab";
-import SettingTab from "../containers/setting/SettingTab";
-import SearchTab from "../containers/search/SearchTab";
-import TomatoTab from "../containers/tomato/TomatoTab";
-import ClockInTab from "../containers/clockin/ClockInTab";
+import {TodoTab, CalendarTab, SearchTab, SettingTab, TomatoTab, ClockinTab} from '../containers'
 import { theme } from "../theme";
 
 
@@ -20,9 +15,9 @@ class AppStore {
     { index: 0, cmp: TodoTab, show: true },
     { index: 1, cmp: CalendarTab, show: true },
     { index: 2, cmp: TomatoTab, show: false },
-    { index: 3, cmp: ClockInTab, show: false },
+    { index: 3, cmp: ClockinTab, show: false },
     { index: 4, cmp: SearchTab, show: false },
-    { index: 5, cmp: SettingTab, show: true },
+    { index: 5, cmp: SettingTab, show: true }
   ]
 
 
@@ -30,13 +25,15 @@ class AppStore {
   @computed get tabMap(): { [index: string]: any } {
     return this.appTabs.reduce((p, c) => {
       if (c.show) {
-        // get injected component by mobx displayName
-        if (c.cmp.displayName.indexOf('inject') > -1) {
-          const displayName = c.cmp.displayName.split('-')[1]
-          p[displayName] = c.cmp;
+        // get injected component by mobx displayName or plain Component's name
+        let name = c.cmp.displayName || c.cmp.name
+        console.log(`AppStore-reduce-name:\n:${JSON.stringify(name)}`)
+        if (name.indexOf('inject') > -1) {
+          name = name.split('-')[1];
+          p[name] = c.cmp;
         } else {
           // get a plain Component displayName
-          p[c.cmp.displayName] = c.cmp;
+          p[name] = c.cmp;
         }
       }
       return p;
@@ -53,7 +50,7 @@ class AppStore {
 
 
   @computed get fabVisible(): boolean {
-    const fabVisibleScreenArrays = ['TodoTab', 'CalendarTab', 'ClockInTab', 'SearchTab']
+    const fabVisibleScreenArrays = ['TodoTab', 'CalendarTab', 'ClockinTab', 'SearchTab']
 
     return fabVisibleScreenArrays.findIndex(v => v === this.currentScreen) > -1;
   }
