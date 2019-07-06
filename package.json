@@ -7,7 +7,8 @@
     "test": "jest",
     "and": "react-native run-android",
     "ios": "react-native run-ios",
-    "fix-modal": "node node_modules/react-native-modal-translucent/scripts/translucent-modal.js"
+    "fix-modal": "node node_modules/react-native-modal-translucent/scripts/translucent-modal.js",
+    "and-release": "cd android && ./gradlew assembleRelease"
   },
   "dependencies": {
     "moment": "^2.22.1",
