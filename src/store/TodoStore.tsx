@@ -30,7 +30,7 @@ class TodoStore {
 
   @action.bound
   addTodo(title: string): void {
-    const item = this.generateTodoItemByTitle(title)
+    const item = this.createTodoByTitle(title)
     this.todoList.unshift(item)
   }
 
@@ -41,7 +41,7 @@ class TodoStore {
     )
   }
 
-  generateTodoItemByTitle(title: string): TodoModel {
+  createTodoByTitle(title: string): TodoModel {
     return {
       id: uuidv1(),
       title,

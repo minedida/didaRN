@@ -29,7 +29,11 @@ export default function withBackHandler(WrappedComponent: any, params: 'Auth' | 
       }
     }
 
-    onBackAndroid() {
+    /**
+     * false -> 交给系统处理，自己不处理。
+     * true -> 由自己处理，系统不要处理
+     */
+    onBackAndroid(): boolean {
       const currentSwitch = getCurrentSwitchName();
 
       if ('Auth' === params && 'Auth' !== currentSwitch ) {
@@ -46,9 +50,14 @@ export default function withBackHandler(WrappedComponent: any, params: 'Auth' | 
           stores.drawer.toggleMenu()
           return true
         }
+        // 处理fabinput
+        const fabInputWithBackButtonResult = this.handleFabInputWithBackButton()
+        if (fabInputWithBackButtonResult) {
+          return true
+        }
       }
 
-      if (this.lastBackPressed && this.lastBackPressed + 1000 >= Date.now()) {
+      if (this.lastBackPressed && this.lastBackPressed + 1500 >= Date.now()) {
         BackHandler.exitApp();
         return false;
       }
@@ -57,6 +66,19 @@ export default function withBackHandler(WrappedComponent: any, params: 'Auth' | 
       Toast.show('再次点击退出程序')
 
       return true;
+    }
+
+    // 处理fabinput
+    handleFabInputWithBackButton(): boolean {
+      if (stores.app.currentScreen === 'TodoTab' || stores.app.currentScreen === 'AppTabBar') {
+        if (stores.app.fabOpen) {
+          // 恢复fab状态
+          stores.app.setFabOpen(false);
+          stores.app.setFabVisible(true)
+          return true
+        }
+      }
+      return false
     }
 
     render() {

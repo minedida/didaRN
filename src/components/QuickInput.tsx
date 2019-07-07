@@ -3,10 +3,11 @@ import { inject, observer } from "mobx-react";
 import { View, Text, StyleSheet, Platform } from 'react-native'
 import { KeyboardAccessoryView } from 'react-native-keyboard-input';
 import { AutoGrowingTextInput } from 'react-native-autogrow-textinput';
-import '../../demo/keyboard-input/demoKeyboards'
 import { AppStore } from "../store/AppStore";
+import { TodoStore } from "../store/TodoStore";
 import { d, t } from "../helper/utils/ScreenUtil";
 import { ButtonContainer, Icon, Toast } from "./index";
+import { Theme, withTheme } from "react-native-paper";
 
 
 const IsIOS = Platform.OS === 'ios';
@@ -44,35 +45,50 @@ const styles = StyleSheet.create({
   toolView: {
     flexDirection: 'row',
     backgroundColor: '#f7f7f7',
-    // justifyContent: 'space-between',
     paddingHorizontal: d(6)
   }
 });
 
 type Props = {
-  fabOpen: boolean
   app?: AppStore
+  todo?: TodoStore
+  theme: Theme
 }
 
 const InputIcon = (props: any) =>
-  <Icon style={styles.iconView} color={'#787878'}size={t(22)} scale={1.8} {...props}/>
+  <Icon style={styles.iconView} color={'#787878'} size={t(22)} scale={1.8} {...props}/>
 
 
 //todo contentView 在y轴方向上的动画
-@inject('app') @observer
+@inject('app', 'todo') @observer
 class QuickInput extends React.Component<Props, any> {
   textInputRef: any
   state = {
-    customKeyboard: {
-      component: undefined
-    }
+    inputTxt: ''
   }
 
   onToolItemPress(type: string) {
-    Toast.show(type)
+    if (type === 'send') {
+      // 1.添加todo到store中
+      this.props.todo!.addTodo(this.state.inputTxt)
+      // 2.清空state
+      this.setState({ inputTxt: '' })
+      // 3.恢复fab状态
+      this.props.app!.setFabOpen(false)
+      this.props.app!.setFabVisible(true)
+      return
+    }
+    Toast.show(type);
+  }
+
+  onChangeText(txt: string) {
+    this.setState({ inputTxt: txt })
   }
 
   renderToolView() {
+    const { theme: { colors: { primary } } } = this.props
+    const sendBtnDisabled = !this.state.inputTxt
+    const sendIconColor = sendBtnDisabled ? '#d1d1d1' : primary
     return (
       <View style={styles.toolView}>
 
@@ -85,17 +101,37 @@ class QuickInput extends React.Component<Props, any> {
             type={'MaterialCommunityIcons'} name={'priority-high'}/>
 
           <InputIcon onPress={() => this.onToolItemPress('tag')}
-                type={'AntDesign'}  name={'tag'} size={t(20)}/>
+                     type={'AntDesign'} name={'tag'} size={t(20)}/>
 
-          <ButtonContainer onPress={() => this.onToolItemPress('inbox')} style={[styles.iconView, {flex: 1}]}>
+          <ButtonContainer onPress={() => this.onToolItemPress('inbox')} style={[styles.iconView, { flex: 1 }]}>
             <InputIcon type={'MaterialCommunityIcons'} name={'inbox'}/>
             <Text>收集箱</Text>
           </ButtonContainer>
         </View>
 
-        <InputIcon onPress={() => this.onToolItemPress('send')}
-              type={'MaterialCommunityIcons'} name={'send'}/>
+        <ButtonContainer style={styles.iconView} disabled={sendBtnDisabled}
+                         onPress={() => this.onToolItemPress('send')}>
+          <InputIcon type={'MaterialCommunityIcons'} name={'send'} color={sendIconColor}/>
+        </ButtonContainer>
 
+      </View>
+    )
+  }
+
+  renderTextView() {
+    // todo: 同步textinput的光标颜色
+    return (
+      <View style={styles.inputContainer}>
+        <AutoGrowingTextInput
+          autoFocus
+          maxHeight={d(100)}
+          style={styles.textInput}
+          ref={r => this.textInputRef = r}
+          placeholder={'准备做什么?'}
+          underlineColorAndroid="transparent"
+          value={this.state.inputTxt}
+          onChangeText={(t) => this.onChangeText(t)}
+        />
       </View>
     )
   }
@@ -103,25 +139,14 @@ class QuickInput extends React.Component<Props, any> {
   renderKeyboardContent() {
     return (
       <View style={styles.blurContainer}>
-        <View style={styles.inputContainer}>
-          <AutoGrowingTextInput
-            autoFocus
-            maxHeight={d(100)}
-            style={styles.textInput}
-            ref={r => this.textInputRef = r}
-            placeholder={'准备做什么?'}
-            underlineColorAndroid="transparent"
-            // onFocus={() => this.resetKeyboardView()}
-            testID={'input'}
-          />
-        </View>
+        {this.renderTextView()}
         {this.renderToolView()}
       </View>
     );
   }
 
   render() {
-    if (!this.props.fabOpen) {
+    if (!this.props.app!.fabOpen) {
       return null
     }
     return (
@@ -130,13 +155,9 @@ class QuickInput extends React.Component<Props, any> {
         renderContent={() => this.renderKeyboardContent()}
         onHeightChanged={IsIOS ? height => this.setState({ keyboardAccessoryViewHeight: height }) : undefined}
         trackInteractive={TrackInteractive}
-        kbInputRef={this.textInputRef}
-        // kbComponent={this.state.customKeyboard.component}
-        // onItemSelected={this.onKeyboardItemSelected}
-        // onKeyboardResigned={this.onKeyboardResigned}
-      />
-    );
+        kbInputRef={this.textInputRef}/>
+    )
   }
 }
 
-export default QuickInput
+export default withTheme(QuickInput)

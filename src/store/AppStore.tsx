@@ -24,6 +24,7 @@ class AppStore {
   }
 
   @observable fabVisible: boolean = true
+  @observable fabOpen: boolean = false
   @observable appTabs: Array<{ index: number, cmp: any, show: boolean }> = [
     { index: 0, cmp: TodoTab, show: true },
     { index: 1, cmp: CalendarTab, show: true },
@@ -62,6 +63,11 @@ class AppStore {
   @action.bound
   setFabVisible(visible: boolean) {
     this.fabVisible = visible
+  }
+
+  @action.bound
+  setFabOpen(visible: boolean) {
+    this.fabOpen = visible
   }
 
   @action.bound
