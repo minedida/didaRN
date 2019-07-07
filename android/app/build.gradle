@@ -9,7 +9,6 @@ project.ext.react = [
 apply from: "../../node_modules/react-native/react.gradle"
 
 def enableSeparateBuildPerCPUArchitecture = false
-def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -34,9 +33,17 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled enableProguardInReleaseBuilds
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            zipAlignEnabled true
             signingConfig signingConfigs.release
+            resValue "string", "app_name", "滴答"
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+            resValue "string", "app_name", "滴答debug"
         }
     }
     splits {
