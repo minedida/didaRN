@@ -1,4 +1,4 @@
-import { action, computed, observable } from 'mobx'
+import { action, computed, observable, observe } from 'mobx'
 import { Theme } from 'react-native-paper'
 import {TodoTab, CalendarTab, SearchTab, SettingTab, TomatoTab, ClockinTab} from '../containers'
 import { theme } from "../theme";
@@ -9,8 +9,21 @@ class AppStore {
     //  autorun 可以检测到自己的store发生变化
     // autorun(()=> console.log(`AppStore changed: ${JSON.stringify(this.appTabs)}`));
     // observe(this, 'currentScreen', change => console.log(change))
+    /**
+       @computed get fabVisible(): boolean {
+          const fabVisibleScreenArrays = ['TodoTab', 'CalendarTab', 'ClockinTab', 'SearchTab']
+          return fabVisibleScreenArrays.findIndex(v => v === this.currentScreen) > -1;
+        }
+     */
+    // 这里期望fabVisible既可以观察别的属性的变化从而计算出自己的值，又期望该计算值可以直接被修改。
+    // 所以将@computed get fabVisible()改为@observable fabVisible，在构造方法中监听currentScreen属性，从而自动的计算出fabVisible的值。同时作为一个变量又可以直接被赋值
+    observe(this, 'currentScreen', change => {
+      const fabVisibleScreenArrays = ['TodoTab', 'CalendarTab', 'ClockinTab', 'SearchTab']
+      this.fabVisible = fabVisibleScreenArrays.findIndex(v => v === change.newValue) > -1
+    })
   }
 
+  @observable fabVisible: boolean = true
   @observable appTabs: Array<{ index: number, cmp: any, show: boolean }> = [
     { index: 0, cmp: TodoTab, show: true },
     { index: 1, cmp: CalendarTab, show: true },
@@ -19,7 +32,8 @@ class AppStore {
     { index: 4, cmp: SearchTab, show: false },
     { index: 5, cmp: SettingTab, show: true }
   ]
-
+  @observable appTheme: Theme = theme
+  @observable currentScreen: string = ''
 
   // {[index: string]: any} 动态索引签名
   @computed get tabMap(): { [index: string]: any } {
@@ -40,19 +54,14 @@ class AppStore {
     }, {})
   }
 
-  @observable appTheme: Theme = theme
-  @observable currentScreen: string = ''
-
   @action.bound
   setCurrentScreen(currentScreen) {
     this.currentScreen = currentScreen
   }
 
-
-  @computed get fabVisible(): boolean {
-    const fabVisibleScreenArrays = ['TodoTab', 'CalendarTab', 'ClockinTab', 'SearchTab']
-
-    return fabVisibleScreenArrays.findIndex(v => v === this.currentScreen) > -1;
+  @action.bound
+  setFabVisible(visible: boolean) {
+    this.fabVisible = visible
   }
 
   @action.bound

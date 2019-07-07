@@ -67,6 +67,7 @@ class InboxTodo extends React.Component<Props, { value: string, open: boolean }>
   }
 
   render() {
+    // todo 等到todolist的多条目改造完成后，将todolist的header暴露出来，这里就可以将Tips用作header
     const { todo: { checkedList, uncheckedList } } = this.props
     return (
       <View style={{ flex: 1 }}>

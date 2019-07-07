@@ -20,6 +20,8 @@ import TypographyExample from './react-native-typography/TypographyExample'
 import Header from './Header/'
 
 import SplashScreen from "react-native-splash-screen";
+// @ts-ignore
+import KeyboardDemoScreen from './keyboard-input/demoScreen';
 
 class Demo extends React.Component {
 
@@ -28,7 +30,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <Header/>
+    return <KeyboardDemoScreen/>
   }
 }
 

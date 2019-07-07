@@ -20,6 +20,8 @@ type Props = {
 // 使用webview ： http://bastengao.com/blog/2017/08/webview-with-local-html-in-react-native.html
 // community-webview : https://github.com/react-native-community/react-native-webview
 
+// 行内webview：https://codeburst.io/untangling-react-native-webview-b9c3cd3a30d8
+
 class Webview extends React.Component<Props> {
   static defaultProps = {
     title: 'webview',

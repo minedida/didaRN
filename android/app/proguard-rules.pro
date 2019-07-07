@@ -15,3 +15,6 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+# react-native-keyboard-input
+-dontwarn com.wix.reactnativekeyboardinput.**

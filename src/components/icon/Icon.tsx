@@ -19,6 +19,7 @@ interface IconProps extends ViewProps {
   onPress?: Function
   style?: ViewStyle
   ref?: Function
+  scale?: number
 }
 
 const styles = StyleSheet.create({
@@ -43,8 +44,8 @@ const Icon = React.forwardRef(
       color,
       onPress,
       style,
+      scale = 1.2
     } = props;
-
     const IconComponent = getIconType(type);
     const Component = onPress ? ButtonContainer : View as any
     const ComponentProps = onPress ?
@@ -52,8 +53,8 @@ const Icon = React.forwardRef(
     const containerStyle = {
       justifyContent: 'center',
       alignItems: 'center',
-      width: size * 1.2,
-      height: size * 1.2,
+      width: size * scale,
+      height: size * scale,
     } as any
     return (
       <Component style={[containerStyle, style]} onPress={onPress} {...ComponentProps}>
