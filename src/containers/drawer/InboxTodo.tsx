@@ -29,6 +29,8 @@ class InboxTodo extends React.Component<Props, any> {
     if (!isAndroid) {
       return
     }
+    // pop-up-dialog on android and actionsheet on ios
+    // https://github.com/Noitidart/react-native-popup-menu-android
     const node = findNodeHandle(this.menu.current) as any;
     UIManager.showPopupMenu(
       node,
@@ -73,7 +75,6 @@ class InboxTodo extends React.Component<Props, any> {
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
 
           <Tips type={'inbox'}/>
-
           <CombineTodoList
             checkedList={checkedList}
             uncheckedList={uncheckedList}/>
