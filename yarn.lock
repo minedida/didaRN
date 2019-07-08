@@ -5830,6 +5830,11 @@ react-native-date-picker@^2.4.2:
   dependencies:
     moment "^2.22.1"
 
+react-native-dialogs@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npm.taobao.org/react-native-dialogs/download/react-native-dialogs-1.0.5.tgz#b64e8d00e8942009861f432d2cce930e84db8737"
+  integrity sha1-tk6NAOiUIAmGH0MtLM6TDoTbhzc=
+
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/react-native-dismiss-keyboard/download/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"

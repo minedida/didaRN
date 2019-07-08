@@ -98,6 +98,7 @@ class SettingTab extends React.Component<NavigationParams> {
   constructor(props) {
     super(props)
     this.onSettingListItemPress = this.onSettingListItemPress.bind(this)
+    this.renderSettingItem = this.renderSettingItem.bind(this)
   }
 
   onSettingListItemPress(type: string) {
@@ -114,6 +115,17 @@ class SettingTab extends React.Component<NavigationParams> {
     type === 'theme' && navigate('ThemeSetting')
   }
 
+  renderSettingItem(g, i) {
+    return (
+      <SettingListGroup key={i} last={i === configs.length - 1}>
+        {
+          g.map(v =>
+            <SettingListItem key={v.id} onPress={this.onSettingListItemPress} {...v}/>)
+        }
+      </SettingListGroup>
+    )
+  }
+
   render() {
     const params = this.props.navigation.state.params
     const leftButton = params && params.from && params.from === 'drawer' ? undefined : null
@@ -124,15 +136,7 @@ class SettingTab extends React.Component<NavigationParams> {
 
           <SettingHeader onPress={() => this.onSettingListItemPress('header')}/>
 
-          {configs.map(
-            (g, i) =>
-              <SettingListGroup key={i} last={i === configs.length - 1}>
-                {
-                  g.map(v =>
-                    <SettingListItem key={v.id} onPress={this.onSettingListItemPress} {...v}/>)
-                }
-              </SettingListGroup>
-          )}
+          {configs.map(this.renderSettingItem)}
         </ScrollView>
       </View>
     )

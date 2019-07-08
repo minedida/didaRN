@@ -25,6 +25,8 @@ import KeyboardDemoScreen from './keyboard-input/demoScreen';
 import RecycleTestComponent from './recyclerlistview/RecycleTestComponent'
 // @ts-ignore
 import StickySample from './recyclerlistview/StickySample'
+// @ts-ignore
+import NativeMaterialDialog from './material-dialog/NativeMaterialDialog'
 
 
 class Demo extends React.Component {
@@ -34,7 +36,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <StickySample/>
+    return <NativeMaterialDialog/>
   }
 }
 

@@ -26,4 +26,4 @@ const ignores = [
 YellowBox.ignoreWarnings(ignores)
 
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => Demo);
