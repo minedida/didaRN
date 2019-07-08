@@ -36,14 +36,14 @@ export default function withBackHandler(WrappedComponent: any, params: 'Auth' | 
     onBackAndroid(): boolean {
       const currentSwitch = getCurrentSwitchName();
 
-      if ('Auth' === params && 'Auth' !== currentSwitch ) {
+      if ('Auth' === params && 'Auth' !== currentSwitch) {
         // pop view
         return false;
       }
 
-      if ('App' === params ) {
+      if ('App' === params) {
         if ('AppTabBar' !== currentSwitch) {
-          return  false
+          return false
         }
         // 处理抽屉的返回
         if (stores.drawer.showDrawer) {
@@ -73,8 +73,9 @@ export default function withBackHandler(WrappedComponent: any, params: 'Auth' | 
       if (stores.app.currentScreen === 'TodoTab' || stores.app.currentScreen === 'AppTabBar') {
         if (stores.app.fabOpen) {
           // 恢复fab状态
-          stores.app.setFabOpen(false);
-          stores.app.setFabVisible(true)
+          stores.app
+          .setFabOpen(false)
+          .setFabVisible(true)
           return true
         }
       }

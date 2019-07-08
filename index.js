@@ -3,6 +3,15 @@ import App from './src/App';
 import Demo from './demo/Demo'
 import {name as appName} from './app.json';
 
+if (!__DEV__) {
+  global.console = {
+    info: () => {},
+    log: () => {},
+    warn: () => {},
+    debug: () => {},
+    error: () => {}
+  }
+}
 
 const ignores = [
   // 消除AppTabBarNav.tsx组件中引入新的navigator带来的⚠️

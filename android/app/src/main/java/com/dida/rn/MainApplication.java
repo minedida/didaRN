@@ -3,6 +3,7 @@ package com.dida.rn;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.bolan9999.SpringScrollViewPackage;
 import com.cmcewen.blurview.BlurViewPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.swmansion.reanimated.ReanimatedPackage;
@@ -33,7 +34,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new BlurViewPackage(),
+          new SpringScrollViewPackage(),
+          new BlurViewPackage(),
           new RNGestureHandlerPackage(),
           new ReanimatedPackage(),
           new RNCWebViewPackage(),

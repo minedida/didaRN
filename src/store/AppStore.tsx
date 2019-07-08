@@ -58,16 +58,19 @@ class AppStore {
   @action.bound
   setCurrentScreen(currentScreen) {
     this.currentScreen = currentScreen
+    return this
   }
 
   @action.bound
   setFabVisible(visible: boolean) {
     this.fabVisible = visible
+    return this
   }
 
   @action.bound
   setFabOpen(visible: boolean) {
     this.fabOpen = visible
+    return this
   }
 
   @action.bound

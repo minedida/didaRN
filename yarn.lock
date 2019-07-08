@@ -4269,6 +4269,11 @@ locate-path@^3.0.0:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
 
+lodash.debounce@4.0.8:
+  version "4.0.8"
+  resolved "https://registry.npm.taobao.org/lodash.debounce/download/lodash.debounce-4.0.8.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flodash.debounce%2Fdownload%2Flodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
+
 lodash.escape@^4.0.1:
   version "4.0.1"
   resolved "https://registry.npm.taobao.org/lodash.escape/download/lodash.escape-4.0.1.tgz#c9044690c21e04294beaa517712fded1fa88de98"
@@ -5643,6 +5648,13 @@ prop-types-exact@^1.2.0:
     object.assign "^4.1.0"
     reflect.ownkeys "^0.2.0"
 
+prop-types@15.5.8:
+  version "15.5.8"
+  resolved "https://registry.npm.taobao.org/prop-types/download/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
+  integrity sha1-a3suFBCDvjjIWVqlH8VXdccZk5Q=
+  dependencies:
+    fbjs "^0.8.9"
+
 prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.npm.taobao.org/prop-types/download/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
@@ -5869,6 +5881,11 @@ react-native-keyboard-tracking-view@^5.5.0:
   resolved "https://registry.npm.taobao.org/react-native-keyboard-tracking-view/download/react-native-keyboard-tracking-view-5.5.0.tgz#87d28639f30e5b511de510e4063e476f23d6e4f2"
   integrity sha1-h9KGOfMOW1Ed5RDkBj5HbyPW5PI=
 
+react-native-largelist-v3@^3.0.14:
+  version "3.0.14"
+  resolved "https://registry.npm.taobao.org/react-native-largelist-v3/download/react-native-largelist-v3-3.0.14.tgz#0b03dc588ed90f90432361f91ffa26d8e529e7c0"
+  integrity sha1-CwPcWI7ZD5BDI2H5H/om2OUp58A=
+
 react-native-material-design-styles@^0.2.6:
   version "0.2.7"
   resolved "https://registry.npm.taobao.org/react-native-material-design-styles/download/react-native-material-design-styles-0.2.7.tgz#428560ef4d0659db1163c9f9b5476d886ed22d57"
@@ -5932,14 +5949,14 @@ react-native-safe-area-view@^0.12.0:
 
 react-native-safe-area-view@^0.7.0:
   version "0.7.0"
-  resolved "https://registry.npm.taobao.org/react-native-safe-area-view/download/react-native-safe-area-view-0.7.0.tgz#38f5ab9368d6ef9e5d18ab64212938af3ec39421"
+  resolved "https://registry.npm.taobao.org/react-native-safe-area-view/download/react-native-safe-area-view-0.7.0.tgz?cache=0&sync_timestamp=1562164292655&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-native-safe-area-view%2Fdownload%2Freact-native-safe-area-view-0.7.0.tgz#38f5ab9368d6ef9e5d18ab64212938af3ec39421"
   integrity sha1-OPWrk2jW755dGKtkISk4rz7DlCE=
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
 react-native-safe-area-view@^0.8.0:
   version "0.8.0"
-  resolved "https://registry.npm.taobao.org/react-native-safe-area-view/download/react-native-safe-area-view-0.8.0.tgz#22d78cb8e8658d04a10cd53c1546e0bc86cb7aea"
+  resolved "https://registry.npm.taobao.org/react-native-safe-area-view/download/react-native-safe-area-view-0.8.0.tgz?cache=0&sync_timestamp=1562164292655&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-native-safe-area-view%2Fdownload%2Freact-native-safe-area-view-0.8.0.tgz#22d78cb8e8658d04a10cd53c1546e0bc86cb7aea"
   integrity sha1-IteMuOhljQShDNU8FUbgvIbLeuo=
   dependencies:
     hoist-non-react-statics "^2.3.1"
@@ -5966,6 +5983,11 @@ react-native-splash-screen@^3.2.0:
   version "3.2.0"
   resolved "https://registry.npm.taobao.org/react-native-splash-screen/download/react-native-splash-screen-3.2.0.tgz#d47ec8557b1ba988ee3ea98d01463081b60fff45"
   integrity sha1-1H7IVXsbqYjuPqmNAUYwgbYP/0U=
+
+react-native-spring-scrollview@^2.0.22:
+  version "2.0.22"
+  resolved "https://registry.npm.taobao.org/react-native-spring-scrollview/download/react-native-spring-scrollview-2.0.22.tgz#6d8dbaf485b68a30c330d25e7e22f70ce7574c4c"
+  integrity sha1-bY269IW2ijDDMNJefiL3DOdXTEw=
 
 react-native-swipeable@^0.6.0:
   version "0.6.0"
@@ -6248,6 +6270,15 @@ realpath-native@^1.1.0:
   integrity sha1-IAMpT+oj+wZy8kduviL89Jii1lw=
   dependencies:
     util.promisify "^1.0.0"
+
+recyclerlistview@^2.0.0-beta.3:
+  version "2.0.0-beta.4"
+  resolved "https://registry.npm.taobao.org/recyclerlistview/download/recyclerlistview-2.0.0-beta.4.tgz#c3c96f3e55650b1c96543fe71009009ea5ce9d63"
+  integrity sha1-w8lvPlVlCxyWVD/nEAkAnqXOnWM=
+  dependencies:
+    lodash.debounce "4.0.8"
+    prop-types "15.5.8"
+    ts-object-utils "0.0.5"
 
 reflect.ownkeys@^0.2.0:
   version "0.2.0"
@@ -7136,6 +7167,11 @@ ts-jest@^24.0.2:
     resolve "1.x"
     semver "^5.5"
     yargs-parser "10.x"
+
+ts-object-utils@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.npm.taobao.org/ts-object-utils/download/ts-object-utils-0.0.5.tgz#95361cdecd7e52167cfc5e634c76345e90a26077"
+  integrity sha1-lTYc3s1+UhZ8/F5jTHY0XpCiYHc=
 
 tunnel-agent@^0.6.0:
   version "0.6.0"

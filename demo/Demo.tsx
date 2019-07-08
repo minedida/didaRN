@@ -18,10 +18,14 @@ import MaterialShowcaseScreen from './react-native-typography/MaterialShowcaseSc
 import TypographyExample from './react-native-typography/TypographyExample'
 // @ts-ignore
 import Header from './Header/'
-
 import SplashScreen from "react-native-splash-screen";
 // @ts-ignore
 import KeyboardDemoScreen from './keyboard-input/demoScreen';
+// @ts-ignore
+import RecycleTestComponent from './recyclerlistview/RecycleTestComponent'
+// @ts-ignore
+import StickySample from './recyclerlistview/StickySample'
+
 
 class Demo extends React.Component {
 
@@ -30,7 +34,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <KeyboardDemoScreen/>
+    return <StickySample/>
   }
 }
 

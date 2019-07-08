@@ -74,8 +74,9 @@ class QuickInput extends React.Component<Props, any> {
       // 2.清空state
       this.setState({ inputTxt: '' })
       // 3.恢复fab状态
-      this.props.app!.setFabOpen(false)
-      this.props.app!.setFabVisible(true)
+      this.props.app!
+        .setFabOpen(false)
+        .setFabVisible(true)
       return
     }
     Toast.show(type);
