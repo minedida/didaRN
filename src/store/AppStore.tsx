@@ -73,6 +73,7 @@ class AppStore {
     return this
   }
 
+  // 修改Theme的primary color
   @action.bound
   changeThemeColor(color: string) {
     this.appTheme = {

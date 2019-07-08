@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
 const SolidColorTheme = [
   {
     type: 'solid-color',
-    color: '#6071e2',
+    color: '#607edf',
     title: '官方蓝',
     active: false,
     clocked: false

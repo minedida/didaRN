@@ -20,7 +20,7 @@ const blueThemeLight = {
   colors: {
     ...DefaultTheme.colors,
     primary: '#607edf',
-    accent: '#6071e2',
+    accent: '#607edf',
     placeholder: '#c3c3c3'
   }
 }
@@ -30,8 +30,8 @@ const blueThemeDark = {
   dark: true,
   colors: {
     ...DefaultTheme.colors,
-    primary: '#6071e2',
-    accent: '#6071e2',
+    primary: '#607edf',
+    accent: '#607edf',
     placeholder: '#c3c3c3'
   }
 }

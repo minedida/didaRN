@@ -22,7 +22,7 @@ export default class StickySample extends React.Component {
         return index;
       },
       (type, dimension) => {
-        dimension.height = 30;
+        dimension.height = 60;
         dimension.width = width;
       }
     );
@@ -77,6 +77,10 @@ export default class StickySample extends React.Component {
     return view;
   };
 
+  _setRef(recycler) {
+    this._recyclerRef = recycler;
+  }
+
   render() {
     const Indices = [...Array(159).keys()].filter(v => v % 5 === 0)
     return (
@@ -84,13 +88,10 @@ export default class StickySample extends React.Component {
                        overrideRowRenderer={this._overrideRowRenderer}>
         <RecyclerListView layoutProvider={this.layoutProvider}
                           ref={this._setRef}
-                          dataProvider={this.dataProvider} rowRenderer={this._rowRenderer}
-                          showsVerticalScrollIndicator={false}/>
+                          dataProvider={this.dataProvider}
+                          rowRenderer={this._rowRenderer}
+                          showsVerticalScrollIndicator={true}/>
       </StickyContainer>
     );
-  }
-
-  _setRef(recycler) {
-    this._recyclerRef = recycler;
   }
 }

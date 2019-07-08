@@ -25,7 +25,11 @@ class AppTabBarNav extends React.Component<{ app: AppStore }> {
     const Tab: NavigationContainer = createBottomTabNavigator(
       this.props.app.tabMap,
       {
-        tabBarOptions,
+        tabBarOptions: {
+          ...tabBarOptions,
+          // dynamic change tab activeTintColor
+          activeTintColor: this.props.app.appTheme.colors.primary
+        },
         // initialRouteName: 'SettingTab',
         lazy: true,
         animationEnabled: false,
