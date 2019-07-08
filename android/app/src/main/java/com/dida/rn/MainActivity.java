@@ -1,4 +1,4 @@
-package com.dida_rn;
+package com.dida.rn;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -19,7 +19,7 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "dida_RN";
+        return "dida";
     }
 
     @Override

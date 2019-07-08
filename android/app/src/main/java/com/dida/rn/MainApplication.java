@@ -1,4 +1,4 @@
-package com.dida_rn;
+package com.dida.rn;
 
 import android.app.Application;
 

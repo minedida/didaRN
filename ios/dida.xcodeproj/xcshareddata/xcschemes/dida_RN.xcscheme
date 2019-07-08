@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D2A28121D9B038B00D4039D"
+               BlueprintIdentifier = "83CBBA2D1A601D0E00E9B192"
                BuildableName = "libReact.a"
-               BlueprintName = "React-tvOS"
+               BlueprintName = "React"
                ReferencedContainer = "container:../node_modules/react-native/React/React.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,10 +28,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "dida_RN-tvOS.app"
-               BlueprintName = "dida_RN-tvOS"
-               ReferencedContainer = "container:dida_RN.xcodeproj">
+               BlueprintIdentifier = "D834CED71CC64F2400FA5668"
+               BuildableName = "libKeyboardTrackingView.a"
+               BlueprintName = "KeyboardTrackingView"
+               ReferencedContainer = "container:../node_modules/react-native-keyboard-tracking-view/lib/KeyboardTrackingView.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+               BuildableName = "dida.app"
+               BlueprintName = "dida"
+               ReferencedContainer = "container:dida.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -42,10 +56,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "dida_RN-tvOSTests.xctest"
-               BlueprintName = "dida_RN-tvOSTests"
-               ReferencedContainer = "container:dida_RN.xcodeproj">
+               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
+               BuildableName = "didaTests.xctest"
+               BlueprintName = "didaTests"
+               ReferencedContainer = "container:dida.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -60,20 +74,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "dida_RN-tvOSTests.xctest"
-               BlueprintName = "dida_RN-tvOSTests"
-               ReferencedContainer = "container:dida_RN.xcodeproj">
+               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
+               BuildableName = "didaTests.xctest"
+               BlueprintName = "didaTests"
+               ReferencedContainer = "container:dida.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "dida_RN-tvOS.app"
-            BlueprintName = "dida_RN-tvOS"
-            ReferencedContainer = "container:dida_RN.xcodeproj">
+            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+            BuildableName = "dida.app"
+            BlueprintName = "dida"
+            ReferencedContainer = "container:dida.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -93,10 +107,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "dida_RN-tvOS.app"
-            BlueprintName = "dida_RN-tvOS"
-            ReferencedContainer = "container:dida_RN.xcodeproj">
+            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+            BuildableName = "dida.app"
+            BlueprintName = "dida"
+            ReferencedContainer = "container:dida.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -112,10 +126,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "dida_RN-tvOS.app"
-            BlueprintName = "dida_RN-tvOS"
-            ReferencedContainer = "container:dida_RN.xcodeproj">
+            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+            BuildableName = "dida.app"
+            BlueprintName = "dida"
+            ReferencedContainer = "container:dida.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
