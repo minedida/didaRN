@@ -1,15 +1,24 @@
 import React from 'react'
 import {
   View,
-  TouchableNativeFeedback,
-  TouchableOpacityProps
+  TouchableNativeFeedback, TouchableOpacityProps,
 } from 'react-native'
 
-interface anyProps {
+export interface anyProps {
   [k: string]: any
 }
-interface Props extends TouchableNativeFeedback, TouchableOpacityProps, anyProps {}
 
+/*export default (props: anyProps) =>
+  <TouchableNativeFeedback
+    delayPressIn={0}
+    background={this.props.background}
+    {...props}>
+    <View style={props.style}>
+      {props.children}
+    </View>
+  </TouchableNativeFeedback>*/
+
+interface Props extends TouchableNativeFeedback, TouchableOpacityProps, anyProps {}
 export default class ButtonContainer extends React.PureComponent<Props, any> {
   static defaultProps = {
     background:TouchableNativeFeedback.SelectableBackground()

@@ -1,12 +1,13 @@
 import React from 'react';
 import {
   TouchableNativeFeedback,
-  View, ViewStyle, ViewProps, StyleSheet
+  View, ViewStyle, ViewProps
 } from 'react-native';
 
 import getIconType from './getIconType';
 import { ButtonContainer } from '../'
 import { d } from "../../helper/utils/ScreenUtil";
+import { isEmpty } from "../../helper/utils/Utils";
 
 interface IconProps extends ViewProps {
   type?:
@@ -20,61 +21,47 @@ interface IconProps extends ViewProps {
   style?: ViewStyle
   ref?: Function
   scale?: number
+  hitSlop?: { left: number, top: number, right: number, bottom: number }
+  largeTouchArea?: boolean
 }
 
-const styles = StyleSheet.create({
-  anchorView: {
-    backgroundColor: 'transparent',
-    width: StyleSheet.hairlineWidth,
-    height: StyleSheet.hairlineWidth,
-    ...StyleSheet.absoluteFillObject,
-    top: -d(8)
-  }
-})
-
-// how to pass ref as props:
-// https://stackoverflow.com/questions/37647061/how-do-i-access-refs-of-a-child-component-in-the-parent-component
-
-const Icon = React.forwardRef(
-  (props: IconProps, ref?: any) => {
-    const {
-      type,
-      name,
-      size,
-      color,
-      onPress,
-      style,
-      scale = 1.2
-    } = props;
-    const IconComponent = getIconType(type);
-    const Component = onPress ? ButtonContainer : View as any
-    const ComponentProps = onPress ?
-      { background: TouchableNativeFeedback.SelectableBackgroundBorderless() } : {}
-    const containerStyle = {
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: size * scale,
-      height: size * scale,
-    } as any
-    return (
-      <Component style={[containerStyle, style]} onPress={onPress} {...ComponentProps}>
-        <IconComponent
-          style={{position: 'relative'}}
-          testID="iconIcon"
-          size={size}
-          name={name}
-          color={color}/>
-        {/* We need this view as an anchor for drop down menu. findNodeHandle can
-            find just view with width and height, even it needs backgroundColor
-            ref: react-native-material-ui/src/Toolbar/RightElement.react.js line.186
-        */}
-
-        <View ref={ref} style={styles.anchorView}>
-        </View>
-      </Component>
-    )
-  }
-)
+const Icon = (props: IconProps) => {
+  let {
+    type,
+    name,
+    size,
+    color,
+    onPress,
+    // style = { height: '100%', width: '100%' },
+    style,
+    scale = 1.2,
+    hitSlop = {},
+    largeTouchArea
+  } = props;
+  const IconComponent = getIconType(type);
+  const Component = onPress ? ButtonContainer : View as any
+  const ComponentProps = onPress ?
+    { background: TouchableNativeFeedback.SelectableBackgroundBorderless() } : {}
+  const containerStyle = {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: size * scale,
+    height: size * scale,
+  } as any
+  hitSlop = !isEmpty(hitSlop) ? hitSlop :
+    (largeTouchArea ? { left: d(20), top: d(20), right: d(20), bottom: d(20) } : {})
+  console.log(`hitSlop:${JSON.stringify(hitSlop)}`)
+  return (
+    <Component style={[containerStyle, style]} onPress={onPress} hitSlop={hitSlop} {...ComponentProps} >
+      <IconComponent
+        style={{ position: 'relative' }}
+        testID="iconIcon"
+        size={size}
+        name={name}
+        color={color}/>
+    </Component>
+  )
+}
 
 
 export default Icon

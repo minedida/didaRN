@@ -36,7 +36,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <NativeMaterialDialog/>
+    return <Header/>
   }
 }
 

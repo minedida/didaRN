@@ -122,10 +122,10 @@ class DrawerPanel extends React.Component<Props> {
           </View>
 
           <View style={styles.avatarView}>
-            <Icon type={'Feather'} color={'#fff'}
+            <Icon type={'Feather'} color={'#fff'} largeTouchArea
                   name={'search'} size={24} style={{ marginRight: d(22) }}/>
             <Icon onPress={() => this.onPress('setting')}
-                  type={'Ionicons'} color={'#fff'}
+                  type={'Ionicons'} color={'#fff'} largeTouchArea
                   name={'md-settings'} size={24}/>
           </View>
         </View>

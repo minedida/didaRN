@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     marginTop: d(6)
   },
   btnView: {
-    width: d(76),
+    width: d(65),
     height: d(24),
     borderRadius: d(14),
     backgroundColor: '#fff',

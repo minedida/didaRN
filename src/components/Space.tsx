@@ -1,6 +1,11 @@
 import React from 'react'
-import { View } from 'react-native'
+import { Platform, View } from 'react-native'
+import { d } from '../helper/utils/ScreenUtil';
 
-export default ({ height = 0, width = 0, bgc = 'transparent' }) => height ?
+export const Space = ({ height = 0, width = 0, bgc = 'transparent' }) => height ?
   <View style={{ width: '100%', height, backgroundColor: bgc }}/> :
   <View style={{ height: '100%', width, backgroundColor: bgc }}/>
+
+  // 配合NavigationBar.tsx的elevation属性一起使用
+export const ElevationSpace = () => <Space height={Platform.OS === 'android' ? d(4) : 0}/>
+

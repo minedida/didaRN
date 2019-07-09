@@ -5,20 +5,20 @@ import {
   Platform,
   StatusBar,
   StyleSheet,
-  TouchableNativeFeedback,
   StyleProp,
   ViewStyle
 } from 'react-native'
-import { d, t } from "../helper/utils/ScreenUtil";
-import { goBack } from "../navigation";
-import DeviceConstants from "../helper/constant/DeviceConstants";
-import { ButtonContainer, Icon } from "./";
 import { material } from 'react-native-typography'
+import { Icon } from "./";
+import { goBack } from "../navigation";
+import { d, t } from "../helper/utils/ScreenUtil";
+import DeviceConstants from "../helper/constant/DeviceConstants";
 
 const isAndroid = Platform.OS === 'android'
 
 const NAV_BAR_HEIGHT_IOS = d(44)
 const NAV_BAR_HEIGHT_ANDROID = d(50)
+
 const {
   status_bar_height, fake_status_bar_padding_for_ios,
   fake_status_bar_height_for_android
@@ -36,6 +36,7 @@ interface Props {
   leftButton?: JSX.Element | null,
   style?: StyleProp<ViewStyle>
   onBackPress?: (e) => void
+  elevation?: boolean
 }
 
 
@@ -46,9 +47,13 @@ const styles = StyleSheet.create({
         height: NAV_BAR_HEIGHT_IOS + status_bar_height,
       },
       android: {
-        height: NAV_BAR_HEIGHT_ANDROID + status_bar_height
+        height: NAV_BAR_HEIGHT_ANDROID + status_bar_height,
       }
     })
+  },
+  shadow: {
+    elevation: 4,
+    zIndex: 1
   },
   navBar: {
     flex: 1,
@@ -85,7 +90,7 @@ class NavigationBar extends PureComponent<Props> {
 
   private getRightButton(rightView: any) {
     return (
-      <View style={[styles.center, { height: '100%', position: 'absolute', right: d(12) }]}>
+      <View style={[styles.center, { height: '100%', width: d(38) }]}>
         {rightView && rightView}
       </View>
     )
@@ -95,33 +100,30 @@ class NavigationBar extends PureComponent<Props> {
   // undefined -> 默认
   // null -> 空
   private getLeftButton(leftButton: any) {
-    return (
-      <View style={[styles.center, { height: '100%', position: 'absolute', left: d(10) }]}>
-        {
-          leftButton !== undefined ? leftButton :
-            <ButtonContainer
-              style={{ width: d(32), justifyContent: 'center', alignItems: 'center' }}
-              onPress={this.props.onBackPress ? this.props.onBackPress : goBack}
-              background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
-              <Icon
-                type={isAndroid ? 'Feather' : 'Ionicons'}
-                name={isAndroid ? 'arrow-left' : 'ios-arrow-back'}
-                size={isAndroid ? 24 : 26}
-                color={this.props.navBarContentColor}
-              />
-            </ButtonContainer>
-        }
-      </View>
-    )
+    if (leftButton === null) {
+      return null
+    }
+    return <View style={{ width: d(50), height: '100%',
+      justifyContent: 'center', alignItems: 'center' }}>
+      {
+        leftButton !== undefined ? leftButton :
+          <Icon
+            type={isAndroid ? 'Feather' : 'Ionicons'}
+            name={isAndroid ? 'arrow-left' : 'ios-arrow-back'}
+            size={isAndroid ? 24 : 26}
+            color={this.props.navBarContentColor}
+            onPress={this.props.onBackPress ? this.props.onBackPress : goBack}
+            largeTouchArea/>
+      }
+
+    </View>
   }
 
   getTitleView(title: any) {
     const { titleView, leftButton } = this.props
-    const paddingLeft = isAndroid ? (
-      leftButton === null ? d(15) : d(52)
-    ) : 0
+    const marginLeft = isAndroid ? (leftButton === null ? d(15) : d(0)) : 0
     return (
-      <View style={{ paddingLeft }}>
+      <View style={{ marginLeft, height: '100%', justifyContent: 'center', flex: 1 }}>
         {
           !title ? titleView :
             <Text
@@ -137,19 +139,25 @@ class NavigationBar extends PureComponent<Props> {
     const {
       title, navBarBackgroundColor,
       rightButton, leftButton,
-      statusBarStyle, statusBarHidden
+      statusBarStyle, statusBarHidden,
+      elevation
     } = this.props
     const content = (
       <View style={[styles.navBar]}>
-        {this.getTitleView(title)}
-        {this.getLeftButton(leftButton)}
+        <View style={{ flexDirection: 'row', width: '100%', height: '100%', flex: 1 }}>
+          {this.getLeftButton(leftButton)}
+          {this.getTitleView(title)}
+        </View>
         {this.getRightButton(rightButton)}
       </View>
     )
+    const elevation_android = elevation ? {elevation: 4, zIndex: 1} : {}
+
     return (
-      <View style={[styles.container, { backgroundColor: navBarBackgroundColor }, this.props.style]}>
+      <View style={[styles.container, elevation_android,
+        { backgroundColor: navBarBackgroundColor,  }, this.props.style]}>
         <StatusBar barStyle={statusBarStyle} backgroundColor="transparent" translucent
-                   animated={true}  hidden={statusBarHidden} />
+                   animated={true} hidden={statusBarHidden}/>
         <View style={{
           height: fake_status_bar_height_for_android,
           width: '100%',

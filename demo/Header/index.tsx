@@ -6,4 +6,4 @@ import PaperHeader from './PaperHeader';
 import ToolbarHeader from './ToolbarHeader';
 
 
-export default ToolbarHeader
+export default PaperHeader
