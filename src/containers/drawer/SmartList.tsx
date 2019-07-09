@@ -1,6 +1,6 @@
 import React from 'react'
 import { ScrollView } from 'react-native'
-import { SettingListItem, SettingIcon } from "../../components";
+import { SettingListItem, SettingIcon, Toast } from "../../components";
 import { d } from "../../helper/utils/ScreenUtil";
 import { List, Divider } from "react-native-paper";
 
@@ -59,8 +59,8 @@ const configs: Array<any> = [
 
 class SmartList extends React.PureComponent<Props> {
 
-  onSettingListItemPress(type) {
-    alert(type)
+  onSettingListItemPress(type: string) {
+    Toast.show(type)
   }
 
   render() {

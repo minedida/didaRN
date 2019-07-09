@@ -40,12 +40,17 @@ class InboxTodo extends React.Component<Props, any> {
     // pop-up-dialog on android and actionsheet on ios
     // https://github.com/Noitidart/react-native-popup-menu-android
     const node = findNodeHandle(this.menu.current) as any;
+    const items = ['显示详细', '隐藏已完成', '排序', '分享', '编辑多个任务']
     UIManager.showPopupMenu(
       node,
-      ['显示详细', '隐藏已完成', '排序', '分享', '编辑多个任务'],
+      items,
       () => {},
-      (item: string, index: number | undefined) =>
-        Toast.show(`item:${item}\nindex:${index}`)
+      (_item: string, index: number | undefined) =>
+      {
+        if (index !== undefined) {
+          Toast.show(`点击了:${items[index]}`)
+        }
+      }
     )
   }
 

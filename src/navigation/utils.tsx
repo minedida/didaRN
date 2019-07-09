@@ -41,8 +41,6 @@ function onNavigationStateChange(prevState: any, currentState: any) {
   // 本项目中，由于使用了动态Tab，顶级的`onNavigationStateChange`在TabBar中被切断。
   // 为妥协动态Tab的需求，将两个NavigationContainer的`onNavigationStateChange`回调均指向改方法。
   if (prevScreen !== currentScreen) {
-    console.log(`currentScreen:${currentScreen}`)
-    console.log(`prevScreen:${prevScreen}`)
     // 当前一个路由为Splash，当前路由为AppTabBar，视作当前路由为TodoTab
     if (prevScreen === 'Splash' && currentScreen === 'AppTabBar') {
       currentScreen = 'TodoTab'

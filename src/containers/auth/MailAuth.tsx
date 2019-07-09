@@ -101,7 +101,7 @@ class MailAuth extends React.Component<Props, State> {
 
         <Space height={d(18)}/>
         <Button style={styles.button} dark={true} mode="contained"
-                onPress={() => console.log('Pressed')}>
+                onPress={() => {}}>
           创建账户
         </Button>
 

@@ -34,26 +34,26 @@ const styles = StyleSheet.create({
   },
   topView: {
     width: '100%',
-    height: d(136),
+    height: d(120),
     alignItems: 'center'
   },
   topIconView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
-    height: d(96)
+    height: d(86)
   },
   avatarView: {
     flexDirection: 'row',
     flex: 1,
     justifyContent: 'flex-end',
-    padding: d(18)
+    padding: d(18),
+    paddingRight: d(8)
   },
   btn: {
-    width: d(284),
-    height: d(32),
+    width: d(300),
+    height: d(28),
     borderRadius: d(6),
-    // backgroundColor: '#8de9cc',
     justifyContent: 'center',
     alignItems: 'center'
   }
@@ -100,13 +100,12 @@ class DrawerPanel extends React.Component<Props> {
     const {
       theme: {colors: {primary}}
     } = this.props
-    const green = primary
-    const light_green = color(green)
+    const light_primary = color(primary)
     .rgb()
     .lighten(0.27)
     .string()
     return (
-      <View style={[styles.topView, { backgroundColor: green }]}>
+      <View style={[styles.topView, { backgroundColor: primary }]}>
         <View style={styles.topIconView}>
 
           <View style={{ flex: 1, justifyContent: 'center', paddingLeft: d(18) }}>
@@ -132,7 +131,7 @@ class DrawerPanel extends React.Component<Props> {
         <ButtonContainer
           onPress={() => this.onPress('btn')}
           activeOpacity={0.6}
-          style={[styles.btn, { backgroundColor: light_green}]}>
+          style={[styles.btn, { backgroundColor: light_primary}]}>
           <Text style={[material.button, { color: '#fff' }]}>登录或注册</Text>
         </ButtonContainer>
       </View>

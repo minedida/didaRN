@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import { SettingListGroup, SettingListItem, SettingIcon } from "../../components";
+import { SettingListGroup, SettingListItem, SettingIcon, Toast } from "../../components";
 
 type Props = any
 
@@ -24,7 +24,7 @@ const configs: Array<Array<any>> = [
 
 class Label extends React.PureComponent<Props> {
   onSettingListItemPress(type) {
-    alert(type)
+    Toast.show(type)
   }
 
   render() {

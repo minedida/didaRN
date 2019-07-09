@@ -76,7 +76,6 @@ class CalendarTab extends React.PureComponent {
           }
         }
       }
-      //console.log(this.state.items);
       const newItems = {};
       Object.keys(this.state.items).forEach(key => {
         newItems[key] = this.state.items[key];
@@ -85,7 +84,6 @@ class CalendarTab extends React.PureComponent {
         items: newItems
       });
     }, 1000);
-    // console.log(`Load Items for ${day.year}-${day.month}`);
   }
 
   renderItem = (item) =>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, ScrollView, StyleSheet } from 'react-native'
-import { NavigationBar, SettingListItem, Switch } from "../../components";
+import { NavigationBar, SettingListItem, Switch, Toast } from "../../components";
 import { List } from 'react-native-paper';
 import { d } from "../../helper/utils/ScreenUtil";
 
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 class IntelligentRecognition extends React.Component {
 
   onSettingListItemPress(type) {
-    console.log(type)
+    Toast.show(type)
   }
 
   render() {

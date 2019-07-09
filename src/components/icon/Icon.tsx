@@ -50,9 +50,8 @@ const Icon = (props: IconProps) => {
   } as any
   hitSlop = !isEmpty(hitSlop) ? hitSlop :
     (largeTouchArea ? { left: d(20), top: d(20), right: d(20), bottom: d(20) } : {})
-  console.log(`hitSlop:${JSON.stringify(hitSlop)}`)
   return (
-    <Component style={[containerStyle, style]} onPress={onPress} hitSlop={hitSlop} {...ComponentProps} >
+    <Component style={[containerStyle, style]} onPress={onPress} hitSlop={hitSlop} {...ComponentProps}>
       <IconComponent
         style={{ position: 'relative' }}
         testID="iconIcon"

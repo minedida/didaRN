@@ -28,7 +28,6 @@ class Dashboard extends React.Component<Props> {
   }
 
   render() {
-    console.log('Dashboard-render')
     let [, CalendarItem, TomatoItem,
       ClockInItem, SearchItem, SettingItem]
       = this.props.app.appTabs
