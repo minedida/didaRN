@@ -85,7 +85,8 @@ class NavigationBar extends PureComponent<Props> {
     statusBarHidden: false,
     navBarBackgroundColor: '#fff',
     navBarContentColor: '#333',
-    backBtnColor: '#62646c'
+    backBtnColor: '#62646c',
+    elevation: true
   }
 
   private getRightButton(rightView: any) {

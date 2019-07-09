@@ -44,13 +44,12 @@ class ManageTodo extends React.PureComponent<Props> {
 
     return (
       <View style={{ flex: 1 }}>
-        <NavigationBar title={'管理清单和标签'}/>
+        <NavigationBar title={'管理清单和标签'} elevation={false}/>
         <TabView
           navigationState={this.state}
           renderScene={Scenes}
           onIndexChange={index => this.setState({ index })}
-          renderTabBar={Tab}
-        />
+          renderTabBar={Tab}/>
       </View>
     )
   }

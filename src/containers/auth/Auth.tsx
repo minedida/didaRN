@@ -50,7 +50,7 @@ class Auth extends React.Component<Props> {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: '#fff' }}>
-        <NavigationBar title={''}/>
+        <NavigationBar title={''} elevation={false}/>
         <View style={styles.container}>
           <Image resizeMode={'contain'} source={Images.auth_logo} style={styles.logoStyle}/>
 

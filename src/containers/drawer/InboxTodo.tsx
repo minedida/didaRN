@@ -1,7 +1,7 @@
 import React, { RefObject } from 'react'
 import { View, Platform, findNodeHandle, UIManager, StyleSheet } from 'react-native'
 import { inject, observer } from "mobx-react";
-import { NavigationBar, CombineTodoList, Tips, Icon, Toast } from "../../components/";
+import { NavigationBar, CombineTodoList, Tips, Icon, Toast, ElevationSpace } from "../../components/";
 import { t } from "../../helper/utils/ScreenUtil";
 import { DrawerStore } from "../../store/DrawerStore";
 import { TodoStore } from "../../store/TodoStore";
@@ -90,7 +90,7 @@ class InboxTodo extends React.Component<Props, any> {
                        rightButton={this.renderRightBtn()}/>
 
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
-
+          <ElevationSpace/>
           <Tips type={'inbox'}/>
           <CombineTodoList
             checkedList={checkedList}

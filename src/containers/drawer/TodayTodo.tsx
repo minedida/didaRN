@@ -1,6 +1,6 @@
 import React from 'react'
-import { View, Text, TouchableNativeFeedback, Platform } from 'react-native'
-import { ButtonContainer, NavigationBar, Icon, Tips } from "../../components/";
+import { View, Text, Platform } from 'react-native'
+import { NavigationBar, Icon, Tips, ElevationSpace } from "../../components/";
 import { material } from "react-native-typography";
 import { d, t } from "../../helper/utils/ScreenUtil";
 import { inject, observer } from "mobx-react";
@@ -16,39 +16,34 @@ type Props = {
 class TodayTodo extends React.Component<Props> {
   renderLeftBtn() {
     return (
-      <ButtonContainer
-        style={{ width: d(26), height: d(26), justifyContent: 'center', alignItems: 'center' }}
+      <Icon
+        largeTouchArea
         onPress={this.props.drawer.toggleMenu}
-        background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
-        <Icon
-          type={'Ionicons'}
-          size={isAndroid ? t(20): t(20)}
-          name={isAndroid ? 'md-menu' : 'ios-menu'}
-          color={'#333'} />
-      </ButtonContainer>
+        type={'Ionicons'}
+        size={isAndroid ? t(20): t(20)}
+        style={{ width: d(26), height: d(26), justifyContent: 'center', alignItems: 'center' }}
+        name={isAndroid ? 'md-menu' : 'ios-menu'}
+        color={'#333'} />
     )
   }
   renderRightBtn() {
     return (
-      <View style={{  justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
-        <ButtonContainer
-          style={{ width: d(44),height: (44), justifyContent: 'center', alignItems: 'center' }}
-          background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
-          <Icon
-            type={'MaterialCommunityIcons'}
-            size={isAndroid ? t(20): t(20)}
-            name={'radiobox-marked'}
-            color={'#333'} />
-        </ButtonContainer>
-        <ButtonContainer
-          style={{ width: d(44),height: (44), justifyContent: 'center', alignItems: 'center'}}
-          background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
-          <Icon
-            type={'Ionicons'}
-            size={isAndroid ? t(20): t(20)}
-            name={isAndroid ? 'md-more' : 'ios-more'}
-            color={'#333'} />
-        </ButtonContainer>
+      <View style={{  justifyContent: 'center', alignItems: 'center', flexDirection: 'row', marginRight: d(16) }}>
+        <Icon
+          largeTouchArea
+          onPress={() => {}}
+          type={'MaterialCommunityIcons'}
+          size={isAndroid ? t(20): t(20)}
+          style={{ marginRight: d(8) }}
+          name={'radiobox-marked'}
+          color={'#333'} />
+        <Icon
+          largeTouchArea
+          onPress={() => {}}
+          type={'Ionicons'}
+          size={isAndroid ? t(20): t(20)}
+          name={isAndroid ? 'md-more' : 'ios-more'}
+          color={'#333'} />
       </View>
     )
   }
@@ -57,6 +52,7 @@ class TodayTodo extends React.Component<Props> {
       <View style={{ flex: 1 }}>
         <NavigationBar title={'今天'} leftButton={this.renderLeftBtn()} rightButton={this.renderRightBtn()}/>
         <View style={{ flex: 1,  backgroundColor: '#fff' }}>
+          <ElevationSpace/>
           <Tips type={'today'}/>
 
           <Text style={material.button}>
