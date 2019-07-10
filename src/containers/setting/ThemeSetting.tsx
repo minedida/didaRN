@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     width: d(56),
     height: d(56),
     borderRadius: d(12),
-    justifyContent:'center',
-    alignItems:'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   checkView: {
     position: "absolute",
@@ -40,8 +40,8 @@ const styles = StyleSheet.create({
     height: d(40),
     borderRadius: d(20),
     backgroundColor: '#b3b3b3',
-    justifyContent:'center',
-    alignItems:'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 })
 const SolidColorTheme = [
@@ -49,6 +49,7 @@ const SolidColorTheme = [
     type: 'solid-color',
     color: '#607edf',
     title: '官方蓝',
+    key: 'blue',
     active: false,
     clocked: false
   },
@@ -56,6 +57,7 @@ const SolidColorTheme = [
     type: 'solid-color',
     color: '#212121',
     title: '夜间',
+    key: 'black_night',
     active: false,
     clocked: false
   },
@@ -63,6 +65,7 @@ const SolidColorTheme = [
     type: 'solid-color',
     color: '#000',
     title: '纯黑',
+    key: 'black_black',
     active: false,
     clocked: true
   },
@@ -70,6 +73,7 @@ const SolidColorTheme = [
     type: 'solid-color',
     color: '#fe7797',
     title: '粉色',
+    key: 'pink',
     active: false,
     clocked: false
   },
@@ -77,6 +81,7 @@ const SolidColorTheme = [
     type: 'solid-color',
     color: '#272a34',
     title: '黑色',
+    key: 'black_gray',
     active: false,
     clocked: false
   },
@@ -84,6 +89,7 @@ const SolidColorTheme = [
     type: 'solid-color',
     color: '#04ce91',
     title: '绿色',
+    key: 'green',
     active: true,
     clocked: false
   },
@@ -91,6 +97,7 @@ const SolidColorTheme = [
     type: 'solid-color',
     color: '#7d7f85',
     title: '灰色',
+    key: 'gray',
     active: false,
     clocked: false
   },
@@ -98,6 +105,7 @@ const SolidColorTheme = [
     type: 'solid-color',
     color: '#f9bf13',
     title: '黄色',
+    key: 'yellow',
     active: false,
     clocked: false
   },
@@ -105,6 +113,7 @@ const SolidColorTheme = [
     type: 'solid-color',
     color: '#f0f0f0',
     title: '白色',
+    key: 'white',
     active: false,
     clocked: true
   }
@@ -124,10 +133,10 @@ class ThemeSetting extends React.Component<Props> {
     this.onItemPress = this.onItemPress.bind(this)
   }
 
-  onItemPress(type: string, value: any) {
+  onItemPress(value: any) {
     const activePrimaryColor = this.props.app!.appTheme!.colors!.primary
 
-    if (type === 'solid-color') {
+    if (value.type === 'solid-color') {
       if (value.color === activePrimaryColor) {
         return;
       }
@@ -136,6 +145,7 @@ class ThemeSetting extends React.Component<Props> {
         return;
       }
       this.props.app.changeThemeColor(value.color);
+      //NativeModules.AndroidTheme.changeTheme(value.key)
       Toast.show(`已为你换上${value.title}主题`)
     }
   }
@@ -154,7 +164,7 @@ class ThemeSetting extends React.Component<Props> {
               key={v.title.toString()}
               isActive={v.color === activePrimaryColor}
               item={v} onItemPress={this.onItemPress}/>
-            )
+          )
         }
       </View>
     </View>
@@ -163,7 +173,7 @@ class ThemeSetting extends React.Component<Props> {
 
 type ISolidColorItemProps = {
   item: any,
-  onItemPress: (type: string, value: any) => void ,
+  onItemPress: (value: any) => void,
   isActive: boolean
 }
 
@@ -174,7 +184,7 @@ class SolidColorItem extends React.Component<ISolidColorItemProps> {
   }
 
   renderCheckView() {
-    const { item: { color} } = this.props
+    const { item: { color } } = this.props
     return <View style={styles.checkView}>
       <Icon type={'Entypo'} name={'check'} size={t(12)} color={color}/>
     </View>
@@ -183,7 +193,7 @@ class SolidColorItem extends React.Component<ISolidColorItemProps> {
   renderLockView() {
     const { item: { color } } = this.props
     const isWhite = color === '#f0f0f0'
-    const viewStyle = [styles.lockView, {backgroundColor: isWhite ? '#fff' : styles.lockView.backgroundColor}] as any
+    const viewStyle = [styles.lockView, { backgroundColor: isWhite ? '#fff' : styles.lockView.backgroundColor }] as any
     return <View style={viewStyle}>
       <Icon type={'FontAwesome5'} name={'lock'} size={t(16)} color={'#525252'}/>
     </View>
@@ -194,14 +204,13 @@ class SolidColorItem extends React.Component<ISolidColorItemProps> {
       item: {
         color,
         title,
-        clocked,
-        type
+        clocked
       },
       isActive,
       onItemPress
     } = this.props
     return (
-      <ButtonContainer style={styles.itemView} onPress={() => onItemPress(type, this.props.item)}>
+      <ButtonContainer style={styles.itemView} onPress={() => onItemPress(this.props.item)}>
         <View style={[styles.colorsView, { backgroundColor: color }]}>
           {isActive && this.renderCheckView()}
           {clocked && this.renderLockView()}
