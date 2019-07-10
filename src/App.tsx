@@ -11,7 +11,7 @@ import { withAppInit } from "./helper/hoc";
 // how to detect a store change? https://mobx.js.org/refguide/observe.html#observe
 
 
-@observer @withAppInit
+@withAppInit @observer
 export default class App extends Component<any> {
   constructor(props: any) {
     super(props)
