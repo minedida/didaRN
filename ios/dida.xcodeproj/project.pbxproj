@@ -65,6 +65,7 @@
 		44FBE92C22CA614C00E05EE2 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44FBE8F222CA614C00E05EE2 /* Roboto-Bold.ttf */; };
 		44FBE92D22CA614C00E05EE2 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44FBE8F322CA614C00E05EE2 /* Roboto-Thin.ttf */; };
 		44FBE92E22CA614C00E05EE2 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44FBE8F422CA614C00E05EE2 /* Roboto-Black.ttf */; };
+		47981E7BACA14BB6A45303DB /* libRNShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E3E5D45C5D48A4B85FB725 /* libRNShare.a */; };
 		4E476116FA024474B0419D64 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9867B67C51A47DB929AE976 /* Ionicons.ttf */; };
 		5AB0939780FA4305914E3553 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C488496AA1834AF28926AAA1 /* FontAwesome.ttf */; };
 		67481E6E4AB540ECA0090251 /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBC3F920D8A418283213FBF /* libRNGestureHandler-tvOS.a */; };
@@ -297,6 +298,13 @@
 			remoteGlobalIDString = 3D3CD9321DE5FBEE00167DC4;
 			remoteInfo = "cxxreact-tvOS";
 		};
+		4403BEC022D59CE50000DB4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FA3FDAA01374175B40F65DB /* RNShare.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNShare;
+		};
 		441E815822AFFFE100A53D82 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2C75B37F68C84EF29B197EFD /* RNCWebView.xcodeproj */;
@@ -523,6 +531,7 @@
 		49734E6709F44BB49713F7A7 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		4FBC3F920D8A418283213FBF /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; };
 		538ACCB8CFA94D3688D71656 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		56E3E5D45C5D48A4B85FB725 /* libRNShare.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNShare.a; sourceTree = "<group>"; };
 		5B58662390CC4398BF635CEB /* libRNReanimated.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNReanimated.a; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		644923C7989945279425A0A8 /* LRDRCTSimpleToast.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = LRDRCTSimpleToast.xcodeproj; path = "../node_modules/react-native-simple-toast/ios/LRDRCTSimpleToast.xcodeproj"; sourceTree = "<group>"; };
@@ -530,6 +539,7 @@
 		7AE794C03F7D487C85697556 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		81C333FE5AC14960BF66A38C /* RNSyanImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSyanImagePicker.xcodeproj; path = "../node_modules/react-native-syan-image-picker/ios/RNSyanImagePicker.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		8FA3FDAA01374175B40F65DB /* RNShare.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNShare.xcodeproj; path = "../node_modules/react-native-share/ios/RNShare.xcodeproj"; sourceTree = "<group>"; };
 		A7D79F7989114F4F912B3D63 /* libRNVectorIcons-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNVectorIcons-tvOS.a"; sourceTree = "<group>"; };
 		AC56A0E2350D4365B35E4B3A /* libRNSyanImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSyanImagePicker.a; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
@@ -587,6 +597,7 @@
 				CF7B8F11EEB34F3B947A1CE3 /* libRNBlur.a in Frameworks */,
 				0BB2A89CA2004F458FF493C3 /* libRNSpringScrollView.a in Frameworks */,
 				01A614A0D55646DB8663CC7B /* libRNSyanImagePicker.a in Frameworks */,
+				47981E7BACA14BB6A45303DB /* libRNShare.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +779,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4403BEBD22D59CE50000DB4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4403BEC122D59CE50000DB4E /* libRNShare.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		441E815522AFFFE000A53D82 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -865,6 +884,7 @@
 				FC28C0852C654426A32A23D9 /* libRNBlur.a */,
 				BC5F46FCDD2D47E5A63786A7 /* libRNSpringScrollView.a */,
 				AC56A0E2350D4365B35E4B3A /* libRNSyanImagePicker.a */,
+				56E3E5D45C5D48A4B85FB725 /* libRNShare.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -943,6 +963,7 @@
 				341CBC0DEE514DC1B44B5668 /* RNBlur.xcodeproj */,
 				AF0C9C630513430DB79CCBF8 /* RNSpringScrollView.xcodeproj */,
 				81C333FE5AC14960BF66A38C /* RNSyanImagePicker.xcodeproj */,
+				8FA3FDAA01374175B40F65DB /* RNShare.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1191,6 +1212,10 @@
 					ProjectRef = 161EF065143440FD8FC8B879 /* RNReanimated.xcodeproj */;
 				},
 				{
+					ProductGroup = 4403BEBD22D59CE50000DB4E /* Products */;
+					ProjectRef = 8FA3FDAA01374175B40F65DB /* RNShare.xcodeproj */;
+				},
+				{
 					ProductGroup = 4452767922D45F5F00C3FD9D /* Products */;
 					ProjectRef = AF0C9C630513430DB79CCBF8 /* RNSpringScrollView.xcodeproj */;
 				},
@@ -1408,6 +1433,13 @@
 			fileType = archive.ar;
 			path = libcxxreact.a;
 			remoteRef = 3DAD3EAA1DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4403BEC122D59CE50000DB4E /* libRNShare.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNShare.a;
+			remoteRef = 4403BEC022D59CE50000DB4E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		441E815922AFFFE100A53D82 /* libRNCWebView.a */ = {
@@ -1756,12 +1788,14 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
 				INFOPLIST_FILE = didaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1799,12 +1833,14 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
 				INFOPLIST_FILE = didaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1845,6 +1881,7 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
 				INFOPLIST_FILE = dida/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1876,6 +1913,7 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
 				INFOPLIST_FILE = dida/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1912,11 +1950,13 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
 				INFOPLIST_FILE = "dida-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1963,11 +2003,13 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
 				INFOPLIST_FILE = "dida-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -2013,11 +2055,13 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
 				INFOPLIST_FILE = "dida-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -2063,11 +2107,13 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
 				INFOPLIST_FILE = "dida-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",

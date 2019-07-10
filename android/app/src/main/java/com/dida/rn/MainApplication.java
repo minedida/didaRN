@@ -3,6 +3,7 @@ package com.dida.rn;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import cl.json.RNSharePackage;
 import com.syanpicker.RNSyanImagePickerPackage;
 import com.aakashns.reactnativedialogs.ReactNativeDialogsPackage;
 import com.bolan9999.SpringScrollViewPackage;
@@ -23,8 +24,9 @@ import com.wix.autogrowtextinput.AutoGrowTextInputPackage;
 
 import java.util.Arrays;
 import java.util.List;
+import cl.json.ShareApplication;
 
-public class MainApplication extends Application implements ReactApplication {
+public class MainApplication extends Application implements ReactApplication, ShareApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
@@ -36,6 +38,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNSharePackage(),
           new RNSyanImagePickerPackage(),
           new ReactNativeDialogsPackage(),
           new SpringScrollViewPackage(),
@@ -68,4 +71,10 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
   }
+
+  @Override
+   public String getFileProviderAuthority() {
+      return BuildConfig.APPLICATION_ID + ".provider";
+   }
+
 }

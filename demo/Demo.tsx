@@ -31,6 +31,10 @@ import NativeMaterialDialog from './material-dialog/NativeMaterialDialog'
 import SyanImagePicker from './image-picker/SyanImagePicker'
 // @ts-ignore
 import OfflineDemo from './offline/OfflineDemo'
+// @ts-ignore
+import RNShareDemo from './Share/RNShareDemo'
+// @ts-ignore
+import RNCShareDemo from './Share/RNCShareDemo'
 
 
 class Demo extends React.Component {
@@ -40,7 +44,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <OfflineDemo/>
+    return <RNCShareDemo/>
   }
 }
 
