@@ -74,7 +74,7 @@ public class MainApplication extends Application implements ReactApplication, Sh
 
   @Override
    public String getFileProviderAuthority() {
-      return BuildConfig.APPLICATION_ID + ".provider";
+      return BuildConfig.APPLICATION_ID + ".share.provider";
    }
 
 }

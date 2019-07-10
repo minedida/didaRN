@@ -113,6 +113,7 @@ export default class SyanImagePicker extends Component<{}> {
 
   handleLaunchCamera = async () => {
     await this.requestPermission()
+
     SYImagePicker.openCamera({isCrop: true, showCropCircle: true, showCropFrame: false}, (err, photos) => {
       console.log(err, photos);
       if (!err) {
