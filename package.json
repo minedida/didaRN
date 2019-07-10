@@ -51,6 +51,7 @@
     "react-native-splash-screen": "^3.2.0",
     "react-native-spring-scrollview": "^2.0.22",
     "react-native-swipeable": "^0.6.0",
+    "react-native-syan-image-picker": "^0.3.6",
     "react-native-tab-view": "2.0.1",
     "react-native-typography": "^1.4.0",
     "react-native-vector-icons": "^6.4.2",

@@ -125,3 +125,8 @@ Roboto.ttf
 - 修改bundle identifier，直接在info.plist文件中修改，将这里的动态参数自己写死即可
 ### android 
 - android项目改名就非常简单
+
+
+## 打包
+- Android： 在[命令行中生成签名文件](https://coderwall.com/p/r09hoq/android-generate-release-debug-keystores)
+- `keytool -genkey -v -keystore `${my-key.keystore}` -alias `${alias_name}` -keyalg RSA -keysize 2048 -validity 10000`

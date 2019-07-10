@@ -6001,6 +6001,11 @@ react-native-swipeable@^0.6.0:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-syan-image-picker@^0.3.6:
+  version "0.3.6"
+  resolved "https://registry.npm.taobao.org/react-native-syan-image-picker/download/react-native-syan-image-picker-0.3.6.tgz#80231740af0a4baed834b54792dbd4d326b0243e"
+  integrity sha1-gCMXQK8KS67YNLVHktvU0yawJD4=
+
 react-native-tab-view@2.0.1:
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/react-native-tab-view/download/react-native-tab-view-2.0.1.tgz#67ad94be00d751f35367838bb7b089361e58af5d"

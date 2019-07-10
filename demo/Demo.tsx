@@ -27,6 +27,8 @@ import RecycleTestComponent from './recyclerlistview/RecycleTestComponent'
 import StickySample from './recyclerlistview/StickySample'
 // @ts-ignore
 import NativeMaterialDialog from './material-dialog/NativeMaterialDialog'
+// @ts-ignore
+import SyanImagePicker from './image-picker/SyanImagePicker'
 
 
 class Demo extends React.Component {
@@ -36,7 +38,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <Header/>
+    return <SyanImagePicker/>
   }
 }
 

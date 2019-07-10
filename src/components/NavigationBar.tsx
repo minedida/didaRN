@@ -109,12 +109,12 @@ class NavigationBar extends PureComponent<Props> {
       {
         leftButton !== undefined ? leftButton :
           <Icon
+            largeTouchArea
             type={isAndroid ? 'Feather' : 'Ionicons'}
             name={isAndroid ? 'arrow-left' : 'ios-arrow-back'}
             size={isAndroid ? 24 : 26}
             color={this.props.navBarContentColor}
-            onPress={this.props.onBackPress ? this.props.onBackPress : goBack}
-            largeTouchArea/>
+            onPress={this.props.onBackPress ? this.props.onBackPress : goBack}/>
       }
 
     </View>

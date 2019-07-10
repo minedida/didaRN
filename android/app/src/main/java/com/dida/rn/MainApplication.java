@@ -3,6 +3,7 @@ package com.dida.rn;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.syanpicker.RNSyanImagePickerPackage;
 import com.aakashns.reactnativedialogs.ReactNativeDialogsPackage;
 import com.bolan9999.SpringScrollViewPackage;
 import com.cmcewen.blurview.BlurViewPackage;
@@ -35,6 +36,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+          new RNSyanImagePickerPackage(),
           new ReactNativeDialogsPackage(),
           new SpringScrollViewPackage(),
           new BlurViewPackage(),

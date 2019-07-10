@@ -1,6 +1,6 @@
 import {AppRegistry, YellowBox} from 'react-native';
 import App from './src/App';
-import Demo from './demo/Demo'
+// import Demo from './demo/Demo'
 import {name as appName} from './app.json';
 
 if (!__DEV__) {

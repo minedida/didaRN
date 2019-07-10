@@ -2,6 +2,10 @@
   package="com.dida.rn">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--  react-native-syan-image-picker需要的  -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
       android:name=".MainApplication"
