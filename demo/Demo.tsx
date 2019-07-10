@@ -29,6 +29,8 @@ import StickySample from './recyclerlistview/StickySample'
 import NativeMaterialDialog from './material-dialog/NativeMaterialDialog'
 // @ts-ignore
 import SyanImagePicker from './image-picker/SyanImagePicker'
+// @ts-ignore
+import OfflineDemo from './offline/OfflineDemo'
 
 
 class Demo extends React.Component {
@@ -38,7 +40,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <SyanImagePicker/>
+    return <OfflineDemo/>
   }
 }
 

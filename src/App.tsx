@@ -5,12 +5,13 @@ import { Provider as PaperProvider } from 'react-native-paper';
 import stores from './store'
 import AppNavigatorCmp from "./navigation/AppNavigatorCmp";
 import RootView from "./containers/RootView";
+import { withAppInit } from "./helper/hoc";
 
 // how to type-safe inject store? https://github.com/mobxjs/mobx/issues/1778
 // how to detect a store change? https://mobx.js.org/refguide/observe.html#observe
 
 
-@observer
+@observer @withAppInit
 export default class App extends Component<any> {
   constructor(props: any) {
     super(props)

@@ -2,6 +2,7 @@ import { action, computed, observable, observe } from 'mobx'
 import { Theme } from 'react-native-paper'
 import {TodoTab, CalendarTab, SearchTab, SettingTab, TomatoTab, ClockinTab} from '../containers'
 import { theme } from "../theme";
+import { Toast } from "../components";
 
 
 class AppStore {
@@ -35,6 +36,7 @@ class AppStore {
   ]
   @observable appTheme: Theme = theme
   @observable currentScreen: string = ''
+  @observable isNetworkConnected: boolean = true
 
   // {[index: string]: any} 动态索引签名
   @computed get tabMap(): { [index: string]: any } {
@@ -70,6 +72,13 @@ class AppStore {
   @action.bound
   setFabOpen(visible: boolean) {
     this.fabOpen = visible
+    return this
+  }
+
+  @action.bound
+  setNetworkConnected(isConnected: boolean) {
+    Toast.show(`isConnected:${isConnected}`)
+    this.isNetworkConnected = isConnected
     return this
   }
 
