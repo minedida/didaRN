@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 import { List } from "react-native-paper";
 import { material } from 'react-native-typography'
-import { ButtonContainer, NavigationBar, Space, Icon } from "../../components";
+import { ButtonContainer, NavigationBar, Space, Icon, Toast } from "../../components";
 import { d, t } from "../../helper/utils/ScreenUtil";
 import { inject, observer } from "mobx-react";
 import { AppStore } from "../../store/AppStore";
@@ -119,15 +119,43 @@ type Props = {
 @inject('app')
 @observer
 class ThemeSetting extends React.Component<Props> {
+  constructor(props) {
+    super(props)
+    this.onItemPress = this.onItemPress.bind(this)
+  }
+
+  onItemPress(type: string, value: any) {
+    const activePrimaryColor = this.props.app!.appTheme!.colors!.primary
+
+    if (type === 'solid-color') {
+      if (value.color === activePrimaryColor) {
+        return;
+      }
+      if (value.clocked) {
+        Toast.show('会员专享，请充值');
+        return;
+      }
+      this.props.app.changeThemeColor(value.color);
+      Toast.show(`已为你换上${value.title}主题`)
+    }
+  }
 
   render() {
+    const activePrimaryColor = this.props.app!.appTheme!.colors!.primary
+
     return <View style={styles.container}>
       <NavigationBar title={'主题'}/>
-      <List.Subheader>
-        纯色主题</List.Subheader>
 
+      <List.Subheader>纯色主题</List.Subheader>
       <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-        {configs.map(v => <SolidColorItem key={v.title.toString()} item={v}/>)}
+        {
+          configs.map(v =>
+            <SolidColorItem
+              key={v.title.toString()}
+              isActive={v.color === activePrimaryColor}
+              item={v} onItemPress={this.onItemPress}/>
+            )
+        }
       </View>
     </View>
   }
@@ -135,35 +163,28 @@ class ThemeSetting extends React.Component<Props> {
 
 type ISolidColorItemProps = {
   item: any,
-  app?: AppStore
+  onItemPress: (type: string, value: any) => void ,
+  isActive: boolean
 }
 
-@inject('app')
-@observer
 class SolidColorItem extends React.Component<ISolidColorItemProps> {
-  onItemPress(item: any) {
-    if (item.clocked) {
-      alert('会员专享，请充值')
-      return
-    }
-    this.props.app!.changeThemeColor(item.color);
-    alert(`已为你换上${item.title}主题`)
+
+  shouldComponentUpdate(nextProps: Readonly<ISolidColorItemProps>): boolean {
+    return nextProps.isActive !== this.props.isActive
   }
 
   renderCheckView() {
     const { item: { color} } = this.props
-    const activePrimaryColor = this.props.app!.appTheme!.colors!.primary
-    return color === activePrimaryColor &&
-      <View style={styles.checkView}>
-        <Icon type={'Entypo'} name={'check'} size={t(12)} color={color}/>
-      </View>
+    return <View style={styles.checkView}>
+      <Icon type={'Entypo'} name={'check'} size={t(12)} color={color}/>
+    </View>
   }
 
   renderLockView() {
-    const { item: { clocked, color } } = this.props
+    const { item: { color } } = this.props
     const isWhite = color === '#f0f0f0'
     const viewStyle = [styles.lockView, {backgroundColor: isWhite ? '#fff' : styles.lockView.backgroundColor}] as any
-    return clocked && <View style={viewStyle}>
+    return <View style={viewStyle}>
       <Icon type={'FontAwesome5'} name={'lock'} size={t(16)} color={'#525252'}/>
     </View>
   }
@@ -172,15 +193,18 @@ class SolidColorItem extends React.Component<ISolidColorItemProps> {
     const {
       item: {
         color,
-        title
-      }
+        title,
+        clocked,
+        type
+      },
+      isActive,
+      onItemPress
     } = this.props
     return (
-      <ButtonContainer style={styles.itemView}
-                       onPress={() => this.onItemPress(this.props.item)}>
+      <ButtonContainer style={styles.itemView} onPress={() => onItemPress(type, this.props.item)}>
         <View style={[styles.colorsView, { backgroundColor: color }]}>
-          {this.renderCheckView()}
-          {this.renderLockView()}
+          {isActive && this.renderCheckView()}
+          {clocked && this.renderLockView()}
         </View>
         <Space height={d(10)}/>
         <Text style={[material.body1, { color: '#989898' }]}>{title}</Text>

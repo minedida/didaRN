@@ -6,9 +6,19 @@ import SplashScreen from 'react-native-splash-screen'
 type Props = {
   navigation: NavigationPops
 }
+function Splash(props: Props) {
+  function goNext(routeName: string) {
+    props.navigation.navigate(routeName)
+  }
+  React.useEffect(() =>
+  {
+    Platform.OS === 'android' && SplashScreen.hide();
+    goNext('App')
+  })
+  return null
+}
 
-class Splash extends React.PureComponent<Props, {}> {
-  timer: any
+/*class Splash extends React.PureComponent<Props, {}> {
 
   constructor(props) {
     super(props)
@@ -27,6 +37,6 @@ class Splash extends React.PureComponent<Props, {}> {
   render() {
     return null
   }
-}
+}*/
 
 export default Splash

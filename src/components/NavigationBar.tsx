@@ -122,7 +122,7 @@ class NavigationBar extends PureComponent<Props> {
 
   getTitleView(title: any) {
     const { titleView, leftButton } = this.props
-    const marginLeft = isAndroid ? (leftButton === null ? d(15) : d(0)) : 0
+    const marginLeft = leftButton === null ? d(15) : d(0)
     return (
       <View style={{ marginLeft, height: '100%', justifyContent: 'center', flex: 1 }}>
         {

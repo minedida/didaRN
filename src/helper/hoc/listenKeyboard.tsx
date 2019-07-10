@@ -3,7 +3,7 @@ import { Platform, Keyboard, LayoutAnimation, UIManager } from 'react-native'
 
 // 另一个优雅的处理键盘事件的方法：https://codeburst.io/react-native-keyboard-covering-inputs-72a9d3072689
 
-export default function listenKeyboardHOC(WrappedComponent: any) {
+export default function listenKeyboard(WrappedComponent: any) {
   return class ListenKeyboardHOC extends React.PureComponent {
     keyboardWillShowSub: any
     keyboardWillHideSub: any

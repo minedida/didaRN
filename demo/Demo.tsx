@@ -35,6 +35,12 @@ import OfflineDemo from './offline/OfflineDemo'
 import RNShareDemo from './Share/RNShareDemo'
 // @ts-ignore
 import RNCShareDemo from './Share/RNCShareDemo'
+// @ts-ignore
+import Count1 from './hooks/Count1'
+// @ts-ignore
+import Count2 from './hooks/Count2'
+// @ts-ignore
+import Count3 from './hooks/Count3'
 
 
 class Demo extends React.Component {
@@ -44,7 +50,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <RNCShareDemo/>
+    return <Count2/>
   }
 }
 

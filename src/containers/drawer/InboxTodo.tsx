@@ -6,7 +6,6 @@ import { t } from "../../helper/utils/ScreenUtil";
 import { DrawerStore } from "../../store/DrawerStore";
 import { TodoStore } from "../../store/TodoStore";
 
-
 const styles = StyleSheet.create({
   anchorView: {
     backgroundColor: 'transparent',
@@ -108,3 +107,4 @@ class InboxTodo extends React.Component<Props, any> {
 }
 
 export default InboxTodo
+// export default listenKeyboard(InboxTodo)
