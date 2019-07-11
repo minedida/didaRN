@@ -2,7 +2,6 @@ import React from 'react'
 import { UIManager, LayoutAnimation } from 'react-native'
 import { Divider } from 'react-native-paper'
 import SortableList from '../../libs/react-native-sortable-list/src/SortableList';
-import SwipeabTodoItem from "./SwipeabTodoItem";
 import { TodoStore } from "../../store/TodoStore";
 import { inject, observer } from "mobx-react";
 import { TodoModel } from "../../model";
@@ -59,7 +58,7 @@ class TodoList extends React.Component<Props, { headerClick: boolean }> {
     return this.props.renderHeader && this.props.renderHeader()
   }
 
-  /*renderItem(datas: {key: number, data: TodoModel, disabled: boolean, active: boolean, index: number}) {
+  renderItem(datas: {key: number, data: TodoModel, disabled: boolean, active: boolean, index: number}) {
     const { data, ...rest } = datas
     const adb = { ...rest, item: datas.data }
     return <Row {...adb} onItemCheck={this.onItemCheck}/>;
@@ -78,22 +77,7 @@ class TodoList extends React.Component<Props, { headerClick: boolean }> {
         renderSeparator={this.renderSeparator}
         renderRow={this.renderItem}/>
     )
-  }*/
-  renderItem(datas: {item: TodoModel, index: number}) {
-    return <Row {...datas.item} onItemCheck={this.onItemCheck}/>;
   }
-  renderList() {
-      const { data } = this.props
-      const {FlatList} = require('react-native')
-      const ITEM_HEIGHT = 60
-      return (
-        <FlatList data={data} renderItem={this.renderItem} extraData={this.props}
-                  ItemSeparatorComponent={this.renderSeparator}
-                  style={{ height:  data.length * ITEM_HEIGHT }}
-                  keyExtractor={(item, index) => `${item.toString()}--${index}`}
-        />
-      )
-    }
   onActivateRow() {
     this.props.todo!.todoItemSortableEnable = true
   }

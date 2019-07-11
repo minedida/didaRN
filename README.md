@@ -137,3 +137,7 @@ Roboto.ttf
 
 ## todolist
 - react-native-sortable-list存在的问题，item状态刷新时，Item.tsx的`shouldComponentUpdate()`方法不会调用，造成性能浪费
+### 改造react-native-sortable-list
+- 1.将SortableList`props.data`直接传递给child view，不再用自己的state存储
+- 2.完整地注释掉`componentWillReceiveProps()` 和 `componentDidUpdate()`。此时自己的Row.tsx组件中就可以正常回调`shouldComponentUpdate()`方法，控制刷新时机，提升性能但是此时发现只有第一次拖动列表效果正常，第二次开始拖动列表失效
+- 3.在`_onReleaseRow()`方法中添加`this._onUpdateLayouts();`。然后一切正常

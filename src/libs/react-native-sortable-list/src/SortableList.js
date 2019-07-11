@@ -98,49 +98,6 @@ export default class SortableList extends Component {
     this._onUpdateLayouts();
   }
 
-  componentWillReceiveProps(nextProps) {
-    const {data, order} = this.state;
-    let {data: nextData, order: nextOrder} = nextProps;
-
-    if (data && nextData && !shallowEqual(data, nextData)) {
-      nextOrder = nextOrder || Object.keys(nextData)
-      uniqueRowKey.id++;
-      this._rowsLayouts = {};
-      nextOrder.forEach((key) => {
-        this._rowsLayouts[key] = new Promise((resolve) => {
-          this._resolveRowLayout[key] = resolve;
-        });
-      });
-
-      if (Object.keys(nextData).length > Object.keys(data).length) {
-        this.setState({
-          animated: false,
-          data: nextData,
-          containerLayout: null,
-          rowsLayouts: null,
-          order: nextOrder
-        });
-      } else {
-        this.setState({
-          data: nextData,
-          order: nextOrder
-        });
-      }
-
-    } else if (order && nextOrder && !shallowEqual(order, nextOrder)) {
-      this.setState({order: nextOrder});
-    }
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    const {data} = this.state;
-    const {data: prevData} = prevState;
-
-    if (data && prevData && !shallowEqual(data, prevData)) {
-      this._onUpdateLayouts();
-    }
-  }
-
   scrollBy({dx = 0, dy = 0, animated = false}) {
     if (this.props.horizontal) {
       this._contentOffset.x += dx;
@@ -232,8 +189,8 @@ export default class SortableList extends Component {
   }
 
   _renderRows() {
-    const {horizontal, rowActivationTime, sortingEnabled, renderRow, renderSeparator} = this.props;
-    const {animated, order, data, activeRowKey, releasedRowKey, rowsLayouts} = this.state;
+    const {horizontal, rowActivationTime, sortingEnabled, renderRow, renderSeparator, data} = this.props;
+    const {animated, order, activeRowKey, releasedRowKey, rowsLayouts} = this.state;
 
 
     let nextX = 0;
@@ -592,6 +549,9 @@ export default class SortableList extends Component {
   };
 
   _onReleaseRow = (rowKey) => {
+
+    this._onUpdateLayouts();
+
     this._stopAutoScroll();
     this.setState(({activeRowKey}) => ({
       activeRowKey: null,

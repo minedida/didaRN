@@ -7,6 +7,7 @@ import { DrawerStore } from "../../store/DrawerStore";
 import { TodoStore } from "../../store/TodoStore";
 import { translate } from "../../i18n";
 import TodoList from "../../components/todo/TodoList";
+import { toJS } from "mobx";
 
 const styles = StyleSheet.create({
   anchorView: {
@@ -101,7 +102,7 @@ class InboxTodo extends React.Component<Props, any> {
         <NavigationBar title={translate('inbox')} leftButton={this.renderLeftBtn()}
                        rightButton={this.renderRightBtn()}/>
 
-        <TodoList data={todos}
+        <TodoList data={toJS(todos)}
                   renderHeader={() => <InboxTodoHeader/>}/>
       </View>
     )

@@ -5,7 +5,6 @@ import { d } from "../../helper/utils/ScreenUtil";
 import { material } from "react-native-typography";
 import { TodoStore } from "../../store/TodoStore";
 import { TodoModel } from "../../model";
-import { prettyLog } from "../../helper/utils/Utils";
 
 export const ITEM_HEIGHT = d(66)
 
@@ -30,7 +29,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
 
     elevation: 4,
-    zIndex:4
+    zIndex: 4
   }
 })
 
@@ -42,14 +41,27 @@ type RowProps = {
   todo?: TodoStore
   onItemCheck: (id: number) => void
 }
+
 // SortableList-row
-/*export class Row extends React.PureComponent<RowProps>{
+export class Row extends React.Component<RowProps> {
+
+  shouldComponentUpdate(nextProps: Readonly<RowProps>): boolean {
+    console.log(`Row-render-shouldComponentUpdate`)
+
+    if (JSON.stringify(nextProps) !== JSON.stringify(this.props)) {
+      return true
+    }
+    if (this.props.item.checked !== nextProps.item.checked) {
+      return true;
+    }
+    return false
+  }
 
   render() {
     console.log(`Row-render`)
 
     // todo 去除Checkbox的padding
-    const { item , active} = this.props
+    const { item, active } = this.props
     const checkboxStatus = item.checked ? 'checked' : 'unchecked'
     const shadowStyle = active ? styles.shadow : {};
     return (
@@ -67,39 +79,8 @@ type RowProps = {
     )
   }
 }
-export default Row*/
 
-export default class Row extends React.Component<TodoModel>{
-
-  shouldComponentUpdate(nextProps: Readonly<TodoModel>): boolean {
-    prettyLog(this.props, 'Row-this.props:')
-    prettyLog(nextProps, 'Row-nextProps:')
-
-    if (nextProps.checked !== this.props.checked) {
-      return true
-    }
-    return false
-  }
-
-  render() {
-    console.log(`Row-render`)
-    const {checked, id, title} = this.props
-    const checkboxStatus = checked ? 'checked' : 'unchecked'
-    return (
-      <View style={[styles.container]}>
-        <Space height={d(6)}/>
-        <View style={styles.topView}>
-          <Checkbox status={checkboxStatus}
-            // onPress={() => this.props.todo!.checkTodo(item.id)}
-                    onPress={() => this.props.onItemCheck(id)}
-          />
-          <Text numberOfLines={1} style={material.body1}>{title}</Text>
-        </View>
-        <Text numberOfLines={1} style={[material.body1, { paddingLeft: d(34), includeFontPadding: false }]}>6月29日</Text>
-      </View>
-    )
-  }
-}
+export default Row
 
 /**
  这里的row有两种高度
