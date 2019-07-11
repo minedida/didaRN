@@ -5,6 +5,7 @@ import { NavigationBar, CombineTodoList, Tips, Icon, Toast, ElevationSpace } fro
 import { t } from "../../helper/utils/ScreenUtil";
 import { DrawerStore } from "../../store/DrawerStore";
 import { TodoStore } from "../../store/TodoStore";
+import { translate } from "../../i18n";
 
 const styles = StyleSheet.create({
   anchorView: {
@@ -90,7 +91,7 @@ class InboxTodo extends React.Component<Props, any> {
     const { todo: { checkedList, uncheckedList } } = this.props
     return (
       <View style={{ flex: 1 }}>
-        <NavigationBar title={'收集箱'} leftButton={this.renderLeftBtn()}
+        <NavigationBar title={translate('inbox')} leftButton={this.renderLeftBtn()}
                        rightButton={this.renderRightBtn()}/>
 
         <View style={{ flex: 1, backgroundColor: '#fff' }}>

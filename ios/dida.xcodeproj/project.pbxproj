@@ -75,6 +75,7 @@
 		909E1E24CF824BD5BE0C6606 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1298256B8BAA4343A2FC2278 /* FontAwesome5_Regular.ttf */; };
 		A1DF1D8E0EF6499A87A96A98 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C00E79111FAB46A390B359A1 /* Foundation.ttf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		BE753697F5744F2995C2B91E /* libRNLocalize.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB2DEF1A78B470CBF1A27D2 /* libRNLocalize.a */; };
 		C7DFB7E4D3094FC7BEA8245C /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49734E6709F44BB49713F7A7 /* MaterialCommunityIcons.ttf */; };
 		CD4186291E784962A05EFF72 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AE0422B5264A5B9A10A506 /* libRNVectorIcons.a */; };
 		CF7B8F11EEB34F3B947A1CE3 /* libRNBlur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC28C0852C654426A32A23D9 /* libRNBlur.a */; };
@@ -83,6 +84,7 @@
 		D9B7C83A0CD94514B7A3DD22 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2564A36A5C0C4BDC9A6D9AC3 /* Octicons.ttf */; };
 		DE464B9C2E84479EA5786107 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47B435133DF84B4D9CD6EC7C /* MaterialIcons.ttf */; };
 		DFC446A0A11F473D990CF961 /* libLRDRCTSimpleToast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0834E8A11B40C097DB88C4 /* libLRDRCTSimpleToast.a */; };
+		ED09B20628BA41EE92757E3F /* libRNLocalize-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E7508E41314E988A9A49A0 /* libRNLocalize-tvOS.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
@@ -438,6 +440,20 @@
 			remoteGlobalIDString = A39873CE1EA65EE60051E01A;
 			remoteInfo = "RNVectorIcons-tvOS";
 		};
+		4499CBFB22D7074800B13B82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8C6A3E1024F4B1A96CBF8EF /* RNLocalize.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNLocalize;
+		};
+		4499CBFD22D7074800B13B82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8C6A3E1024F4B1A96CBF8EF /* RNLocalize.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28471D9B043800D4039D;
+			remoteInfo = "RNLocalize-tvOS";
+		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -549,13 +565,16 @@
 		BC5F46FCDD2D47E5A63786A7 /* libRNSpringScrollView.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSpringScrollView.a; sourceTree = "<group>"; };
 		C00E79111FAB46A390B359A1 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		C488496AA1834AF28926AAA1 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		C7E7508E41314E988A9A49A0 /* libRNLocalize-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNLocalize-tvOS.a"; sourceTree = "<group>"; };
 		CACCE1CC35E24928BAB7930A /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		CEB2DEF1A78B470CBF1A27D2 /* libRNLocalize.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNLocalize.a; sourceTree = "<group>"; };
 		DA769EDF604242EBA5948846 /* libRNReanimated-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNReanimated-tvOS.a"; sourceTree = "<group>"; };
 		E1AAF807656D4E939DD83EA8 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F0CA9FE1A81C4242A69A330B /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		F64FAB0F6D4F4C8A93D82758 /* libRNCWebView.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNCWebView.a; sourceTree = "<group>"; };
+		F8C6A3E1024F4B1A96CBF8EF /* RNLocalize.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNLocalize.xcodeproj; path = "../node_modules/react-native-localize/ios/RNLocalize.xcodeproj"; sourceTree = "<group>"; };
 		F9867B67C51A47DB929AE976 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		FC28C0852C654426A32A23D9 /* libRNBlur.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNBlur.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -598,6 +617,7 @@
 				0BB2A89CA2004F458FF493C3 /* libRNSpringScrollView.a in Frameworks */,
 				01A614A0D55646DB8663CC7B /* libRNSyanImagePicker.a in Frameworks */,
 				47981E7BACA14BB6A45303DB /* libRNShare.a in Frameworks */,
+				BE753697F5744F2995C2B91E /* libRNLocalize.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +637,7 @@
 				413BFE35672F462DBC7052AE /* libRNVectorIcons-tvOS.a in Frameworks */,
 				7948B59B9D554D68AAEE7F40 /* libRNReanimated-tvOS.a in Frameworks */,
 				67481E6E4AB540ECA0090251 /* libRNGestureHandler-tvOS.a in Frameworks */,
+				ED09B20628BA41EE92757E3F /* libRNLocalize-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -885,6 +906,8 @@
 				BC5F46FCDD2D47E5A63786A7 /* libRNSpringScrollView.a */,
 				AC56A0E2350D4365B35E4B3A /* libRNSyanImagePicker.a */,
 				56E3E5D45C5D48A4B85FB725 /* libRNShare.a */,
+				CEB2DEF1A78B470CBF1A27D2 /* libRNLocalize.a */,
+				C7E7508E41314E988A9A49A0 /* libRNLocalize-tvOS.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -894,6 +917,15 @@
 			children = (
 				448955942297D8CE001FC50E /* libRNVectorIcons.a */,
 				448955962297D8CE001FC50E /* libRNVectorIcons-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4499CBF722D7074800B13B82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4499CBFC22D7074800B13B82 /* libRNLocalize.a */,
+				4499CBFE22D7074800B13B82 /* libRNLocalize-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -964,6 +996,7 @@
 				AF0C9C630513430DB79CCBF8 /* RNSpringScrollView.xcodeproj */,
 				81C333FE5AC14960BF66A38C /* RNSyanImagePicker.xcodeproj */,
 				8FA3FDAA01374175B40F65DB /* RNShare.xcodeproj */,
+				F8C6A3E1024F4B1A96CBF8EF /* RNLocalize.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1206,6 +1239,10 @@
 				{
 					ProductGroup = 445F130A22BE69E600873401 /* Products */;
 					ProjectRef = B2E8D721B91E4E9F8FE1869D /* RNGestureHandler.xcodeproj */;
+				},
+				{
+					ProductGroup = 4499CBF722D7074800B13B82 /* Products */;
+					ProjectRef = F8C6A3E1024F4B1A96CBF8EF /* RNLocalize.xcodeproj */;
 				},
 				{
 					ProductGroup = 445F130822BE69E600873401 /* Products */;
@@ -1575,6 +1612,20 @@
 			remoteRef = 448955952297D8CE001FC50E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		4499CBFC22D7074800B13B82 /* libRNLocalize.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNLocalize.a;
+			remoteRef = 4499CBFB22D7074800B13B82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4499CBFE22D7074800B13B82 /* libRNLocalize-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNLocalize-tvOS.a";
+			remoteRef = 4499CBFD22D7074800B13B82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1789,12 +1840,15 @@
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-localize/ios",
 				);
 				INFOPLIST_FILE = didaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1834,12 +1888,15 @@
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-localize/ios",
 				);
 				INFOPLIST_FILE = didaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1882,6 +1939,7 @@
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-localize/ios",
 				);
 				INFOPLIST_FILE = dida/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1914,6 +1972,7 @@
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-localize/ios",
 				);
 				INFOPLIST_FILE = dida/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1951,11 +2010,14 @@
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-localize/ios",
 				);
 				INFOPLIST_FILE = "dida-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -2004,11 +2066,14 @@
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-localize/ios",
 				);
 				INFOPLIST_FILE = "dida-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -2056,11 +2121,14 @@
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-localize/ios",
 				);
 				INFOPLIST_FILE = "dida-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -2108,11 +2176,14 @@
 					"$(SRCROOT)/../node_modules/react-native-spring-scrollview/ios/SpringScrollView",
 					"$(SRCROOT)/../node_modules/react-native-syan-image-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-localize/ios",
 				);
 				INFOPLIST_FILE = "dida-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",

@@ -4,6 +4,8 @@ import {TodoTab, CalendarTab, SearchTab, SettingTab, TomatoTab, ClockinTab} from
 import { theme } from "../theme";
 import { Toast } from "../components";
 import { AppTabBarModel } from "../model";
+import { translate } from "../i18n";
+
 
 
 class AppStore {
@@ -38,6 +40,7 @@ class AppStore {
   @observable appTheme: Theme = theme
   @observable currentScreen: string = ''
   @observable isNetworkConnected: boolean = true
+  @observable languageTag: string = 'zh'
 
   // {[index: string]: any} 动态索引签名
   @computed get tabMap(): { [index: string]: any } {
@@ -77,8 +80,14 @@ class AppStore {
   }
 
   @action.bound
+  setLanguageTag(languageTag: string) {
+    this.languageTag = languageTag
+    return this
+  }
+
+  @action.bound
   setNetworkConnected(isConnected: boolean) {
-    Toast.show(`isConnected:${isConnected}`)
+    Toast.show(`${translate('hello')}:${isConnected}`)
     this.isNetworkConnected = isConnected
     return this
   }

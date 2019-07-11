@@ -6,6 +6,7 @@ import com.aakashns.reactnativedialogs.ReactNativeDialogsPackage;
 import com.bolan9999.SpringScrollViewPackage;
 import com.cmcewen.blurview.BlurViewPackage;
 import com.facebook.react.ReactApplication;
+import com.reactcommunity.rnlocalize.RNLocalizePackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -43,6 +44,7 @@ public class MainApplication extends Application implements ReactApplication, Sh
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage()
+                    , new RNLocalizePackage()
                     , new RNSharePackage()
                     //, new RNSyanImagePickerPackage()
                     , new ReactNativeDialogsPackage()
