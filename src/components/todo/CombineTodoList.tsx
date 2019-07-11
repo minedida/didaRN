@@ -20,7 +20,7 @@ class CombineTodoList extends React.Component<any> {
     return (
       <View style={{ flex: 1 }}>
         <TodoList {...this.props} data={this.props.uncheckedList}/>
-        <TodoList {...this.props} data={this.props.checkedList} headerTxt={'已完成'}/>
+        {/*<TodoList {...this.props} data={this.props.checkedList} headerTxt={'已完成'}/>*/}
       </View>
     )
     // return <TodoList data={uncheckedList}/>

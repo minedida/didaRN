@@ -50,7 +50,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <Count3/>
+    return <SortableListViewExample/>
   }
 }
 

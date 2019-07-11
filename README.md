@@ -134,3 +134,6 @@ Roboto.ttf
 ## 自动版本号(git)
 - [iOS](https://a1049145827.github.io/2018/01/09/iOS%E5%BC%80%E5%8F%91-Archive%E6%97%B6%E8%87%AA%E5%8A%A8%E5%A2%9E%E5%8A%A0build%E7%89%88%E6%9C%AC/)
 - android 简单
+
+## todolist
+- react-native-sortable-list存在的问题，item状态刷新时，Item.tsx的`shouldComponentUpdate()`方法不会调用，造成性能浪费

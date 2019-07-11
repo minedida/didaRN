@@ -1,16 +1,18 @@
 import React from 'react'
-import { View, Text, UIManager, LayoutAnimation } from 'react-native'
-import { material } from "react-native-typography";
+import { UIManager, LayoutAnimation } from 'react-native'
 import { Divider } from 'react-native-paper'
 import SortableList from '../../libs/react-native-sortable-list/src/SortableList';
 import SwipeabTodoItem from "./SwipeabTodoItem";
 import { TodoStore } from "../../store/TodoStore";
 import { inject, observer } from "mobx-react";
+import { TodoModel } from "../../model";
+import Row from "./Row";
 
 type Props = {
   todo?: TodoStore
   data: Array<TodoModel>
   headerTxt?: string,
+  renderHeader?: () => void,
 }
 
 
@@ -35,59 +37,63 @@ class TodoList extends React.Component<Props, { headerClick: boolean }> {
     this.renderSeparator = this.renderSeparator.bind(this)
     this.onReleaseRow = this.onReleaseRow.bind(this)
     this.onActivateRow = this.onActivateRow.bind(this)
+    this.renderHeader = this.renderHeader.bind(this)
+    this.onItemCheck = this.onItemCheck.bind(this)
   }
 
   componentWillUpdate(): void {
     LayoutAnimation.easeInEaseOut()
   }
 
-  /*renderItem(datas:{item: TodoModel, index: number}) {
-    return <SwipeabTodoItem {...datas} />
-  }*/
-  renderItem(datas) {
+  onItemCheck(id: number) {
+    this.props.todo!.checkTodo(id)
+  }
+
+  renderSeparator(index: number) {
+    if (index !== this.props.data.length) {
+      return <Divider/>
+    }
+    return null
+  }
+  renderHeader() {
+    return this.props.renderHeader && this.props.renderHeader()
+  }
+
+  /*renderItem(datas: {key: number, data: TodoModel, disabled: boolean, active: boolean, index: number}) {
     const { data, ...rest } = datas
     const adb = { ...rest, item: datas.data }
-    return <SwipeabTodoItem {...adb}/>
+    return <Row {...adb} onItemCheck={this.onItemCheck}/>;
   }
-
-  renderSeparator() {
-    return <Divider />
-  }
-
-  renderListHeader() {
-    return <Text style={material.title}
-                 onPress={() => this.setState({ headerClick: !this.state.headerClick })}>
-      {this.props.headerTxt}</Text>
-  }
-
-  /*renderList() {
-    const { data } = this.props
-    const {FlatList} = require('react-native')
-    const {ITEM_HEIGHT} = require('./SwipeabTodoItem')
-    return (
-      <FlatList data={data} renderItem={this.renderItem} extraData={this.props}
-                ItemSeparatorComponent={this.renderSeparator}
-                style={{ height: this.state.headerClick ? 0 : data.length * ITEM_HEIGHT }}
-                keyExtractor={(item, index) => `${item.toString()}--${index}`}
-      />
-    )
-  }*/
 
   renderList() {
     // todo 改造为多条目
-    const { data } = this.props
     return (
       <SortableList
-        data={data}
+        // style={{ flex: 1 }}
+        renderHeader={this.renderHeader}
+        data={this.props.data}
         sortingEnabled={true}
-        // style={{ width: Dimensions.get('window').width, height: data.length * ITEM_HEIGHT }}
         onActivateRow={this.onActivateRow}
         onReleaseRow={this.onReleaseRow}
         renderSeparator={this.renderSeparator}
         renderRow={this.renderItem}/>
     )
+  }*/
+  renderItem(datas: {item: TodoModel, index: number}) {
+    return <Row {...datas.item} onItemCheck={this.onItemCheck}/>;
   }
-
+  renderList() {
+      const { data } = this.props
+      const {FlatList} = require('react-native')
+      const ITEM_HEIGHT = 60
+      return (
+        <FlatList data={data} renderItem={this.renderItem} extraData={this.props}
+                  ItemSeparatorComponent={this.renderSeparator}
+                  style={{ height:  data.length * ITEM_HEIGHT }}
+                  keyExtractor={(item, index) => `${item.toString()}--${index}`}
+        />
+      )
+    }
   onActivateRow() {
     this.props.todo!.todoItemSortableEnable = true
   }
@@ -100,12 +106,7 @@ class TodoList extends React.Component<Props, { headerClick: boolean }> {
     const { data } = this.props
     if (data.length === 0)
       return null
-    return (
-      <View>
-        {this.props.headerTxt && this.renderListHeader()}
-        {!this.state.headerClick && this.renderList()}
-      </View>
-    );
+    return this.renderList()
   }
 }
 

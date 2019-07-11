@@ -28,4 +28,4 @@ YellowBox.ignoreWarnings(ignores)
 // todo async-storage、NetInfo
 
 
-AppRegistry.registerComponent(appName, () => Demo);
+AppRegistry.registerComponent(appName, () => App);

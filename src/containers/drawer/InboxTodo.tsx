@@ -1,11 +1,12 @@
 import React, { RefObject } from 'react'
 import { View, Platform, findNodeHandle, UIManager, StyleSheet } from 'react-native'
 import { inject, observer } from "mobx-react";
-import { NavigationBar, CombineTodoList, Tips, Icon, Toast, ElevationSpace } from "../../components/";
+import { NavigationBar, Tips, Icon, Toast, ElevationSpace } from "../../components/";
 import { t } from "../../helper/utils/ScreenUtil";
 import { DrawerStore } from "../../store/DrawerStore";
 import { TodoStore } from "../../store/TodoStore";
 import { translate } from "../../i18n";
+import TodoList from "../../components/todo/TodoList";
 
 const styles = StyleSheet.create({
   anchorView: {
@@ -20,6 +21,12 @@ type Props = {
   todo: TodoStore
 }
 const isAndroid = Platform.OS === 'android'
+const InboxTodoHeader = () => (
+  <View>
+    <ElevationSpace/>
+    <Tips type={'inbox'}/>
+  </View>
+)
 
 // how to pass ref as props: https://stackoverflow.com/questions/37647061/how-do-i-access-refs-of-a-child-component-in-the-parent-component
 
@@ -88,24 +95,17 @@ class InboxTodo extends React.Component<Props, any> {
 
   render() {
     // todo 等到todolist的多条目改造完成后，将todolist的header暴露出来，这里就可以将Tips用作header
-    const { todo: { checkedList, uncheckedList } } = this.props
+    const { todo: { todos } } = this.props
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: '#fff' }}>
         <NavigationBar title={translate('inbox')} leftButton={this.renderLeftBtn()}
                        rightButton={this.renderRightBtn()}/>
 
-        <View style={{ flex: 1, backgroundColor: '#fff' }}>
-          <ElevationSpace/>
-          <Tips type={'inbox'}/>
-          <CombineTodoList
-            checkedList={checkedList}
-            uncheckedList={uncheckedList}/>
-
-        </View>
+        <TodoList data={todos}
+                  renderHeader={() => <InboxTodoHeader/>}/>
       </View>
     )
   }
 }
 
 export default InboxTodo
-// export default listenKeyboard(InboxTodo)

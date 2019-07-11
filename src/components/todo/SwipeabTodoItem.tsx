@@ -101,10 +101,11 @@ class AppleStyleSwipeableRow extends React.Component {
   close = () => {
     this._swipeableRow.close();
   };
+
   render() {
     const { children } = this.props;
     // 当条目为active时，禁用swipeable手势
-    const gestureProps = {enabled: !stores.todo.todoItemSortableEnable} as any
+    const gestureProps = { enabled: !stores.todo.todoItemSortableEnable } as any
     return (
       <NativeSwipeable
         {...gestureProps}
@@ -125,22 +126,25 @@ class JSSwipeableRow extends React.Component {
   onOpen() {
 
   }
+
   onClose() {
 
   }
+
   renderLeft() {
     return (
-      <View style={[styles.leftSwipeItem, {backgroundColor: 'lightskyblue'}]}>
+      <View style={[styles.leftSwipeItem, { backgroundColor: 'lightskyblue' }]}>
         <Text>Pull action</Text>
       </View>
     )
   }
+
   render() {
     const right = [
-      <TouchableOpacity style={[styles.rightSwipeItem, {backgroundColor: 'lightseagreen'}]}>
+      <TouchableOpacity style={[styles.rightSwipeItem, { backgroundColor: 'lightseagreen' }]}>
         <Text>1</Text>
       </TouchableOpacity>,
-      <TouchableOpacity style={[styles.rightSwipeItem, {backgroundColor: 'orchid'}]}>
+      <TouchableOpacity style={[styles.rightSwipeItem, { backgroundColor: 'orchid' }]}>
         <Text>2</Text>
       </TouchableOpacity>
     ]
@@ -157,10 +161,16 @@ class JSSwipeableRow extends React.Component {
   }
 }
 
+// export default (props) => {
+//   return <Row {...props} />;
+// }
+export default function (props: any) {
+  return <Row {...props}/>
+}
 
-
+/*
 export default (props) =>
   <AppleStyleSwipeableRow>
     <Row {...props} />
-  </AppleStyleSwipeableRow>
+  </AppleStyleSwipeableRow>*/
 

@@ -283,7 +283,7 @@ export default class SortableList extends Component {
             active,
             index,
           })}
-          {index !== order.length && renderSeparator && renderSeparator()}
+          {renderSeparator && renderSeparator(index)}
         </Row>
       );
     });

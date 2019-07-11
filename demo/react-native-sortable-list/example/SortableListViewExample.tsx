@@ -52,7 +52,7 @@ class MyComponent extends React.Component {
         order={order}
         onRowMoved={e => {
           order.splice(e.to, 0, order.splice(e.from, 1)[0])
-          this.forceUpdate()
+          // this.forceUpdate()
         }}
         renderRow={row => <RowComponent data={row} />}
       />
