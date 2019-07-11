@@ -144,7 +144,7 @@ class ThemeSetting extends React.Component<Props> {
         Toast.show('会员专享，请充值');
         return;
       }
-      this.props.app.changeThemeColor(value.color);
+      this.props.app.changePrimaryColor(value.color);
       //NativeModules.AndroidTheme.changeTheme(value.key)
       Toast.show(`已为你换上${value.title}主题`)
     }

@@ -1,4 +1,4 @@
-class TodoModel {
+export default class TodoModel {
   id: number
   title: string
   desc?: string

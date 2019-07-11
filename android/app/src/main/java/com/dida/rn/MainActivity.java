@@ -30,8 +30,8 @@ public class MainActivity extends ReactActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         MainApplication application = (MainApplication) getApplication();
-        if (application.theme != 0)
-            setTheme(application.theme);
+        //if (application.theme != 0)
+        //    setTheme(application.theme);
         SplashScreen.show(this, R.style.SplashScreenTheme);
         super.onCreate(savedInstanceState);
     }

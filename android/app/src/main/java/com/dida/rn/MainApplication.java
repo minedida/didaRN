@@ -5,7 +5,6 @@ import android.app.Application;
 import com.aakashns.reactnativedialogs.ReactNativeDialogsPackage;
 import com.bolan9999.SpringScrollViewPackage;
 import com.cmcewen.blurview.BlurViewPackage;
-import com.dida.rn.plugin.theme.ThemePackage;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -29,6 +28,8 @@ import cl.json.RNSharePackage;
 import cl.json.ShareApplication;
 import me.listenzz.modal.TranslucentModalReactPackage;
 
+//import com.dida.rn.plugin.theme.ThemePackage;
+
 public class MainApplication extends Application implements ReactApplication, ShareApplication {
     public int theme = R.style.BlueTheme;
 
@@ -41,22 +42,22 @@ public class MainApplication extends Application implements ReactApplication, Sh
         @Override
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
-                    new MainReactPackage(),
-                    new RNSharePackage(),
-                    new RNSyanImagePickerPackage(),
-                    new ReactNativeDialogsPackage(),
-                    new SpringScrollViewPackage(),
-                    new BlurViewPackage(),
-                    new RNGestureHandlerPackage(),
-                    new ReanimatedPackage(),
-                    new RNCWebViewPackage(),
-                    new TranslucentModalReactPackage(),
-                    new SplashScreenReactPackage(),
-                    new ExtraDimensionsPackage(),
-                    new VectorIconsPackage(),
-                    new KeyboardInputPackage(MainApplication.this),
-                    new AutoGrowTextInputPackage(),
-                    new ThemePackage()
+                    new MainReactPackage()
+                    , new RNSharePackage()
+                    , new RNSyanImagePickerPackage()
+                    , new ReactNativeDialogsPackage()
+                    , new SpringScrollViewPackage()
+                    , new BlurViewPackage()
+                    , new RNGestureHandlerPackage()
+                    , new ReanimatedPackage()
+                    , new RNCWebViewPackage()
+                    , new TranslucentModalReactPackage()
+                    , new SplashScreenReactPackage()
+                    , new ExtraDimensionsPackage()
+                    , new VectorIconsPackage()
+                    , new KeyboardInputPackage(MainApplication.this)
+                    , new AutoGrowTextInputPackage()
+                    //, new ThemePackage()
             );
         }
 

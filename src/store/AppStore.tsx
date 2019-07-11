@@ -3,6 +3,7 @@ import { Theme } from 'react-native-paper'
 import {TodoTab, CalendarTab, SearchTab, SettingTab, TomatoTab, ClockinTab} from '../containers'
 import { theme } from "../theme";
 import { Toast } from "../components";
+import { AppTabBarModel } from "../model";
 
 
 class AppStore {
@@ -26,7 +27,7 @@ class AppStore {
 
   @observable fabVisible: boolean = true
   @observable fabOpen: boolean = false
-  @observable appTabs: Array<{ index: number, cmp: any, show: boolean }> = [
+  @observable appTabs: Array<AppTabBarModel> = [
     { index: 0, cmp: TodoTab, show: true },
     { index: 1, cmp: CalendarTab, show: true },
     { index: 2, cmp: TomatoTab, show: false },
@@ -84,7 +85,7 @@ class AppStore {
 
   // 修改Theme的primary color
   @action.bound
-  changeThemeColor(color: string) {
+  changePrimaryColor(color: string) {
     this.appTheme = {
       ...this.appTheme,
       colors: {
@@ -96,7 +97,7 @@ class AppStore {
 
 
   @action.bound
-  changeTabs(index: number) {
+  changeTabs(index: number): Array<AppTabBarModel> {
     // 直接在原数组的基础上修改内部多层嵌套的一个对象的状态，很难被发现从而产生后续动作
     // 最简单的方式使用ES6语法返回一个新的数组即可达到state change的效果。这里还可以使用immutable.js
     // this.appTabs[index].show = !this.appTabs[index].show
