@@ -130,3 +130,7 @@ Roboto.ttf
 ## 打包
 - Android： 在[命令行中生成签名文件](https://coderwall.com/p/r09hoq/android-generate-release-debug-keystores)
 - `keytool -genkey -v -keystore `${my-key.keystore}` -alias `${alias_name}` -keyalg RSA -keysize 2048 -validity 10000`
+
+## 自动版本号(git)
+- [iOS](https://a1049145827.github.io/2018/01/09/iOS%E5%BC%80%E5%8F%91-Archive%E6%97%B6%E8%87%AA%E5%8A%A8%E5%A2%9E%E5%8A%A0build%E7%89%88%E6%9C%AC/)
+- android 简单

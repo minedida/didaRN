@@ -9,6 +9,8 @@ project.ext.react = [
 apply from: "../../node_modules/react-native/react.gradle"
 
 def enableSeparateBuildPerCPUArchitecture = false
+def cmd = 'git rev-list HEAD --count'
+def gitVersionCount = cmd.execute().text.trim().toInteger()
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -20,7 +22,7 @@ android {
         applicationId "com.dida.rn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        versionCode gitVersionCount
         versionName "1.0.0"
         renderscriptSupportModeEnabled true
     }
