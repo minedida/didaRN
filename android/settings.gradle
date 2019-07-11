@@ -1,8 +1,8 @@
 rootProject.name = 'dida'
 include ':react-native-share'
 project(':react-native-share').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-share/android')
-include ':react-native-syan-image-picker'
-project(':react-native-syan-image-picker').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-syan-image-picker/android')
+//include ':react-native-syan-image-picker'
+//project(':react-native-syan-image-picker').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-syan-image-picker/android')
 include ':react-native-dialogs'
 project(':react-native-dialogs').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-dialogs/android')
 include ':react-native-spring-scrollview'

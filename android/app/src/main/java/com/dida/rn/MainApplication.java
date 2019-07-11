@@ -14,7 +14,7 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import com.reactnativecommunity.webview.RNCWebViewPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.swmansion.reanimated.ReanimatedPackage;
-import com.syanpicker.RNSyanImagePickerPackage;
+//import com.syanpicker.RNSyanImagePickerPackage;
 import com.wix.autogrowtextinput.AutoGrowTextInputPackage;
 import com.wix.reactnativekeyboardinput.KeyboardInputPackage;
 
@@ -44,7 +44,7 @@ public class MainApplication extends Application implements ReactApplication, Sh
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage()
                     , new RNSharePackage()
-                    , new RNSyanImagePickerPackage()
+                    //, new RNSyanImagePickerPackage()
                     , new ReactNativeDialogsPackage()
                     , new SpringScrollViewPackage()
                     , new BlurViewPackage()
