@@ -50,7 +50,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <SyanImagePicker/>
+    return <Count3/>
   }
 }
 

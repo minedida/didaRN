@@ -6,7 +6,7 @@
 ### hooks产生的影响
 - [hooks存在的问题](https://overreacted.io/zh-hans/why-do-hooks-rely-on-call-order/)
 - mobx 基于 hooks 产出了 [mobx-react-lite](https://github.com/mobxjs/mobx-react-lite)
-
+- 不知道如何模拟`shouldComponentUpdate()`做性能优化
 
 ### useState
 - 必须保证useState执行顺序一致，不能用条件语句断开
@@ -28,6 +28,7 @@ useEffect(() =>
 ### useMemo/useCallback
 - useCallback减少在函数式组件中由于回调改变而导致的重复渲染(太精简了) [详细解释：useCallback](https://github.com/happylindz/blog/issues/19)
 - useMemo和useCallback等价的 `useCallback(fn, inputs) is equivalent to useMemo(() => fn, inputs)`
+- 
 ### useRef
 - 帮助在函数式组件中也可以获取组件的ref、直接操作组件
 ### useReducerd

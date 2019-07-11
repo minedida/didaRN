@@ -40,7 +40,7 @@ export default function App() {
       })
     );
   };
-
+  console.log(`render-TodoContainer`)
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Todo List</Text>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     flex: 1,
-    height: 20,
+    height: 40,
     fontSize: 18,
     fontWeight: 'bold',
     color: 'black',

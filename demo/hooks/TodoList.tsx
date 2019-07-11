@@ -2,7 +2,8 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
-export default function TodoList(props) {
+const TodoList =(props: any) => {
+  console.log(`render-TodoList`)
   return (
     <View style={styles.listContainer}>
       <Icon
@@ -26,6 +27,8 @@ export default function TodoList(props) {
     </View>
   );
 }
+
+export default React.memo(TodoList)
 
 const styles = StyleSheet.create({
   listContainer: {
