@@ -3,13 +3,13 @@ import { Platform } from 'react-native'
 // @ts-ignore
 import TabViewExampleList from './react-native-tab-view/TabViewExampleList';
 // @ts-ignore
-import SortableListExample from './react-native-sortable-list/example/SortableListExample';
+import SortableListExample from './sort-and-swipe/react-native-sortable-list/example/SortableListExample';
 // @ts-ignore
-import SortableListViewExample from './react-native-sortable-list/example/SortableListViewExample';
+import SortableListViewExample from './sort-and-swipe/react-native-sortable-list/example/SortableListViewExample';
 // @ts-ignore
-import DragableListExample from './react-native-sortable-list/example/DragableListExample';
+import DragableListExample from './sort-and-swipe/react-native-sortable-list/example/DragableListExample';
 // @ts-ignore
-import SwipeableExample from './react-native-swipeable/Example'
+import SwipeableExample from './sort-and-swipe/react-native-swipeable/Example'
 // @ts-ignore
 import HumanShowcaseScreen from './react-native-typography/HumanShowcaseScreen'
 // @ts-ignore
@@ -50,7 +50,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <SortableListViewExample/>
+    return <DragableListExample/>
   }
 }
 

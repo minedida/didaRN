@@ -2,27 +2,32 @@ import React from 'react'
 import { Text, TouchableHighlight } from 'react-native'
 import SortableListView from 'react-native-sortable-listview'
 
-let data = {
-  hello: { text: 'world' },
-  how: { text: 'are you' },
-  test: { text: 123 },
-  this: { text: 'is' },
-  a: { text: 'a' },
-  real: { text: 'real' },
-  drag: { text: 'drag and drop' },
-  bb: { text: 'bb' },
-  cc: { text: 'cc' },
-  dd: { text: 'dd' },
-  ee: { text: 'ee' },
-  ff: { text: 'ff' },
-  gg: { text: 'gg' },
-  hh: { text: 'hh' },
-  ii: { text: 'ii' },
-  jj: { text: 'jj' },
-  kk: { text: 'kk' },
-}
+let data = [
+  { text: 'world' },
+  { text: 'are you' },
+  { text: 123 },
+  { text: 'is' },
+  { text: 'a' },
+  { text: 'real' },
+  { text: 'drag and drop' },
+  { text: 'bb' },
+  { text: 'cc' },
+  { text: 'dd' },
+  { text: 'ee' },
+  { text: 'ff' },
+  { text: 'gg' },
+  { text: 'hh' },
+  { text: 'ii' },
+  { text: 'jj' },
+  { text: 'kk' }
+]
+
 
 let order = Object.keys(data) //Array of keys
+/*let order = data.reduce((p, c) => {
+  p.push(c.text)
+  return p
+}, [])*/
 
 class RowComponent extends React.Component<any> {
   render() {
@@ -52,7 +57,7 @@ class MyComponent extends React.Component {
         order={order}
         onRowMoved={e => {
           order.splice(e.to, 0, order.splice(e.from, 1)[0])
-          // this.forceUpdate()
+          this.forceUpdate()
         }}
         renderRow={row => <RowComponent data={row} />}
       />
