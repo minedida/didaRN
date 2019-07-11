@@ -68,7 +68,7 @@ class TodoList extends React.Component<Props, { headerClick: boolean }> {
     // todo 改造为多条目
     return (
       <SortableList
-        // style={{ flex: 1 }}
+        manualActivateRows
         renderHeader={this.renderHeader}
         data={this.props.data}
         sortingEnabled={true}
