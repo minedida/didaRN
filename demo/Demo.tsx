@@ -10,6 +10,7 @@ import SortableListViewExample from './sort-and-swipe/react-native-sortable-list
 import DragableListExample from './sort-and-swipe/react-native-sortable-list/example/DragableListExample';
 // @ts-ignore
 import SwipeableExample from './sort-and-swipe/react-native-swipeable/Example'
+import CustomSortAndSwipeList from './sort-and-swipe/react-native-sort-and-swipe-list/src/CustomSortAndSwipeList'
 // @ts-ignore
 import HumanShowcaseScreen from './react-native-typography/HumanShowcaseScreen'
 // @ts-ignore
@@ -50,7 +51,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <DragableListExample/>
+    return <CustomSortAndSwipeList/>
   }
 }
 

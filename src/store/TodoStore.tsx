@@ -21,7 +21,6 @@ class TodoStore {
     { id: uuidv1(), title: '标题15', checked: true, createAt: 1561473966285 },
   ]
 
-  @observable todoItemSortableEnable: boolean = false
 
   @computed get checkedList(): Array<TodoModel> {
     return this.todos.filter(

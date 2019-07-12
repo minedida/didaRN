@@ -1,11 +1,13 @@
 import React from 'react'
-import { UIManager, LayoutAnimation } from 'react-native'
+import { UIManager, LayoutAnimation, View, Dimensions } from 'react-native'
 import { Divider } from 'react-native-paper'
-import SortableList from '../../libs/react-native-sortable-list/src/SortableList';
 import { TodoStore } from "../../store/TodoStore";
 import { inject, observer } from "mobx-react";
 import { TodoModel } from "../../model";
 import Row from "./Row";
+// import SwipeableContainer from '../../../demo/sort-and-swipe/react-native-sort-and-swipe-list/src/SwipeableContainer'
+import SortableList from '../../libs/react-native-sortable-list/src/SortableList';
+// import SortableList from '../../../demo/sort-and-swipe/react-native-sort-and-swipe-list/src/SortableList'
 
 type Props = {
   todo?: TodoStore
@@ -17,6 +19,7 @@ type Props = {
 
 UIManager.setLayoutAnimationEnabledExperimental &&
 UIManager.setLayoutAnimationEnabledExperimental(true);
+const window = Dimensions.get("window");
 
 /**
  功能：
@@ -26,16 +29,20 @@ UIManager.setLayoutAnimationEnabledExperimental(true);
 
 @inject('todo')
 @observer
-class TodoList extends React.Component<Props, { headerClick: boolean }> {
+class TodoList extends React.Component<Props, {
+  scrollEnabled: boolean
+  rowHasMoved: boolean
+}> {
+  openRowKey = "-1";
+  rowsRef = {};
   constructor(props) {
     super(props)
     this.state = {
-      headerClick: false
+      scrollEnabled: true,
+      rowHasMoved: false
     }
     this.renderItem = this.renderItem.bind(this)
     this.renderSeparator = this.renderSeparator.bind(this)
-    this.onReleaseRow = this.onReleaseRow.bind(this)
-    this.onActivateRow = this.onActivateRow.bind(this)
     this.renderHeader = this.renderHeader.bind(this)
     this.onItemCheck = this.onItemCheck.bind(this)
   }
@@ -58,10 +65,62 @@ class TodoList extends React.Component<Props, { headerClick: boolean }> {
     return this.props.renderHeader && this.props.renderHeader()
   }
 
-  renderItem(datas: {key: number, data: TodoModel, disabled: boolean, active: boolean, index: number}) {
+  // -----------------------------
+  myOnMove = async () => {
+    await this.setState({rowHasMoved: true});
+  }
+  swipeGestureBegan = () => {
+    this.setState({scrollEnabled: false});
+  };
+  rowDoneMoving = async () => {
+    await this.setState({rowHasMoved: false});
+  };
+  onRowOpen = key => {
+    this.openRowKey = key;
+
+    // Close all other rows when one is opened.
+    let closeRowKey = 0;
+    for (let i = 0; i < this.props.data.length; i++) {
+      closeRowKey = i;
+      if (parseInt(this.openRowKey, 10) !== closeRowKey) {
+        const rowRef = this.rowsRef[i.toString()];
+        rowRef.closeRow();
+      }
+    }
+    this.setState({scrollEnabled: true});
+  }
+  onRowClose = async key => {
+    if (this.openRowKey === key) {
+      await this.setState({scrollEnabled: true});
+    }
+    this.setState({scrollEnabled: true});
+  };
+  renderItem = (datas: {key: number, data: TodoModel, disabled: boolean, active: boolean, index: number}) => {
     const { data, ...rest } = datas
     const adb = { ...rest, item: datas.data }
     return <Row {...adb} onItemCheck={this.onItemCheck}/>;
+   /* const {key, active, index} = datas
+   return (
+      <SwipeableContainer
+        ref={c => (this.rowsRef[key] = c)}
+        data={data}
+        active={active}
+        rowId={index}
+        swipeGestureBegan={this.swipeGestureBegan} //开始左右滑动时，禁止上下滚动
+        rowHasMoved={this.state.rowHasMoved} //used in myRow to close open rows if needed
+        rowDoneMoving={this.rowDoneMoving} //used in myRow to close open rows if needed.
+        openRowKey={this.openRowKey} //used in myRow to close open rows if needed
+        onRowPress={rowId => {
+          alert(`${rowId} has pressed`)
+        }}
+        // timeToUpdate={this.state.timeToUpdate} //this.props (because purecomponent and is shallowequals, need to tell it to refresh deep.)
+        onRowOpen={this.onRowOpen}
+        onRowClose={this.onRowClose}
+        renderHiddenRow={() => <View style={{flex: 1 }}/>} // 占位
+      >
+        {<Row {...adb} onItemCheck={this.onItemCheck}/>}
+      </SwipeableContainer>
+    );*/
   }
 
   renderList() {
@@ -72,24 +131,28 @@ class TodoList extends React.Component<Props, { headerClick: boolean }> {
         renderHeader={this.renderHeader}
         data={this.props.data}
         sortingEnabled={true}
-        onActivateRow={this.onActivateRow}
-        onReleaseRow={this.onReleaseRow}
         renderSeparator={this.renderSeparator}
         renderRow={this.renderItem}/>
     )
-  }
-  onActivateRow() {
-    this.props.todo!.todoItemSortableEnable = true
-  }
-
-  onReleaseRow() {
-    this.props.todo!.todoItemSortableEnable = false
   }
 
   render() {
     const { data } = this.props
     if (data.length === 0)
       return null
+    /*return <View style={{ flex: 1, backgroundColor: '#eee' }}>
+      <SortableList
+        renderHeader={this.renderHeader}
+        manuallyActivateRows
+        data={data}
+        myOnMove={this.myOnMove}
+        contentContainerStyle={{
+          width: window.width
+        }}
+        style={{flex: 1}}
+        renderRow={this.renderItem}
+      />
+    </View>*/
     return this.renderList()
   }
 }

@@ -5,7 +5,8 @@ interface ISwitchProps extends SwitchProps{
   theme: Theme
 }
 // 将switch的主题色由原本paper自带的`accent`改为`primary`
-const Switch = (props: ISwitchProps) =>
-  <PaperSwitch {...props} color={props.theme.colors.primary}/>
+const Switch = withTheme((props: ISwitchProps) =>
+    <PaperSwitch {...props} color={props.theme.colors.primary}/>
+)
 
-export default withTheme(Switch)
+export default Switch
