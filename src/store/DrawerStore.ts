@@ -31,10 +31,6 @@ class DrawerStore {
       this.timer = setTimeout(() => navigate(item), 250)
       return
     }
-    //todo 这里需要改进抽屉切换动画
-    // 目前有两种改进方案：
-    //  1。在跳转前加200毫秒左右的延时，类似twitter
-    //  2。在跳转前，用无动画的方式收回抽屉
     this.selectedItem = item
 
   }

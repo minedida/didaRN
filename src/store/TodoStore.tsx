@@ -6,19 +6,6 @@ class TodoStore {
   @observable todos: Array<TodoModel> = [
     { id: uuidv1(), title: '标题1', checked: false, createAt: 1561473966283 },
     { id: uuidv1(), title: '标题2', checked: false, createAt: 1561473966284 },
-    { id: uuidv1(), title: '标题3', checked: false, createAt: 1561473966285 },
-    { id: uuidv1(), title: '标题4', checked: false, createAt: 1561473966283 },
-    { id: uuidv1(), title: '标题5', checked: false, createAt: 1561473966284 },
-    { id: uuidv1(), title: '标题6', checked: false, createAt: 1561473966285 },
-    { id: uuidv1(), title: '标题7', checked: false, createAt: 1561473966283 },
-    { id: uuidv1(), title: '标题8', checked: false, createAt: 1561473966284 },
-    { id: uuidv1(), title: '标题9', checked: false, createAt: 1561473966285 },
-    { id: uuidv1(), title: '标题10', checked: false, createAt: 1561473966283 },
-    { id: uuidv1(), title: '标题11', checked: false, createAt: 1561473966284 },
-    { id: uuidv1(), title: '标题12', checked: true, createAt: 1561473966285 },
-    { id: uuidv1(), title: '标题13', checked: true, createAt: 1561473966283 },
-    { id: uuidv1(), title: '标题14', checked: true, createAt: 1561473966284 },
-    { id: uuidv1(), title: '标题15', checked: true, createAt: 1561473966285 },
   ]
 
 
@@ -53,7 +40,7 @@ class TodoStore {
     )
   }
 
-  createTodoByTitle(title: string): TodoModel {
+  private createTodoByTitle(title: string): TodoModel {
     return {
       id: uuidv1(),
       title,

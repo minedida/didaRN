@@ -95,7 +95,6 @@ class InboxTodo extends React.Component<Props, any> {
   }
 
   render() {
-    // todo 等到todolist的多条目改造完成后，将todolist的header暴露出来，这里就可以将Tips用作header
     const { todo: { todos } } = this.props
     return (
       <View style={{ flex: 1, backgroundColor: '#fff' }}>

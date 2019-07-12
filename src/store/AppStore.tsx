@@ -1,11 +1,12 @@
 import { action, computed, observable, observe } from 'mobx'
 import { Theme } from 'react-native-paper'
-import {TodoTab, CalendarTab, SearchTab, SettingTab, TomatoTab, ClockinTab} from '../containers'
+import { persist } from 'mobx-persist'
+import {TodoTab, CalendarTab, SearchTab,
+  SettingTab, TomatoTab, ClockinTab} from '../containers'
 import { theme } from "../theme";
 import { Toast } from "../components";
 import { AppTabBarModel } from "../model";
 import { translate } from "../i18n";
-import { persist } from 'mobx-persist'
 
 
 

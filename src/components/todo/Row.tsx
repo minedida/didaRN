@@ -68,7 +68,6 @@ export class Row extends React.Component<RowProps> {
         <Space height={d(6)}/>
         <View style={styles.topView}>
           <Checkbox status={checkboxStatus}
-            // onPress={() => this.props.todo!.checkTodo(item.id)}
                     onPress={() => this.props.onItemCheck(item.id)}
           />
           <Text numberOfLines={1} style={material.body1}>{item.title}</Text>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { UIManager, LayoutAnimation, View } from 'react-native'
+import { UIManager, LayoutAnimation } from 'react-native'
 import TodoList from "./TodoList";
 
 /**
@@ -17,13 +17,7 @@ class CombineTodoList extends React.Component<any> {
   }
 
   render() {
-    return (
-      <View style={{ flex: 1 }}>
-        <TodoList {...this.props} data={this.props.uncheckedList}/>
-        {/*<TodoList {...this.props} data={this.props.checkedList} headerTxt={'已完成'}/>*/}
-      </View>
-    )
-    // return <TodoList data={uncheckedList}/>
+    return <TodoList {...this.props} data={this.props.uncheckedList}/>
   }
 }
 
