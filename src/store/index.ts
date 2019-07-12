@@ -4,6 +4,7 @@ import { auth } from './AuthStore'
 import { app } from './AppStore'
 import { todo } from './TodoStore'
 
+// @ts-ignore
 export default {
   counter,
   drawer,

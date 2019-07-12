@@ -2,6 +2,7 @@ import React from 'react'
 import { Platform } from "react-native";
 import { NavigationPops } from "../navigation/utils";
 import SplashScreen from 'react-native-splash-screen'
+import initPersist from "../store/persist-store";
 
 type Props = {
   navigation: NavigationPops
@@ -13,7 +14,16 @@ function Splash(props: Props) {
   React.useEffect(() =>
   {
     Platform.OS === 'android' && SplashScreen.hide();
-    goNext('App')
+    let timmer;
+    initPersist().then(() =>
+    {
+      timmer = setTimeout(() => {
+        goNext('App')
+      }, 200)
+    })
+    return function cleanup() {
+      timmer && clearTimeout(timmer)
+    }
   })
   return null
 }

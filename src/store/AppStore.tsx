@@ -5,6 +5,7 @@ import { theme } from "../theme";
 import { Toast } from "../components";
 import { AppTabBarModel } from "../model";
 import { translate } from "../i18n";
+import { persist } from 'mobx-persist'
 
 
 
@@ -37,6 +38,7 @@ class AppStore {
     { index: 4, cmp: SearchTab, show: false },
     { index: 5, cmp: SettingTab, show: true }
   ]
+  @persist('object')
   @observable appTheme: Theme = theme
   @observable currentScreen: string = ''
   @observable isNetworkConnected: boolean = true
