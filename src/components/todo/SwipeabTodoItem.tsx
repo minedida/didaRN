@@ -5,7 +5,6 @@ import JSSwipeable from 'react-native-swipeable';
 import { RectButton } from "react-native-gesture-handler";
 import _ from 'lodash'
 import stores from '../../store'
-import Row from "./Row";
 
 const styles = StyleSheet.create({
   leftAction: {
@@ -164,15 +163,14 @@ class JSSwipeableRow extends React.Component {
 // export default (props) => {
 //   return <Row {...props} />;
 // }
-export default function (props: any) {
+/*export default function (props: any) {
   return <Row {...props}/>
-}
+}*/
 
 
 
-/*
 export default (props) =>
   <AppleStyleSwipeableRow>
-    <Row {...props} />
-  </AppleStyleSwipeableRow>*/
+    {props.children}
+  </AppleStyleSwipeableRow>
 

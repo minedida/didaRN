@@ -16,20 +16,23 @@ type Props = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    marginBottom: d(90)
   },
   logoStyle: {
-    width: d(500 / 6),
-    height: d(478 / 6)
+    width: d(100),
+    height: d(100),
+    marginTop: d(50)
   },
   bottomContainer: {
     alignItems: 'center',
     width: '100%'
   },
   iconView: {
-    width: d(320),
+    height: d(36),
+    width: d(310),
     justifyContent: 'center'
   },
   wechatIcon: {

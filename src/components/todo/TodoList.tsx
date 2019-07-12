@@ -1,5 +1,5 @@
 import React from 'react'
-import { UIManager, LayoutAnimation, View, Dimensions } from 'react-native'
+import { UIManager, LayoutAnimation, View, Dimensions, Vibration } from 'react-native'
 import { Divider } from 'react-native-paper'
 import { TodoStore } from "../../store/TodoStore";
 import { inject, observer } from "mobx-react";
@@ -7,10 +7,13 @@ import { TodoModel } from "../../model";
 import Row from "./Row";
 // import SwipeableContainer from '../../../demo/sort-and-swipe/react-native-sort-and-swipe-list/src/SwipeableContainer'
 import SortableList from '../../libs/react-native-sortable-list/src/SortableList';
+import { AppStore } from "../../store/AppStore";
+import SwipeabTodoItem from "./SwipeabTodoItem";
 // import SortableList from '../../../demo/sort-and-swipe/react-native-sort-and-swipe-list/src/SortableList'
 
 type Props = {
   todo?: TodoStore
+  app?: AppStore
   data: Array<TodoModel>
   headerTxt?: string,
   renderHeader?: () => void,
@@ -27,7 +30,7 @@ const window = Dimensions.get("window");
  2。长按拖动
  */
 
-@inject('todo')
+@inject('todo', 'app')
 @observer
 class TodoList extends React.Component<Props, {
   scrollEnabled: boolean
@@ -45,6 +48,8 @@ class TodoList extends React.Component<Props, {
     this.renderSeparator = this.renderSeparator.bind(this)
     this.renderHeader = this.renderHeader.bind(this)
     this.onItemCheck = this.onItemCheck.bind(this)
+    this.onActivateRow = this.onActivateRow.bind(this)
+    this.onReleaseRow = this.onReleaseRow.bind(this)
   }
 
   componentWillUpdate(): void {
@@ -63,6 +68,14 @@ class TodoList extends React.Component<Props, {
   }
   renderHeader() {
     return this.props.renderHeader && this.props.renderHeader()
+  }
+
+  onActivateRow() {
+    Vibration.vibrate([0, 30], false)
+    this.props.app!.setFabVisible(false)
+  }
+  onReleaseRow() {
+    this.props.app!.setFabVisible(true)
   }
 
   // -----------------------------
@@ -132,6 +145,8 @@ class TodoList extends React.Component<Props, {
         data={this.props.data}
         sortingEnabled={true}
         renderSeparator={this.renderSeparator}
+        onActivateRow={this.onActivateRow}
+        onReleaseRow={this.onReleaseRow}
         renderRow={this.renderItem}/>
     )
   }
