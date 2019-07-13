@@ -12,7 +12,7 @@ import { material } from 'react-native-typography'
 import { Icon } from "./";
 import { goBack } from "../navigation";
 import { d, t } from "../helper/utils/ScreenUtil";
-import DeviceConstants from "../helper/constant/DeviceConstants";
+import { DeviceSize } from "../helper/constant/DeviceConstants";
 
 const isAndroid = Platform.OS === 'android'
 
@@ -22,7 +22,7 @@ const NAV_BAR_HEIGHT_ANDROID = d(50)
 const {
   status_bar_height, fake_status_bar_padding_for_ios,
   fake_status_bar_height_for_android
-} = DeviceConstants
+} = DeviceSize
 
 interface Props {
   title?: string,
@@ -104,8 +104,10 @@ class NavigationBar extends PureComponent<Props> {
     if (leftButton === null) {
       return null
     }
-    return <View style={{ width: d(50), height: '100%',
-      justifyContent: 'center', alignItems: 'center' }}>
+    return <View style={{
+      width: d(50), height: '100%',
+      justifyContent: 'center', alignItems: 'center'
+    }}>
       {
         leftButton !== undefined ? leftButton :
           <Icon
@@ -152,11 +154,11 @@ class NavigationBar extends PureComponent<Props> {
         {this.getRightButton(rightButton)}
       </View>
     )
-    const elevation_android = elevation ? {elevation: 4, zIndex: 1} : {}
+    const elevation_android = elevation ? { elevation: 4, zIndex: 1 } : {}
 
     return (
       <View style={[styles.container, elevation_android,
-        { backgroundColor: navBarBackgroundColor,  }, this.props.style]}>
+        { backgroundColor: navBarBackgroundColor, }, this.props.style]}>
         <StatusBar barStyle={statusBarStyle} backgroundColor="transparent" translucent
                    animated={true} hidden={statusBarHidden}/>
         <View style={{

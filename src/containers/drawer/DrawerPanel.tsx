@@ -10,13 +10,14 @@ import {
 import { inject, observer } from "mobx-react";
 import { DrawerItems, DrawerStore } from "../../store/DrawerStore";
 import { Drawer, withTheme, Theme } from 'react-native-paper';
-import DeviceConstants from "../../helper/constant/DeviceConstants";
+import { DeviceSize } from "../../helper/constant/DeviceConstants";
 import { d } from "../../helper/utils/ScreenUtil";
 import { material } from 'react-native-typography'
 import { ButtonContainer, Space, Icon } from "../../components";
 import { navigate } from "../../navigation";
 import color from 'color';
-const { fake_status_bar_padding_for_ios, fake_status_bar_height_for_android } = DeviceConstants
+
+const { fake_status_bar_padding_for_ios, fake_status_bar_height_for_android } = DeviceSize
 const window = Dimensions.get('window');
 const uri = 'https://pickaface.net/gallery/avatar/Opi51c74d0125fd4.png';
 
@@ -98,12 +99,9 @@ class DrawerPanel extends React.Component<Props> {
 
   renderTopView() {
     const {
-      theme: {colors: {primary}}
+      theme: { colors: { primary } }
     } = this.props
-    const light_primary = color(primary)
-    .rgb()
-    .lighten(0.27)
-    .string()
+    const light_primary = color(primary).rgb().lighten(0.27).string()
     return (
       <View style={[styles.topView, { backgroundColor: primary }]}>
         <View style={styles.topIconView}>
@@ -131,7 +129,7 @@ class DrawerPanel extends React.Component<Props> {
         <ButtonContainer
           onPress={() => this.onPress('btn')}
           activeOpacity={0.6}
-          style={[styles.btn, { backgroundColor: light_primary}]}>
+          style={[styles.btn, { backgroundColor: light_primary }]}>
           <Text style={[material.button, { color: '#fff' }]}>登录或注册</Text>
         </ButtonContainer>
       </View>
@@ -159,11 +157,11 @@ class DrawerPanel extends React.Component<Props> {
 
   render() {
     const {
-      theme: {colors: {primary}}
+      theme: { colors: { primary } }
     } = this.props
     return (
       <ScrollView scrollsToTop={false} style={styles.container}>
-        <View style={[styles.statusBar, {backgroundColor: primary}]}/>
+        <View style={[styles.statusBar, { backgroundColor: primary }]}/>
         {this.renderTopView()}
         <Space height={d(6)}/>
         {this.renderDrawerItem()}

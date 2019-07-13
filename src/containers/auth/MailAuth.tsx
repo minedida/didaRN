@@ -7,9 +7,9 @@ import { d } from "../../helper/utils/ScreenUtil";
 import { observer, inject } from "mobx-react";
 import { AuthStore } from "../../store/AuthStore";
 import { material } from "react-native-typography";
-import DeviceConstants from "../../helper/constant/DeviceConstants";
+import { DeviceSize } from "../../helper/constant/DeviceConstants";
 
-const { DeviceWidth } = DeviceConstants
+const { device_width } = DeviceSize
 const Input = ({ placeholder, value, onChangeText, ...props }) =>
   <View style={{ width: d(260) }}>
     <TextInput
@@ -62,7 +62,7 @@ class MailAuth extends React.Component<Props, State> {
       transform: [{
         translateX: this.state.animation.interpolate({
           inputRange: [0, 1],
-          outputRange: [-DeviceWidth, 0]
+          outputRange: [-device_width, 0]
         })
       }]
     }
@@ -70,7 +70,7 @@ class MailAuth extends React.Component<Props, State> {
       transform: [{
         translateX: this.state.animation.interpolate({
           inputRange: [0, 1],
-          outputRange: [-DeviceWidth, 0]
+          outputRange: [-device_width, 0]
         })
       }]
     }
@@ -90,7 +90,7 @@ class MailAuth extends React.Component<Props, State> {
     } = this.props
     return (
       <Animated.View
-        style={[{ alignItems: 'center', width: DeviceWidth }, this.createViewTransform]}>
+        style={[{ alignItems: 'center', width: device_width }, this.createViewTransform]}>
         <Space height={d(32)}/>
 
         <Input placeholder={'邮箱'} value={loginMail}
@@ -101,7 +101,8 @@ class MailAuth extends React.Component<Props, State> {
 
         <Space height={d(18)}/>
         <Button style={styles.button} dark={true} mode="contained"
-                onPress={() => {}}>
+                onPress={() => {
+                }}>
           创建账户
         </Button>
 
@@ -123,7 +124,7 @@ class MailAuth extends React.Component<Props, State> {
     } = this.props
     return (
       <Animated.View
-        style={[{ alignItems: 'center', width: DeviceWidth }, this.loginViewTransform]}>
+        style={[{ alignItems: 'center', width: device_width }, this.loginViewTransform]}>
         <Space height={d(32)}/>
 
         <Input placeholder={'邮箱'} value={loginMail} autoFocus
