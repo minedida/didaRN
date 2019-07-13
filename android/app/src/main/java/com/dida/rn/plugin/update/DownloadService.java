@@ -39,12 +39,11 @@ public class DownloadService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-
         mNotifyManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             mBuilder = new Builder(this, "downLoadChannelId");
-            NotificationChannel channel = new NotificationChannel("downLoad_channel", "update", NotificationManager.IMPORTANCE_LOW);
+            NotificationChannel channel = new NotificationChannel("downLoadChannelId", "update", NotificationManager.IMPORTANCE_LOW);
             mNotifyManager.createNotificationChannel(channel);
         } else {
             mBuilder = new Builder(this);
@@ -54,7 +53,8 @@ public class DownloadService extends IntentService {
         int icon = getApplicationInfo().icon;
 
         mBuilder.setContentTitle(appName)
-                .setSmallIcon(icon);
+                //.setSmallIcon(icon);
+                .setSmallIcon(R.mipmap.dida_logo);
         updateProgress(0);
 
         String urlStr = intent.getStringExtra(Constants.APK_DOWNLOAD_URL);
@@ -138,9 +138,9 @@ public class DownloadService extends IntentService {
     private void installAPk(File apkFile) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             String authority = "com.dida.rn.file.provider";
             Uri apkUri = FileProvider.getUriForFile(this, authority, apkFile);
             intent.setDataAndType(apkUri, "application/vnd.android.package-archive");

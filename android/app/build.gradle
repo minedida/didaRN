@@ -2,8 +2,8 @@ apply plugin: "com.android.application"
 
 import com.android.build.OutputFile
 project.ext.react = [
-    entryFile: "index.js",
-    extraPackagerArgs: [ '--minify=false' ]
+    entryFile: "index.js"
+    , extraPackagerArgs: [ '--minify=false' ]
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -12,12 +12,8 @@ def enableSeparateBuildPerCPUArchitecture = false
 def cmd = 'git rev-list HEAD --count'
 def gitVersionCount = cmd.execute().text.trim().toInteger()
 
-// Create a variable called keystorePropertiesFile, and initialize it to your
-// keystore.properties file, in the rootProject folder.
 def keystorePropertiesFile = rootProject.file("keystore.properties")
-// Initialize a new Properties() object called keystoreProperties.
 def keystoreProperties = new Properties()
-// Load your keystore.properties file into the keystoreProperties object.
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
@@ -30,7 +26,7 @@ android {
         applicationId "com.dida.rn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode gitVersionCount
+        versionCode 2
         versionName "1.0.0"
         renderscriptSupportModeEnabled true
     }
@@ -46,8 +42,8 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
             resValue "string", "app_name", "滴答"
         }
