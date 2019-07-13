@@ -26,7 +26,7 @@ android {
         applicationId "com.dida.rn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2
+        versionCode gitVersionCount
         versionName "1.0.0"
         renderscriptSupportModeEnabled true
     }
