@@ -5,6 +5,7 @@ import stores from '../../store'
 import { setI18nConfig } from "../../i18n";
 import { app } from "../../store/AppStore";
 import { checkUpdate } from "../utils/UpdateApp";
+import SentryUtil from "../utils/SentryUtil";
 
 export default function withAppInit(WrappedComponent: any) {
   return class extends React.Component {
@@ -16,6 +17,8 @@ export default function withAppInit(WrappedComponent: any) {
       setI18nConfig()
       // 3.检查更新
       checkUpdate()
+      // 4.sentry
+      SentryUtil.init()
 
       NetInfo.addEventListener("connectionChange", this.handleConnectionChange)
       RNLocalize.addEventListener("change", this.handleLocalizationChange);

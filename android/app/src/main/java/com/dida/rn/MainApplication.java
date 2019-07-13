@@ -7,6 +7,7 @@ import com.bolan9999.SpringScrollViewPackage;
 import com.cmcewen.blurview.BlurViewPackage;
 import com.dida.rn.plugin.update.UpgradePackage;
 import com.facebook.react.ReactApplication;
+import io.sentry.RNSentryPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -46,6 +47,7 @@ public class MainApplication extends Application implements ReactApplication, Sh
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage(),
+            new RNSentryPackage(),
             new RNDeviceInfo()
                     , new RNLocalizePackage()
                     , new RNSharePackage()
