@@ -12,6 +12,7 @@ function isEmpty(arg: object | string | number | Array<any> | boolean) {
   return lodash.isEmpty(arg)
 }
 
+
 export {
   prettyLog,
   isEmpty

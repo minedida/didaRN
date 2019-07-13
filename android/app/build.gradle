@@ -12,6 +12,14 @@ def enableSeparateBuildPerCPUArchitecture = false
 def cmd = 'git rev-list HEAD --count'
 def gitVersionCount = cmd.execute().text.trim().toInteger()
 
+// Create a variable called keystorePropertiesFile, and initialize it to your
+// keystore.properties file, in the rootProject folder.
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+// Initialize a new Properties() object called keystoreProperties.
+def keystoreProperties = new Properties()
+// Load your keystore.properties file into the keystoreProperties object.
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     compileOptions {
@@ -22,16 +30,16 @@ android {
         applicationId "com.dida.rn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode gitVersionCount
+        versionCode 1
         versionName "1.0.0"
         renderscriptSupportModeEnabled true
     }
     signingConfigs {
         release {
-            storeFile file(APP_RELEASE_STORE_FILE)
-            storePassword APP_RELEASE_KEY_ALIAS
-            keyAlias APP_RELEASE_STORE_PASSWORD
-            keyPassword APP_RELEASE_KEY_PASSWORD
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
         }
     }
     buildTypes {

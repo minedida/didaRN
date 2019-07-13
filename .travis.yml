@@ -40,3 +40,5 @@ deploy:
   on:
     repo: dautent/dida_RN
 tags: false
+after_deploy
+- yarn upload-apk

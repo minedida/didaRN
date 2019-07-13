@@ -10,7 +10,8 @@
     "fix-modal": "node node_modules/react-native-modal-translucent/scripts/translucent-modal.js",
     "and-release": "cd android && ./gradlew assembleRelease && cd ..",
     "and-clean": "cd android && ./gradlew clean && cd ..",
-    "and-install-release": "cd android && ./gradlew installRelease && cd .."
+    "and-install-release": "cd android && ./gradlew installRelease && cd ..",
+    "upload-apk": "cd ./scripts && ./upload_firim.sh && cd .."
   },
   "dependencies": {
     "@react-native-community/blur": "^3.3.1",
