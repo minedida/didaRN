@@ -27,6 +27,8 @@ class AppTabBarNav extends React.Component<{ app: AppStore }> {
       {
         tabBarOptions: {
           ...tabBarOptions,
+          safeAreaInset: { bottom: 'always' },
+          style: { backgroundColor: '#fff' },
           // dynamic change tab activeTintColor
           activeTintColor: this.props.app.appTheme.colors.primary
         },

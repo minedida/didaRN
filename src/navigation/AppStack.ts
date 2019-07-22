@@ -16,6 +16,9 @@ import IntelligentRecognition from "../containers/setting/IntelligentRecognition
 import MoreSetting from "../containers/setting/MoreSetting";
 import ThemeSetting from "../containers/setting/ThemeSetting";
 import TransitionConfig from './TransitionConfig'
+import { Platform } from "react-native";
+
+const transitionConfig: any = Platform.OS === 'ios' ? undefined : TransitionConfig
 
 export default createStackNavigator(
   {
@@ -42,6 +45,6 @@ export default createStackNavigator(
     navigationOptions: {
       gesturesEnabled: true,
     },
-    transitionConfig: TransitionConfig
+    transitionConfig: transitionConfig
   }
 );
