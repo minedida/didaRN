@@ -1,4 +1,4 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator  } from 'react-navigation';
 import AppTabBar from './AppTabBar';
 import AddTodo from "../containers/drawer/AddTodo";
 import InboxTodo from "../containers/drawer/InboxTodo";
@@ -15,6 +15,7 @@ import AddTaskInstantly from "../containers/setting/AddTaskInstantly";
 import IntelligentRecognition from "../containers/setting/IntelligentRecognition";
 import MoreSetting from "../containers/setting/MoreSetting";
 import ThemeSetting from "../containers/setting/ThemeSetting";
+import TransitionConfig from './TransitionConfig'
 
 export default createStackNavigator(
   {
@@ -37,8 +38,10 @@ export default createStackNavigator(
   {
     headerMode: 'none',
     initialRouteName: 'AppTabBar',
-    cardStyle: {
-      shadowColor: 'transparent',
+    mode: 'card',
+    navigationOptions: {
+      gesturesEnabled: true,
     },
-  },
+    transitionConfig: TransitionConfig
+  }
 );
