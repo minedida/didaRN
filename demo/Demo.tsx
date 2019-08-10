@@ -45,6 +45,10 @@ import Count2 from './hooks/Count2'
 import Count3 from './hooks/Count3'
 // @ts-ignore
 import LightboxDemo from './light-demo/LightboxDemo'
+// @ts-ignore
+import ReanimatedCollapsibleNavbar from './collapsible/reanimated-collapsible-navbar/ReanimatedCollapsibleNavbar';
+// @ts-ignore
+import ReactNativeScrollableHeader from './collapsible/react-native-scrollable-header/ReactNativeScrollableHeader';
 
 class Demo extends React.Component {
 
@@ -53,7 +57,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <Count3/>
+    return <ReactNativeScrollableHeader/>
   }
 }
 
