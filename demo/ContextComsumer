@@ -1,0 +1,8 @@
+export const PageContext = React.createContext({ metaData: {} });
+ // https://medium.com/@danielteles95/react-native-context-api-b801df44fb52
+    const pageMetaData = {}
+    const ad = <PageContext.Provider value={{ metaData: pageMetaData }}>
+      <PageContext.Consumer>
+        {context => <Component data={context.value} />}
+      </PageContext.Consumer>
+    </PageContext.Provider>

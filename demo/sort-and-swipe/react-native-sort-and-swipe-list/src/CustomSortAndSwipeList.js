@@ -5,12 +5,14 @@ import {
   View,
   Image,
   Dimensions,
-  Platform
+  Platform,
+  TextInput
 } from "react-native";
 import SortableList from "./SortableList";
 import SwipeableContainer from "./SwipeableContainer";
 import uuidv1 from 'uuid/v1'
 import Row from "../../../../src/components/todo/Row";
+import {prettyLog} from "../../../../src/helper/utils/Utils";
 
 // https://github.com/gitim/react-native-sortable-list
 // https://github.com/jemise111/react-native-swipe-list-view/blob/master/docs/SwipeRow.md
@@ -31,17 +33,6 @@ const defaultData =  [
   { id: uuidv1(), title: '标题2', checked: false, createAt: 1561473966284 },
   { id: uuidv1(), title: '标题3', checked: false, createAt: 1561473966285 },
   { id: uuidv1(), title: '标题4', checked: false, createAt: 1561473966283 },
-  { id: uuidv1(), title: '标题5', checked: false, createAt: 1561473966284 },
-  { id: uuidv1(), title: '标题6', checked: false, createAt: 1561473966285 },
-  { id: uuidv1(), title: '标题7', checked: false, createAt: 1561473966283 },
-  { id: uuidv1(), title: '标题8', checked: false, createAt: 1561473966284 },
-  { id: uuidv1(), title: '标题9', checked: false, createAt: 1561473966285 },
-  { id: uuidv1(), title: '标题10', checked: false, createAt: 1561473966283 },
-  { id: uuidv1(), title: '标题11', checked: false, createAt: 1561473966284 },
-  { id: uuidv1(), title: '标题12', checked: true, createAt: 1561473966285 },
-  { id: uuidv1(), title: '标题13', checked: true, createAt: 1561473966283 },
-  { id: uuidv1(), title: '标题14', checked: true, createAt: 1561473966284 },
-  { id: uuidv1(), title: '标题15', checked: true, createAt: 1561473966285 },
 ]
 
 const styles = StyleSheet.create({
@@ -110,7 +101,9 @@ class CustomSortAndSwipeList extends Component {
     this.rowsRef = {};
     this.state = {
       scrollEnabled: true,
-      rowHasMoved: false
+      rowHasMoved: false,
+      data: defaultData,
+      value: ''
     };
   }
 
@@ -160,6 +153,15 @@ class CustomSortAndSwipeList extends Component {
     </View>
   }
 
+
+  onItemCheck= (id) => {
+    let data = this.state.data.map(
+      item => item.id === id ? {...item, checked: !item.checked} : item
+    )
+    this.setState({data})
+  }
+
+
   renderRow = ({key, index, data, active}) => {
     return (
       <SwipeableContainer
@@ -183,7 +185,7 @@ class CustomSortAndSwipeList extends Component {
         // animatedRowViewStyle={styles.animatedRowViewStyle}
       >
         {
-          <Row {...{key, index, item: data, active}} onItemCheck={() => {}}/>
+          <Row {...{key, index, item: data, active}} onItemCheck={this.onItemCheck}/>
         }
         {/*{this.Row2(data)}*/}
       </SwipeableContainer>
@@ -195,7 +197,7 @@ class CustomSortAndSwipeList extends Component {
       <View style={styles.containerStyle}>
         <SortableList
           manuallyActivateRows
-          data={defaultData}
+          data={this.state.data}
           myOnMove={this.myOnMove}
           contentContainerStyle={{
             width: window.width
@@ -204,9 +206,24 @@ class CustomSortAndSwipeList extends Component {
           renderRow={this.renderRow}
           scrollEnabled={this.state.scrollEnabled}
         />
+        <TextInput value={this.state.value} placeholder={'添加待办事项'}
+                   style={{ position: 'absolute', bottom: 30, left: 0, width: Dimensions.get('window').width }}
+                   onSubmitEditing={() => {
+                     // this.props.todo.addTodo(this.state.value)
+                     const item = {
+                       id: uuidv1(), title: this.state.value, checked: false, createAt: 1561473966283
+                     }
+                     // const data = this.state.data.unshift(item)
+                     const data = [item, ...this.state.data]
+                     prettyLog(data, 'unshift-data')
+
+                     this.setState({ data, value: '' })
+                     this.forceUpdate()
+                   }}
+                   onChangeText={(value) => this.setState({ value })}/>
+
       </View>
     );
   }
 }
-
 export default CustomSortAndSwipeList;

@@ -10,6 +10,7 @@ import SortableListViewExample from './sort-and-swipe/react-native-sortable-list
 import DragableListExample from './sort-and-swipe/react-native-sortable-list/example/DragableListExample';
 // @ts-ignore
 import SwipeableExample from './sort-and-swipe/react-native-swipeable/Example'
+// @ts-ignore
 import CustomSortAndSwipeList from './sort-and-swipe/react-native-sort-and-swipe-list/src/CustomSortAndSwipeList'
 // @ts-ignore
 import HumanShowcaseScreen from './react-native-typography/HumanShowcaseScreen'
@@ -42,7 +43,8 @@ import Count1 from './hooks/Count1'
 import Count2 from './hooks/Count2'
 // @ts-ignore
 import Count3 from './hooks/Count3'
-
+// @ts-ignore
+import LightboxDemo from './light-demo/LightboxDemo'
 
 class Demo extends React.Component {
 
@@ -51,7 +53,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <CustomSortAndSwipeList/>
+    return <Count3/>
   }
 }
 

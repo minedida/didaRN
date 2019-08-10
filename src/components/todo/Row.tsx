@@ -3,7 +3,6 @@ import { View, Text, StyleSheet } from 'react-native'
 import { Space, Checkbox } from "../";
 import { d } from "../../helper/utils/ScreenUtil";
 import { material } from "react-native-typography";
-import { TodoStore } from "../../store/TodoStore";
 import { TodoModel } from "../../model";
 
 export const ITEM_HEIGHT = d(66)
@@ -37,7 +36,6 @@ type RowProps = {
   active: boolean
   index: number
   disabled: boolean
-  todo?: TodoStore
   onItemCheck: (id: number) => void
 }
 
