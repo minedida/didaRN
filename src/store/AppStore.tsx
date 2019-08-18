@@ -7,6 +7,7 @@ import { theme } from "../theme";
 import { Toast } from "../components";
 import { AppTabBarModel } from "../model";
 import { translate } from "../i18n";
+import { getCmpName } from "../helper/utils/Utils";
 
 
 // 对于UIStore的构建建议：https://cn.mobx.js.org/best/store.html
@@ -26,6 +27,10 @@ class AppStore {
     observe(this, 'currentScreen', change => {
       const fabVisibleScreenArrays = ['TodoTab', 'CalendarTab', 'ClockinTab', 'SearchTab']
       this.fabVisible = fabVisibleScreenArrays.findIndex(v => v === change.newValue) > -1
+    })
+    observe(this, 'appTabs', change => {
+      console.log('appTabs-change')
+      console.log(change)
     })
   }
 
@@ -47,22 +52,35 @@ class AppStore {
 
   // {[index: string]: any} 动态索引签名
   @computed get tabMap(): { [index: string]: any } {
-    return this.appTabs.reduce((p, c) => {
+    return this.appTabs
+    .reduce((p, c) => {
       if (c.show) {
-        // get injected component by mobx displayName or plain Component's name
-        let name = c.cmp.displayName || c.cmp.name
-        console.log(`AppStore-reduce-name:\n:${JSON.stringify(name)}`)
-        if (name.indexOf('inject') > -1) {
-          name = name.split('-')[1];
-          p[name] = c.cmp;
-        } else {
-          // get a plain Component displayName
-          p[name] = c.cmp;
-        }
+        const name = getCmpName(c.cmp)
+        p[name] = c.cmp;
       }
       return p;
     }, {})
   }
+
+  @computed get tabRoutes() {
+    return this.appTabs
+    .filter(v => v.show)
+    .reduce((p, c) => {
+      const name = getCmpName(c.cmp)
+      p.push({
+        key: name,
+        routeName: name,
+        params: undefined,
+      })
+      return p;
+    }, [])
+  }
+
+  @observable tabMap2 = {
+    TodoMain: TodoTab,
+    CalendarMain: CalendarTab,
+    SettingMain: SettingTab,
+  } as any
 
   @action.bound
   setCurrentScreen(currentScreen) {

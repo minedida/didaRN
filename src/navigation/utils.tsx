@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NavigationParams, NavigationRoute, NavigationScreenProp } from "react-navigation";
 import stores from '../store'
+import Toast from "../components/Toast";
 
 /**
  * Make the navigation state params "this.props.navigation.state.params.<x>" become a component props

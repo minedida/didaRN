@@ -9,10 +9,7 @@ class AppStackNav extends Component<any> {
   static router = AppStack.router;
 
   render() {
-    const { navigation } = this.props;
-    return <AppStack
-      navigation={navigation}
-      ref={(nav: NavigationContainerComponent) => setNavigator(nav)}/>
+    return <AppStack {...this.props} />
   }
 }
 
