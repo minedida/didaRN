@@ -40,6 +40,7 @@ class Webview extends React.Component<Props> {
     return <View style={styles.container}>
       <NavigationBar title={title}/>
       <WebView
+        useWebKit
         style={{ backgroundColor: '#fff' }}
         javaScriptEnabled={true}
         domStorageEnabled={true}

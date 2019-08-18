@@ -9,7 +9,7 @@ import { AppTabBarModel } from "../model";
 import { translate } from "../i18n";
 
 
-
+// 对于UIStore的构建建议：https://cn.mobx.js.org/best/store.html
 class AppStore {
   constructor() {
     //  autorun 可以检测到自己的store发生变化
