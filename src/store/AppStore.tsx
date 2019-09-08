@@ -39,9 +39,9 @@ class AppStore {
   @observable appTabs: Array<AppTabBarModel> = [
     { index: 0, cmp: TodoTab, show: true },
     { index: 1, cmp: CalendarTab, show: true },
-    { index: 2, cmp: TomatoTab, show: false },
-    { index: 3, cmp: ClockinTab, show: false },
-    { index: 4, cmp: SearchTab, show: false },
+    { index: 2, cmp: TomatoTab, show: true },
+    { index: 3, cmp: ClockinTab, show: true },
+    { index: 4, cmp: SearchTab, show: true },
     { index: 5, cmp: SettingTab, show: true }
   ]
   @persist('object')
@@ -52,7 +52,7 @@ class AppStore {
 
   // {[index: string]: any} 动态索引签名
   @computed get tabMap(): { [index: string]: any } {
-    return this.appTabs
+    const value = this.appTabs
     .reduce((p, c) => {
       if (c.show) {
         const name = getCmpName(c.cmp)
@@ -60,12 +60,14 @@ class AppStore {
       }
       return p;
     }, {})
+    // console.log('AppStore-tabMap-value', value)
+    return value;
   }
 
   @computed get tabRoutes() {
     return this.appTabs
     .filter(v => v.show)
-    .reduce((p, c) => {
+    .reduce((p: any, c) => {
       const name = getCmpName(c.cmp)
       p.push({
         key: name,
@@ -80,7 +82,7 @@ class AppStore {
     TodoMain: TodoTab,
     CalendarMain: CalendarTab,
     SettingMain: SettingTab,
-  } as any
+  } as any;
 
   @action.bound
   setCurrentScreen(currentScreen) {

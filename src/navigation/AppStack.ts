@@ -1,4 +1,4 @@
-import { createStackNavigator  } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import AppTabBar from './AppTabBar';
 import AddTodo from "../containers/drawer/AddTodo";
 import InboxTodo from "../containers/drawer/InboxTodo";
@@ -18,33 +18,43 @@ import ThemeSetting from "../containers/setting/ThemeSetting";
 import TransitionConfig from './TransitionConfig'
 import { Platform } from "react-native";
 
-const transitionConfig: any = Platform.OS === 'ios' ? undefined : TransitionConfig
+const transitionConfig: any = Platform.OS === 'ios' ? undefined : TransitionConfig;
+
+const stackConfig = {
+  headerMode: 'none',
+  initialRouteName: 'AppTabBar',
+  mode: 'card',
+  navigationOptions: {
+    gesturesEnabled: true,
+  },
+  transitionConfig: transitionConfig
+} as any;
+
+const routeConfigMap = {
+  AppTabBar,
+  AddTodo,
+  InboxTodo,
+  ManageTodo,
+  TodayTodo,
+  Auth,
+  MailAuth,
+  SettingTab,
+  Webview,
+  Dashboard,
+  SoundAndNotify,
+  AddTaskInstantly,
+  IntelligentRecognition,
+  MoreSetting,
+  ThemeSetting,
+};
+
+
+const getRouteConfigMap = (map) => Object.keys(map).reduce((p, c) => {
+  p[c] = paramsToProps(map[c]);
+  return p;
+}, {});
 
 export default createStackNavigator(
-  {
-    AppTabBar,
-    AddTodo,
-    InboxTodo,
-    ManageTodo,
-    TodayTodo,
-    Auth,
-    MailAuth,
-    SettingTab,
-    Webview: paramsToProps(Webview),
-    Dashboard,
-    SoundAndNotify,
-    AddTaskInstantly,
-    IntelligentRecognition,
-    MoreSetting,
-    ThemeSetting,
-  },
-  {
-    headerMode: 'none',
-    initialRouteName: 'AppTabBar',
-    mode: 'card',
-    navigationOptions: {
-      gesturesEnabled: true,
-    },
-    transitionConfig: transitionConfig
-  }
+  getRouteConfigMap(routeConfigMap),
+  stackConfig
 );

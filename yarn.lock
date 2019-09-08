@@ -6001,8 +6001,10 @@ react-native-autogrow-textinput@^5.2.0:
   resolved "https://registry.npm.taobao.org/react-native-autogrow-textinput/download/react-native-autogrow-textinput-5.2.0.tgz#acf736454781f5beaba8b7d9c943b7333691b65e"
   integrity sha1-rPc2RUeB9b6rqLfZyUO3MzaRtl4=
 
-"react-native-calendars@file:./src/libs/react-native-calendars":
+react-native-calendars@1.185.0:
   version "1.185.0"
+  resolved "https://registry.npm.taobao.org/react-native-calendars/download/react-native-calendars-1.185.0.tgz#8846c11374738e0180f65774de59fdb7c8bf0eca"
+  integrity sha1-iEbBE3RzjgGA9ld03ln9t8i/Dso=
   dependencies:
     lodash.get "^4.4.2"
     lodash.isequal "^4.5.0"
@@ -6226,6 +6228,11 @@ react-native-tab-view@^1.2.0, react-native-tab-view@^1.4.1:
   dependencies:
     prop-types "^15.6.1"
 
+react-native-tab-view@^2.0.3:
+  version "2.10.0"
+  resolved "https://registry.npm.taobao.org/react-native-tab-view/download/react-native-tab-view-2.10.0.tgz#5e249e5650502010013449ffd4e5edc18a95364b"
+  integrity sha1-XiSeVlBQIBABNEn/1OXtwYqVNks=
+
 react-native-typescript-transformer@^1.2.12:
   version "1.2.12"
   resolved "https://registry.npm.taobao.org/react-native-typescript-transformer/download/react-native-typescript-transformer-1.2.12.tgz#ec234d31446d1aee213a2d5fb7e7584beff5dba3"
@@ -6327,6 +6334,15 @@ react-navigation-stack@~1.4.0:
   version "1.4.0"
   resolved "https://registry.npm.taobao.org/react-navigation-stack/download/react-navigation-stack-1.4.0.tgz#69cdb029ea4ee5877d7e933b3117dc90bc841eb2"
   integrity sha1-ac2wKepO5Yd9fpM7MRfckLyEHrI=
+
+react-navigation-tabs@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/react-navigation-tabs/download/react-navigation-tabs-2.1.0.tgz#d9400ba6c4c089d64ce68c012905a5a89d287e3c"
+  integrity sha1-2UALpsTAidZM5owBKQWlqJ0ofjw=
+  dependencies:
+    hoist-non-react-statics "^3.3.0"
+    react-lifecycles-compat "^3.0.4"
+    react-native-tab-view "^2.0.3"
 
 react-navigation-tabs@~1.1.4:
   version "1.1.4"

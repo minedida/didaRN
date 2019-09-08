@@ -50,12 +50,8 @@ export default AppTabBarNav
 */
 import React from 'react'
 import { createBottomTabNavigator } from 'react-navigation';
-import { inject, observer } from "mobx-react";
-import _ from 'lodash';
+import { observer } from "mobx-react";
 import { BottomTabBar } from 'react-navigation-tabs';
-import SettingTab from '../containers/setting/SettingTab';
-import CalendarTab from "../containers/calendar/CalendarTab";
-import TodoTab from "../containers/todo/TodoTab";
 import { app } from "../store/AppStore";
 
 const tabBarOptions = {
@@ -64,7 +60,7 @@ const tabBarOptions = {
   inactiveTintColor: '#a3a3a3',
   tabStyle: {
     backgroundColor: '#ffffff',
-    alignItems:'center',
+    alignItems: 'center',
     justifyContent: 'center'
   },
   showLabel: false,
@@ -74,50 +70,36 @@ const tabBarOptions = {
   animationEnabled: false,
   swipeEnabled: false,
   backBehavior: 'none',
-} as any
-
-const routeConfigMap = {
-  TodoMain: TodoTab,
-  CalendarMain: CalendarTab,
-  SettingMain: SettingTab,
-} as any
-
-const originalRoutes = [
-  { key: '首页', routeName: '首页', params: undefined },
-  { key: '商品推荐', routeName: '商品推荐', params: undefined },
-  { key: '我的', routeName: '我的', params: undefined }
-];
+} as any;
 
 
-// @inject('app')
 @observer
 class CustomBottomTabBar extends React.Component<any>{
   calculateNavigation(navigation) {
-    const { routes, index } = navigation.state;
+    // @ts-ignore
+    const { routes } = navigation.state;
 
-    console.log(routes)
-    console.log(app.tabRoutes)
     // return navigation;
     return {
       state: {
-        index: 0,
+        // index: 0,
+        ...navigation.state,
         routes: app.tabRoutes
       }
     }
-
   }
   render() {
+    console.log('CustomBottomTabBar-this.props', this.props)
     const customNavigation = this.calculateNavigation(this.props.navigation)
     return <BottomTabBar {...this.props} navigation={customNavigation}/>;
   }
 }
 
 const bottomTabNavigator = createBottomTabNavigator(
-  // routeConfigMap,
   app.tabMap,
   {
     tabBarOptions,
-    // initialRouteName: 'SettingMain',
+    // initialRouteName: 'SettingTab',
     tabBarComponent: CustomBottomTabBar
   },
 );

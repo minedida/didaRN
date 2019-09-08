@@ -64,6 +64,13 @@
     - 2.react-native-paper的Drawer
     - 3.react-native-gesture-handler的Drawer
 
+### 关于动态tab
+- 想要实现`滴答清单`中动态add/remove一个底栏的效果，花费了我很多精力，暂时以失败告终。下面是过程记录
+- [issue3945](https://github.com/react-navigation/react-navigation/issues/3945#issuecomment-404732749)有一个可行的方案，但是只在v2版本中生效，很可惜
+- 在v3版本中根据[动态底部导航栏](https://juejin.im/post/5cff4f516fb9a07ea803c0f5)实现了一遍，但是有一定问题，不能做到真正的动态化。
+- 在v3版本尝试的过程中又看到了[底层原理解析](https://juejin.im/post/5966c938f265da6c2c7f3a87)，希望以后可以阅读一下
+- 最后又看到了官方针对这个问题的[回复](https://github.com/react-navigation/react-navigation/issues/5542)，那么我就等着吧
+
 ### todo
 - 1.在`onConfigurationChanged`方法中监听刘海儿是否存在，将正确的状态栏信息发送到js侧，从而app能刘海正确根据响应
 - 2.处理安卓平台下抽屉组件，手势拖出

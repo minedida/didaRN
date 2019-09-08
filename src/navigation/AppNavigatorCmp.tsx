@@ -3,7 +3,7 @@ import { createAppContainer, NavigationContainerComponent } from 'react-navigati
 import { onNavigationStateChange } from "./utils";
 import AppNavigator from "./AppNavigator";
 import { observer } from "mobx-react";
-import { withDrawer } from "../helper/hoc";
+// import { withDrawer } from "../helper/hoc";
 import { setNavigator } from "./index";
 
 
@@ -16,6 +16,7 @@ import { setNavigator } from "./index";
 // }
 
 @observer
+// @withDrawer
 class Route extends React.Component {
   render() {
     const AppContainer = createAppContainer(AppNavigator as any)
@@ -26,5 +27,8 @@ class Route extends React.Component {
     )
   }
 }
+
+// tab动态化，最终还是要等待官方解决，已经正在进行中了：https://github.com/react-navigation/react-navigation/issues/5542
+// 如果非要自己解决这个问题：目前应该着手于customnavigator：https://reactnavigation.org/docs/zh-Hans/3.x/custom-navigators.html
 
 export default Route
