@@ -1,4 +1,5 @@
-import { createStackNavigator } from 'react-navigation';
+// import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import AppTabBar from './AppTabBar';
 import AddTodo from "../containers/drawer/AddTodo";
 import InboxTodo from "../containers/drawer/InboxTodo";

@@ -8,7 +8,8 @@ import { Toast } from "../../components";
 
 export default function withBackHandler(WrappedComponent: any, params: 'Auth' | 'App') {
   return class extends React.Component {
-    static router = params === 'Auth' ? AuthStack.router : AppStack.router
+    // @ts-ignore
+    static router = params === 'Auth' ? AuthStack.router : AppStack.router;
 
     lastBackPressed: number = 0;
 
@@ -19,13 +20,13 @@ export default function withBackHandler(WrappedComponent: any, params: 'Auth' | 
 
     componentDidMount() {
       if (Platform.OS === 'android') {
-        BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
+        // BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
       }
     }
 
     componentWillUnmount() {
       if (Platform.OS === 'android') {
-        BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
+        // BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
       }
     }
 

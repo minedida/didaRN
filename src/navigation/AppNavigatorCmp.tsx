@@ -3,7 +3,6 @@ import { createAppContainer, NavigationContainerComponent } from 'react-navigati
 import { onNavigationStateChange } from "./utils";
 import AppNavigator from "./AppNavigator";
 import { observer } from "mobx-react";
-// import { withDrawer } from "../helper/hoc";
 import { setNavigator } from "./index";
 
 

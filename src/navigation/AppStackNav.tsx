@@ -5,6 +5,7 @@ import { app } from "../store/AppStore";
 
 @observer
 class AppStackNav extends Component<any> {
+  // @ts-ignore
   static router = AppStack.router;
 
   calculateNavigation(navigation) {
