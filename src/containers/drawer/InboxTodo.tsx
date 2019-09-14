@@ -7,6 +7,7 @@ import { DrawerStore } from "../../store/DrawerStore";
 import { TodoStore } from "../../store/TodoStore";
 import { translate } from "../../i18n";
 import TodoList from "../../components/todo/TodoList";
+import { openDrawer } from "../../navigation";
 
 const styles = StyleSheet.create({
   anchorView: {
@@ -39,6 +40,9 @@ class InboxTodo extends React.Component<Props, any> {
     this.onMenuPress = this.onMenuPress.bind(this)
     this.menu = React.createRef<View>();
   }
+  componentDidMount(): void {
+    Toast.show('InboxTodo')
+  }
 
   onMenuPress() {
     if (!isAndroid) {
@@ -65,7 +69,8 @@ class InboxTodo extends React.Component<Props, any> {
     return (
       <Icon
         largeTouchArea
-        onPress={this.props.drawer.toggleMenu}
+        // onPress={this.props.drawer.toggleMenu}
+        onPress={() => openDrawer()}
         size={isAndroid ? t(20) : t(20)}
         name={isAndroid ? 'md-menu' : 'ios-menu'}
         type={'Ionicons'} color={'#333'}/>

@@ -1,6 +1,6 @@
+import { Platform } from "react-native";
 // import { createStackNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import AppTabBar from './AppTabBar';
 import AddTodo from "../containers/drawer/AddTodo";
 import InboxTodo from "../containers/drawer/InboxTodo";
 import ManageTodo from "../containers/drawer/ManageTodo";
@@ -17,22 +17,22 @@ import IntelligentRecognition from "../containers/setting/IntelligentRecognition
 import MoreSetting from "../containers/setting/MoreSetting";
 import ThemeSetting from "../containers/setting/ThemeSetting";
 import TransitionConfig from './TransitionConfig'
-import { Platform } from "react-native";
+import AppDrawer from "./AppDrawer";
 
+// @ts-ignore
 const transitionConfig: any = Platform.OS === 'ios' ? undefined : TransitionConfig;
 
 const stackConfig = {
   headerMode: 'none',
-  initialRouteName: 'AppTabBar',
+  // initialRouteName: 'AppTabBar',
   mode: 'card',
   navigationOptions: {
     gesturesEnabled: true,
   },
-  transitionConfig: transitionConfig
 } as any;
 
 const routeConfigMap = {
-  AppTabBar,
+  AppDrawer,
   AddTodo,
   InboxTodo,
   ManageTodo,
@@ -40,6 +40,7 @@ const routeConfigMap = {
   Auth,
   MailAuth,
   SettingTab,
+  SettingTab2: SettingTab,
   Webview,
   Dashboard,
   SoundAndNotify,

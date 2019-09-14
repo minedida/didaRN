@@ -49,6 +49,7 @@ class AppTabBarNav extends React.Component<{ app: AppStore }> {
 export default AppTabBarNav
 */
 import React from 'react'
+import { Platform } from 'react-native';
 import { createBottomTabNavigator } from 'react-navigation';
 import { observer } from "mobx-react";
 import { BottomTabBar } from 'react-navigation-tabs';
@@ -65,11 +66,24 @@ const tabBarOptions = {
   },
   showLabel: false,
   showIcon: true,
-  style: { backgroundColor: '#fff' },
+  style: {
+    ...Platform.select({
+      ios: {
+        backgroundColor: '#fff',
+      },
+      android: {
+        backgroundColor: '#fff',
+        // 去除bottom-tab的那条线，替换成阴影
+        borderTopWidth: 0,
+        elevation: 14,
+      }
+    }),
+  },
   lazy: true,
   animationEnabled: false,
   swipeEnabled: false,
   backBehavior: 'none',
+
 } as any;
 
 
@@ -90,8 +104,11 @@ class CustomBottomTabBar extends React.Component<any>{
   }
   render() {
     console.log('CustomBottomTabBar-this.props', this.props)
+    const style = {
+      activeTintColor: app.appTheme.colors.primary
+    };
     const customNavigation = this.calculateNavigation(this.props.navigation)
-    return <BottomTabBar {...this.props} navigation={customNavigation}/>;
+    return <BottomTabBar {...this.props} navigation={customNavigation} {...style} />;
   }
 }
 
@@ -100,6 +117,7 @@ const bottomTabNavigator = createBottomTabNavigator(
   {
     tabBarOptions,
     // initialRouteName: 'SettingTab',
+    initialRouteName: 'TodoTab',
     tabBarComponent: CustomBottomTabBar
   },
 );

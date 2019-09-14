@@ -36,6 +36,7 @@ class AppStore {
 
   @observable fabVisible: boolean = true
   @observable fabOpen: boolean = false
+
   @observable appTabs: Array<AppTabBarModel> = [
     { index: 0, cmp: TodoTab, show: true },
     { index: 1, cmp: CalendarTab, show: true },
@@ -44,6 +45,7 @@ class AppStore {
     { index: 4, cmp: SearchTab, show: true },
     { index: 5, cmp: SettingTab, show: true }
   ]
+
   @persist('object')
   @observable appTheme: Theme = theme
   @observable currentScreen: string = ''
