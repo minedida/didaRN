@@ -47,6 +47,10 @@
 - 项目中使用了[modal-translucent](react-native-modal-translucent)来去除安卓平台下，弹出modal时尴尬的状态栏
 - 在每次重新安装依赖时，注意运行修复脚本`yarn fix-modal`
 
+### 关于Android下的多渠道包名配置
+- 简单来看，在build.gradle 文件下配置`applicationIdSuffix`就可以达到效果。但是使用其他复杂组件时会有特殊情况
+- https://juejin.im/entry/59f07fb06fb9a045076edf5f
+
 ### 关于抽屉
 - 抽屉有几个问题
 - 1。样式：安卓和iOS的抽屉样式不同，手势不同
@@ -125,6 +129,9 @@ Roboto.ttf
 - 因为有一些功能，expo实现的效果不错，并且能直接预览，所以希望借鉴过来。
 - 目前借助`unimodules`可以访问到expo的一些API，尝试使用
 - expo 目前暂时不支持RN060
+- 根据文档安装完成`unimodules`模块后，默认提供3个API供使用。当看上别的expo-repo时，只需要npm install expo-xxx，在安卓native文件中，会自动生成模块添加代码。
+- 所以接下来要做的就是将iOS项目pod化
+- 最后还需要观察打包后项目的体积
 
 ## Release包出现的问题
 - AppStore中遍历获取组件的名字，在Debug时取displayName没有问题，但是再Release时必须通过这样的方式获取`const name = c.cmp.displayName || c.cmp.name`
