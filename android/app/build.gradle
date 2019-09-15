@@ -8,6 +8,7 @@ project.ext.react = [
 
 apply from: "../../node_modules/react-native/react.gradle"
 apply from: "../../node_modules/react-native-sentry/sentry.gradle"
+apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
 
 def enableSeparateBuildPerCPUArchitecture = true
 def cmd = 'git rev-list HEAD --count'
@@ -77,6 +78,7 @@ android {
 }
 
 dependencies {
+    addUnimodulesDependencies()
     implementation project(':react-native-sentry')
     implementation project(':react-native-device-info')
     implementation project(':react-native-localize')

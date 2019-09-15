@@ -48,7 +48,8 @@ import LightboxDemo from './light-demo/LightboxDemo'
 // @ts-ignore
 import ReanimatedCollapsibleNavbar from './collapsible/reanimated-collapsible-navbar/ReanimatedCollapsibleNavbar';
 // @ts-ignore
-import ReactNativeScrollableHeader from './collapsible/react-native-scrollable-header/ReactNativeScrollableHeader';
+// import ReactNativeScrollableHeader from './collapsible/react-native-scrollable-header/ReactNativeScrollableHeader';
+import ExpoExample from './expo/ExpoExample'
 
 class Demo extends React.Component {
 
@@ -57,7 +58,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <ReactNativeScrollableHeader/>
+    return <ExpoExample/>
   }
 }
 

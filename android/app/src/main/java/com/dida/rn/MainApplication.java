@@ -34,10 +34,16 @@ import me.listenzz.modal.TranslucentModalReactPackage;
 
 //import com.syanpicker.RNSyanImagePickerPackage;
 //import com.dida.rn.plugin.theme.ThemePackage;
+import com.dida.rn.generated.BasePackageList;
+
+import org.unimodules.adapters.react.ModuleRegistryAdapter;
+import org.unimodules.adapters.react.ReactModuleRegistryProvider;
+import org.unimodules.core.interfaces.SingletonModule;
 
 public class MainApplication extends Application implements ReactApplication, ShareApplication {
     public int theme = R.style.BlueTheme;
-
+    private final ReactModuleRegistryProvider mModuleRegistryProvider =
+            new ReactModuleRegistryProvider(new BasePackageList().getPackageList(), Arrays.<SingletonModule>asList());
     private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
         @Override
         public boolean getUseDeveloperSupport() {
@@ -47,11 +53,12 @@ public class MainApplication extends Application implements ReactApplication, Sh
         @Override
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
-                    new MainReactPackage(),
-            new RNSentryPackage(),
-            new RNDeviceInfo()
-                    , new RNLocalizePackage()
-                    , new RNSharePackage()
+                    new MainReactPackage()
+                    ,new ModuleRegistryAdapter(mModuleRegistryProvider)
+                    ,new RNSentryPackage()
+                    ,new RNDeviceInfo()
+                    ,new RNLocalizePackage()
+                    ,new RNSharePackage()
                     //, new RNSyanImagePickerPackage()
                     , new ReactNativeDialogsPackage()
                     , new SpringScrollViewPackage()
@@ -86,7 +93,7 @@ public class MainApplication extends Application implements ReactApplication, Sh
         super.onCreate();
         SoLoader.init(this, /* native exopackage */ false);
 
-        WebView.setWebContentsDebuggingEnabled(true);
+        WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG);
 
     }
 

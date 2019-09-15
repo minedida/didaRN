@@ -120,6 +120,11 @@
 - 编辑`Info.plist`，增加item，value就是fonts文件夹下所有ttf的名字
 Roboto.ttf
 
+## expo
+> ref: [expo-repo](https://github.com/expo/expo/tree/master/apps/native-component-list)、[expo2RN](https://blog.expo.io/you-can-now-use-expo-apis-in-any-react-native-app-7c3a93041331)
+- 因为有一些功能，expo实现的效果不错，并且能直接预览，所以希望借鉴过来。
+- 目前借助`unimodules`可以访问到expo的一些API，尝试使用
+- expo 目前暂时不支持RN060
 
 ## Release包出现的问题
 - AppStore中遍历获取组件的名字，在Debug时取displayName没有问题，但是再Release时必须通过这样的方式获取`const name = c.cmp.displayName || c.cmp.name`
