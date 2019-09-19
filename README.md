@@ -136,7 +136,7 @@ Roboto.ttf
 
 ## iOS项目Pod化改造
 - cd ios & pod init
-
+- 1.写入基础依赖；2.写入原有的依赖，然后一个一个的去除对应的Library依赖。（比如ReAnimated：现打开xcodeproj文件，在Librarys中remove，然后再移除ReAnimated的.a文件）
 
 ## Release包出现的问题
 - AppStore中遍历获取组件的名字，在Debug时取displayName没有问题，但是再Release时必须通过这样的方式获取`const name = c.cmp.displayName || c.cmp.name`

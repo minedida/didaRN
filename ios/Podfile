@@ -1,0 +1,78 @@
+   # Uncomment the next line to define a global platform for your project
+   platform :ios, '9.0'
+
+   target 'dida' do
+     # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+     # use_frameworks!
+
+     # Pods for dida
+     pod 'React', :path => '../node_modules/react-native', :subspecs => [
+       'Core',
+       'CxxBridge',
+       'DevSupport',
+       'RCTText',
+       'RCTImage',
+       'RCTNetwork',
+       'RCTWebSocket',
+       'RCTAnimation',
+       'RCTLinkingIOS',
+       'RCTSettings',
+       'RCTGeolocation',
+       'RCTActionSheet',
+       'RCTVibration',
+       'RCTBlob',
+       'RCTPushNotification'
+     ]
+
+     pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+     pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+     pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+     pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+
+     # third party
+     #pod 'SentryReactNative', :path => '../node_modules/react-native-sentry/SentryReactNative.podspec'
+     pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
+     pod 'RNLocalize', :path => '../node_modules/react-native-localize'
+     pod 'RNShare', :path => '../node_modules/react-native-share'
+     pod 'RNSpringScrollView', :podspec => '../node_modules/react-native-spring-scrollview/ios/RNSpringScrollView.podspec'
+     #pod '@react-native-community_blur', :path => '../node_modules/@react-native-community/blur'
+     #pod 'react-native-autogrow-textinput', :path => '../node_modules/react-native-autogrow-textinput/ios'
+     #pod 'react-native-keyboard-tracking-view', :path => '../node_modules/react-native-keyboard-tracking-view'
+     #pod 'react-native-keyboard-input', :path => '../node_modules/react-native-keyboard-input'
+     pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+     pod 'RNReanimated', :path => '../node_modules/react-native-reanimated/RNReanimated.podspec'
+     pod 'react-native-webview', :path => '../node_modules/react-native-webview/react-native-webview.podspec'
+     pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen/react-native-splash-screen.podspec'
+     pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons/RNVectorIcons.podspec'
+   end
+
+   target 'dida-tvOS' do
+     # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+     # use_frameworks!
+
+     # Pods for dida-tvOS
+
+     target 'dida-tvOSTests' do
+       inherit! :search_paths
+       # Pods for testing
+     end
+
+   end
+
+   post_install do |installer|
+     installer.pods_project.targets.each do |target|
+
+       # The following is needed to ensure the "archive" step works in XCode.
+       # It removes React & Yoga from the Pods project, as it is already included in the main project.
+       # Without this, you'd see errors when you archive like:
+       # "Multiple commands produce ... libReact.a"
+       # "Multiple commands produce ... libyoga.a"
+
+       targets_to_ignore = %w(React yoga)
+
+       if targets_to_ignore.include? target.name
+         target.remove_from_project
+       end
+
+     end
+   end
