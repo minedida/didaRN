@@ -132,6 +132,11 @@ Roboto.ttf
 - 根据文档安装完成`unimodules`模块后，默认提供3个API供使用。当看上别的expo-repo时，只需要npm install expo-xxx，在安卓native文件中，会自动生成模块添加代码。
 - 所以接下来要做的就是将iOS项目pod化
 - 最后还需要观察打包后项目的体积
+    - 实际结果是：增加unimodules、expo-web-browser，然后包体积从11.25M -> 13.5M，还是能接受的
+
+## iOS项目Pod化改造
+- cd ios & pod init
+
 
 ## Release包出现的问题
 - AppStore中遍历获取组件的名字，在Debug时取displayName没有问题，但是再Release时必须通过这样的方式获取`const name = c.cmp.displayName || c.cmp.name`
