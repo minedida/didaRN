@@ -30,12 +30,12 @@
      pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
      # third party
-     #pod 'SentryReactNative', :path => '../node_modules/react-native-sentry/SentryReactNative.podspec'
+     pod 'SentryReactNative', :path => '../node_modules/react-native-sentry'
      pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
      pod 'RNLocalize', :path => '../node_modules/react-native-localize'
      pod 'RNShare', :path => '../node_modules/react-native-share'
      pod 'RNSpringScrollView', :podspec => '../node_modules/react-native-spring-scrollview/ios/RNSpringScrollView.podspec'
-     #pod '@react-native-community_blur', :path => '../node_modules/@react-native-community/blur'
+     pod 'react-native-blur', :path => '../node_modules/@react-native-community/blur'
      #pod 'react-native-autogrow-textinput', :path => '../node_modules/react-native-autogrow-textinput/ios'
      #pod 'react-native-keyboard-tracking-view', :path => '../node_modules/react-native-keyboard-tracking-view'
      #pod 'react-native-keyboard-input', :path => '../node_modules/react-native-keyboard-input'
