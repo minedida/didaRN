@@ -148,6 +148,7 @@ Roboto.ttf
 - 2.`android.useAndroidX=true` 和`android.enableJetifier=true`
 - 3.Android Studio -> Refactor -> Migrate to AndroidX
 - 4.run jetifier
+- 5.注意将`npx jetify`命令放到post install中
 
 ## Release包出现的问题
 - AppStore中遍历获取组件的名字，在Debug时取displayName没有问题，但是再Release时必须通过这样的方式获取`const name = c.cmp.displayName || c.cmp.name`

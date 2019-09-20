@@ -44,6 +44,8 @@
      pod 'react-native-webview', :path => '../node_modules/react-native-webview/react-native-webview.podspec'
      pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen/react-native-splash-screen.podspec'
      pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons/RNVectorIcons.podspec'
+     pod 'RNScreens', :path => '../node_modules/react-native-screens'
+
    end
 
    target 'dida-tvOS' do

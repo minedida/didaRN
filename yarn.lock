@@ -6254,6 +6254,13 @@ react-native-safe-area-view@^0.14.6:
   dependencies:
     debounce "^1.2.0"
 
+react-native-screens@^2.0.0-alpha.3:
+  version "2.0.0-alpha.3"
+  resolved "https://registry.npm.taobao.org/react-native-screens/download/react-native-screens-2.0.0-alpha.3.tgz#af86f265b2fb4293b626cf4396db7743de5a54af"
+  integrity sha1-r4byZbL7QpO2Js9Dltt3Q95aVK8=
+  dependencies:
+    debounce "^1.2.0"
+
 react-native-sentry@^0.43.2:
   version "0.43.2"
   resolved "https://registry.npm.taobao.org/react-native-sentry/download/react-native-sentry-0.43.2.tgz#1505d16d334656f25f4d515e004d0c5a4ac5a01b"
