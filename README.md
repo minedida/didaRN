@@ -134,7 +134,8 @@ Roboto.ttf
 - 最后还需要观察打包后项目的体积
     - 实际结果是：增加unimodules、expo-web-browser，然后包体积从11.25M -> 13.5M，还是能接受的
 
-## iOS项目Pod化改造
+## 项目升级
+### 1. iOS项目Pod化改造
 - cd ios & pod init
 - 1.写入基础依赖；2.写入原有的依赖，然后一个一个的去除对应的Library依赖。（比如ReAnimated：现打开xcodeproj文件，在Librarys中remove，然后再移除ReAnimated的.a文件）
 - 在xcodeproj中删除依赖，在xcworkspace中进行编译
@@ -142,6 +143,11 @@ Roboto.ttf
 - 删除 Recovered References文件夹中对应引用
 - 060以下的iOS项目不能完全的pod化。比如`Animation`这样基础依赖不能因为Podfile中添加过了一遍就删除Library中的引用，不过060以后在这点上可以彻底的pod化了
 - pod化改造发现，podfile和Library是可以共存的。比如A库提供了podspec就可以使用pod安装，B库没有提供就手动安装，两者不冲突。但是不能重复安装
+### 2. Android迁移androidx
+- 1.引入`jetifier`。
+- 2.`android.useAndroidX=true` 和`android.enableJetifier=true`
+- 3.Android Studio -> Refactor -> Migrate to AndroidX
+- 4.run jetifier
 
 ## Release包出现的问题
 - AppStore中遍历获取组件的名字，在Debug时取displayName没有问题，但是再Release时必须通过这样的方式获取`const name = c.cmp.displayName || c.cmp.name`
