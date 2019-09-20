@@ -50,6 +50,7 @@ import ReanimatedCollapsibleNavbar from './collapsible/reanimated-collapsible-na
 // @ts-ignore
 // import ReactNativeScrollableHeader from './collapsible/react-native-scrollable-header/ReactNativeScrollableHeader';
 import ExpoExample from './expo/ExpoExample'
+import RNScreensExample from './rn-screens/App';
 
 class Demo extends React.Component {
 
@@ -58,7 +59,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <ExpoExample/>
+    return <RNScreensExample/>
   }
 }
 
