@@ -149,6 +149,10 @@ Roboto.ttf
 - 3.Android Studio -> Refactor -> Migrate to AndroidX
 - 4.run jetifier
 - 5.注意将`npx jetify`命令放到post install中
+### 3.升级到RN060
+-1.使用[upgrade-helper](https://react-native-community.github.io/upgrade-helper/)。对比js部分改变的地方作出修改。
+-然后对比Android改变的部分作出修改，注意在新的getPackages()方法中，不需要再添加MainReactPackage()了
+-2.移除三方依赖包中，手动link的部分
 
 ## Release包出现的问题
 - AppStore中遍历获取组件的名字，在Debug时取displayName没有问题，但是再Release时必须通过这样的方式获取`const name = c.cmp.displayName || c.cmp.name`
