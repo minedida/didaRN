@@ -12,7 +12,7 @@ export default function withAppInit(WrappedComponent: any) {
 
     async componentDidMount() {
       // 1.网络连接
-      this.handleConnectionChange()
+      // this.handleConnectionChange()
       // 2.国际化
       setI18nConfig()
       // 3.检查更新
@@ -24,23 +24,24 @@ export default function withAppInit(WrappedComponent: any) {
         import('../enhance/ReactotronConfig').then(() => console.log('Reactotron Configured'))
       }
 
-      NetInfo.addEventListener("connectionChange", this.handleConnectionChange)
+      // NetInfo.addEventListener("connectionChange", this.handleConnectionChange)
       RNLocalize.addEventListener("change", this.handleLocalizationChange);
     }
 
+
     componentWillUnmount() {
-      NetInfo.isConnected.removeEventListener(
-        "connectionChange",
-        this.handleConnectionChange
-      )
+      // NetInfo.isConnected.removeEventListener(
+      //   "connectionChange",
+      //   this.handleConnectionChange
+      // )
       RNLocalize.removeEventListener("change", this.handleLocalizationChange)
     }
 
     // 处理网络连接发生改变
-    handleConnectionChange = async (_connectionInfo?: any) => {
-      const result = await NetInfo.isConnected.fetch()
-      stores.app.setNetworkConnected(result)
-    }
+    // handleConnectionChange = async (_connectionInfo?: any) => {
+    //   const result = await NetInfo.isConnected.fetch()
+    //   stores.app.setNetworkConnected(result)
+    // }
 
     // 处理语言发生改变
     handleLocalizationChange = () => {

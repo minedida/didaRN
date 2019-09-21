@@ -52,7 +52,7 @@ class TodoList extends React.Component<Props, {
     this.onReleaseRow = this.onReleaseRow.bind(this)
   }
 
-  componentWillUpdate(): void {
+  UNSAFE_componentWillUpdate(): void {
     LayoutAnimation.easeInEaseOut()
   }
 

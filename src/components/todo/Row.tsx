@@ -42,6 +42,7 @@ type RowProps = {
 // SortableList-row
 export class Row extends React.Component<RowProps> {
 
+
   shouldComponentUpdate(nextProps: Readonly<RowProps>): boolean {
     console.log(`Row-render-shouldComponentUpdate`)
 

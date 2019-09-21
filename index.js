@@ -4,13 +4,14 @@ import App from './src/App';
 import {name as appName} from './app.json';
 
 if (!__DEV__) {
-  global.console = {
-    info: () => {},
-    log: () => {},
-    warn: () => {},
-    debug: () => {},
-    error: () => {}
-  }
+  // 在升级RN060后，下面这行代码在android-release包中会出现问题，暂时不知道为什么
+  // global.console = {
+  //   info: () => {},
+  //   log: () => {},
+  //   warn: () => {},
+  //   debug: () => {},
+  //   error: () => {}
+  // }
 }
 
 const ignores = [

@@ -30,21 +30,9 @@
      pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
      # third party
-     pod 'SentryReactNative', :path => '../node_modules/react-native-sentry'
-     pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
-     pod 'RNLocalize', :path => '../node_modules/react-native-localize'
-     pod 'RNShare', :path => '../node_modules/react-native-share'
-     pod 'RNSpringScrollView', :podspec => '../node_modules/react-native-spring-scrollview/ios/RNSpringScrollView.podspec'
-     pod 'react-native-blur', :path => '../node_modules/@react-native-community/blur'
      #pod 'react-native-autogrow-textinput', :path => '../node_modules/react-native-autogrow-textinput/ios'
      #pod 'react-native-keyboard-tracking-view', :path => '../node_modules/react-native-keyboard-tracking-view'
      #pod 'react-native-keyboard-input', :path => '../node_modules/react-native-keyboard-input'
-     pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
-     pod 'RNReanimated', :path => '../node_modules/react-native-reanimated/RNReanimated.podspec'
-     pod 'react-native-webview', :path => '../node_modules/react-native-webview/react-native-webview.podspec'
-     pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen/react-native-splash-screen.podspec'
-     pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons/RNVectorIcons.podspec'
-     pod 'RNScreens', :path => '../node_modules/react-native-screens'
 
    end
 
