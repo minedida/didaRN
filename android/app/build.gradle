@@ -4,7 +4,7 @@ import com.android.build.OutputFile
 project.ext.react = [
     entryFile: "index.js"
     , extraPackagerArgs: [ '--minify=false' ]
-    , enableHermes: false,  // clean and rebuild if changing
+    , enableHermes: true,  // clean and rebuild if changing
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -65,7 +65,7 @@ android {
             reset()
             enable enableSeparateBuildPerCPUArchitecture
             universalApk false  // If true, also generate a universal APK
-            include "armeabi-v7a"//, "x86", "arm64-v8a", "x86_64"
+            include "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
         }
     }
     applicationVariants.all { variant ->

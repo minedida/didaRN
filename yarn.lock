@@ -5559,18 +5559,18 @@ mobx-persist@^0.4.1:
   dependencies:
     serializr "^1.1.11"
 
-mobx-react@^5.4.3:
-  version "5.4.4"
-  resolved "https://registry.npm.taobao.org/mobx-react/download/mobx-react-5.4.4.tgz#b3de9c6eabcd0ed8a40036888cb0221ab9568b80"
-  integrity sha1-s96cbqvNDtikADaIjLAiGrlWi4A=
+mobx-react@5.4.2:
+  version "5.4.2"
+  resolved "https://registry.npm.taobao.org/mobx-react/download/mobx-react-5.4.2.tgz#53db594dbb44752c15b53c355babaa94a6af5934"
+  integrity sha1-U9tZTbtEdSwVtTw1W6uqlKavWTQ=
   dependencies:
     hoist-non-react-statics "^3.0.0"
     react-lifecycles-compat "^3.0.2"
 
-mobx@^5.9.4:
-  version "5.13.0"
-  resolved "https://registry.npm.taobao.org/mobx/download/mobx-5.13.0.tgz#0fd68f10aa5ff2d146a4ed9e145b53337cfbca59"
-  integrity sha1-D9aPEKpf8tFGpO2eFFtTM3z7ylk=
+mobx@4.5.1:
+  version "4.5.1"
+  resolved "https://registry.npm.taobao.org/mobx/download/mobx-4.5.1.tgz#c7340fd6c272d1bf498e9391aadbcd0f8acbca0d"
+  integrity sha1-xzQP1sJy0b9JjpORqtvND4rLyg0=
 
 moment@^2.22.1, moment@^2.24.0:
   version "2.24.0"
@@ -6524,9 +6524,10 @@ react-native-animatable@^1.3.1:
   dependencies:
     prop-types "^15.5.10"
 
-react-native-autogrow-textinput@pokemon-corps/react-native-autogrow-textinput#master:
+react-native-autogrow-textinput@^5.2.0:
   version "5.2.0"
-  resolved "https://codeload.github.com/pokemon-corps/react-native-autogrow-textinput/tar.gz/14655a00cb5d8f01dce375a7ec90606b5b9d3263"
+  resolved "https://registry.npm.taobao.org/react-native-autogrow-textinput/download/react-native-autogrow-textinput-5.2.0.tgz#acf736454781f5beaba8b7d9c943b7333691b65e"
+  integrity sha1-rPc2RUeB9b6rqLfZyUO3MzaRtl4=
 
 react-native-calendars@1.185.0:
   version "1.185.0"
@@ -6585,9 +6586,10 @@ react-native-gesture-handler@^1.4.1:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
-react-native-keyboard-input@pokemon-corps/react-native-keyboard-input#master:
+react-native-keyboard-input@^5.3.1:
   version "5.3.1"
-  resolved "https://codeload.github.com/pokemon-corps/react-native-keyboard-input/tar.gz/f2b5886a6f05cdcad253e30d76c1e34b4d0b7ad1"
+  resolved "https://registry.npm.taobao.org/react-native-keyboard-input/download/react-native-keyboard-input-5.3.1.tgz#e90f43e17c070535cb54cc0be66a247f177474fc"
+  integrity sha1-6Q9D4XwHBTXLVMwL5mokfxd0dPw=
   dependencies:
     lodash "^4.17.4"
     react-native-keyboard-tracking-view "^5.5.0"

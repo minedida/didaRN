@@ -12,3 +12,6 @@
 
 # react-native-keyboard-input
 -dontwarn com.wix.reactnativekeyboardinput.**
+
+# hermes
+-keep class com.facebook.hermes.unicode.** { *; }
