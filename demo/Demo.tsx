@@ -48,9 +48,9 @@ import LightboxDemo from './light-demo/LightboxDemo'
 // @ts-ignore
 import ReanimatedCollapsibleNavbar from './collapsible/reanimated-collapsible-navbar/ReanimatedCollapsibleNavbar';
 // @ts-ignore
-// import ReactNativeScrollableHeader from './collapsible/react-native-scrollable-header/ReactNativeScrollableHeader';
-import ExpoExample from './expo/ExpoExample'
-import RNScreensExample from './rn-screens/App';
+import ReactNativeScrollableHeader from './collapsible/react-native-scrollable-header/ReactNativeScrollableHeader';
+// import ExpoExample from './expo/ExpoExample'
+// import RNScreensExample from './rn-screens/App';
 
 class Demo extends React.Component {
 
@@ -59,7 +59,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <RNScreensExample/>
+    return <Count3/>
   }
 }
 

@@ -152,7 +152,9 @@ Roboto.ttf
 ### 3.升级到RN060
 -1.使用[upgrade-helper](https://react-native-community.github.io/upgrade-helper/)。对比js部分改变的地方作出修改。
 -然后对比Android改变的部分作出修改，注意在新的getPackages()方法中，不需要再添加MainReactPackage()了
--2.更新package.json中的依赖，使用unlink移除三方依赖
+-2.更新package.json中的依赖，使用unlink移除三方依赖，然后就可以运行了
+-3.升级iOS项目：最终结果是将Librarys中的内容删除，podfile变成最基础的样子，然后使用(升级)支持autolink的三方库。这个过程是痛苦的
+-4.升级iOS项目目前遗留下了一个[bug](https://github.com/wix/react-native-keyboard-tracking-view/issues/16)
 
 
 ## Release包出现的问题
