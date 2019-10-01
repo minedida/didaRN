@@ -105,7 +105,7 @@ class CustomBottomTabBar extends React.Component<any>{
   render() {
     console.log('CustomBottomTabBar-this.props', this.props)
     const style = {
-      activeTintColor: app.appTheme.colors.primary
+      activeTintColor: app.appTheme.colors.primary,
     };
     const customNavigation = this.calculateNavigation(this.props.navigation)
     return <BottomTabBar {...this.props} navigation={customNavigation} {...style} />;

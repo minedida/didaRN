@@ -51,6 +51,8 @@ import ReanimatedCollapsibleNavbar from './collapsible/reanimated-collapsible-na
 import ReactNativeScrollableHeader from './collapsible/react-native-scrollable-header/ReactNativeScrollableHeader';
 // import ExpoExample from './expo/ExpoExample'
 // import RNScreensExample from './rn-screens/App';
+import SpecificPlatformExample from './specific-platform';
+// import SpecificPlatformTSExample from './specific-platform-ts';
 
 class Demo extends React.Component {
 
@@ -59,7 +61,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <Count3/>
+    return <SpecificPlatformExample/>
   }
 }
 

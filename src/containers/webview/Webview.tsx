@@ -35,19 +35,22 @@ class Webview extends React.Component<Props> {
       : isAndroid ? html.and : html.ios*/
     const source = html
       ? isAndroid ? html.and : html.ios
-      : { uri: url }
+      : { uri: url } as any
 
-    return <View style={styles.container}>
-      <NavigationBar title={title}/>
-      <WebView
-        useWebKit
-        style={{ backgroundColor: '#fff' }}
-        javaScriptEnabled={true}
-        domStorageEnabled={true}
-        decelerationRate="normal"
-        source={source}
-        startInLoadingState/>
-    </View>
+    return (
+      <View style={styles.container}>
+        <NavigationBar title={title}/>
+        <WebView
+          androidHardwareAccelerationDisabled // react-native-webview/issues/575
+          style={{ backgroundColor: '#fff' }}
+          javaScriptEnabled={true}
+          domStorageEnabled={true}
+          decelerationRate="normal"
+          startInLoadingState
+          source={source}
+        />
+      </View>
+    )
   }
 }
 

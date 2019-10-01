@@ -24,22 +24,24 @@ class RootView extends React.Component<Props> {
   }
 
   render() {
-    return <Portal>
-      <FabGroup
-        color={'#fff'}
-        visible={this.props.app!.fabVisible}
-        fabStyle={{ marginBottom: d(56) }}
-        open={this.props.app!.fabOpen}
-        icon={this.props.app!.fabOpen ? 'today' : 'add'}
-        actions={[]}
-        onStateChange={({ open }) => this.onFabPress(open)}
-        onPress={() => {}}/>
+    return (
+      <Portal>
+        <FabGroup
+          color={'#fff'}
+          visible={this.props.app!.fabVisible}
+          fabStyle={{ marginBottom: d(56) }}
+          open={this.props.app!.fabOpen}
+          icon={this.props.app!.fabOpen ? 'today' : 'add'}
+          actions={[]}
+          onStateChange={({ open }) => this.onFabPress(open)}
+          onPress={() => {}}/>
         {/*
             用一个空布局将输入框顶到屏幕最下面(安卓用)
         */}
         <View style={{ flex: 1 }} pointerEvents={"none"}/>
-      <QuickInput/>
-    </Portal>
+        <QuickInput/>
+      </Portal>
+    )
   }
 }
 
