@@ -11,9 +11,9 @@ interface IFABGroupProps extends FABGroupProps {
 
 const FabGroup = withTheme(
   (props: IFABGroupProps) =>
-    <PaperFAB.Group {...props}
-                    fabStyle={[props.fabStyle,
-                      {backgroundColor: props.theme.colors.primary}]}/>
+    <PaperFAB.Group
+      {...props}
+      fabStyle={[props.fabStyle, {backgroundColor: props.theme.colors.primary}]}/>
 )
 
 export {

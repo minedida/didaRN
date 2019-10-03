@@ -54,6 +54,7 @@ export default createDrawerNavigator(
     // contentComponent: CustomDrawerContentComponent,
     drawerWidth: Dimensions.get('window').width * 0.86,
     drawerType: Platform.OS === 'android' ? 'front' : 'slide',
+    overlayColor: 'rgba(0, 0, 0, 0.5)',
     unmountInactiveRoutes: false // 设置false才能有缓存
   }
 );
