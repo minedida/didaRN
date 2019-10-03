@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, LayoutAnimation, UIManager } from 'react-native'
 import { material } from "react-native-typography";
 import { Theme, withTheme } from 'react-native-paper'
@@ -46,39 +46,40 @@ const icons = {
   today: { type: 'FontAwesome5', name: 'calendar-alt' }
 }
 
-UIManager.setLayoutAnimationEnabledExperimental &&
-UIManager.setLayoutAnimationEnabledExperimental(true);
+const animate = () => {
+  UIManager.setLayoutAnimationEnabledExperimental &&
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+  LayoutAnimation.easeInEaseOut();
+};
 
+// use Animate with React Hooks: https://medium.com/@andriidrozdov/animate-everything-in-reactnative-with-single-line-of-code-4c6b73ea6de9
+const Tips: any = (props: Props) => {
+  const [click, setClick] = useState(false);
+  const handlePress = useCallback(
+    () => {
+      animate();
+      setClick(true);
+    },
+    [click]
+  );
 
-class Tips extends React.PureComponent<Props> {
-  state = {
-    click: false
-  }
+  const {
+    theme: { colors: { primary } },
+    type = 'inbox',
+  } = props;
+  return !click && (
+    <View style={[styles.container, { backgroundColor: primary }]}>
+      <Icon {...icons[type]} color={'#fff'} size={t(34)} style={styles.iconStyle}/>
 
-  UNSAFE_componentWillUpdate = () => LayoutAnimation.easeInEaseOut()
-
-  render() {
-    const {
-      theme: { colors: { primary } },
-      type = 'inbox',
-    } = this.props
-    return !this.state.click && (
-      <View style={[styles.container,
-        { backgroundColor: primary }]}>
-        <Icon {...icons[type]} color={'#fff'}
-              size={t(34)} style={styles.iconStyle}/>
-
-        <View style={{ width: d(270) }}>
-          <Space height={d(8)}/>
-          <Text
-            style={[material.caption, { color: '#fff', lineHeight: t(20) }]}>{txts[type]}</Text>
-          <TouchableOpacity style={styles.btnView} onPress={() => this.setState({ click: true })}>
-            <Text style={[material.caption, { color: primary }]}>我知道了</Text>
-          </TouchableOpacity>
-        </View>
+      <View style={{ width: d(270) }}>
+        <Space height={d(8)}/>
+        <Text style={[material.caption, { color: '#fff', lineHeight: t(20) }]}>{txts[type]}</Text>
+        <TouchableOpacity style={styles.btnView} onPress={handlePress}>
+          <Text style={[material.caption, { color: primary }]}>我知道了</Text>
+        </TouchableOpacity>
       </View>
-    )
-  }
-}
+    </View>
+  )
+};
 
 export default withTheme(Tips)
