@@ -51,8 +51,11 @@ import ReanimatedCollapsibleNavbar from './collapsible/reanimated-collapsible-na
 import ReactNativeScrollableHeader from './collapsible/react-native-scrollable-header/ReactNativeScrollableHeader';
 // import ExpoExample from './expo/ExpoExample'
 // import RNScreensExample from './rn-screens/App';
+// @ts-ignore
 import SpecificPlatformExample from './specific-platform';
 // import SpecificPlatformTSExample from './specific-platform-ts';
+
+import MerryPhotoViewer from './@merryjs/photo-viewer/MerryPhotoViewer';
 
 class Demo extends React.Component {
 
@@ -61,7 +64,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <SpecificPlatformExample/>
+    return <MerryPhotoViewer/>
   }
 }
 

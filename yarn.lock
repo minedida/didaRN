@@ -997,6 +997,11 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
+"@merryjs/photo-viewer@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.npm.taobao.org/@merryjs/photo-viewer/download/@merryjs/photo-viewer-3.1.0.tgz#6dc218b5ecf9c065233c19799bd112b8858e4ab0"
+  integrity sha1-bcIYtez5wGUjPBl5m9ESuIWOSrA=
+
 "@react-native-community/blur@^3.3.1":
   version "3.3.1"
   resolved "https://registry.npm.taobao.org/@react-native-community/blur/download/@react-native-community/blur-3.3.1.tgz#bc9ecd6d85d89739d8180138716535ac7cfa4680"
