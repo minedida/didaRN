@@ -50,6 +50,7 @@
     "react-native-gesture-handler": "^1.4.1",
     "react-native-keyboard-input": "pokemon-corps/react-native-keyboard-input#master",
     "react-native-largelist-v3": "^3.0.14",
+    "react-native-linear-gradient": "^2.5.6",
     "react-native-localize": "^1.2.1",
     "react-native-looped-carousel": "^0.1.13",
     "react-native-material-ui": "^1.30.1",

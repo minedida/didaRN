@@ -54,7 +54,9 @@ import ReactNativeScrollableHeader from './collapsible/react-native-scrollable-h
 // @ts-ignore
 import SpecificPlatformExample from './specific-platform';
 // import SpecificPlatformTSExample from './specific-platform-ts';
+import FlutterAnimation from './fluttter-animations/'
 
+// @ts-ignore
 import MerryPhotoViewer from './@merryjs/photo-viewer/MerryPhotoViewer';
 
 class Demo extends React.Component {
@@ -64,7 +66,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <MerryPhotoViewer/>
+    return <FlutterAnimation/>
   }
 }
 

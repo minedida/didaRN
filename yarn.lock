@@ -6607,6 +6607,11 @@ react-native-largelist-v3@^3.0.14:
   resolved "https://registry.npm.taobao.org/react-native-largelist-v3/download/react-native-largelist-v3-3.0.14.tgz#0b03dc588ed90f90432361f91ffa26d8e529e7c0"
   integrity sha1-CwPcWI7ZD5BDI2H5H/om2OUp58A=
 
+react-native-linear-gradient@^2.5.6:
+  version "2.5.6"
+  resolved "https://registry.npm.taobao.org/react-native-linear-gradient/download/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"
+  integrity sha1-liFcvF7HoBJHogiQiIqnW4NNRKA=
+
 react-native-localize@^1.2.1:
   version "1.2.1"
   resolved "https://registry.npm.taobao.org/react-native-localize/download/react-native-localize-1.2.1.tgz#7c68a9275117942763439bf570828f05fb5bbdc7"
