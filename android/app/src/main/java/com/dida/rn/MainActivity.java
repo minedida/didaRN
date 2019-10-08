@@ -33,6 +33,7 @@ public class MainActivity extends ReactActivity {
         //if (application.theme != 0)
         //    setTheme(application.theme);
         SplashScreen.show(this, R.style.SplashScreenTheme);
+        //SplashScreen.show(this, true);
         super.onCreate(savedInstanceState);
     }
 

@@ -52,11 +52,16 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="colorPrimary">@color/white</item>
     </style>
-
+<!--colorPrimaryDark生效，statusBarColor也生效。如果都不给的话，为黑色-->
     <style name="SplashScreenTheme" parent="SplashScreen_SplashTheme">
-        <item name="colorPrimaryDark">@color/status_bar_color</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
         <!--启动屏时，状态栏文字设置为黑色-->
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:statusBarColor">#ffffff</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_layer</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
 </resources>
