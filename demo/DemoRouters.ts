@@ -31,9 +31,11 @@ import SpecificPlatformExample from './specific-platform';
 // import SpecificPlatformTSExample from './specific-platform-ts';
 import FlutterAnimation from './fluttter-animations/'
 import MerryPhotoViewer from './@merryjs/photo-viewer/MerryPhotoViewer';
+import AnExApp from './rn-animated/AnExApp';
 
 export default [
   // TabViewExampleList,
+  AnExApp,
   SortableListExample,
   SortableListViewExample,
   DragableListExample,

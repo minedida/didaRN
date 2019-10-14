@@ -36,6 +36,7 @@ public class SplashActivity extends AppCompatActivity {
             ViewCompat.requestApplyInsets(decorView);
             //将状态栏设成透明，如不想透明可设置其他颜色
             window.setStatusBarColor(ContextCompat.getColor(this, android.R.color.transparent));
+
         }
     }
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Platform, ScrollView, View } from 'react-native'
+import { Platform, ScrollView, View, Easing } from 'react-native'
+import { PanGestureHandler, TapGestureHandler } from 'react-native-gesture-handler';
 import { List } from 'react-native-paper';
 import { createAppContainer, createStackNavigator } from 'react-navigation'
 import DemoRouters from './DemoRouters';

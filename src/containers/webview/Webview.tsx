@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, Platform } from 'react-native'
+import { View, StyleSheet, Platform, ScrollView, SafeAreaView } from 'react-native'
 import { WebView } from 'react-native-webview';
 import { NavigationBar } from "../../components";
 
@@ -41,6 +41,7 @@ class Webview extends React.Component<Props> {
       <View style={styles.container}>
         <NavigationBar title={title}/>
         <WebView
+          scrollIndicatorInsets={false}
           androidHardwareAccelerationDisabled // react-native-webview/issues/575
           style={{ backgroundColor: '#fff' }}
           javaScriptEnabled={true}
