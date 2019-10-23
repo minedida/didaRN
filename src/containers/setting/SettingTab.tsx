@@ -84,7 +84,7 @@ const configs: Array<Array<ConfigItem>> = [
       leftIcon: <SettingIcon type={'AntDesign'} name={'like1'}/>
     },
     {
-      id: 'info',
+      id: 'about',
       title: '关于',
       leftIcon: <SettingIcon type={'Ionicons'} name={'md-information-circle'}/>
     },
@@ -121,6 +121,7 @@ class SettingTab extends React.Component<NavigationParams> {
 
     type === 'settings' && navigate('MoreSetting')
     type === 'theme' && navigate('ThemeSetting')
+    type === 'about' && navigate('Demo')
   }
 
   renderSettingItem(g, i) {

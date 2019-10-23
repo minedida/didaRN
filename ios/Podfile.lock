@@ -261,6 +261,8 @@ PODS:
     - React
   - RNSpringScrollView (2.0.22):
     - React
+  - RNSVG (9.12.0):
+    - React
   - RNVectorIcons (6.6.0):
     - React
   - Sentry (4.4.0):
@@ -313,6 +315,7 @@ DEPENDENCIES:
   - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - RNShare (from `../node_modules/react-native-share`)
   - RNSpringScrollView (from `../node_modules/react-native-spring-scrollview/ios`)
+  - RNSVG (from `../node_modules/react-native-svg`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -406,6 +409,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-share"
   RNSpringScrollView:
     :path: "../node_modules/react-native-spring-scrollview/ios"
+  RNSVG:
+    :path: "../node_modules/react-native-svg"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
   Yoga:
@@ -456,6 +461,7 @@ SPEC CHECKSUMS:
   RNSentry: f1c8e34f9109a94b77e946d0ca50803375c1c19e
   RNShare: 8b171d4b43c1d886917fdd303bf7a4b87167b05c
   RNSpringScrollView: 98da773df6ab48553c8f77a976598633d05b2e8b
+  RNSVG: 75670614bca635d3dd64bc267bc199e539cb4fa9
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Sentry: 26650184fe71eb7476dfd2737acb5ea6cc64b4b1
   Yoga: 14927e37bd25376d216b150ab2a561773d57911f

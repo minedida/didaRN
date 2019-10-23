@@ -31,7 +31,7 @@ const renderCarousel = () => (
   </Carousel>
 )
 
-export default () => (
+const App = () => (
   <ScrollView style={styles.container}>
     <View style={styles.text}><Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </Text></View>
     <Lightbox underlayColor="white">
@@ -73,6 +73,8 @@ export default () => (
   </ScrollView>
 )
 
+App.displayName='LightboxDemo';
+export default App;
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: BASE_PADDING,

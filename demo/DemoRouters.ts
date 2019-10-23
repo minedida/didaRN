@@ -1,13 +1,9 @@
-// @ts-ignore
 import TabViewExampleList from './react-native-tab-view/TabViewExampleList';
 import SortableListExample from './sort-and-swipe/react-native-sortable-list/example/SortableListExample';
 import SortableListViewExample from './sort-and-swipe/react-native-sortable-list/example/SortableListViewExample';
 import DragableListExample from './sort-and-swipe/react-native-sortable-list/example/DragableListExample';
 import SwipeableExample from './sort-and-swipe/react-native-swipeable/Example'
 import CustomSortAndSwipeList from './sort-and-swipe/react-native-sort-and-swipe-list/src/CustomSortAndSwipeList'
-import HumanShowcaseScreen from './react-native-typography/HumanShowcaseScreen'
-import MaterialShowcaseScreen from './react-native-typography/MaterialShowcaseScreen'
-// @ts-ignore
 import TypographyExample from './react-native-typography/TypographyExample'
 import Header from './Header/'
 import KeyboardDemoScreen from './keyboard-input/demoScreen';
@@ -25,25 +21,27 @@ import Count3 from './hooks/Count3'
 import LightboxDemo from './light-demo/LightboxDemo'
 import ReanimatedCollapsibleNavbar from './collapsible/reanimated-collapsible-navbar/ReanimatedCollapsibleNavbar';
 import ReactNativeScrollableHeader from './collapsible/react-native-scrollable-header/ReactNativeScrollableHeader';
-// import ExpoExample from './expo/ExpoExample'
-// import RNScreensExample from './rn-screens/App';
+import ExpoExample from './expo/ExpoExample'
+import RNScreensExample from './rn-screens/App';
 import SpecificPlatformExample from './specific-platform';
 // import SpecificPlatformTSExample from './specific-platform-ts';
 import FlutterAnimation from './fluttter-animations/'
 import MerryPhotoViewer from './@merryjs/photo-viewer/MerryPhotoViewer';
 import AnExApp from './rn-animated/AnExApp';
+import CloneElement from "./react/CloneElement";
+import ShadowDemo1 from './shadow/ShadowDemo1'
+import ShadowDemo2 from './shadow/ShadowDemo2'
+import ShadowDemo3 from './shadow/ShadowDemo3'
 
 export default [
-  // TabViewExampleList,
+  TabViewExampleList,
   AnExApp,
   SortableListExample,
   SortableListViewExample,
   DragableListExample,
   SwipeableExample,
   CustomSortAndSwipeList,
-  HumanShowcaseScreen,
-  MaterialShowcaseScreen,
-  // TypographyExample,
+  TypographyExample,
   Header,
   KeyboardDemoScreen,
   RecycleTestComponent,
@@ -55,10 +53,16 @@ export default [
   Count1,
   Count2,
   Count3,
+  ExpoExample,
   LightboxDemo,
   ReanimatedCollapsibleNavbar,
   ReactNativeScrollableHeader,
   SpecificPlatformExample,
   MerryPhotoViewer,
   FlutterAnimation,
+  RNScreensExample,
+  CloneElement,
+  ShadowDemo1,
+  ShadowDemo2,
+  ShadowDemo3,
 ];

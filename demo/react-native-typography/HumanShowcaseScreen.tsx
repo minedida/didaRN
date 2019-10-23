@@ -8,7 +8,7 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
-  StatusBar
+  StatusBar,
 } from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
@@ -44,7 +44,7 @@ const headerStyles = StyleSheet.create({
   }
 });
 
-const TouchableRoundedImage = ({ style, ...props }) => (
+const TouchableRoundedImage = ({ style, ...props }: any) => (
   <TouchableOpacity style={style}>
     <ImageBackground
       borderRadius={6}

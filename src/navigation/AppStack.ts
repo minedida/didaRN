@@ -19,6 +19,7 @@ import MoreSetting from "../containers/setting/MoreSetting";
 import ThemeSetting from "../containers/setting/ThemeSetting";
 import TransitionConfig from './TransitionConfig'
 import AppDrawer from "./AppDrawer";
+import Demo from '../../demo/Demo';
 
 // @ts-ignore
 const transitionConfig: any = Platform.OS === 'ios' ? undefined : TransitionConfig;
@@ -49,6 +50,7 @@ const routeConfigMap = {
   IntelligentRecognition,
   MoreSetting,
   ThemeSetting,
+  Demo,
 };
 
 

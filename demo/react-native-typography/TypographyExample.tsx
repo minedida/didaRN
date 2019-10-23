@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Platform, TouchableOpacity } from "react-native";
-import { StackNavigator, DrawerNavigator } from "react-navigation";
+import { createStackNavigator, createDrawerNavigator } from "react-navigation";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 import { iOSColors } from "react-native-typography";
@@ -55,7 +55,7 @@ const openDrawerHeaderButton = (navigation, color) => (
 
 // @ts-ignore
 const guidelinesStackNavigator = (screen, headerTitle) =>
-  StackNavigator(
+  createStackNavigator(
     {
       Screen: { screen }
     },
@@ -68,36 +68,31 @@ const guidelinesStackNavigator = (screen, headerTitle) =>
     }
   );
 
-const Root = DrawerNavigator({
-  // humanShowcase: {
-  //   screen: StackNavigator({
-  //     Screen: { screen: HumanShowcaseScreen }
-  //   })
-  // },
-  materialShowcase: {
-    screen: StackNavigator({
-      Screen: {
-        screen: MaterialShowcaseScreen,
-        navigationOptions: ({ navigation }) => ({
-          headerTitle: "Your Daily Mix",
-          headerLeft: openDrawerHeaderButton(navigation, iOSColors.white)
-        })
+const Root = createDrawerNavigator(
+  {
+    humanShowcase: {
+      screen: createStackNavigator({
+        Screen: { screen: HumanShowcaseScreen }
+      })
+    },
+    materialShowcase: {
+      screen: createStackNavigator({
+        Screen: {
+          screen: MaterialShowcaseScreen,
+          navigationOptions: ({ navigation }) => ({
+            headerTitle: "Your Daily Mix",
+            headerLeft: openDrawerHeaderButton(navigation, iOSColors.white)
+          })
+        }
+      }),
+      navigationOptions: {
+        drawerLabel: "Showcase - Material Design",
+        drawerIcon: drawerButton("ios-create")
       }
-    }),
-    navigationOptions: {
-      drawerLabel: "Showcase - Material Design",
-      drawerIcon: drawerButton("ios-create")
-    }
-  },
-});
-
-const TypographyExample = () => {
-  return (
-    <View style={styles.container}>
-      <Root />
-    </View>
-  );
-};
+    },
+  }
+)
+Root.displayName = 'TypographyExample';
 
 const styles = StyleSheet.create({
   container: {
@@ -108,4 +103,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default TypographyExample;
+export default Root;

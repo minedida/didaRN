@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import TodoList from './TodoList';
 
 // ref: https://medium.com/crowdbotics/build-a-react-native-app-with-react-hooks-5498e1d5fdf6
-export default function App() {
+const App = () => {
   const [value, setValue] = useState('');
   const [todos, setTodos]: Array<any> = useState([]);
 
@@ -71,7 +71,8 @@ export default function App() {
     </View>
   );
 }
-
+App.displayName='Count3';
+export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

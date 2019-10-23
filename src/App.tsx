@@ -13,7 +13,7 @@ import { withAppInit } from "./helper/hoc";
 
 // enable layout-animation
 Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental(true);
-useScreens()
+useScreens();
 
 @withAppInit @observer
 export default class App extends Component<any> {
@@ -24,6 +24,7 @@ export default class App extends Component<any> {
   }
 
   render() {
+
     const theme = stores.app.appTheme
     return (
       <StoreProvider {...stores}>
