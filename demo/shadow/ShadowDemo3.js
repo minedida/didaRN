@@ -16,24 +16,27 @@ const styles = StyleSheet.create({
     color: '#333',
     textAlign: 'center',
     letterSpacing: 0.24,
+  },
+  square: {
+    width: 294,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: '#ffffff',
+  },
+  shadow: {
+    shadowColor: '#4563cd',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowRadius: 14,
+    shadowOpacity: 0.14,
   }
 })
 
 const ShadowInput = () => (
   <ShadowView
-    style={{
-      borderRadius: 30,
-      backgroundColor: '#ffffff',
-      shadowColor: '#4563cd',
-      shadowOffset: {
-        width: 0,
-        height: 2,
-      },
-      shadowRadius: 14,
-      shadowOpacity: 0.14,
-      width: 294,
-      height: 60,
-    }}
+    style={[styles.square, styles.shadow]}
   >
     <TextInput
       editable={true}
@@ -59,7 +62,7 @@ class ShadowDemo3 extends React.Component {
       >
         <Space height={60} />
         <ShadowInput />
-        {/*<ShadowScroll />*/}
+        <View style={[styles.square, { backgroundColor: 'yellow' }]} />
       </View>
     );
   }

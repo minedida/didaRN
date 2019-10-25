@@ -1,9 +1,8 @@
 import React from 'react'
-import { View, StyleSheet, Platform, ScrollView, SafeAreaView } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import { WebView } from 'react-native-webview';
 import { NavigationBar } from "../../components";
 
-const isAndroid = Platform.OS === 'android'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -14,7 +13,6 @@ const styles = StyleSheet.create({
 type Props = {
   title: ''
   url?: any
-  html?: any
 }
 
 // 使用webview ： http://bastengao.com/blog/2017/08/webview-with-local-html-in-react-native.html
@@ -30,25 +28,20 @@ class Webview extends React.Component<Props> {
 
   render() {
 
-    const { title, html, url } = this.props
-    /*const source = url ? {uri: url}
-      : isAndroid ? html.and : html.ios*/
-    const source = html
-      ? isAndroid ? html.and : html.ios
-      : { uri: url } as any
+    const { title, url } = this.props
 
     return (
       <View style={styles.container}>
         <NavigationBar title={title}/>
         <WebView
-          scrollIndicatorInsets={false}
+          // scrollIndicatorInsets={false}
           androidHardwareAccelerationDisabled // react-native-webview/issues/575
           style={{ backgroundColor: '#fff' }}
           javaScriptEnabled={true}
           domStorageEnabled={true}
           decelerationRate="normal"
           startInLoadingState
-          source={source}
+          source={url}
         />
       </View>
     )

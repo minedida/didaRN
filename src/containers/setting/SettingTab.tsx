@@ -111,8 +111,8 @@ class SettingTab extends React.Component<NavigationParams> {
     //
     // });
     type === 'header' && navigate('Auth')
-    type === 'wechat' && navigate('Webview',
-      { title: '玩转微信公众号', html: Html.play })
+    type === 'wechat' &&
+    navigate('Webview', { title: '玩转微信公众号', url: Html.play })
 
     type === 'dashboard' && navigate('Dashboard')
     type === 'alarm' && navigate('SoundAndNotify')

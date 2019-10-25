@@ -1,7 +1,5 @@
 import React from 'react'
-import { NetInfo } from "react-native";
 import * as RNLocalize from "react-native-localize";
-import stores from '../../store'
 import { setI18nConfig } from "../../i18n";
 import { app } from "../../store/AppStore";
 import { checkUpdate } from "../utils/UpdateApp";

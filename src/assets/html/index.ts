@@ -1,6 +1,9 @@
+import { Platform } from "react-native";
+
+
 export default {
-  play: {
+  play: Platform.select({
     ios: require('./play.html'),
-    and: { uri: 'file:///android_asset/play.html' }
-  }
+    android: { uri: 'file:///android_asset/play.html' }
+  })
 }

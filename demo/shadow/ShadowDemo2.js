@@ -29,11 +29,18 @@ const ShadowDemo2 = () => (
           height: '100%',
           backgroundColor: '#fff',
           borderRadius: 30,
-          // marginVertical:5,
           overflow: 'hidden',
         }}>
       </View>
     </BoxShadow>
+    <View
+      style={{
+        width: 294,
+        height: 60,
+        borderRadius: 30,
+        backgroundColor: 'yellow',
+      }}
+    />
   </View>
 );
 export default ShadowDemo2;
