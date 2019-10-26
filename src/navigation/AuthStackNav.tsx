@@ -10,9 +10,12 @@ class AuthStackNav extends Component<any> {
 
   render() {
     const { navigation } = this.props;
-    return <AuthStack
-      navigation={navigation}
-      ref={(nav: NavigationContainerComponent) => setNavigator(nav)}/>
+    return (
+      <AuthStack
+        navigation={navigation}
+        ref={(nav: NavigationContainerComponent) => setNavigator(nav)}
+      />
+    )
   }
 }
 

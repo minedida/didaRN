@@ -54,7 +54,7 @@ const configs: Array<Array<any>> = [
       id: 'countdown-mode',
       title: '倒数日模式',
       description: '启用后，清单内各任务右侧的日期，将显示为倒数日。你可以点击任务右侧的倒数日或日期进行切换。',
-      rightView: <Switch value={false} style={styles.switch}/>
+      rightView: <Switch value={false} style={styles.switch} />
     },
     {
       id: 'attachment',
@@ -73,13 +73,13 @@ const configs: Array<Array<any>> = [
     {
       id: 'background-pure-mode',
       title: '后台纯净模式',
-      rightView: <Switch value={false} style={styles.switch}/>
+      rightView: <Switch value={false} style={styles.switch} />
     },
     {
       id: 'double-back',
       title: '退出前提示',
       description: '点击返回键退出应用时，需要再次点击确认',
-      rightView: <Switch value={false} style={styles.switch}/>
+      rightView: <Switch value={false} style={styles.switch} />
     }
   ]
 ]
@@ -90,16 +90,30 @@ class MoreSetting extends React.PureComponent {
   }
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#fff' }}>
-        <NavigationBar title={'更多设置'}/>
-        <ScrollView style={{ flex: 1, backgroundColor: '#fff' }}>
+      <View
+        style={{ flex: 1, backgroundColor: '#fff' }}
+      >
+        <NavigationBar title={'更多设置'} />
+        <ScrollView
+          style={{ flex: 1, backgroundColor: '#fff' }}
+        >
 
-          {configs.map((g, i) =>
-            <SettingListGroup key={i} last={i === configs.length -1}>
+          {configs.map(
+            (g, i) =>
+            <SettingListGroup
+              key={i}
+              last={i === configs.length -1}
+            >
               {
-                g.map(v =>
-                  <SettingListItem key={v.id} onPress={this.onSettingListItemPress}
-                                   itemHeight={d(70)} {...v}/>)
+                g.map(
+                  v =>
+                      <SettingListItem
+                        key={v.id}
+                        onPress={this.onSettingListItemPress}
+                        itemHeight={d(70)}
+                        {...v}
+                      />
+                    )
               }
             </SettingListGroup>
           )}

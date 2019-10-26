@@ -2,12 +2,12 @@ import React from 'react'
 import { View, ScrollView } from 'react-native'
 import { observer } from "mobx-react";
 import { withTheme } from 'react-native-paper';
+import { NavigationParams } from "react-navigation";
 import { SettingTabNavigationOptions } from "../../navigation/TabBarNavigationOptions";
 import { navigate } from "../../navigation";
 import { d, t } from "../../helper/utils/ScreenUtil";
 import { SettingListItem, SettingListGroup, SettingHeader, SettingIcon, NavigationBar }
   from "../../components/";
-import { NavigationParams } from "react-navigation";
 import { Html } from "../../assets";
 
 type ConfigItem = {
@@ -124,12 +124,21 @@ class SettingTab extends React.Component<NavigationParams> {
     type === 'about' && navigate('Demo')
   }
 
-  renderSettingItem(g, i) {
+  renderSettingItem(g: Array<any>, i: Number) {
     return (
-      <SettingListGroup key={i} last={i === configs.length - 1}>
+      <SettingListGroup
+        key={i}
+        last={i === configs.length - 1}
+      >
         {
-          g.map(v =>
-            <SettingListItem key={v.id} onPress={this.onSettingListItemPress} {...v}/>)
+          g.map(
+            v =>
+              <SettingListItem
+                key={v.id}
+                onPress={this.onSettingListItemPress}
+                {...v}
+              />
+            )
         }
       </SettingListGroup>
     )
@@ -137,13 +146,25 @@ class SettingTab extends React.Component<NavigationParams> {
 
   render() {
     const params = this.props.navigation.state.params
-    const leftButton = params && params.from && params.from === 'drawer' ? undefined : null
+    const leftButton = params && params.from && params.from === 'drawer'
+      ? undefined
+      : null
     return (
-      <View style={{ flex: 1, backgroundColor: '#fff' }}>
-        <NavigationBar leftButton={leftButton} title={'设置'}/>
-        <ScrollView endFillColor={'cyan'} style={{ flex: 1, backgroundColor: '#fff' }}>
+      <View
+        style={{ flex: 1, backgroundColor: '#fff' }}
+      >
+        <NavigationBar
+          leftButton={leftButton}
+          title={'设置'}
+        />
+        <ScrollView
+          endFillColor={'cyan'}
+          style={{ flex: 1, backgroundColor: '#fff' }}
+        >
 
-          <SettingHeader onPress={() => this.onSettingListItemPress('header')}/>
+          <SettingHeader
+            onPress={() => this.onSettingListItemPress('header')}
+          />
 
           {configs.map(this.renderSettingItem)}
         </ScrollView>

@@ -23,7 +23,9 @@ class TodoStore {
 
   @action.bound checkTodo(id: number): void {
     this.todos = this.todos.map(
-      item => item.id === id ? { ...item, checked: !item.checked } : item
+      item => item.id === id
+        ? { ...item, checked: !item.checked }
+        : item
     )
   }
 

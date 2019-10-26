@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, ScrollView, StyleSheet } from 'react-native'
-import { NavigationBar, SettingListItem, Switch, Toast } from "../../components";
 import { List } from 'react-native-paper';
+import { NavigationBar, SettingListItem, Switch, Toast } from "../../components";
 import { d } from "../../helper/utils/ScreenUtil";
 
 
@@ -18,11 +18,19 @@ class IntelligentRecognition extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#fff' }}>
+      <View
+        style={{ flex: 1, backgroundColor: '#fff' }}
+      >
         <NavigationBar title={'智能识别'}/>
-        <ScrollView style={{ flex: 1, backgroundColor: '#fff' }}>
-          <List.Section>
-            <List.Subheader>智能识别</List.Subheader>
+        <ScrollView
+          style={{ flex: 1, backgroundColor: '#fff' }}
+        >
+          <List.Section
+          >
+            <List.Subheader
+            >
+              智能识别
+            </List.Subheader>
             <SettingListItem key={'intelligent-recognition-date'} id={'intelligent-recognition-date'}
                              title={'智能识别日期'} description={'通过快速添加、语言输入等方式创建任务时，自动识别任务中的日期和时间信息并设置提醒。'}
                              onPress={_ => this.onSettingListItemPress('intelligent-recognition-date')}

@@ -17,10 +17,22 @@ export default function listenKeyboard(WrappedComponent: any) {
     }
 
     componentWillMount() {
-      const keyboardShowType = Platform.OS === 'android' ? 'keyboardDidShow' : 'keyboardWillShow'
-      const keyboardHideType = Platform.OS === 'android' ? 'keyboardDidHide' : 'keyboardWillHide'
-      this.keyboardWillShowSub = Keyboard.addListener(keyboardShowType, this.keyboardWillShow);
-      this.keyboardWillHideSub = Keyboard.addListener(keyboardHideType, this.keyboardWillHide);
+      const keyboardShowType =
+        Platform.OS === 'android'
+          ? 'keyboardDidShow'
+          : 'keyboardWillShow'
+      const keyboardHideType =
+        Platform.OS === 'android'
+          ? 'keyboardDidHide'
+          : 'keyboardWillHide'
+      this.keyboardWillShowSub = Keyboard.addListener(
+        keyboardShowType,
+        this.keyboardWillShow)
+      ;
+      this.keyboardWillHideSub = Keyboard.addListener(
+        keyboardHideType,
+        this.keyboardWillHide
+      );
     }
 
     componentWillUnmount() {

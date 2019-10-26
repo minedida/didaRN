@@ -84,15 +84,30 @@ class SoundAndNotify extends React.PureComponent {
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#fff' }}>
+      <View
+        style={{ flex: 1, backgroundColor: '#fff' }}
+      >
         <NavigationBar title={'声音与提醒'}/>
-        <ScrollView endFillColor={'cyan'} style={{ flex: 1, backgroundColor: '#fff' }}>
+        <ScrollView
+          endFillColor={'cyan'}
+          style={{ flex: 1, backgroundColor: '#fff' }}
+        >
 
-          {configs.map((g, i) =>
-              <SettingListGroup key={i}>
+          {configs.map(
+            (g, i) =>
+              <SettingListGroup
+                key={i}
+              >
                 {
-                  g.map(v =>
-                    <SettingListItem key={v.id} onPress={this.onSettingListItemPress} itemHeight={d(78)} {...v}/>)
+                  g.map(
+                    v =>
+                      <SettingListItem
+                        key={v.id}
+                        onPress={this.onSettingListItemPress}
+                        itemHeight={d(78)}
+                        {...v}
+                      />
+                    )
                 }
               </SettingListGroup>
           )}

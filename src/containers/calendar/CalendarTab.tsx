@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { NavigationBar } from "../../components/";
 import {Agenda} from 'react-native-calendars';
+import { NavigationBar } from "../../components/";
 import { d } from "../../helper/utils/ScreenUtil";
 import { CalendarTabNavigationOptions } from "../../navigation/TabBarNavigationOptions";
 
@@ -31,8 +31,13 @@ class CalendarTab extends React.PureComponent {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <NavigationBar leftButton={null} title={'CalendarTab'}/>
+      <View
+        style={{ flex: 1 }}
+      >
+        <NavigationBar
+          leftButton={null}
+          title={'CalendarTab'}
+        />
         <Agenda
           items={this.state.items}
           loadItemsForMonth={this.loadItems.bind(this)}
@@ -70,13 +75,17 @@ class CalendarTab extends React.PureComponent {
           for (let j = 0; j < numItems; j++) {
             this.state.items[strTime].push({
               name: 'Item for ' + strTime,
-              height: Math.max(50, Math.floor(Math.random() * 150))
+              height: Math.max(
+                50,
+                Math.floor(Math.random() * 150)
+              )
             });
           }
         }
       }
       const newItems = {};
-      Object.keys(this.state.items).forEach(key => {
+      Object.keys(this.state.items).forEach(
+        key => {
         newItems[key] = this.state.items[key];
       });
       this.setState({
@@ -86,11 +95,23 @@ class CalendarTab extends React.PureComponent {
   }
 
   renderItem = (item) =>
-    <View style={[styles.item, { height: item.height }]}><Text>{item.name}</Text></View>
+    <View
+      style={[styles.item, { height: item.height }]}
+    >
+      <Text>
+        {item.name}
+      </Text>
+    </View>
 
   renderEmptyDate() {
     return (
-      <View style={styles.emptyDate}><Text>This is empty date!</Text></View>
+      <View
+        style={styles.emptyDate}
+      >
+        <Text>
+          This is empty date!
+        </Text>
+      </View>
     );
   }
 

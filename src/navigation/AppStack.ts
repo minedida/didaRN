@@ -22,7 +22,8 @@ import AppDrawer from "./AppDrawer";
 import Demo from '../../demo/Demo';
 
 // @ts-ignore
-const transitionConfig: any = Platform.OS === 'ios' ? undefined : TransitionConfig;
+const transitionConfig: any = Platform.OS === 'ios'
+  ? undefined : TransitionConfig;
 
 const stackConfig = {
   headerMode: 'none',
@@ -54,10 +55,11 @@ const routeConfigMap = {
 };
 
 
-const getRouteConfigMap = (map) => Object.keys(map).reduce((p, c) => {
-  p[c] = paramsToProps(map[c]);
-  return p;
-}, {});
+const getRouteConfigMap = (map) =>
+  Object.keys(map).reduce((p, c) => {
+    p[c] = paramsToProps(map[c]);
+    return p;
+  }, {});
 
 export default createStackNavigator(
   getRouteConfigMap(routeConfigMap),

@@ -31,7 +31,9 @@ class Webview extends React.Component<Props> {
     const { title, url } = this.props
 
     return (
-      <View style={styles.container}>
+      <View
+        style={styles.container}
+      >
         <NavigationBar title={title}/>
         <WebView
           // scrollIndicatorInsets={false}

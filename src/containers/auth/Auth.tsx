@@ -1,12 +1,13 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
+import { inject, observer } from "mobx-react";
+import { material } from "react-native-typography";
+import MaterialCommunityIconsIcon
+  from 'react-native-vector-icons/MaterialCommunityIcons';
 import { NavigationPops } from "../../navigation/utils";
 import { NavigationBar, Space } from "../../components/";
-import { material } from "react-native-typography";
 import { Images } from "../../assets";
-import MaterialCommunityIconsIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { d } from "../../helper/utils/ScreenUtil";
-import { inject, observer } from "mobx-react";
 import { AuthStore } from "../../store/AuthStore";
 
 type Props = {
@@ -52,12 +53,24 @@ class Auth extends React.Component<Props> {
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#fff' }}>
-        <NavigationBar title={''} elevation={false}/>
-        <View style={styles.container}>
-          <Image resizeMode={'contain'} source={Images.auth_logo} style={styles.logoStyle}/>
+      <View
+        style={{ flex: 1, backgroundColor: '#fff' }}
+      >
+        <NavigationBar
+          title={''}
+          elevation={false}
+        />
+        <View
+          style={styles.container}>
+          <Image
+            resizeMode={'contain'}
+            source={Images.auth_logo}
+            style={styles.logoStyle}
+          />
 
-          <View style={styles.bottomContainer}>
+          <View
+            style={styles.bottomContainer}
+          >
             <MaterialCommunityIconsIcon.Button
               borderRadius={d(8)}
               style={styles.iconView}
@@ -82,7 +95,12 @@ class Auth extends React.Component<Props> {
             </MaterialCommunityIconsIcon.Button>
 
             <Space height={d(20)}/>
-            <Text style={[material.button, { paddingLeft: d(4) }]} onPress={() => this.onPress('more')}>更多</Text>
+            <Text
+              style={[material.button, { paddingLeft: d(4) }]}
+              onPress={() => this.onPress('more')}
+            >
+              更多
+            </Text>
 
           </View>
         </View>

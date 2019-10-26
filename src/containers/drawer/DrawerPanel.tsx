@@ -99,34 +99,62 @@ class DrawerPanel extends React.Component<Props> {
     } = this.props
     const light_primary = color(primary).rgb().lighten(0.27).string()
     return (
-      <View style={[styles.topView, { backgroundColor: primary }]}>
-        <View style={styles.topIconView}>
+      <View
+        style={[
+          styles.topView,
+          { backgroundColor: primary }
+        ]}
+      >
+        <View
+          style={styles.topIconView}
+        >
 
-          <View style={{ flex: 1, justifyContent: 'center', paddingLeft: d(18) }}>
+          <View
+            style={{ flex: 1, justifyContent: 'center', paddingLeft: d(18) }}
+          >
             <ButtonContainer
               onPress={() => this.onPress('avatar')}
-              style={{ width: d(64), height: d(64), borderRadius: d(64 / 2), backgroundColor: '#f2f2f2' }}
-              background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
+              style={{ width: d(64), height: d(64),
+                borderRadius: d(64 / 2), backgroundColor: '#f2f2f2' }}
+              background={TouchableNativeFeedback.SelectableBackgroundBorderless()}
+            >
               <Image
                 source={{ uri }}
-                style={{ width: d(64), height: d(64), borderRadius: d(64) / 2 }}/>
+                style={{ width: d(64), height: d(64), borderRadius: d(64) / 2 }}
+              />
 
             </ButtonContainer>
           </View>
 
-          <View style={styles.avatarView}>
-            <Icon type={'Feather'} color={'#fff'} largeTouchArea
-                  name={'search'} size={24} style={{ marginRight: d(22) }}/>
-            <Icon onPress={() => this.onPress('setting')}
-                  type={'Ionicons'} color={'#fff'} largeTouchArea
-                  name={'md-settings'} size={24}/>
+          <View
+            style={styles.avatarView}
+          >
+            <Icon
+              largeTouchArea
+              type={'Feather'}
+              color={'#fff'}
+              name={'search'}
+              size={24}
+              style={{ marginRight: d(22) }}
+            />
+            <Icon
+              largeTouchArea
+              type={'Ionicons'} color={'#fff'}
+              size={24}
+              name={'md-settings'}
+              onPress={() => this.onPress('setting')}
+            />
           </View>
         </View>
         <ButtonContainer
           onPress={() => this.onPress('auth')}
           activeOpacity={0.6}
           style={[styles.btn, { backgroundColor: light_primary }]}>
-          <Text style={[material.button, { color: '#fff' }]}>登录或注册</Text>
+          <Text
+            style={[material.button, { color: '#fff' }]}
+          >
+            登录或注册
+          </Text>
         </ButtonContainer>
       </View>
     )
@@ -142,8 +170,11 @@ class DrawerPanel extends React.Component<Props> {
               {
                 g.map(v =>
                   <Drawer.Item
+                    key={v.id}
                     onPress={() => this.props.drawer!.onMenuItemSelected(v.id)}
-                    key={v.id} active={currentItem === v.id} {...v}/>)
+                    active={currentItem === v.id}
+                    {...v}
+                  />)
               }
             </Drawer.Section>
           )
@@ -158,8 +189,16 @@ class DrawerPanel extends React.Component<Props> {
       theme: { colors: { primary } }
     } = this.props
     return (
-      <ScrollView scrollsToTop={false} style={styles.container}>
-        <View style={[styles.statusBar, { backgroundColor: primary }]}/>
+      <ScrollView
+        scrollsToTop={false}
+        style={styles.container}
+      >
+        <View
+          style={[
+            styles.statusBar,
+            { backgroundColor: primary }
+          ]}
+        />
         {this.renderTopView()}
         <Space height={d(6)}/>
         {this.renderDrawerItem()}

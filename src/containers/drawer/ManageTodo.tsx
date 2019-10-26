@@ -27,8 +27,11 @@ class ManageTodo extends React.PureComponent<Props> {
       SmartList,
       Label,
     })
-
-    const {theme: {colors: {primary}}} = this.props
+    const {
+      theme: {
+        colors: {primary}
+      }
+    } = this.props
     const Tab = props =>
       <TabBar
         {...props}
@@ -36,20 +39,28 @@ class ManageTodo extends React.PureComponent<Props> {
         style={{ backgroundColor: '#fff' }}
         pressColor={'rgba(0, 0, 0, .2)'}
         renderLabel={props =>
-          <Text style={material.subheading}>
+          <Text
+            style={material.subheading}
+          >
             {props.route.title}
           </Text>
         }
       />
 
     return (
-      <View style={{ flex: 1 }}>
-        <NavigationBar title={'管理清单和标签'} elevation={false}/>
+      <View
+        style={{ flex: 1 }}
+      >
+        <NavigationBar
+          title={'管理清单和标签'}
+          elevation={false}
+        />
         <TabView
           navigationState={this.state}
           renderScene={Scenes}
           onIndexChange={index => this.setState({ index })}
-          renderTabBar={Tab}/>
+          renderTabBar={Tab}
+        />
       </View>
     )
   }

@@ -54,16 +54,30 @@ class AddTaskInstantly extends React.PureComponent {
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#fff' }}>
-        <NavigationBar title={'快速添加任务'}/>
-        <ScrollView style={{ flex: 1, backgroundColor: '#fff' }}>
+      <View
+        style={{ flex: 1, backgroundColor: '#fff' }}
+      >
+        <NavigationBar
+          title={'快速添加任务'}
+        />
+        <ScrollView
+          style={{ flex: 1, backgroundColor: '#fff' }}
+        >
 
           {configs.map((g, i) =>
-              <SettingListGroup key={i} last={i === configs.length -1}>
+              <SettingListGroup
+                key={i}
+                last={i === configs.length -1}
+              >
                 {
-                  g.map(v =>
-                    <SettingListItem key={v.id} onPress={this.onSettingListItemPress}
-                                     itemHeight={d(70)} {...v}/>)
+                  g.map(
+                    v =>
+                      <SettingListItem
+                        key={v.id}
+                        onPress={this.onSettingListItemPress}
+                        itemHeight={d(70)}
+                        {...v} />
+                      )
                 }
               </SettingListGroup>
           )}

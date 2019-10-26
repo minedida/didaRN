@@ -73,7 +73,8 @@ class InboxTodo extends React.Component<Props, any> {
         onPress={() => openDrawer()}
         size={isAndroid ? t(20) : t(20)}
         name={isAndroid ? 'md-menu' : 'ios-menu'}
-        type={'Ionicons'} color={'#333'}/>
+        type={'Ionicons'} color={'#333'}
+      />
     )
   }
 
@@ -81,7 +82,7 @@ class InboxTodo extends React.Component<Props, any> {
   // https://stackoverflow.com/questions/37647061/how-do-i-access-refs-of-a-child-component-in-the-parent-component
   renderRightBtn() {
     return (
-      <View>
+      <>
         <Icon
           largeTouchArea
           onPress={this.onMenuPress}
@@ -93,20 +94,30 @@ class InboxTodo extends React.Component<Props, any> {
             ref: react-native-material-ui/src/Toolbar/RightElement.react.js line.186
         */}
 
-        <View ref={this.menu} style={styles.anchorView}/>
-      </View>
+        <View
+          ref={this.menu}
+          style={styles.anchorView}
+        />
+      </>
     )
   }
 
   render() {
     const { todo: { todos } } = this.props
     return (
-      <View style={{ flex: 1, backgroundColor: '#fff' }}>
-        <NavigationBar title={translate('inbox')} leftButton={this.renderLeftBtn()}
-                       rightButton={this.renderRightBtn()}/>
+      <View
+        style={{ flex: 1, backgroundColor: '#fff' }}
+      >
+        <NavigationBar
+          title={translate('inbox')}
+          leftButton={this.renderLeftBtn()}
+          rightButton={this.renderRightBtn()}
+        />
 
-        <TodoList data={todos}
-                  renderHeader={() => <InboxTodoHeader/>}/>
+        <TodoList
+          data={todos}
+          renderHeader={() => <InboxTodoHeader />}
+        />
       </View>
     )
   }

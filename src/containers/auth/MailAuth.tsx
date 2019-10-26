@@ -1,17 +1,19 @@
 import React from 'react'
 import { View, StyleSheet, Text, Animated } from 'react-native'
+import { observer, inject } from "mobx-react";
+import { TextInput, Button } from "react-native-paper";
+import { material } from "react-native-typography";
 import { NavigationPops } from "../../navigation/utils";
 import { ButtonContainer, NavigationBar, Space } from "../../components/";
-import { TextInput, Button } from "react-native-paper";
 import { d } from "../../helper/utils/ScreenUtil";
-import { observer, inject } from "mobx-react";
 import { AuthStore } from "../../store/AuthStore";
-import { material } from "react-native-typography";
 import { DeviceSize } from "../../helper/constant/DeviceConstants";
 
 const { device_width } = DeviceSize
 const Input = ({ placeholder, value, onChangeText, ...props }) =>
-  <View style={{ width: d(260) }}>
+  <View
+    style={{ width: d(260) }}
+  >
     <TextInput
       selectionColor={'#5b6de5'}
       underlineColor={'#f0f0f0'}
@@ -90,25 +92,45 @@ class MailAuth extends React.Component<Props, State> {
     } = this.props
     return (
       <Animated.View
-        style={[{ alignItems: 'center', width: device_width }, this.createViewTransform]}>
+        style={[
+          { alignItems: 'center', width: device_width },
+          this.createViewTransform
+        ]}
+      >
         <Space height={d(32)}/>
 
-        <Input placeholder={'邮箱'} value={loginMail}
-               onChangeText={setLoginMail}/>
+        <Input
+          placeholder={'邮箱'}
+          value={loginMail}
+          onChangeText={setLoginMail}
+        />
 
-        <Input placeholder={'密码：6~64字符'} value={loginMailPwd}
-               onChangeText={setLoginMailPwd} secureTextEntry={true}/>
+        <Input
+          placeholder={'密码：6~64字符'}
+          value={loginMailPwd}
+          onChangeText={setLoginMailPwd}
+          secureTextEntry={true}
+        />
 
         <Space height={d(18)}/>
-        <Button style={styles.button} dark={true} mode="contained"
-                onPress={() => {
-                }}>
+        <Button
+          dark
+          style={styles.button}
+          mode="contained"
+          onPress={() => {}}
+        >
           创建账户
         </Button>
 
         <Space height={d(10)}/>
-        <Button style={[styles.button, { backgroundColor: '#fff' }]}
-                mode="text" onPress={() => this.onPress('create')}>
+        <Button
+          style={[
+            styles.button,
+            { backgroundColor: '#fff' }
+          ]}
+          mode="text"
+          onPress={() => this.onPress('create')}
+        >
           我已有账户
         </Button>
       </Animated.View>
@@ -124,27 +146,57 @@ class MailAuth extends React.Component<Props, State> {
     } = this.props
     return (
       <Animated.View
-        style={[{ alignItems: 'center', width: device_width }, this.loginViewTransform]}>
+        style={[
+          { alignItems: 'center', width: device_width },
+          this.loginViewTransform
+        ]}>
         <Space height={d(32)}/>
 
-        <Input placeholder={'邮箱'} value={loginMail} autoFocus
-               onChangeText={setLoginMail}/>
+        <Input
+          autoFocus
+          placeholder={'邮箱'}
+          value={loginMail}
+          onChangeText={setLoginMail}
+        />
 
-        <Input placeholder={'密码'} value={loginMailPwd}
-               onChangeText={setLoginMailPwd} secureTextEntry={true}/>
+        <Input
+          placeholder={'密码'}
+          value={loginMailPwd}
+          onChangeText={setLoginMailPwd}
+          secureTextEntry={true}
+        />
 
         <Space height={d(18)}/>
-        <Button style={styles.button} mode="contained" dark>
+        <Button
+          dark
+          style={styles.button}
+          mode="contained"
+        >
           登录
         </Button>
 
         <Space height={d(12)}/>
-        <View style={{ width: d(260), flexDirection: 'row', justifyContent: 'space-between' }}>
-          <ButtonContainer style={{ padding: d(4) }}>
-            <Text style={[material.button, { color: '#a2a2a2' }]}>忘记密码</Text>
+        <View
+          style={{ width: d(260), flexDirection: 'row', justifyContent: 'space-between' }}
+        >
+          <ButtonContainer
+            style={{ padding: d(4) }}
+          >
+            <Text
+              style={[material.button, { color: '#a2a2a2' }]}
+            >
+              忘记密码
+            </Text>
           </ButtonContainer>
-          <ButtonContainer onPress={() => this.onPress('login')} style={{ padding: d(4) }}>
-            <Text style={[material.button, { color: '#a2a2a2' }]}>创建账户</Text>
+          <ButtonContainer
+            onPress={() => this.onPress('login')}
+            style={{ padding: d(4) }}
+          >
+            <Text
+              style={[material.button, { color: '#a2a2a2' }]}
+            >
+              创建账户
+            </Text>
           </ButtonContainer>
         </View>
       </Animated.View>
@@ -153,9 +205,15 @@ class MailAuth extends React.Component<Props, State> {
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#fff' }}>
-        <NavigationBar title={'邮箱账户'} />
-        <View style={{ flex: 1, flexDirection: 'row' }}>
+      <View
+        style={{ flex: 1, backgroundColor: '#fff' }}
+      >
+        <NavigationBar
+          title={'邮箱账户'}
+        />
+        <View
+          style={{ flex: 1, flexDirection: 'row' }}
+        >
           {this.renderCreateAccountView()}
           {this.renderLoginView()}
         </View>

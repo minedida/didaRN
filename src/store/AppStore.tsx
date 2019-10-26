@@ -137,7 +137,9 @@ class AppStore {
     // this.appTabs[index].show = !this.appTabs[index].show
     return this.appTabs = this.appTabs.map(
       (item, i) =>
-        i === index ? { ...item, show: !item.show } : item
+        i === index
+          ? { ...item, show: !item.show }
+          : item
     )
   }
 

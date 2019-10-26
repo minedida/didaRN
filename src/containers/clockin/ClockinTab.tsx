@@ -5,8 +5,16 @@ import { ClockInTabNavigationOptions } from "../../navigation/TabBarNavigationOp
 class ClockInTab extends React.Component {
   static navigationOptions = ClockInTabNavigationOptions
   render() {
-    return <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
-      <Text>ClockInTab</Text></View>
+    return (
+      <View
+        style={{ flex: 1, alignItems: 'center',
+          justifyContent: 'center', backgroundColor: '#fff' }}
+      >
+        <Text>
+          ClockInTab
+        </Text>
+      </View>
+    )
   }
 }
 

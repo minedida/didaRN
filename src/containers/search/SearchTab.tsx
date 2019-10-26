@@ -5,8 +5,17 @@ import { SearchTabNavigationOptions } from "../../navigation/TabBarNavigationOpt
 class SearchTab extends React.Component {
   static navigationOptions = SearchTabNavigationOptions
   render() {
-    return <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
-      <Text>SearchTab</Text></View>
+    return (
+      <View
+        style={{ flex: 1, alignItems: 'center',
+          justifyContent: 'center', backgroundColor: '#fff' }}
+      >
+        <Text
+        >
+          SearchTab
+        </Text>
+      </View>
+    )
   }
 }
 

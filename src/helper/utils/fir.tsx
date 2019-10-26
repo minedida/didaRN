@@ -5,6 +5,7 @@ export default class firHelper {
   static APP_ID = '5d294b3ef945481b38526a83'
 
   static async queryVersion() {
-    return await axios.get(`http://api.fir.im/apps/latest/${this.APP_ID}?api_token=${this.API_TOKEN}`)
+    return await axios.get(
+      `http://api.fir.im/apps/latest/${this.APP_ID}?api_token=${this.API_TOKEN}`)
   }
 }

@@ -29,13 +29,22 @@ class Label extends React.PureComponent<Props> {
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#fff' }}>
+      <View
+        style={{ flex: 1, backgroundColor: '#fff' }}
+      >
         {configs.map(
           (g, i) =>
-            <SettingListGroup key={i} last={i === configs.length - 1}>
+            <SettingListGroup
+              key={i}
+              last={i === configs.length - 1}
+            >
               {
                 g.map(v =>
-                  <SettingListItem key={v.id} onPress={this.onSettingListItemPress} {...v}/>)
+                  <SettingListItem
+                    key={v.id}
+                    onPress={this.onSettingListItemPress}
+                    {...v}
+                  />)
               }
             </SettingListGroup>
         )}

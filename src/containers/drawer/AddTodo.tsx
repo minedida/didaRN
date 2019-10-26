@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import {NavigationBar} from "../../components/";
 import { material } from "react-native-typography";
+import {NavigationBar} from "../../components/";
 
 class AddTodo extends React.PureComponent {
   render() {

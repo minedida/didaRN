@@ -3220,10 +3220,15 @@ expo-permissions@~7.0.0:
   resolved "https://registry.npm.taobao.org/expo-permissions/download/expo-permissions-7.0.0.tgz#f4135c3cf8e49c673a9a714459a1eb2b40fe2092"
   integrity sha1-9BNcPPjknGc6mnFEWaHrK0D+IJI=
 
-expo-web-browser@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.npm.taobao.org/expo-web-browser/download/expo-web-browser-7.0.0.tgz#97d72fe8389079c8da4208eaedfe85247b5bd704"
-  integrity sha1-l9cv6DiQecjaQgjq7f6FJHtb1wQ=
+expo-video-thumbnails@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/expo-video-thumbnails/download/expo-video-thumbnails-3.0.0.tgz#7ffaaeab425ea2ee4136c15b7b368da9054095f2"
+  integrity sha1-f/quq0Jeou5BNsFbezaNqQVAlfI=
+
+expo-web-browser@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.npm.taobao.org/expo-web-browser/download/expo-web-browser-7.0.1.tgz#b64ef895b5c0604f312b64b085f7a2f1da630e20"
+  integrity sha1-tk74lbXAYE8xK2Swhfei8dpjDiA=
 
 extend-shallow@^1.1.2:
   version "1.1.4"

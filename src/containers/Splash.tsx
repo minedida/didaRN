@@ -1,7 +1,7 @@
 import React from 'react'
 import { Platform } from "react-native";
-import { NavigationPops } from "../navigation/utils";
 import SplashScreen from 'react-native-splash-screen'
+import { NavigationPops } from "../navigation/utils";
 import initPersist from "../store/persist-store";
 
 type Props = {

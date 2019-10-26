@@ -23,7 +23,10 @@ const ScaleSize = (size: any) =>
 
 const isIphoneX=() =>
   Platform.OS === 'ios' &&
-  ((deviceHeight === 812 || deviceWidth === 812) || (deviceHeight === 896 || deviceWidth === 896))
+  ((deviceHeight === 812 ||
+    deviceWidth === 812) ||
+    (deviceHeight === 896 ||
+      deviceWidth === 896))
 
 /**
  * StatusBar高度大于28及表示为全面屏

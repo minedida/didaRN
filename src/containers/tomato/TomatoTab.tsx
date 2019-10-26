@@ -6,8 +6,17 @@ class TomatoTab extends React.Component {
   static navigationOptions = TomatoTabNavigationOptions
 
   render() {
-    return <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
-      <Text>TomatoTab</Text></View>
+    return (
+      <View
+        style={{ flex: 1, alignItems: 'center',
+          justifyContent: 'center', backgroundColor: '#fff' }
+        }>
+        <Text
+        >
+          TomatoTab
+        </Text>
+      </View>
+    )
   }
 }
 

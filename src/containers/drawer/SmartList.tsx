@@ -1,8 +1,8 @@
 import React from 'react'
 import { ScrollView } from 'react-native'
+import { List, Divider } from "react-native-paper";
 import { SettingListItem, SettingIcon, Toast } from "../../components";
 import { d } from "../../helper/utils/ScreenUtil";
-import { List, Divider } from "react-native-paper";
 
 type Props = any
 
@@ -65,16 +65,33 @@ class SmartList extends React.PureComponent<Props> {
 
   render() {
     return (
-      <ScrollView style={{ flex: 1, backgroundColor: '#fff' }}>
-        {configs.map((v) =>
-          <SettingListItem key={v.id} itemHeight={d(66)} onPress={this.onSettingListItemPress} {...v}/>
-        )}
+      <ScrollView
+        style={{ flex: 1, backgroundColor: '#fff' }}
+      >
+        {
+          configs.map
+          (
+          (v) =>
+            <SettingListItem
+              key={v.id}
+              itemHeight={d(66)}
+              onPress={this.onSettingListItemPress}
+              {...v}
+            />
+          )
+        }
         <Divider/>
         <List.Section>
-          <List.Subheader>自定义智能清单</List.Subheader>
-          <SettingListItem id={'custom-smart-list'} title={'添加智能清单'} itemHeight={d(70)}
-                           leftIcon={<SettingIcon type={'MaterialIcons'} name={'add'}/>}
-                           onPress={_ => this.onSettingListItemPress('intelligent-recognition-date')}
+          <List.Subheader
+          >
+            自定义智能清单
+          </List.Subheader>
+          <SettingListItem
+            id={'custom-smart-list'}
+            title={'添加智能清单'}
+            itemHeight={d(70)}
+            leftIcon={ <SettingIcon type={'MaterialIcons'} name={'add'} /> }
+            onPress={_ => this.onSettingListItemPress('intelligent-recognition-date')}
           />
         </List.Section>
       </ScrollView>

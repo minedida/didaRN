@@ -1,12 +1,13 @@
 import React from 'react'
-import { View, ScrollView, Text, Image, StyleSheet, TouchableNativeFeedback, Platform } from 'react-native'
+import { View, ScrollView, Text, Image, StyleSheet,
+  TouchableNativeFeedback, Platform } from 'react-native'
 import { material } from 'react-native-typography'
+import { inject, observer } from "mobx-react";
+import { Divider } from "react-native-paper";
+import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import { Space, Icon, NavigationBar, ButtonContainer, Toast } from "../../components";
 import { Images } from "../../assets";
-import { Divider } from "react-native-paper";
 import { d, t } from "../../helper/utils/ScreenUtil";
-import IoniconsIcon from 'react-native-vector-icons/Ionicons';
-import { inject, observer } from "mobx-react";
 import { DrawerStore } from "../../store/DrawerStore";
 import { openDrawer } from "../../navigation";
 
@@ -20,18 +21,32 @@ const styles = StyleSheet.create({
 })
 
 const Item = ({ title, children }) => (
-  <View>
-    <Text style={[{ margin: 20 }, material.headline]}>{title}</Text>
-    <View style={styles.itemView}>
+  <>
+    <Text
+      style={[{ margin: 20 }, material.headline]}
+    >
+      {title}
+    </Text>
+    <View
+      style={styles.itemView}
+    >
       {
         !children.length ? children :
           children.map((child, key) =>
-            <View key={`${title}${key}`} style={{ paddingRight: 20 }}>{child}</View>)
+            (
+              <View
+                key={`${title}${key}`}
+                style={{ paddingRight: 20 }}
+              >
+                {child}
+              </View>
+            )
+          )
       }
     </View>
     <Space height={10}/>
     <Divider/>
-  </View>
+  </>
 )
 const isAndroid = Platform.OS === 'android'
 
@@ -49,23 +64,33 @@ class IconsPreview extends React.Component<Props> {
   renderLeftBtn() {
     return (
       <ButtonContainer
-        style={{ width: d(26), height: d(26), justifyContent: 'center', alignItems: 'center' }}
+        style={{ width: d(26), height: d(26),
+          justifyContent: 'center', alignItems: 'center' }}
         // onPress={this.props.drawer.toggleMenu}
         onPress={() => openDrawer()}
-        background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
+        background={TouchableNativeFeedback.SelectableBackgroundBorderless()}
+      >
         <IoniconsIcon
           size={isAndroid ? t(20): t(20)}
           name={isAndroid ? 'md-menu' : 'ios-menu'}
-          color={'#333'} />
+          color={'#333'}
+        />
       </ButtonContainer>
     )
   }
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#fff' }}>
-        <NavigationBar title={'Icon预览'} leftButton={this.renderLeftBtn()}/>
-        <ScrollView ref={ref => this.scrollView = ref}
-                    onContentSizeChange={_ => this.scrollView.scrollToEnd({ animated: false })}>
+      <View
+        style={{ flex: 1, backgroundColor: '#fff' }}
+      >
+        <NavigationBar
+          title={'Icon预览'}
+          leftButton={this.renderLeftBtn()}
+        />
+        <ScrollView
+          ref={ref => this.scrollView = ref}
+          onContentSizeChange={_ => this.scrollView.scrollToEnd({ animated: false })}
+        >
           <Item title={'back'}>
             <Icon type={'Feather'} color={'#333'} name={'chevron-left'} size={40}/>
             <Icon type={'Ionicons'} color={'#333'} name={'ios-arrow-back'} size={40}/>

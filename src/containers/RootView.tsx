@@ -25,7 +25,8 @@ class RootView extends React.Component<Props> {
 
   render() {
     return (
-      <Portal>
+      <Portal
+      >
         <FabGroup
           color={'#fff'}
           visible={this.props.app!.fabVisible}
@@ -38,7 +39,10 @@ class RootView extends React.Component<Props> {
         {/*
             用一个空布局将输入框顶到屏幕最下面(安卓用)
         */}
-        <View style={{ flex: 1 }} pointerEvents={"none"}/>
+        <View
+          style={{ flex: 1 }}
+          pointerEvents={"none"}
+        />
         <QuickInput/>
       </Portal>
     )

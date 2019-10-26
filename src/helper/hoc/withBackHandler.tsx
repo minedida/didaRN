@@ -6,7 +6,10 @@ import AuthStack from "../../navigation/AuthStack";
 import stores from '../../store'
 import { Toast } from "../../components";
 
-export default function withBackHandler(WrappedComponent: any, params: 'Auth' | 'App') {
+export default function withBackHandler(
+  WrappedComponent: any,
+  params: 'Auth' | 'App'
+) {
   return class extends React.Component {
     // @ts-ignore
     static router = params === 'Auth' ? AuthStack.router : AppStack.router;
@@ -71,7 +74,9 @@ export default function withBackHandler(WrappedComponent: any, params: 'Auth' | 
 
     // 处理fabinput
     handleFabInputWithBackButton(): boolean {
-      if (stores.app.currentScreen === 'TodoTab' || stores.app.currentScreen === 'AppTabBar') {
+      if (stores.app.currentScreen === 'TodoTab'
+        || stores.app.currentScreen === 'AppTabBar'
+      ) {
         if (stores.app.fabOpen) {
           // 恢复fab状态
           stores.app

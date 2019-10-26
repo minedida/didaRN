@@ -48,16 +48,25 @@ export function navigate(
 }
 
 export function openDrawer() {
-    navigationContainer.dispatch(DrawerActions.openDrawer());
+    navigationContainer.dispatch(
+      DrawerActions.openDrawer()
+    );
 }
 export function closeDrawer() {
-    navigationContainer.dispatch(DrawerActions.closeDrawer());
+    navigationContainer.dispatch(
+      DrawerActions.closeDrawer()
+    );
 }
 export function toggleDrawer() {
-    navigationContainer.dispatch(DrawerActions.toggleDrawer());
+    navigationContainer.dispatch(
+      DrawerActions.toggleDrawer()
+    );
 }
 
-export function push(routeName: string, params?: NavigationParams) {
+export function push(
+  routeName: string,
+  params?: NavigationParams
+) {
   if (navigationContainer && lastNavigateTime + 500 < Date.now()) {
     navigationContainer.dispatch(
       StackActions.push({
@@ -81,7 +90,9 @@ export function getCurrentSwitchName(): string {
 }
 
 export function goBack(): boolean {
-  navigationContainer.dispatch(NavigationActions.back());
+  navigationContainer.dispatch(
+    NavigationActions.back()
+  );
   return true;
 }
 
@@ -93,7 +104,10 @@ export function pop(numToPop: number) {
   );
 }
 
-export function replacePrevious(routeName: string, params?: NavigationParams) {
+export function replacePrevious(
+  routeName: string,
+  params?: NavigationParams
+) {
   if (navigationContainer && lastNavigateTime + 500 < Date.now()) {
     navigationContainer.dispatch(
       StackActions.replace({
