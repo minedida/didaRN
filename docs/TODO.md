@@ -17,7 +17,7 @@
 
 ### 2019/09/22
 - 解决upgrade RN060带来的bug
-- 1.抽屉打开后背景太黑了
+- 1.~~抽屉打开后背景太黑了~~
 - 2.`autogrow-textinput`和`keyboard-view`，这两个库出现的问题
     - 安卓上为什么点击button就crash？，这块和升级RN没什么关系才对啊
     - iOS上除了podspec外，RN060还移除了一些API如UIViewManager，这个API还在这两个库上使用着，需要升级这些api

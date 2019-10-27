@@ -1,4 +1,7 @@
 import {AppRegistry, YellowBox} from 'react-native';
+// https://github.com/kmagiera/react-native-gesture-handler/issues/320
+import 'react-native-gesture-handler'
+
 // import App from './App';
 import App from './src/App';
 // import App from './demo/Demo'
@@ -30,7 +33,7 @@ const ignores = [
 ]
 YellowBox.ignoreWarnings(ignores)
 // todo async-storage、NetInfo
-console.disableYellowBox = true;
+// console.disableYellowBox = true;
 
 
 AppRegistry.registerComponent(appName, () => App);

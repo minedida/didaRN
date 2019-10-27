@@ -11,8 +11,9 @@ import { withAppInit } from "./helper/hoc";
 // how to type-safe inject store? https://github.com/mobxjs/mobx/issues/1778
 // how to detect a store change? https://mobx.js.org/refguide/observe.html#observe
 
-// enable layout-animation
-Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental(true);
+Platform.OS === 'android'
+&& UIManager.setLayoutAnimationEnabledExperimental(true);
+
 enableScreens();
 
 @withAppInit @observer
