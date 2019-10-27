@@ -22,3 +22,11 @@
     - 安卓上为什么点击button就crash？，这块和升级RN没什么关系才对啊
     - iOS上除了podspec外，RN060还移除了一些API如UIViewManager，这个API还在这两个库上使用着，需要升级这些api
 - 3.完善todo-item
+
+
+### 2019/10/27
+- 重构demo部分的路由，保证应用只有一个AppContainer，方便demo部分后续扩展
+- 重构demo部分内容，有选择性的放置文件目录/层级，大致分类：UI相关、重要依赖相关、动效相关、测试相关。ui和依赖库大都有example/，直接拷贝过来，达到查看效果的目的即可
+- 继续探索已有依赖库的能力。
+- 升级依赖后，对应库的`DefinitelyTyped`还未更新。
+- 3.完善todo-item

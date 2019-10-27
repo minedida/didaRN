@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Platform, ScrollView } from 'react-native'
 import { List } from 'react-native-paper';
 import SplashScreen from "react-native-splash-screen";
-import { createAppContainer, createStackNavigator } from 'react-navigation'
+import { createAppContainer } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack';
 import DemoRouters from './DemoRouters';
 import { NavigationBar } from "../src/components";
 
@@ -32,7 +33,8 @@ const NavigationView = ({initialRouteName, setRef, ...props}) => {
       {
         initialRouteName,
         headerMode: 'none',
-      })
+       }
+      )
   );
   return <Navigation ref={setRef} {...props}/>;
 };

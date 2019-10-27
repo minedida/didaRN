@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import color from 'color';
 import { inject, observer } from "mobx-react";
-import { DrawerItemsProps/*, NavigationInjectedProps*/ } from "react-navigation";
+import { DrawerItemsProps } from "react-navigation";
 import { material } from 'react-native-typography'
 import { Drawer, withTheme, Theme } from 'react-native-paper';
 import { ButtonContainer, Space, Icon } from "../../components";

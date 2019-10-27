@@ -1,7 +1,9 @@
 import {
-  NavigationActions, NavigationContainerComponent, NavigationParams,
-  StackActions, DrawerActions,
+  NavigationActions, NavigationContainerComponent,
+  NavigationParams, StackActions,
 } from 'react-navigation';
+import { DrawerActions } from 'react-navigation-drawer';
+
 
 let navigationContainer: NavigationContainerComponent;
 let lastNavigateTime = Date.now();

@@ -1,8 +1,8 @@
 import React from 'react'
+import { observer } from "mobx-react";
 import { createAppContainer, NavigationContainerComponent } from 'react-navigation'
 import { onNavigationStateChange } from "./utils";
 import AppNavigator from "./AppNavigator";
-import { observer } from "mobx-react";
 import { setNavigator } from "./index";
 
 

@@ -1,8 +1,7 @@
-// import React from 'react';
 import {
   Dimensions, Platform
 } from 'react-native';
-import { createDrawerNavigator } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 import AppTabBar from "./AppTabBar";
 import DrawerPanel from "../containers/drawer/DrawerPanel";
 
@@ -10,7 +9,7 @@ import DrawerPanel from "../containers/drawer/DrawerPanel";
 //   Toast.show('Screen1')
 //   return (
 //     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//     <Text onPress={() => openDrawer()}>Screen1</Text>
+//     {/*<Text onPress={() => openDrawer()}>Screen1</Text>*/}
 //   </View>
 //   )
 // }
@@ -51,10 +50,9 @@ export default createDrawerNavigator(
   {
     initialRouteName: 'AppTabBar',
     contentComponent: DrawerPanel,
-    // contentComponent: CustomDrawerContentComponent,
     drawerWidth: Dimensions.get('window').width * 0.86,
     drawerType: Platform.OS === 'android' ? 'front' : 'slide',
     overlayColor: 'rgba(0, 0, 0, 0.5)',
     unmountInactiveRoutes: false // 设置false才能有缓存
-  }
+  } as any
 );

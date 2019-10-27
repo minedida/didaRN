@@ -50,9 +50,8 @@ export default AppTabBarNav
 */
 import React from 'react'
 import { Platform } from 'react-native';
-import { createBottomTabNavigator } from 'react-navigation';
+import { createBottomTabNavigator, BottomTabBar } from 'react-navigation-tabs';
 import { observer } from "mobx-react";
-import { BottomTabBar } from 'react-navigation-tabs';
 import { app } from "../store/AppStore";
 
 const tabBarOptions = {
@@ -107,7 +106,7 @@ class CustomBottomTabBar extends React.Component<any>{
     const style = {
       activeTintColor: app.appTheme.colors.primary,
     };
-    const customNavigation = this.calculateNavigation(this.props.navigation)
+    const customNavigation = this.calculateNavigation(this.props.navigation) as any;
     return <BottomTabBar {...this.props} navigation={customNavigation} {...style} />;
   }
 }

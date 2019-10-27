@@ -4,7 +4,6 @@ import SortableListViewExample from './sort-and-swipe/react-native-sortable-list
 import DragableListExample from './sort-and-swipe/react-native-sortable-list/example/DragableListExample';
 import SwipeableExample from './sort-and-swipe/react-native-swipeable/Example'
 import CustomSortAndSwipeList from './sort-and-swipe/react-native-sort-and-swipe-list/src/CustomSortAndSwipeList'
-import TypographyExample from './react-native-typography/TypographyExample'
 import Header from './Header/'
 import KeyboardDemoScreen from './keyboard-input/demoScreen';
 import RecycleTestComponent from './recyclerlistview/RecycleTestComponent'
@@ -22,7 +21,7 @@ import LightboxDemo from './light-demo/LightboxDemo'
 import ReanimatedCollapsibleNavbar from './collapsible/reanimated-collapsible-navbar/ReanimatedCollapsibleNavbar';
 import ReactNativeScrollableHeader from './collapsible/react-native-scrollable-header/ReactNativeScrollableHeader';
 import ExpoExample from './expo/ExpoExample'
-import RNScreensExample from './rn-screens/App';
+// import RNScreensExample from './rn-screens/App';
 import SpecificPlatformExample from './specific-platform';
 // import SpecificPlatformTSExample from './specific-platform-ts';
 import FlutterAnimation from './fluttter-animations/'
@@ -41,7 +40,6 @@ export default [
   DragableListExample,
   SwipeableExample,
   CustomSortAndSwipeList,
-  TypographyExample,
   Header,
   KeyboardDemoScreen,
   RecycleTestComponent,
@@ -60,7 +58,7 @@ export default [
   SpecificPlatformExample,
   MerryPhotoViewer,
   FlutterAnimation,
-  RNScreensExample,
+  // RNScreensExample,
   CloneElement,
   ShadowDemo1,
   ShadowDemo2,

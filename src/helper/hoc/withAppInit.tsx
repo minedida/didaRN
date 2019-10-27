@@ -5,6 +5,11 @@ import { app } from "../../store/AppStore";
 import { checkUpdate } from "../utils/UpdateApp";
 import SentryUtil from "../utils/SentryUtil";
 
+
+if (__DEV__) {
+  import('../../config/ReactotronConfig');
+}
+
 export default function withAppInit(WrappedComponent: any) {
   return class extends React.Component {
 
