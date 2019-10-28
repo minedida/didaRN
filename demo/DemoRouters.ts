@@ -31,8 +31,13 @@ import CloneElement from "./react/CloneElement";
 import ShadowDemo1 from './shadow/ShadowDemo1'
 import ShadowDemo2 from './shadow/ShadowDemo2'
 import ShadowDemo3 from './shadow/ShadowDemo3'
+// import ReanimatedExample from './reanimated/ReanimatedDemo'
+import { EventTestFunc1, EventTestFunc2 } from './hooks/EventTest';
 
 export default [
+  EventTestFunc1,
+  EventTestFunc2,
+  // ReanimatedExample,
   TabViewExampleList,
   AnExApp,
   SortableListExample,

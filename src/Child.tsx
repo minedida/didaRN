@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import axios from 'axios'
 import { inject, observer } from 'mobx-react';

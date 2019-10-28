@@ -7,6 +7,10 @@ import { createStackNavigator } from 'react-navigation-stack';
 import DemoRouters from './DemoRouters';
 import { NavigationBar } from "../src/components";
 
+if (__DEV__) {
+  import('../src/config/ReactotronConfig');
+}
+
 const getComponentName = (cmp) => cmp.displayName || cmp.name || '';
 
 const MapView = (props) => (

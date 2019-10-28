@@ -3,7 +3,7 @@ import { Platform, Keyboard, LayoutAnimation, UIManager } from 'react-native'
 
 // 另一个优雅的处理键盘事件的方法：https://codeburst.io/react-native-keyboard-covering-inputs-72a9d3072689
 
-export default function listenKeyboard(WrappedComponent: any) {
+export default function withKeyboardListener(WrappedComponent: any) {
   return class ListenKeyboardHOC extends React.PureComponent {
     keyboardWillShowSub: any
     keyboardWillHideSub: any
@@ -11,12 +11,13 @@ export default function listenKeyboard(WrappedComponent: any) {
     constructor(props: any) {
       super(props)
       this.state = {
-        keyboardShown: true,
+        keyboardShown: false,
       }
       Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental(true)
     }
 
     componentWillMount() {
+      // https://github.com/facebook/react-native/issues/3468#issuecomment-188146894
       const keyboardShowType =
         Platform.OS === 'android'
           ? 'keyboardDidShow'
@@ -44,9 +45,9 @@ export default function listenKeyboard(WrappedComponent: any) {
       LayoutAnimation.easeInEaseOut()
     }
 
-    keyboardWillShow = (_event: any) => {
-
-      this.setState({ keyboardShown: true })
+    keyboardWillShow = (event: any) => {
+      const keyboardHeight = event.endCoordinates.height;
+      this.setState({ keyboardShown: true, keyboardHeight })
     };
 
     keyboardWillHide = (_event: any) => {
@@ -54,7 +55,7 @@ export default function listenKeyboard(WrappedComponent: any) {
     };
 
     render() {
-      return <WrappedComponent {...this.state}/>
+      return <WrappedComponent {...this.state} {...this.props} />
     }
   }
 }
