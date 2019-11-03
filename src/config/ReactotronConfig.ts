@@ -3,6 +3,7 @@ import { AsyncStorage } from 'react-native'
 import Reactotron from 'reactotron-react-native'
 import { Toast } from "../components";
 
+// 在hermes-engine下，`import Reactotron`不可以放在组件的生命周期内调用(hermes会报错)，只可以在组件外部调用
 
 Reactotron.setAsyncStorageHandler(AsyncStorage);
 Reactotron.configure({

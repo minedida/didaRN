@@ -17,7 +17,7 @@ import MoreSetting from "../containers/setting/MoreSetting";
 import ThemeSetting from "../containers/setting/ThemeSetting";
 import TransitionConfig from './TransitionConfig'
 import AppDrawer from "./AppDrawer";
-import Demo from '../../demo/Demo';
+import { Demo } from '../../demo';
 
 // @ts-ignore
 const transitionConfig: any = Platform.OS === 'ios'

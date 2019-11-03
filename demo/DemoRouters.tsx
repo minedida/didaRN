@@ -33,8 +33,12 @@ import ShadowDemo2 from './shadow/ShadowDemo2'
 import ShadowDemo3 from './shadow/ShadowDemo3'
 // import ReanimatedExample from './reanimated/ReanimatedDemo'
 import { EventTestFunc1, EventTestFunc2 } from './hooks/EventTest';
+import NestedScreenDemo from './nested-screen/';
+import HooksExample from "./hooks";
 
 export default [
+  NestedScreenDemo,
+  HooksExample,
   EventTestFunc1,
   EventTestFunc2,
   // ReanimatedExample,

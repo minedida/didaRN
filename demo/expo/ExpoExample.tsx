@@ -43,7 +43,7 @@ class ExpoExample extends React.Component {
 
   async requestPermission() {
    const resp = await Permissions.askAsync(Permissions.NOTIFICATIONS);
-    // alert(JSON.stringify(resp))
+    alert(JSON.stringify(resp))
   }
 
   render() {

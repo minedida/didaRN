@@ -24,7 +24,8 @@ class Route extends React.Component {
         onNavigationStateChange={onNavigationStateChange}
         ref={(nav: NavigationContainerComponent) => {
           setNavigator(nav)
-        }}/>
+        }}
+      />
     )
   }
 }
