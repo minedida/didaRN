@@ -11,7 +11,12 @@ if (__DEV__) {
 }
 
 // refactor ref: https://github.com/react-navigation/stack/blob/master/example/App.tsx
-export const Demo = createListStackNavigator(DemoRouters, 'Examples', StatusBar.currentHeight, false)
+export const Demo = createListStackNavigator(
+  DemoRouters,
+  'Examples',
+  StatusBar.currentHeight,
+  false
+)
 const DemoContainer = createAppContainer(Demo)
 
 

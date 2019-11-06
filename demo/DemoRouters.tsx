@@ -30,10 +30,12 @@ import NestedScreenDemo from './nested-screen/';
 import HooksExample from "./hooks";
 import ShadowExample from './shadow'
 import ReactNavigationStackExample from './react-navigation-stack-example/ReactNavigationStackExample'
+import VictoryDemo from './victory'
 
 export default [
   NestedScreenDemo,
   HooksExample,
+  VictoryDemo,
   ShadowExample,
   ReactNavigationStackExample,
   // ReanimatedExample,

@@ -2572,6 +2572,85 @@ cycle@1.0.x:
   resolved "https://registry.npm.taobao.org/cycle/download/cycle-1.0.3.tgz#21e80b2be8580f98b468f379430662b046c34ad2"
   integrity sha1-IegLK+hYD5i0aPN5QwZisEbDStI=
 
+d3-array@^1.2.0:
+  version "1.2.4"
+  resolved "https://registry.npm.taobao.org/d3-array/download/d3-array-1.2.4.tgz#635ce4d5eea759f6f605863dbcfc30edc737f71f"
+  integrity sha1-Y1zk1e6nWfb2BYY9vPww7cc39x8=
+
+d3-collection@1:
+  version "1.0.7"
+  resolved "https://registry.npm.taobao.org/d3-collection/download/d3-collection-1.0.7.tgz#349bd2aa9977db071091c13144d5e4f16b5b310e"
+  integrity sha1-NJvSqpl32wcQkcExRNXk8WtbMQ4=
+
+d3-color@1:
+  version "1.4.0"
+  resolved "https://registry.npm.taobao.org/d3-color/download/d3-color-1.4.0.tgz#89c45a995ed773b13314f06460df26d60ba0ecaf"
+  integrity sha1-icRamV7Xc7EzFPBkYN8m1gug7K8=
+
+d3-ease@^1.0.0:
+  version "1.0.5"
+  resolved "https://registry.npm.taobao.org/d3-ease/download/d3-ease-1.0.5.tgz#8ce59276d81241b1b72042d6af2d40e76d936ffb"
+  integrity sha1-jOWSdtgSQbG3IELWry1A522Tb/s=
+
+d3-format@1:
+  version "1.4.1"
+  resolved "https://registry.npm.taobao.org/d3-format/download/d3-format-1.4.1.tgz#c45f74b17c5a290c072a4ba7039dd19662cd5ce6"
+  integrity sha1-xF90sXxaKQwHKkunA53RlmLNXOY=
+
+d3-interpolate@1, d3-interpolate@^1.1.1:
+  version "1.3.2"
+  resolved "https://registry.npm.taobao.org/d3-interpolate/download/d3-interpolate-1.3.2.tgz#417d3ebdeb4bc4efcc8fd4361c55e4040211fd68"
+  integrity sha1-QX0+vetLxO/Mj9Q2HFXkBAIR/Wg=
+  dependencies:
+    d3-color "1"
+
+d3-path@1:
+  version "1.0.8"
+  resolved "https://registry.npm.taobao.org/d3-path/download/d3-path-1.0.8.tgz#4a0606a794d104513ec4a8af43525f374b278719"
+  integrity sha1-SgYGp5TRBFE+xKivQ1JfN0snhxk=
+
+d3-scale@^1.0.0:
+  version "1.0.7"
+  resolved "https://registry.npm.taobao.org/d3-scale/download/d3-scale-1.0.7.tgz#fa90324b3ea8a776422bd0472afab0b252a0945d"
+  integrity sha1-+pAySz6op3ZCK9BHKvqwslKglF0=
+  dependencies:
+    d3-array "^1.2.0"
+    d3-collection "1"
+    d3-color "1"
+    d3-format "1"
+    d3-interpolate "1"
+    d3-time "1"
+    d3-time-format "2"
+
+d3-shape@^1.0.0, d3-shape@^1.2.0:
+  version "1.3.5"
+  resolved "https://registry.npm.taobao.org/d3-shape/download/d3-shape-1.3.5.tgz#e81aea5940f59f0a79cfccac012232a8987c6033"
+  integrity sha1-6BrqWUD1nwp5z8ysASIyqJh8YDM=
+  dependencies:
+    d3-path "1"
+
+d3-time-format@2:
+  version "2.2.1"
+  resolved "https://registry.npm.taobao.org/d3-time-format/download/d3-time-format-2.2.1.tgz#971f66aae3b8fb268040494986f41512d4d4dca6"
+  integrity sha1-lx9mquO4+yaAQElJhvQVEtTU3KY=
+  dependencies:
+    d3-time "1"
+
+d3-time@1:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/d3-time/download/d3-time-1.1.0.tgz#b1e19d307dae9c900b7e5b25ffc5dcc249a8a0f1"
+  integrity sha1-seGdMH2unJALflsl/8XcwkmooPE=
+
+d3-timer@^1.0.0:
+  version "1.0.9"
+  resolved "https://registry.npm.taobao.org/d3-timer/download/d3-timer-1.0.9.tgz#f7bb8c0d597d792ff7131e1c24a36dd471a471ba"
+  integrity sha1-97uMDVl9eS/3Ex4cJKNt1HGkcbo=
+
+d3-voronoi@^1.1.2:
+  version "1.1.4"
+  resolved "https://registry.npm.taobao.org/d3-voronoi/download/d3-voronoi-1.1.4.tgz#dd3c78d7653d2bb359284ae478645d95944c8297"
+  integrity sha1-3Tx412U9K7NZKErkeGRdlZRMgpc=
+
 dashdash@^1.12.0:
   version "1.14.1"
   resolved "https://registry.npm.taobao.org/dashdash/download/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
@@ -2711,6 +2790,18 @@ defined@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/defined/download/defined-1.0.0.tgz#c98d9bcef75674188e110969151199e39b1fa693"
   integrity sha1-yY2bzvdWdBiOEQlpFRGZ45sfppM=
+
+delaunator@^4.0.0:
+  version "4.0.1"
+  resolved "https://registry.npm.taobao.org/delaunator/download/delaunator-4.0.1.tgz#3d779687f57919a7a418f8ab947d3bddb6846957"
+  integrity sha1-PXeWh/V5GaekGPirlH073baEaVc=
+
+delaunay-find@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.npm.taobao.org/delaunay-find/download/delaunay-find-0.0.5.tgz#5fb37e6509da934881b4b16c08898ac89862c097"
+  integrity sha1-X7N+ZQnak0iBtLFsCImKyJhiwJc=
+  dependencies:
+    delaunator "^4.0.0"
 
 delayed-stream@~1.0.0:
   version "1.0.0"
@@ -6266,7 +6357,7 @@ prop-types@15.5.8:
   dependencies:
     fbjs "^0.8.9"
 
-prop-types@^15.5.10, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.npm.taobao.org/prop-types/download/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha1-UsQedbjIfnK52TYOAga5ncv/psU=
@@ -6407,6 +6498,11 @@ react-dom@^16.8.6:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.13.6"
+
+react-fast-compare@^2.0.0:
+  version "2.0.4"
+  resolved "https://registry.npm.taobao.org/react-fast-compare/download/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
+  integrity sha1-6EtNRVsP7BE+BALDKTUnFRlvgfk=
 
 react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   version "16.8.6"
@@ -8189,6 +8285,289 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
+
+victory-area@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-area/download/victory-area-33.1.2.tgz#b3d65bfdf11a738cf4655366bb7fdb230ddea1cc"
+  integrity sha1-s9Zb/fEac4z0ZVNmu3/bIw3eocw=
+  dependencies:
+    d3-shape "^1.2.0"
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-axis@^33.0.0, victory-axis@^33.1.2:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-axis/download/victory-axis-33.1.2.tgz#e6161169b7827f387f78d021b666e729b90b7068"
+  integrity sha1-5hYRabeCfzh/eNAhtmbnKbkLcGg=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-bar@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-bar/download/victory-bar-33.1.2.tgz#e01938cc5a11ab43aede654fb1ef32bb12a3e91d"
+  integrity sha1-4Bk4zFoRq0Ou3mVPse8yuxKj6R0=
+  dependencies:
+    d3-shape "^1.2.0"
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-box-plot@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-box-plot/download/victory-box-plot-33.1.2.tgz#1f691aba69ef47fd4164202cf0cc1ab72db2b693"
+  integrity sha1-H2kaumnvR/1BZCAs8Mwaty2ytpM=
+  dependencies:
+    d3-array "^1.2.0"
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-brush-container@^33.0.0, victory-brush-container@^33.1.2:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-brush-container/download/victory-brush-container-33.1.2.tgz#3a8c854f82ab58e5f28131f55c086705884b6e9e"
+  integrity sha1-OoyFT4KrWOXygTH1XAhnBYhLbp4=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-brush-line@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-brush-line/download/victory-brush-line-33.1.2.tgz#a57e2ba816d1d324418482d228a43bde88dfddc9"
+  integrity sha1-pX4rqBbR0yRBhILSKKQ73ojf3ck=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-candlestick@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-candlestick/download/victory-candlestick-33.1.2.tgz#844a726cb24a414e6bd92907be1ec59b2d326d65"
+  integrity sha1-hEpybLJKQU5r2SkHvh7Fmy0ybWU=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-chart@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-chart/download/victory-chart-33.1.2.tgz#dd63cebf7bd090f8e8c1409cb29583deec6719b2"
+  integrity sha1-3WPOv3vQkPjowUCcspWD3uxnGbI=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+    victory-axis "^33.1.2"
+    victory-core "^33.1.2"
+    victory-polar-axis "^33.1.2"
+    victory-shared-events "^33.1.2"
+
+victory-core@^33.0.0, victory-core@^33.1.2:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-core/download/victory-core-33.1.2.tgz#9ce6d21a1d524cbf952091d84126dbbb4dc3ad27"
+  integrity sha1-nObSGh1STL+VIJHYQSbbu03DrSc=
+  dependencies:
+    d3-ease "^1.0.0"
+    d3-interpolate "^1.1.1"
+    d3-scale "^1.0.0"
+    d3-shape "^1.2.0"
+    d3-timer "^1.0.0"
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+
+victory-create-container@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-create-container/download/victory-create-container-33.1.2.tgz#df14c6d2e3cf7cbd263f7fd319cd20214241e00c"
+  integrity sha1-3xTG0uPPfL0mP3/TGc0gIUJB4Aw=
+  dependencies:
+    lodash "^4.17.15"
+    victory-brush-container "^33.1.2"
+    victory-core "^33.1.2"
+    victory-cursor-container "^33.1.2"
+    victory-selection-container "^33.1.2"
+    victory-voronoi-container "^33.1.2"
+    victory-zoom-container "^33.1.2"
+
+victory-cursor-container@^33.0.0, victory-cursor-container@^33.1.2:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-cursor-container/download/victory-cursor-container-33.1.2.tgz#bf107a150178aefd59087a4ad5b447784af7074d"
+  integrity sha1-vxB6FQF4rv1ZCHpK1bRHeEr3B00=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-errorbar@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-errorbar/download/victory-errorbar-33.1.2.tgz#ef4d344e45323047f197271d35d9fa68d6a89791"
+  integrity sha1-7000TkUyMEfxlycdNdn6aNaol5E=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-group@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-group/download/victory-group-33.1.2.tgz#1a2c0ba0257d859b637ffb407aae9f84d85088c8"
+  integrity sha1-GiwLoCV9hZtjf/tAeq6fhNhQiMg=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+    victory-core "^33.1.2"
+
+victory-legend@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-legend/download/victory-legend-33.1.2.tgz#6e7141cd938fde20985a475f6878f19757d91ff2"
+  integrity sha1-bnFBzZOP3iCYWkdfaHjxl1fZH/I=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-line@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-line/download/victory-line-33.1.2.tgz#a31300137c2b925e23fbacf908bc4def2c160cce"
+  integrity sha1-oxMAE3wrkl4j+6z5CLxN7ywWDM4=
+  dependencies:
+    d3-shape "^1.2.0"
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-native@^33.0.0:
+  version "33.0.0"
+  resolved "https://registry.npm.taobao.org/victory-native/download/victory-native-33.0.0.tgz#9cc37dffe9fa71162159642fb02e15ce7f2eb883"
+  integrity sha1-nMN9/+n6cRYhWWQvsC4Vzn8uuIM=
+  dependencies:
+    lodash "^4.17.11"
+    prop-types "^15.5.10"
+    react-fast-compare "^2.0.0"
+    victory-area "^33.0.0"
+    victory-axis "^33.0.0"
+    victory-bar "^33.0.0"
+    victory-box-plot "^33.0.0"
+    victory-brush-container "^33.0.0"
+    victory-brush-line "^33.0.0"
+    victory-candlestick "^33.0.0"
+    victory-chart "^33.0.0"
+    victory-core "^33.0.0"
+    victory-create-container "^33.0.0"
+    victory-cursor-container "^33.0.0"
+    victory-errorbar "^33.0.0"
+    victory-group "^33.0.0"
+    victory-legend "^33.0.0"
+    victory-line "^33.0.0"
+    victory-pie "^33.0.0"
+    victory-polar-axis "^33.0.0"
+    victory-scatter "^33.0.0"
+    victory-selection-container "^33.0.0"
+    victory-shared-events "^33.0.0"
+    victory-stack "^33.0.0"
+    victory-tooltip "^33.0.0"
+    victory-voronoi "^33.0.0"
+    victory-voronoi-container "^33.0.0"
+    victory-zoom-container "^33.0.0"
+
+victory-pie@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-pie/download/victory-pie-33.1.2.tgz#bc1e6f745f6ac08a9337abeb2cffbc47e8b3c471"
+  integrity sha1-vB5vdF9qwIqTN6vrLP+8R+izxHE=
+  dependencies:
+    d3-shape "^1.0.0"
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-polar-axis@^33.0.0, victory-polar-axis@^33.1.2:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-polar-axis/download/victory-polar-axis-33.1.2.tgz#1d801c46549f252a7f6a363630049d6e231a6fc0"
+  integrity sha1-HYAcRlSfJSp/ajY2MASdbiMab8A=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-scatter@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-scatter/download/victory-scatter-33.1.2.tgz#0abe04d517460c1eaef8abd16d8d01183872c32f"
+  integrity sha1-Cr4E1RdGDB6u+KvRbY0BGDhywy8=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-selection-container@^33.0.0, victory-selection-container@^33.1.2:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-selection-container/download/victory-selection-container-33.1.2.tgz#e3e3dbff0393966237c74ddfe2b25a93a2c6b51d"
+  integrity sha1-4+Pb/wOTlmI3x03f4rJak6LGtR0=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-shared-events@^33.0.0, victory-shared-events@^33.1.2:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-shared-events/download/victory-shared-events-33.1.2.tgz#c6f009d8e371a7a67034a68b95d54ec384af516e"
+  integrity sha1-xvAJ2ONxp6ZwNKaLldVOw4SvUW4=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+    victory-core "^33.1.2"
+
+victory-stack@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-stack/download/victory-stack-33.1.2.tgz#453919686f0c428ab6211ab22e92817ec43c9edf"
+  integrity sha1-RTkZaG8MQoq2IRqyLpKBfsQ8nt8=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+    victory-core "^33.1.2"
+
+victory-tooltip@^33.0.0, victory-tooltip@^33.1.2:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-tooltip/download/victory-tooltip-33.1.2.tgz#06ca60971d3a442a09d776c93035e4c078d4fed2"
+  integrity sha1-Bspglx06RCoJ13bJMDXkwHjU/tI=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-voronoi-container@^33.0.0, victory-voronoi-container@^33.1.2:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-voronoi-container/download/victory-voronoi-container-33.1.2.tgz#89eb32c1ad3d418d231bba6a47e961b1dc4f42fd"
+  integrity sha1-iesywa09QY0jG7pqR+lhsdxPQv0=
+  dependencies:
+    delaunay-find "0.0.5"
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+    victory-tooltip "^33.1.2"
+
+victory-voronoi@^33.0.0:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-voronoi/download/victory-voronoi-33.1.2.tgz#59daf15d3c524fbc23a84bcd40f64483e5b6902e"
+  integrity sha1-WdrxXTxST7wjqEvNQPZEg+W2kC4=
+  dependencies:
+    d3-voronoi "^1.1.2"
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
+
+victory-zoom-container@^33.0.0, victory-zoom-container@^33.1.2:
+  version "33.1.2"
+  resolved "https://registry.npm.taobao.org/victory-zoom-container/download/victory-zoom-container-33.1.2.tgz#8c0a32520a587710654c4f341c1315c6b4f99b5c"
+  integrity sha1-jAoyUgpYdxBlTE80HBMVxrT5m1w=
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    victory-core "^33.1.2"
 
 vlq@^1.0.0:
   version "1.0.1"
