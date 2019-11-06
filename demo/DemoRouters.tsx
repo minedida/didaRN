@@ -14,9 +14,6 @@ import SyanImagePicker from './image-picker/SyanImagePicker'
 import OfflineDemo from './offline/OfflineDemo'
 import RNShareDemo from './Share/RNShareDemo'
 import RNCShareDemo from './Share/RNCShareDemo'
-import Count1 from './hooks/Count1'
-import Count2 from './hooks/Count2'
-import Count3 from './hooks/Count3'
 import LightboxDemo from './light-demo/LightboxDemo'
 import ReanimatedCollapsibleNavbar from './collapsible/reanimated-collapsible-navbar/ReanimatedCollapsibleNavbar';
 import ReactNativeScrollableHeader from './collapsible/react-native-scrollable-header/ReactNativeScrollableHeader';
@@ -28,19 +25,17 @@ import FlutterAnimation from './fluttter-animations/'
 import MerryPhotoViewer from './@merryjs/photo-viewer/MerryPhotoViewer';
 import AnExApp from './rn-animated/AnExApp';
 import CloneElement from "./react/CloneElement";
-import ShadowDemo1 from './shadow/ShadowDemo1'
-import ShadowDemo2 from './shadow/ShadowDemo2'
-import ShadowDemo3 from './shadow/ShadowDemo3'
 // import ReanimatedExample from './reanimated/ReanimatedDemo'
-import { EventTestFunc1, EventTestFunc2 } from './hooks/EventTest';
 import NestedScreenDemo from './nested-screen/';
 import HooksExample from "./hooks";
+import ShadowExample from './shadow'
+import ReactNavigationStackExample from './react-navigation-stack-example/ReactNavigationStackExample'
 
 export default [
   NestedScreenDemo,
   HooksExample,
-  EventTestFunc1,
-  EventTestFunc2,
+  ShadowExample,
+  ReactNavigationStackExample,
   // ReanimatedExample,
   TabViewExampleList,
   AnExApp,
@@ -57,9 +52,6 @@ export default [
   OfflineDemo,
   RNShareDemo,
   RNCShareDemo,
-  Count1,
-  Count2,
-  Count3,
   ExpoExample,
   LightboxDemo,
   ReanimatedCollapsibleNavbar,
@@ -69,7 +61,4 @@ export default [
   FlutterAnimation,
   // RNScreensExample,
   CloneElement,
-  ShadowDemo1,
-  ShadowDemo2,
-  ShadowDemo3,
 ];

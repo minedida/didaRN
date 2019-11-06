@@ -14,7 +14,9 @@ export const defaultNavigationOptions =
   (_, title?) => (
     {
       title,
-      headerLeft: () => <HeaderBackButton labelVisible={false} onPress={() => goBack()}/>, // https://stackoverflow.com/questions/49477330/modifying-back-button-with-react-navigation-on-specific-screen
+      headerLeft: () =>
+        <HeaderBackButton labelVisible={false} onPress={() => goBack()}/>,
+      // https://stackoverflow.com/questions/49477330/modifying-back-button-with-react-navigation-on-specific-screen
     });
 
 const routeConfigMap = (routers) => routers.reduce(

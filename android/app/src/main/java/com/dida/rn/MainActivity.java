@@ -5,7 +5,11 @@ import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
+import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactRootView;
+import com.facebook.react.bridge.ReactBridge;
+import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.views.unimplementedview.ReactUnimplementedViewManager;
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 
 import org.devio.rn.splashscreen.SplashScreen;
