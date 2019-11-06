@@ -28,6 +28,7 @@ export default class Chat extends React.Component {
 
             return (
               <View
+                // eslint-disable-next-line react/no-array-index-key
                 key={i}
                 style={[odd ? styles.odd : styles.even, styles.inverted]}
               >
@@ -35,8 +36,8 @@ export default class Chat extends React.Component {
                   style={styles.avatar}
                   source={
                     odd
-                      ? require('../assets/avatar-2.png')
-                      : require('../assets/avatar-1.png')
+                      ? require('../../assets/avatar-2.png')
+                      : require('../../assets/avatar-1.png')
                   }
                 />
                 <View

@@ -13,7 +13,6 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1822A1C45BC84150BD947762 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AE0A557DABD4E3FB3F70B0C /* Fontisto.ttf */; };
-		28CC454AE6425C8B235CE5CE /* libPods-didaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 521B08C0E8468FAE99DF5FA1 /* libPods-didaTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -35,9 +34,9 @@
 		44FBE92C22CA614C00E05EE2 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44FBE8F222CA614C00E05EE2 /* Roboto-Bold.ttf */; };
 		44FBE92D22CA614C00E05EE2 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44FBE8F322CA614C00E05EE2 /* Roboto-Thin.ttf */; };
 		44FBE92E22CA614C00E05EE2 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44FBE8F422CA614C00E05EE2 /* Roboto-Black.ttf */; };
-		45276F2C0E7FDD0FF0957CB6 /* libPods-dida.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C442DA38F190E65271520E7D /* libPods-dida.a */; };
 		4CF0F547D93D4319A16F4087 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58D808F6293D45FEA2D23E12 /* SimpleLineIcons.ttf */; };
 		4E5E6A35EE1B819E5EA80692 /* libPods-dida-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 575562BBF638C9F267F36141 /* libPods-dida-tvOSTests.a */; };
+		5B9DCD6BB2717C369AE07F52 /* libPods-didaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B16D123EE3CB16710BCBAA9 /* libPods-didaTests.a */; };
 		5CB097A78DB77C6BA71CD9F9 /* libPods-dida-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D7E88B9655588AC1F5B5E8 /* libPods-dida-tvOS.a */; };
 		5F0D2E746E9D4D4EBF3203EA /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BCDF3A7E78A44E0AE752BDB /* AntDesign.ttf */; };
 		77FAB6AE3FBC429BA7CDFB8F /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E907589AF44247B87D92A9 /* Foundation.ttf */; };
@@ -53,6 +52,7 @@
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		F43E404AA28649A9B668ECD1 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8A1F515F2E244CCB300A0DB /* Octicons.ttf */; };
 		F98AA23E35654D79B5C72DAC /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5B0F34DD6834297BC7E38A3 /* MaterialIcons.ttf */; };
+		FA282A5503EF6DA65CBF91C9 /* libPods-dida.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D717D666B1C62616D00E2F0 /* libPods-dida.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,11 +87,13 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = dida/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = dida/main.m; sourceTree = "<group>"; };
 		14D7E88B9655588AC1F5B5E8 /* libPods-dida-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dida-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D717D666B1C62616D00E2F0 /* libPods-dida.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dida.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		275301B81902BEB1066379BC /* Pods-dida-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dida-tvOS.release.xcconfig"; path = "Target Support Files/Pods-dida-tvOS/Pods-dida-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		2C7EDB50A2BE41E1B6183D12 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* dida-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dida-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* dida-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dida-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B16D123EE3CB16710BCBAA9 /* libPods-didaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-didaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCDF3A7E78A44E0AE752BDB /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		44FBE8E822CA614C00E05EE2 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		44FBE8E922CA614C00E05EE2 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -107,7 +109,6 @@
 		44FBE8F322CA614C00E05EE2 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		44FBE8F422CA614C00E05EE2 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		495D9E997AE785C4ED9AD145 /* Pods-dida.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dida.release.xcconfig"; path = "Target Support Files/Pods-dida/Pods-dida.release.xcconfig"; sourceTree = "<group>"; };
-		521B08C0E8468FAE99DF5FA1 /* libPods-didaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-didaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		575562BBF638C9F267F36141 /* libPods-dida-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dida-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D808F6293D45FEA2D23E12 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		5AE0A557DABD4E3FB3F70B0C /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
@@ -121,7 +122,6 @@
 		AC92589E12794457BE929CDD /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		B868E42F6E80406F9A548FA9 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		C436D0F1E5C0235EC9DCDB19 /* Pods-didaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-didaTests.release.xcconfig"; path = "Target Support Files/Pods-didaTests/Pods-didaTests.release.xcconfig"; sourceTree = "<group>"; };
-		C442DA38F190E65271520E7D /* libPods-dida.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dida.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A1F515F2E244CCB300A0DB /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		CE4DFA5389974AD49E0C2770 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		E5B0F34DD6834297BC7E38A3 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28CC454AE6425C8B235CE5CE /* libPods-didaTests.a in Frameworks */,
+				5B9DCD6BB2717C369AE07F52 /* libPods-didaTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +148,7 @@
 			files = (
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				80C805B14E2D4ADEBDE8B807 /* libz.tbd in Frameworks */,
-				45276F2C0E7FDD0FF0957CB6 /* libPods-dida.a in Frameworks */,
+				FA282A5503EF6DA65CBF91C9 /* libPods-dida.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,10 +234,10 @@
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				8D27354816BA439DA46C59B2 /* libz.tbd */,
-				C442DA38F190E65271520E7D /* libPods-dida.a */,
 				14D7E88B9655588AC1F5B5E8 /* libPods-dida-tvOS.a */,
 				575562BBF638C9F267F36141 /* libPods-dida-tvOSTests.a */,
-				521B08C0E8468FAE99DF5FA1 /* libPods-didaTests.a */,
+				1D717D666B1C62616D00E2F0 /* libPods-dida.a */,
+				3B16D123EE3CB16710BCBAA9 /* libPods-didaTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -353,7 +353,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				44E2847922D71779002B8053 /* ShellScript */,
-				1CF0DBB82239818309E5D578 /* [CP] Copy Pods Resources */,
+				268B7A7A40EA7F7CBC094A1F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -529,7 +529,29 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		1CF0DBB82239818309E5D578 /* [CP] Copy Pods Resources */ = {
+		1F7B3253AC6C53D10CDB8EF0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dida-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		268B7A7A40EA7F7CBC094A1F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -577,28 +599,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dida/Pods-dida-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1F7B3253AC6C53D10CDB8EF0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-dida-tvOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {

@@ -1090,6 +1090,11 @@
   resolved "https://registry.npm.taobao.org/@react-native-community/masked-view/download/@react-native-community/masked-view-0.1.1.tgz#dbcfc5ec08efbb02d4142dd9426c8d7a396829d7"
   integrity sha1-28/F7AjvuwLUFC3ZQmyNejloKdc=
 
+"@react-native-community/viewpager@^2.0.1":
+  version "2.0.2"
+  resolved "https://registry.npm.taobao.org/@react-native-community/viewpager/download/@react-native-community/viewpager-2.0.2.tgz#622b190294b1310c4825c98daeaee1c8443f7124"
+  integrity sha1-YisZApSxMQxIJcmNrq7hyEQ/cSQ=
+
 "@react-navigation/core@^3.5.1":
   version "3.5.1"
   resolved "https://registry.npm.taobao.org/@react-navigation/core/download/@react-navigation/core-3.5.1.tgz#7a2339fca3496979305fb3a8ab88c2ca8d8c214d"
@@ -2293,7 +2298,7 @@ color-alpha@^1.0.2:
   dependencies:
     color-parse "^1.3.8"
 
-color-convert@^1.9.0, color-convert@^1.9.1:
+color-convert@^1.9.0, color-convert@^1.9.1, color-convert@^1.9.3:
   version "1.9.3"
   resolved "https://registry.npm.taobao.org/color-convert/download/color-convert-1.9.3.tgz#bb71850690e1f136567de629d2d5471deda4c1e8"
   integrity sha1-u3GFBpDh8TZWfeYp0tVHHe2kweg=
@@ -2490,7 +2495,7 @@ cosmiconfig@^5.0.5, cosmiconfig@^5.1.0:
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
-create-react-class@*, create-react-class@^15.6.0, create-react-class@^15.6.3:
+create-react-class@*, create-react-class@^15.6.0, create-react-class@^15.6.2, create-react-class@^15.6.3:
   version "15.6.3"
   resolved "https://registry.npm.taobao.org/create-react-class/download/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
   integrity sha1-LXMjf7P5cK5uvgEanmb0bbyoADY=
@@ -2622,7 +2627,7 @@ d3-scale@^1.0.0:
     d3-time "1"
     d3-time-format "2"
 
-d3-shape@^1.0.0, d3-shape@^1.2.0:
+d3-shape@^1.0.0, d3-shape@^1.2.0, d3-shape@^1.2.2:
   version "1.3.5"
   resolved "https://registry.npm.taobao.org/d3-shape/download/d3-shape-1.3.5.tgz#e81aea5940f59f0a79cfccac012232a8987c6033"
   integrity sha1-6BrqWUD1nwp5z8ysASIyqJh8YDM=
@@ -6448,6 +6453,11 @@ railroad-diagrams@^1.0.0:
   resolved "https://registry.npm.taobao.org/railroad-diagrams/download/railroad-diagrams-1.0.0.tgz#eb7e6267548ddedfb899c1b90e57374559cddb7e"
   integrity sha1-635iZ1SN3t+4mcG5Dlc3RVnN234=
 
+ramda@^0.26.1:
+  version "0.26.1"
+  resolved "https://registry.npm.taobao.org/ramda/download/ramda-0.26.1.tgz#8d41351eb8111c55353617fc3bbffad8e4d35d06"
+  integrity sha1-jUE1HrgRHFU1Nhf8O7/62OTTXQY=
+
 randexp@0.4.6:
   version "0.4.6"
   resolved "https://registry.npm.taobao.org/randexp/download/randexp-0.4.6.tgz#e986ad5e5e31dae13ddd6f7b3019aa7c87f60ca3"
@@ -6549,6 +6559,15 @@ react-native-cli@^2.0.1:
     minimist "^1.2.0"
     prompt "^0.2.14"
     semver "^5.0.3"
+
+react-native-conical-gradient-progress@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/react-native-conical-gradient-progress/download/react-native-conical-gradient-progress-1.0.0.tgz#627be415da9ced07166aaa34af5639d967371e76"
+  integrity sha1-YnvkFdqc7QcWaqo0r1Y52Wc3HnY=
+  dependencies:
+    color-convert "^1.9.3"
+    d3-shape "^1.2.2"
+    lodash "^4.17.11"
 
 react-native-date-picker@^2.7.0:
   version "2.7.0"
@@ -6671,10 +6690,10 @@ react-native-paper@^2.16.0:
     react-lifecycles-compat "^3.0.4"
     react-native-safe-area-view "^0.12.0"
 
-react-native-reanimated@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.npm.taobao.org/react-native-reanimated/download/react-native-reanimated-1.3.0.tgz#581cdb0bd1ff05e7304b116af712ded0c7665ede"
-  integrity sha1-WBzbC9H/BecwSxFq9xLe0MdmXt4=
+react-native-reanimated@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.npm.taobao.org/react-native-reanimated/download/react-native-reanimated-1.4.0.tgz#7f1acbf9be08492d834f512700570978052be2f9"
+  integrity sha1-fxrL+b4ISS2DT1EnAFcJeAUr4vk=
 
 react-native-redash@7.2.1:
   version "7.2.1"
@@ -6725,6 +6744,16 @@ react-native-screens@^2.0.0-alpha.6:
   dependencies:
     debounce "^1.2.0"
 
+react-native-scrollable-tab-view@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/react-native-scrollable-tab-view/download/react-native-scrollable-tab-view-1.0.0.tgz#87319896067f7bb643ecd7fba2cba4d6d8f9e18b"
+  integrity sha1-hzGYlgZ/e7ZD7Nf7osuk1tj54Ys=
+  dependencies:
+    "@react-native-community/viewpager" "^2.0.1"
+    create-react-class "^15.6.2"
+    prop-types "^15.6.0"
+    react-timer-mixin "^0.13.3"
+
 react-native-share@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/react-native-share/download/react-native-share-2.0.0.tgz#4543a746013e0d8fa9f765fb8937007cfbcffcf7"
@@ -6757,10 +6786,10 @@ react-native-splash-screen@^3.2.0:
   resolved "https://registry.npm.taobao.org/react-native-splash-screen/download/react-native-splash-screen-3.2.0.tgz#d47ec8557b1ba988ee3ea98d01463081b60fff45"
   integrity sha1-1H7IVXsbqYjuPqmNAUYwgbYP/0U=
 
-react-native-spring-scrollview@^2.0.22:
-  version "2.0.22"
-  resolved "https://registry.npm.taobao.org/react-native-spring-scrollview/download/react-native-spring-scrollview-2.0.22.tgz#6d8dbaf485b68a30c330d25e7e22f70ce7574c4c"
-  integrity sha1-bY269IW2ijDDMNJefiL3DOdXTEw=
+react-native-spring-scrollview@^2.0.23:
+  version "2.0.23"
+  resolved "https://registry.npm.taobao.org/react-native-spring-scrollview/download/react-native-spring-scrollview-2.0.23.tgz#23febfc0d28c63b87dcb260ac3b6d1ad886de3ae"
+  integrity sha1-I/6/wNKMY7h9yyYKw7bRrYht464=
 
 react-native-svg@^9.12.0:
   version "9.12.0"
@@ -6927,6 +6956,11 @@ react-test-renderer@^16.0.0-0:
     react-is "^16.8.6"
     scheduler "^0.13.6"
 
+react-timer-mixin@^0.13.3:
+  version "0.13.4"
+  resolved "https://registry.npm.taobao.org/react-timer-mixin/download/react-timer-mixin-0.13.4.tgz#75a00c3c94c13abe29b43d63b4c65a88fc8264d3"
+  integrity sha1-daAMPJTBOr4ptD1jtMZaiPyCZNM=
+
 react@^16.11.0:
   version "16.11.0"
   resolved "https://registry.npm.taobao.org/react/download/react-16.11.0.tgz#d294545fe62299ccee83363599bf904e4a07fdbb"
@@ -7036,6 +7070,13 @@ realpath-native@^1.1.0:
   integrity sha1-IAMpT+oj+wZy8kduviL89Jii1lw=
   dependencies:
     util.promisify "^1.0.0"
+
+reanimated-formula@^1.0.0-beta.3:
+  version "1.0.0-beta.3"
+  resolved "https://registry.npm.taobao.org/reanimated-formula/download/reanimated-formula-1.0.0-beta.3.tgz#869889e2058d953d1a8e02d906f95173a0ad3960"
+  integrity sha1-hpiJ4gWNlT0ajgLZBvlRc6CtOWA=
+  dependencies:
+    ramda "^0.26.1"
 
 recyclerlistview@^2.0.12:
   version "2.0.12"

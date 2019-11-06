@@ -36,11 +36,11 @@ class RefreshListViewDemo extends Component {
 
     // 模拟网络请求
     setTimeout(() => {
-      // 模拟网络加载失败的情况
-      if (Math.random() < 0.2) {
-        this.setState({ refreshState: RefreshState.Failure })
-        return
-      }
+      // // 模拟网络加载失败的情况
+      // if (Math.random() < 0.2) {
+      //   this.setState({ refreshState: RefreshState.Failure })
+      //   return
+      // }
 
       //获取测试数据
       let dataList = this.getTestList(true)
@@ -57,11 +57,11 @@ class RefreshListViewDemo extends Component {
 
     // 模拟网络请求
     setTimeout(() => {
-      // 模拟网络加载失败的情况
-      if (Math.random() < 0.2) {
-        this.setState({ refreshState: RefreshState.Failure })
-        return
-      }
+      // // 模拟网络加载失败的情况
+      // if (Math.random() < 0.2) {
+      //   this.setState({ refreshState: RefreshState.Failure })
+      //   return
+      // }
 
       //获取测试数据
       let dataList = this.getTestList(false)

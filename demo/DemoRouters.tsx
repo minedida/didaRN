@@ -1,66 +1,55 @@
-import TabViewExampleList from './react-native-tab-view/TabViewExampleList';
-import SortableListExample from './sort-and-swipe/react-native-sortable-list/example/SortableListExample';
-import SortableListViewExample from './sort-and-swipe/react-native-sortable-list/example/SortableListViewExample';
-import DragableListExample from './sort-and-swipe/react-native-sortable-list/example/DragableListExample';
-import SwipeableExample from './sort-and-swipe/react-native-swipeable/Example'
-import CustomSortAndSwipeList from './sort-and-swipe/react-native-sort-and-swipe-list/src/CustomSortAndSwipeList'
-import Header from './Header/'
-import KeyboardDemoScreen from './keyboard-input/demoScreen';
-import RecycleTestComponent from './recyclerlistview/RecycleTestComponent'
-import StickySample from './recyclerlistview/StickySample'
-import NativeMaterialDialog from './material-dialog/NativeMaterialDialog'
+import TabViewExampleList from './react-native-tab-view';
+import SortAndSwipeExample from './sort-and-swipe';
+import HeaderDemo from './Header/'
+// import KeyboardDemoScreen from './keyboard-input/demoScreen';
+import RecyclerListViewExample from './recyclerlistview'
+import DialogExample from './dialog'
 // @ts-ignore
 import SyanImagePicker from './image-picker/SyanImagePicker'
-import OfflineDemo from './offline/OfflineDemo'
-import RNShareDemo from './Share/RNShareDemo'
-import RNCShareDemo from './Share/RNCShareDemo'
-import LightboxDemo from './light-demo/LightboxDemo'
-import ReanimatedCollapsibleNavbar from './collapsible/reanimated-collapsible-navbar/ReanimatedCollapsibleNavbar';
-import ReactNativeScrollableHeader from './collapsible/react-native-scrollable-header/ReactNativeScrollableHeader';
-import ExpoExample from './expo/ExpoExample'
+import OfflineDemo from './offline'
+import ShareExample from './Share'
+import LightboxDemo from './light-demo'
+import CollapsibleExample from './collapsible';
+import ExpoExample from './expo'
 // import RNScreensExample from './rn-screens/App';
 import SpecificPlatformExample from './specific-platform';
-// import SpecificPlatformTSExample from './specific-platform-ts';
-import FlutterAnimation from './fluttter-animations/'
-import MerryPhotoViewer from './@merryjs/photo-viewer/MerryPhotoViewer';
-import AnExApp from './rn-animated/AnExApp';
-import CloneElement from "./react/CloneElement";
+import FlutterAnimationDemo from './fluttter-animations/'
+import MerryPhotoViewerDemo from './@merryjs/';
+import AnExApp from './rn-animated/';
+import ReactDemo from "./react";
 // import ReanimatedExample from './reanimated/ReanimatedDemo'
 import NestedScreenDemo from './nested-screen/';
 import HooksExample from "./hooks";
 import ShadowExample from './shadow'
 import ReactNavigationStackExample from './react-navigation-stack-example/ReactNavigationStackExample'
 import VictoryDemo from './victory'
+import ReanimatedDemo from "./reanimated";
+import SvgExample from './svg';
 
 export default [
+  CollapsibleExample,
+  ReanimatedDemo,
+  TabViewExampleList,
   NestedScreenDemo,
   HooksExample,
   VictoryDemo,
   ShadowExample,
+  SvgExample,
   ReactNavigationStackExample,
   // ReanimatedExample,
-  TabViewExampleList,
   AnExApp,
-  SortableListExample,
-  SortableListViewExample,
-  DragableListExample,
-  SwipeableExample,
-  CustomSortAndSwipeList,
-  Header,
-  KeyboardDemoScreen,
-  RecycleTestComponent,
-  StickySample,
-  NativeMaterialDialog,
+  SortAndSwipeExample,
+  HeaderDemo,
+  // KeyboardDemoScreen,
+  RecyclerListViewExample,
+  DialogExample,
   OfflineDemo,
-  RNShareDemo,
-  RNCShareDemo,
+  ShareExample,
   ExpoExample,
   LightboxDemo,
-  ReanimatedCollapsibleNavbar,
-  ReactNativeScrollableHeader,
   SpecificPlatformExample,
-  MerryPhotoViewer,
-  FlutterAnimation,
+  MerryPhotoViewerDemo,
+  FlutterAnimationDemo,
   // RNScreensExample,
-  CloneElement,
+  ReactDemo,
 ];

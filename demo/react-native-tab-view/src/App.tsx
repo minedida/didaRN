@@ -4,18 +4,24 @@ import {
   Platform,
   ScrollView,
   StatusBar,
+  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
   YellowBox,
+  I18nManager,
 } from 'react-native';
+
+import { Asset } from 'expo-asset';
+import Constants from 'expo-constants';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import ScrollableTabBarExample from './ScrollableTabBarExample';
+import AutoWidthTabBarExample from './AutoWidthTabBarExample';
 import TabBarIconExample from './TabBarIconExample';
 import CustomIndicatorExample from './CustomIndicatorExample';
 import CustomTabBarExample from './CustomTabBarExample';
 import CoverflowExample from './CoverflowExample';
-import Ionicons from 'react-native-vector-icons/Ionicons'
 
 type State = {
   title: string;
@@ -31,20 +37,22 @@ type ExampleComponentType = React.ComponentType<{}> & {
   appbarElevation?: number;
 };
 
+I18nManager.forceRTL(false);
+
 YellowBox.ignoreWarnings(['bind():']);
 
 const PERSISTENCE_KEY = 'index_persistence';
 
 const EXAMPLE_COMPONENTS: ExampleComponentType[] = [
   ScrollableTabBarExample,
+  AutoWidthTabBarExample,
   TabBarIconExample,
   CustomIndicatorExample,
   CustomTabBarExample,
   CoverflowExample,
 ];
 
-
-export default class TabViewExampleList extends React.Component<any, State> {
+export default class ExampleList2 extends React.Component<any, State> {
   state = {
     title: 'Examples',
     index: -1,
@@ -55,14 +63,26 @@ export default class TabViewExampleList extends React.Component<any, State> {
     if (process.env.NODE_ENV !== 'production') {
       this.restoreNavigationState();
     }
+
+    [
+      require('../assets/album-art-1.jpg'),
+      require('../assets/album-art-2.jpg'),
+      require('../assets/album-art-3.jpg'),
+      require('../assets/album-art-4.jpg'),
+      require('../assets/album-art-5.jpg'),
+      require('../assets/album-art-6.jpg'),
+      require('../assets/album-art-7.jpg'),
+      require('../assets/album-art-8.jpg'),
+    ].map(image => Asset.fromModule(image).downloadAsync());
   }
 
-  persistNavigationState = async (currentIndex: number) => {
+  private persistNavigationState = async (currentIndex: number) => {
     if (process.env.NODE_ENV !== 'production') {
       await AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(currentIndex));
     }
   };
-  restoreNavigationState = async () => {
+
+  private restoreNavigationState = async () => {
     this.setState({
       restoring: true,
     });
@@ -74,7 +94,7 @@ export default class TabViewExampleList extends React.Component<any, State> {
 
       if (
         Number.isFinite(savedIndex) &&
-        savedIndex > 0 &&
+        savedIndex >= 0 &&
         savedIndex < EXAMPLE_COMPONENTS.length
       ) {
         this.setState({
@@ -89,18 +109,19 @@ export default class TabViewExampleList extends React.Component<any, State> {
       restoring: false,
     });
   };
-  handleNavigate = (index: number) => {
+
+  private handleNavigate = (index: number) => {
     this.setState({
       index,
     });
     this.persistNavigationState(index);
   };
 
-  handleNavigateBack = () => {
+  private handleNavigateBack = () => {
     this.handleNavigate(-1);
   };
 
-  renderItem = (component: ExampleComponentType, i: number) => (
+  private renderItem = (component: ExampleComponentType, i: number) => (
     <TouchableOpacity
       key={i}
       style={styles.touchable}
@@ -112,6 +133,13 @@ export default class TabViewExampleList extends React.Component<any, State> {
     </TouchableOpacity>
   );
 
+  render2() {
+    return (
+      <View>
+        <Text>asd</Text>
+      </View>
+    )
+  }
   render() {
     if (this.state.restoring) {
       return null;
@@ -146,12 +174,6 @@ export default class TabViewExampleList extends React.Component<any, State> {
         />
         <View
           style={[
-            styles.statusbar,
-            backgroundColor ? { backgroundColor } : null,
-          ]}
-        />
-        <View
-          style={[
             styles.appbar,
             backgroundColor ? { backgroundColor } : null,
             appbarElevation
@@ -159,29 +181,40 @@ export default class TabViewExampleList extends React.Component<any, State> {
               : null,
           ]}
         >
-          {index > -1 ? (
-            <TouchableOpacity
-              style={styles.button}
-              onPress={this.handleNavigateBack}
-            >
-              <Ionicons
-                name={
-                  Platform.OS === 'android' ? 'md-arrow-back' : 'ios-arrow-back'
-                }
-                size={24}
-                color={tintColor}
-              />
-            </TouchableOpacity>
-          ) : null}
-          <Text style={[styles.title, tintColor ? { color: tintColor } : null]}>
-            {index > -1 ? EXAMPLE_COMPONENTS[index].title : this.state.title}
-          </Text>
-          {index > -1 ? <View style={styles.button}/> : null}
+          <View style={styles.statusbar} />
+          <SafeAreaView>
+            <View style={styles.content}>
+              {index > -1 ? (
+                <TouchableOpacity
+                  style={styles.button}
+                  onPress={this.handleNavigateBack}
+                >
+                  <Ionicons
+                    name={
+                      Platform.OS === 'android'
+                        ? 'md-arrow-back'
+                        : 'ios-arrow-back'
+                    }
+                    size={24}
+                    color={tintColor}
+                  />
+                </TouchableOpacity>
+              ) : null}
+              <Text
+                style={[styles.title, tintColor ? { color: tintColor } : null]}
+              >
+                {index > -1
+                  ? EXAMPLE_COMPONENTS[index].title
+                  : this.state.title}
+              </Text>
+              {index > -1 ? <View style={styles.button} /> : null}
+            </View>
+          </SafeAreaView>
         </View>
         {index === -1 ? (
           <ScrollView>{EXAMPLE_COMPONENTS.map(this.renderItem)}</ScrollView>
         ) : ExampleComponent ? (
-          <ExampleComponent/>
+          <ExampleComponent />
         ) : null}
       </View>
     );
@@ -194,20 +227,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#eceff1',
   },
   statusbar: {
-    height: Platform.OS === 'ios' ? 20 : 25,
+    height: Platform.select({
+      android: Constants.statusBarHeight,
+      ios: Platform.Version < 11 ? Constants.statusBarHeight : 0,
+    }),
   },
   appbar: {
+    borderBottomColor: 'rgba(0, 0, 0, 0.1)',
+  },
+  content: {
     flexDirection: 'row',
     alignItems: 'center',
     height: 56,
-    borderBottomColor: 'rgba(0, 0, 0, 0.1)',
   },
   title: {
     flex: 1,
-    margin: 16,
     textAlign: Platform.OS === 'ios' ? 'center' : 'left',
-    fontSize: 18,
+    fontSize: Platform.OS === 'ios' ? 17 : 18,
     color: '#fff',
+    margin: 16,
   },
   button: {
     flexDirection: 'row',
@@ -226,3 +264,4 @@ const styles = StyleSheet.create({
     color: '#333',
   },
 });
+

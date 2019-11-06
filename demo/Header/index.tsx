@@ -1,9 +1,14 @@
-// @ts-ignore
 import MenuDemo from './MenuDemo';
-// @ts-ignore
 import PaperHeader from './PaperHeader';
-// @ts-ignore
 import ToolbarHeader from './ToolbarHeader';
 
 
-export default PaperHeader
+import { createListStackNavigator } from "../DemoUtil";
+
+const routers = [
+  MenuDemo,
+  PaperHeader,
+  ToolbarHeader,
+]
+
+export default createListStackNavigator(routers, 'HeaderExample');

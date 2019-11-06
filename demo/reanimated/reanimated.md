@@ -32,11 +32,11 @@ https://callstack.com/blog/reanimating-your-react-native-experience/
 - greaterOrEq(a, b) -> ${a} >= ${b} : 大于等于
 - lessOrEq(a, b) -> ${a} <= ${b} : 小于等于
 - not(a) -> !${a} : 取非
-- diff(a)
+- diff(a) -> diff(clock)
 - acc(a)	
 - defined(a)	
 - cond(a, b) -> ${a} ? ${b} : 0
 - cond(a, b, c)	-> ${a} ? ${b} : ${c}
 - concat(a, 'deg')	-> deg(${a})
-- set(a, b)	
+- set(a, b)	-> a = b
 

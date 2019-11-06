@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
 
-export default class Profile extends React.Component {
+export default class Article extends React.Component {
   render() {
     return (
       <ScrollView
@@ -11,7 +11,7 @@ export default class Profile extends React.Component {
         <View style={styles.author}>
           <Image
             style={styles.avatar}
-            source={require('../assets/avatar-1.png')}
+            source={require('../../assets/avatar-1.png')}
           />
           <View style={styles.meta}>
             <Text style={styles.name}>Knowledge Bot</Text>
@@ -24,7 +24,7 @@ export default class Profile extends React.Component {
           has roots in a piece of classical Latin literature from 45 BC, making
           it over 2000 years old.
         </Text>
-        <Image style={styles.image} source={require('../assets/book.jpg')} />
+        <Image style={styles.image} source={require('../../assets/book.jpg')} />
         <Text style={styles.paragraph}>
           Richard McClintock, a Latin professor at Hampden-Sydney College in
           Virginia, looked up one of the more obscure Latin words, consectetur,

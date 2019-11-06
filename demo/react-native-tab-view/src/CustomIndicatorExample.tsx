@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, I18nManager } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons'
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
   TabView,
   TabBar,
@@ -22,6 +22,7 @@ type Route = {
 type State = NavigationState<Route>;
 
 export default class CustomIndicatorExample extends React.Component<{}, State> {
+  // eslint-disable-next-line react/sort-comp
   static title = 'Custom indicator';
   static backgroundColor = '#263238';
   static appbarElevation = 4;
@@ -53,9 +54,12 @@ export default class CustomIndicatorExample extends React.Component<{}, State> {
     });
 
   private renderIndicator = (
-    props: SceneRendererProps & { navigationState: State; width: number }
+    props: SceneRendererProps & {
+      navigationState: State;
+      getTabWidth: (i: number) => number;
+    }
   ) => {
-    const { width, position, navigationState } = props;
+    const { position, navigationState, getTabWidth } = props;
     const inputRange = [
       0,
       0.48,
@@ -85,16 +89,17 @@ export default class CustomIndicatorExample extends React.Component<{}, State> {
 
     const translateX = Animated.interpolate(position, {
       inputRange: inputRange,
-      outputRange: inputRange.map(
-        x => Math.round(x) * width * (I18nManager.isRTL ? -1 : 1)
-      ),
+      outputRange: inputRange.map(x => {
+        const i = Math.round(x);
+        return i * getTabWidth(i) * (I18nManager.isRTL ? -1 : 1);
+      }),
     });
 
-    // @ts-ignore
-    const ot = x =>  Animated.color(...navigationState.routes[Math.round(x)].color)
     const backgroundColor = Animated.interpolate(position, {
       inputRange,
-      outputRange: inputRange.map(ot),
+      outputRange: inputRange.map(x =>
+        Animated.color(...navigationState.routes[Math.round(x)].color)
+      ),
     });
 
     return (

@@ -34,4 +34,4 @@
 ### 2019/11/3
 - 处理Android的虚拟导航栏的黑色区域
 - 尝试增加更多的错误收集工具在trello中有记录
-- 处理nested-navigator返回不正确的问题
+- ~~处理nested-navigator返回不正确的问题~~

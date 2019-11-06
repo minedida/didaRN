@@ -52,7 +52,10 @@ export const createListStackNavigator = (routers, title, paddingTop = 0, flag = 
   const stack = createStackNavigator(
     {
       Index:
-        createStackNavigator({ IndexPage }, { headerMode: flag ? 'none' : 'screen' }),
+        createStackNavigator(
+          { IndexPage },
+          { headerMode: flag ? 'none' : 'screen' }
+        ),
       ...routeConfigMap(routers)
     },
     {

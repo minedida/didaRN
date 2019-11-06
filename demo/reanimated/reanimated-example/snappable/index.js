@@ -25,6 +25,7 @@ const {
   Value,
   Clock,
   event,
+  call,
 } = Animated;
 
 function runSpring(clock, value, velocity, dest) {
@@ -129,9 +130,9 @@ class Snappable extends Component {
 }
 
 export default class Example extends Component {
-  static navigationOptions = {
-    title: 'Snappable Example',
-  };
+  // static navigationOptions = {
+  //   title: 'Snappable Example',
+  // };
   render() {
     return (
       <View style={styles.container}>

@@ -5,6 +5,8 @@ import { createAppContainer } from 'react-navigation'
 import DemoRouters from './DemoRouters';
 import { setNavigator } from "../src/navigation";
 import { createListStackNavigator, isAndroid } from "./DemoUtil";
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
 
 if (__DEV__) {
   import('../src/config/ReactotronConfig');
@@ -27,15 +29,18 @@ export default () => {
   }, [])
 
   return (
-    <>
-      <StatusBar
-        animated
-        translucent
-        barStyle='dark-content'
-        backgroundColor="transparent"
-      />
+    <SafeAreaProvider>
+      <>
+        <StatusBar
+          animated
+          translucent
+          barStyle='dark-content'
+          backgroundColor="transparent"
+        />
 
-      <DemoContainer ref={nav => setNavigator(nav)}/>
-    </>
+        <DemoContainer ref={nav => setNavigator(nav)}/>
+        {/*<SafeAreaContextDemo />*/}
+      </>
+    </SafeAreaProvider>
   )
 }

@@ -7,7 +7,7 @@ import {
   SceneRendererProps,
 } from 'react-native-tab-view';
 import Animated from 'react-native-reanimated';
-import Ionicons from 'react-native-vector-icons/Ionicons'
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import Albums from './Shared/Albums';
 import Article from './Shared/Article';
 import Chat from './Shared/Chat';
@@ -22,6 +22,7 @@ type Route = {
 type State = NavigationState<Route>;
 
 export default class CustomTabBarExample extends React.Component<{}, State> {
+  // eslint-disable-next-line react/sort-comp
   static title = 'Custom tab bar';
   static backgroundColor = '#fafafa';
   static tintColor = '#263238';
@@ -44,9 +45,9 @@ export default class CustomTabBarExample extends React.Component<{}, State> {
     });
 
   private renderItem = ({
-                          navigationState,
-                          position,
-                        }: {
+    navigationState,
+    position,
+  }: {
     navigationState: State;
     position: Animated.Node<number>;
   }) => ({ route, index }: { route: Route; index: number }) => {
