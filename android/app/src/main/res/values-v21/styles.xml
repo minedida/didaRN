@@ -13,4 +13,9 @@
 
     </style>
 
+    <style name="BootTheme" parent="AppTheme">
+        <!-- set bootsplash.xml as activity background -->
+        <item name="android:background">@drawable/bootsplash</item>
+    </style>
+
 </resources>

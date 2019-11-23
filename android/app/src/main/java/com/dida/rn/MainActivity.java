@@ -5,15 +5,9 @@ import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
-import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactRootView;
-import com.facebook.react.bridge.ReactBridge;
-import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.views.unimplementedview.ReactUnimplementedViewManager;
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
-
-import org.devio.rn.splashscreen.SplashScreen;
-
+import com.zoontek.rnbootsplash.RNBootSplash;
 
 public class MainActivity extends ReactActivity {
 
@@ -34,35 +28,14 @@ public class MainActivity extends ReactActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         MainApplication application = (MainApplication) getApplication();
-        //if (application.theme != 0)
-        //    setTheme(application.theme);
-
-        //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        //    Window window = getWindow();
-        //    View decorView = window.getDecorView();
-        //    decorView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
-        //        @TargetApi(Build.VERSION_CODES.KITKAT_WATCH)
-        //        @Override
-        //        public WindowInsets onApplyWindowInsets(View v, WindowInsets insets) {
-        //            WindowInsets defaultInsets = v.onApplyWindowInsets(insets);
-        //            return defaultInsets.replaceSystemWindowInsets(
-        //                    defaultInsets.getSystemWindowInsetLeft(),
-        //                    0,
-        //                    defaultInsets.getSystemWindowInsetRight(),
-        //                    defaultInsets.getSystemWindowInsetBottom());
-        //        }
-        //    });
-        //    //ViewCompat.requestApplyInsets(decorView);
-        //    //将状态栏设成透明，如不想透明可设置其他颜色
-        //    window.setStatusBarColor(ContextCompat.getColor(this, android.R.color.transparent));
-        //
-        //}
-
 
         //setContentView(R.layout.launch_screen);
-        SplashScreen.show(this, R.style.SplashScreenTheme);
-        //SplashScreen.show(this, true);
+        //SplashScreen.show(this, R.style.SplashScreenTheme);// 此时只能自定义`statusBarColor`为白色来遮掩，不能解决根本问题
+        //SplashScreen.show(this, true); // 如果单纯的设置为`true`全屏的话，状态栏会有灰条。
+        //SplashScreen.show(this); // 如果普通的使用一下，状态栏会有黑条。
         super.onCreate(savedInstanceState);
+        Util.adapt(this);
+        RNBootSplash.show(R.drawable.bootsplash, MainActivity.this);
     }
 
     @Override

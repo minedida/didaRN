@@ -3,8 +3,8 @@ import {AppRegistry, YellowBox} from 'react-native';
 import 'react-native-gesture-handler'
 
 // import App from './App';
-// import App from './src/App';
-import App from './demo/'
+import App from './src/App';
+// import App from './demo/'
 import {name as appName} from './app.json';
 
 if (!__DEV__) {

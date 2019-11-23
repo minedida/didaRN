@@ -6540,6 +6540,11 @@ react-native-autogrow-textinput@pokemon-corps/react-native-autogrow-textinput#ma
   version "5.2.0"
   resolved "https://codeload.github.com/pokemon-corps/react-native-autogrow-textinput/tar.gz/14655a00cb5d8f01dce375a7ec90606b5b9d3263"
 
+react-native-bootsplash@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npm.taobao.org/react-native-bootsplash/download/react-native-bootsplash-1.0.3.tgz#c0fbf46ba333b7bba880a430f4449aad0c04953a"
+  integrity sha1-wPv0a6Mzt7uogKQw9ESarQwElTo=
+
 react-native-calendars@1.185.0:
   version "1.185.0"
   resolved "https://registry.npm.taobao.org/react-native-calendars/download/react-native-calendars-1.185.0.tgz#8846c11374738e0180f65774de59fdb7c8bf0eca"
