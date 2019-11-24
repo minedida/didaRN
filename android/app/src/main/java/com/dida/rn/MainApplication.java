@@ -14,6 +14,7 @@ import com.facebook.soloader.SoLoader;
 import org.unimodules.adapters.react.ModuleRegistryAdapter;
 import org.unimodules.adapters.react.ReactModuleRegistryProvider;
 import org.unimodules.core.interfaces.SingletonModule;
+import com.wix.reactnativekeyboardinput.KeyboardInputPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,6 +38,7 @@ public class MainApplication extends Application implements ReactApplication {
             List<ReactPackage> packages = new PackageList(this).getPackages();
             //packages.add(new MainReactPackage());
             packages.add(new UpgradePackage());
+            packages.add(new KeyboardInputPackage(MainApplication.this));
             List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(
                     new ModuleRegistryAdapter(mModuleRegistryProvider)
             );

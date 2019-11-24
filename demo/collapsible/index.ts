@@ -10,9 +10,11 @@ import StickyHeader from './others/StickyHeader.js';
 import XidDingDemo1 from './others/XidDingDemo1.js';
 import XidDingDemo2 from './others/XidDingDemo2.js';
 import TestCollapsible from './test';
+import RNSearchBarAnimation from './rn-search-bar-animation';
 import { createListStackNavigator } from "../DemoUtil";
 
 const routers = [
+  RNSearchBarAnimation,
   TestCollapsible,
   ReanimatedCollapsibleNavbar,
   ReactNativeScrollableHeader,

@@ -1,8 +1,8 @@
 import * as React from "react"
 import { View, Text, FlatList, Dimensions } from "react-native"
-import Animated from "react-native-reanimated"
+import Animated, { block } from "react-native-reanimated"
 import { onScroll } from "react-native-redash"
-import { TabView } from 'react-native-tab-view';
+import { TabView, TabBar } from 'react-native-tab-view';
 import RefreshListView, { RefreshState } from '../refresh-list-view/RefreshListView'
 import Cell from '../refresh-list-view/Cell'
 import testData from '../refresh-list-view/data'
@@ -12,10 +12,10 @@ const AnimatedTabView = Animated.createAnimatedComponent(TabView);
 
 const HEADER_HEIGHT = 160
 const { diffClamp, interpolate, add, Code, call,
-  multiply,
+  multiply, event, Value,
 } = Animated
 const translateY = (y) => {
-  const diffClampY = diffClamp(y, 0, HEADER_HEIGHT)
+  const diffClampY = diffClamp(y, 0, HEADER_HEIGHT);
   return interpolate(diffClampY, {
     inputRange: [0, HEADER_HEIGHT],
     outputRange: [0, -HEADER_HEIGHT],
@@ -36,6 +36,7 @@ export const Header = ({ y }) => {
         transform: [{ translateY: translateY(y) }],
       } }
     >
+
       <Text>Header</Text>
     </Animated.View>
   )
@@ -43,28 +44,33 @@ export const Header = ({ y }) => {
 
 const List = ({ y }) => {
   return (
-    <AnimatedFlatList
-      // style={{
-      //   paddingTop: HEADER_HEIGHT,
-      // }}
-      bounces={false}
-      onScroll={onScroll({y})}
-      scrollEventThrottle={16}
-      data={new Array(10).fill(1)}
-      keyExtractor={(_item, index) => index.toString()}
-      renderItem={({ _item, index }) => {
-        const bgc = "#"+((1<<24)*Math.random()|0).toString(16);
-        return (
-          <View
-            style={ { width: "100%", height: 200, marginBottom: 50, backgroundColor: bgc,
-              justifyContent: "center", alignItems: "center", } }
-            key={index + ""}
-          >
-            <Text>test{index}</Text>
-          </View>
-        )
-      }}
-    />
+    <>
+      {/*<Code>*/}
+      {/*  {() => call([y], v => console.tron.debug({ list: v[0] }))}*/}
+      {/*</Code>*/}
+      <AnimatedFlatList
+        // style={{
+        //   paddingTop: HEADER_HEIGHT,
+        // }}
+        bounces={false}
+        onScroll={onScroll({y})}
+        scrollEventThrottle={16}
+        data={new Array(10).fill(1)}
+        keyExtractor={(_item, index) => index.toString()}
+        renderItem={({ _item, index }) => {
+          const bgc = "#"+((1<<24)*Math.random()|0).toString(16);
+          return (
+            <View
+              style={ { width: "100%", height: 200, marginBottom: 50, backgroundColor: bgc,
+                justifyContent: "center", alignItems: "center", } }
+              key={index + ""}
+            >
+              <Text>test{index}</Text>
+            </View>
+          )
+        }}
+      />
+    </>
   )
 }
 class ThirdRoute extends React.Component<any>{
@@ -133,25 +139,30 @@ class ThirdRoute extends React.Component<any>{
 
   render() {
     return (
-      <AnimatedRefreshListView
-        bounces={false}
-        onScroll={onScroll({y: this.props.y})}
-        data={this.state.dataList}
-        keyExtractor={this.keyExtractor}
-        renderItem={this.renderCell}
-        refreshState={this.state.refreshState}
-        onHeaderRefresh={this.onHeaderRefresh}
-        onFooterRefresh={this.onFooterRefresh}
-        contentOffset={{
-          y: -HEADER_HEIGHT,
-        }}
+      <>
+        {/*<Code>*/}
+        {/*  {() => call([this.props.y], v => console.tron.debug({ refresh: v[0] }))}*/}
+        {/*</Code>*/}
+        <AnimatedRefreshListView
+          bounces={false}
+          onScroll={onScroll({y: this.props.y})}
+          data={this.state.dataList}
+          keyExtractor={this.keyExtractor}
+          renderItem={this.renderCell}
+          refreshState={this.state.refreshState}
+          onHeaderRefresh={this.onHeaderRefresh}
+          onFooterRefresh={this.onFooterRefresh}
+          contentOffset={{
+            y: -HEADER_HEIGHT,
+          }}
 
-        // 可选
-        footerRefreshingText='玩命加载中 >.<'
-        footerFailureText='我擦嘞，居然失败了 =.=!'
-        footerNoMoreDataText='-我是有底线的-'
-        footerEmptyDataText='-好像什么东西都没有-'
-      />
+          // 可选
+          footerRefreshingText='玩命加载中 >.<'
+          footerFailureText='我擦嘞，居然失败了 =.=!'
+          footerNoMoreDataText='-我是有底线的-'
+          footerEmptyDataText='-好像什么东西都没有-'
+        />
+      </>
     )
   }
 }
@@ -175,7 +186,7 @@ class TestCollapsible extends React.Component{
       case 'first':
         return <List y={this.y} />;
       case 'third':
-        // return <ThirdRoute y={this.y}/>;
+        return <ThirdRoute y={this.y}/>;
         return null;
       case 'second':
         return <SecondRoute/>;
@@ -183,21 +194,33 @@ class TestCollapsible extends React.Component{
         return null;
     }
   }
+  renderTabBar = (props) => {
+    const pt = add(HEADER_HEIGHT, translateY(this.y));
+    return (
+      <Animated.View
+        style={{
+          transform: [{ translateY: pt }],
+          zIndex: 99,
+        }}
+      >
+        <Code>
+          {() => call([pt], v => console.tron.debug({ parents: v[0] }))}
+        </Code>
+        <TabBar {...props} />
+      </Animated.View>
+    )
+  }
   render() {
     return (
       <View
         style={{ flex: 1 }}
       >
-        {/*<Code>*/}
-        {/*  {() => call([translateY(this.y), this.y], v => console.tron.debug( v ))}*/}
-        {/*</Code>*/}
+
         <Header y={this.y} />
         <AnimatedTabView
-          style={{
-            paddingTop: add(HEADER_HEIGHT, translateY(this.y)),
-          }}
           navigationState={this.state}
           renderScene={this.renderScene}
+          renderTabBar={this.renderTabBar}
           onIndexChange={(index) => this.setState({ index })}
           initialLayout={{ width: Dimensions.get('window').width }}
         />

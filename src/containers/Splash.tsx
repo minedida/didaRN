@@ -4,6 +4,7 @@ import React from 'react'
 import { NavigationPops } from "../navigation/utils";
 import initPersist from "../store/persist-store";
 import RNBootSplash from "react-native-bootsplash";
+import { Platform } from "react-native";
 
 type Props = {
   navigation: NavigationPops
@@ -15,17 +16,16 @@ function Splash(props: Props) {
   }
 
   React.useEffect(() => {
-    let timmer;
+    let timer;
     initPersist().then(() => {
       goNext('App');
-      timmer = setTimeout(() => {
-        // Platform.OS === 'android'
-        // && SplashScreen.hide();
-        RNBootSplash.hide({ duration: 0 });
+      timer = setTimeout(() => {
+        Platform.OS === 'android'
+        && RNBootSplash.hide();
       }, 300)
     });
     return () => {
-      timmer && clearTimeout(timmer)
+      timer && clearTimeout(timer)
     }
   });
   return <></>

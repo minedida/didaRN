@@ -210,13 +210,9 @@ PODS:
     - React-cxxreact (= 0.61.2)
     - React-jsi (= 0.61.2)
   - React-jsinspector (0.61.2)
-  - react-native-autogrow-textinput (5.2.0):
-    - React
   - react-native-blur (0.8.0):
     - React
   - react-native-date-picker (2.7.0):
-    - React
-  - react-native-keyboard-input (5.3.1):
     - React
   - react-native-safe-area-context (0.5.0):
     - React
@@ -261,6 +257,14 @@ PODS:
     - React-cxxreact (= 0.61.2)
     - React-jsi (= 0.61.2)
     - ReactCommon/jscallinvoker (= 0.61.2)
+  - ReactNativeAutogrowTextinput (5.3.0):
+    - React
+  - ReactNativeKeyboardInput (6.0.0):
+    - React
+  - ReactNativeKeyboardTrackingView (5.6.1):
+    - React
+  - RNBootSplash (1.0.3):
+    - React
   - RNCMaskedView (0.1.1):
     - React
   - RNDeviceInfo (3.1.4):
@@ -269,7 +273,7 @@ PODS:
     - React
   - RNLocalize (1.2.1):
     - React
-  - RNReanimated (1.3.0):
+  - RNReanimated (1.4.0):
     - React
   - RNScreens (2.0.0-alpha.6):
     - React
@@ -329,10 +333,8 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
-  - react-native-autogrow-textinput (from `../node_modules/react-native-autogrow-textinput`)
   - "react-native-blur (from `../node_modules/@react-native-community/blur`)"
   - react-native-date-picker (from `../node_modules/react-native-date-picker`)
-  - react-native-keyboard-input (from `../node_modules/react-native-keyboard-input`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-simple-toast (from `../node_modules/react-native-simple-toast`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
@@ -348,6 +350,10 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/jscallinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - ReactNativeAutogrowTextinput (from `../node_modules/react-native-autogrow-textinput`)
+  - ReactNativeKeyboardInput (from `../node_modules/react-native-keyboard-input`)
+  - ReactNativeKeyboardTrackingView (from `../node_modules/react-native-keyboard-tracking-view`)
+  - RNBootSplash (from `../node_modules/react-native-bootsplash`)
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
@@ -431,14 +437,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
-  react-native-autogrow-textinput:
-    :path: "../node_modules/react-native-autogrow-textinput"
   react-native-blur:
     :path: "../node_modules/@react-native-community/blur"
   react-native-date-picker:
     :path: "../node_modules/react-native-date-picker"
-  react-native-keyboard-input:
-    :path: "../node_modules/react-native-keyboard-input"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-simple-toast:
@@ -467,6 +469,14 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  ReactNativeAutogrowTextinput:
+    :path: "../node_modules/react-native-autogrow-textinput"
+  ReactNativeKeyboardInput:
+    :path: "../node_modules/react-native-keyboard-input"
+  ReactNativeKeyboardTrackingView:
+    :path: "../node_modules/react-native-keyboard-tracking-view"
+  RNBootSplash:
+    :path: "../node_modules/react-native-bootsplash"
   RNCMaskedView:
     :path: "../node_modules/@react-native-community/masked-view"
   RNDeviceInfo:
@@ -554,10 +564,8 @@ SPEC CHECKSUMS:
   React-jsi: 32285a21b1b24c36060493ed3057a34677d58d09
   React-jsiexecutor: 8909917ff7d8f21a57e443a866fd8d4560e50c65
   React-jsinspector: 111d7d342b07a904c400592e02a2b958f1098b60
-  react-native-autogrow-textinput: 6ac9827113fab5e72be63ba6f0e40e6a01aa4697
   react-native-blur: cad4d93b364f91e7b7931b3fa935455487e5c33c
   react-native-date-picker: 648606a44e21d15725a61cc9f28e864f40ae8cdd
-  react-native-keyboard-input: 06790d8058189f1f0e4099ceb8cc69f6435dcc07
   react-native-safe-area-context: 13004a45f3021328fdd9ee1f987c3131fb65928d
   react-native-simple-toast: 1fc69d83c24279ed4f9624352551a5a3406678a2
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
@@ -572,11 +580,15 @@ SPEC CHECKSUMS:
   React-RCTText: e3ef6191cdb627855ff7fe8fa0c1e14094967fb8
   React-RCTVibration: fb54c732fd20405a76598e431aa2f8c2bf527de9
   ReactCommon: 5848032ed2f274fcb40f6b9ec24067787c42d479
+  ReactNativeAutogrowTextinput: 14bd6349ec4fed9231ca141ad3f1dbadf2f63e4c
+  ReactNativeKeyboardInput: c37e26821519869993b3b61844350feb9177ff37
+  ReactNativeKeyboardTrackingView: a240a6a0dba852bb107109a7ec7e98b884055977
+  RNBootSplash: 161de9d2b5dc2af37c2777063b8e6d844ab2a6ff
   RNCMaskedView: b79e193409a90bf6b5170d421684f437ff4e2278
   RNDeviceInfo: 88099e84466f053bae3f34c307b506738b2b6946
   RNGestureHandler: 4cb47a93019c1a201df2644413a0a1569a51c8aa
   RNLocalize: f42aea3133d91d7fa3ec01284a6895019af1a83f
-  RNReanimated: 6abbbae2e5e72609d85aabd92a982a94566885f1
+  RNReanimated: b2ab0b693dddd2339bd2f300e770f6302d2e960c
   RNScreens: 73691421e207a57b85af0fea931e620b05a35e89
   RNSentry: f1c8e34f9109a94b77e946d0ca50803375c1c19e
   RNShare: 8b171d4b43c1d886917fdd303bf7a4b87167b05c

@@ -25,8 +25,10 @@ import ReactNavigationStackExample from './react-navigation-stack-example/ReactN
 import VictoryDemo from './victory'
 import ReanimatedDemo from "./reanimated";
 import SvgExample from './svg';
+import ExamplesAndTutorials from './examples-and-tutorials';
 
 export default [
+  ExamplesAndTutorials,
   CollapsibleExample,
   ReanimatedDemo,
   TabViewExampleList,

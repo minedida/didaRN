@@ -11,6 +11,7 @@ import { View, StyleSheet, Text, Platform } from 'react-native'
 import RefreshListView, { RefreshState } from './RefreshListView'
 import Cell from './Cell'
 import testData from './data'
+import {FlatList} from "../rn-search-bar-animation/searchBarAnimation";
 
 class RefreshListViewDemo extends Component {
   state: {
@@ -100,22 +101,21 @@ class RefreshListViewDemo extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <RefreshListView
-          data={this.state.dataList}
-          keyExtractor={this.keyExtractor}
-          renderItem={this.renderCell}
-          refreshState={this.state.refreshState}
-          onHeaderRefresh={this.onHeaderRefresh}
-          onFooterRefresh={this.onFooterRefresh}
+      <RefreshListView
+        data={this.state.dataList}
+        keyExtractor={this.keyExtractor}
+        renderItem={this.renderCell}
+        refreshState={this.state.refreshState}
+        onHeaderRefresh={this.onHeaderRefresh}
+        onFooterRefresh={this.onFooterRefresh}
+        tabRoute={this.props.route.key}
 
-          // 可选
-          footerRefreshingText='玩命加载中 >.<'
-          footerFailureText='我擦嘞，居然失败了 =.=!'
-          footerNoMoreDataText='-我是有底线的-'
-          footerEmptyDataText='-好像什么东西都没有-'
-        />
-      </View>
+        // 可选
+        footerRefreshingText='玩命加载中 >.<'
+        footerFailureText='我擦嘞，居然失败了 =.=!'
+        footerNoMoreDataText='-我是有底线的-'
+        footerEmptyDataText='-好像什么东西都没有-'
+      />
     )
   }
 }
