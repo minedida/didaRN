@@ -2,8 +2,8 @@ import {AppRegistry, YellowBox} from 'react-native';
 // https://github.com/kmagiera/react-native-gesture-handler/issues/320
 import 'react-native-gesture-handler'
 
-// import App from './App';
-import App from './src/App';
+import App from './App';
+// import App from './src/App';
 // import App from './demo/'
 import {name as appName} from './app.json';
 

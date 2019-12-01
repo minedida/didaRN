@@ -14,7 +14,8 @@
     "and-clean": "cd android && ./gradlew clean && cd ..",
     "and-install-release": "cd android && ./gradlew installRelease && cd ..",
     "upload-apk": "./scripts/upload_firim.sh",
-    "postinstall": "./scripts/postinstall.sh"
+    "postinstall": "./scripts/postinstall.sh",
+    "haul": "haul start"
   },
   "dependencies": {
     "@merryjs/photo-viewer": "^3.1.0",
@@ -97,6 +98,10 @@
     "@babel/core": "^7.6.2",
     "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/runtime": "^7.6.2",
+    "@haul-bundler/babel-preset-react-native": "^0.15.0",
+    "@haul-bundler/cli": "^0.15.0",
+    "@haul-bundler/inspector": "^0.15.0",
+    "@haul-bundler/preset-0.60": "^0.15.0",
     "@react-native-community/eslint-config": "^0.0.5",
     "@types/enzyme": "^3.9.2",
     "@types/enzyme-adapter-react-16": "^1.0.5",
