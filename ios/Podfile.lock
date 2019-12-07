@@ -40,6 +40,8 @@ PODS:
   - MerryPhotoViewer (3.1.0):
     - NYTPhotoViewer
     - React
+  - NavigationHybrid (0.17.26):
+    - React
   - NYTPhotoViewer (2.0.0):
     - NYTPhotoViewer/AnimatedGifSupport (= 2.0.0)
     - NYTPhotoViewer/Core (= 2.0.0)
@@ -322,6 +324,7 @@ DEPENDENCIES:
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - "MerryPhotoViewer (from `../node_modules/@merryjs/photo-viewer`)"
+  - NavigationHybrid (from `../node_modules/react-native-navigation-hybrid/`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
   - React (from `../node_modules/react-native/`)
@@ -419,6 +422,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   MerryPhotoViewer:
     :path: "../node_modules/@merryjs/photo-viewer"
+  NavigationHybrid:
+    :path: "../node_modules/react-native-navigation-hybrid/"
   RCTRequired:
     :path: "../node_modules/react-native/Libraries/RCTRequired"
   RCTTypeSafety:
@@ -554,6 +559,7 @@ SPEC CHECKSUMS:
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
   MerryPhotoViewer: fe57bd672cc84030ea1f4cbec50e5817719987b6
+  NavigationHybrid: 29aaea7d566bf3bfcf507b47e282531af98a636c
   NYTPhotoViewer: 34b8bd6bcc297466adec1668f9a01249d73c90e6
   RCTRequired: c639d59ed389cfb1f1203f65c2ea946d8ec586e2
   RCTTypeSafety: dc23fb655d6c77667c78e327bf661bc11e3b8aec
@@ -610,6 +616,6 @@ SPEC CHECKSUMS:
   UMTaskManagerInterface: 1e70fe58b872355f0ecb44fb81bb1a16484047f0
   Yoga: 14927e37bd25376d216b150ab2a561773d57911f
 
-PODFILE CHECKSUM: c36c781b2b0a96f7444976e042c10c876dc8ee5d
+PODFILE CHECKSUM: 0e1b76699a5696c3b0389b0cdc9835791eb3ff0f
 
 COCOAPODS: 1.7.2

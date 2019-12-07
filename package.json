@@ -13,7 +13,8 @@
     "and-release": "cd android && ./gradlew assembleRelease && cd ..",
     "and-clean": "cd android && ./gradlew clean && cd ..",
     "and-install-release": "cd android && ./gradlew installRelease && cd ..",
-    "upload-apk": "./scripts/upload_firim.sh"
+    "upload-apk": "./scripts/upload_firim.sh",
+    "postinstall": "./scripts/postinstall.sh"
   },
   "dependencies": {
     "@merryjs/photo-viewer": "^3.1.0",
