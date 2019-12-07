@@ -2,20 +2,15 @@
 
 <resources>
 
-    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="SplashTheme" parent="AppTheme">
         <item name="android:windowFullscreen">true</item>
-        <item name="android:statusBarColor">#FFFFFF</item>
-        <item name="android:navigationBarColor">#FFFFFF</item>
-        <item name="android:windowBackground">@drawable/splash_layer</item>
-
-        <!--不让windowBackground延申到navigation bar区域-->
-        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
-
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@drawable/bootsplash</item>
     </style>
 
-    <style name="BootTheme" parent="AppTheme">
-        <!-- set bootsplash.xml as activity background -->
-        <item name="android:background">@drawable/bootsplash</item>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
 </resources>

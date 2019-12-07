@@ -1,31 +1,35 @@
 package com.dida.rn;
 
 import android.app.Application;
+import android.content.Context;
 import android.webkit.WebView;
 
 import com.dida.rn.generated.BasePackageList;
 import com.dida.rn.plugin.update.UpgradePackage;
-import com.facebook.react.PackageList;
+import com.facebook.common.logging.FLog;
+import com.facebook.drawee.view.DraweeView;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
+import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.navigationhybrid.NavigationHybridPackage;
+import com.navigationhybrid.ReactBridgeManager;
+import com.wix.reactnativekeyboardinput.KeyboardInputPackage;
 
 import org.unimodules.adapters.react.ModuleRegistryAdapter;
 import org.unimodules.adapters.react.ReactModuleRegistryProvider;
 import org.unimodules.core.interfaces.SingletonModule;
-import com.wix.reactnativekeyboardinput.KeyboardInputPackage;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
-
-import android.content.Context;
-import java.lang.reflect.InvocationTargetException;
 
 public class MainApplication extends Application implements ReactApplication {
     public int theme = R.style.BlueTheme;
     private final ReactModuleRegistryProvider mModuleRegistryProvider =
             new ReactModuleRegistryProvider(new BasePackageList().getPackageList(), Arrays.<SingletonModule>asList());
+
     private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
         @Override
         public boolean getUseDeveloperSupport() {
@@ -34,15 +38,13 @@ public class MainApplication extends Application implements ReactApplication {
 
         @Override
         protected List<ReactPackage> getPackages() {
-            @SuppressWarnings("UnnecessaryLocalVariable")
-            List<ReactPackage> packages = new PackageList(this).getPackages();
-            //packages.add(new MainReactPackage());
-            packages.add(new UpgradePackage());
-            packages.add(new KeyboardInputPackage(MainApplication.this));
-            List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(
+            List<ReactPackage> packages = Arrays.<ReactPackage>asList(
+                    new MainReactPackage(),
+                    new NavigationHybridPackage(),
+                    new UpgradePackage(),
+                    new KeyboardInputPackage(MainApplication.this),
                     new ModuleRegistryAdapter(mModuleRegistryProvider)
             );
-            packages.addAll(unimodules);
 
             return packages;
         }
@@ -65,6 +67,12 @@ public class MainApplication extends Application implements ReactApplication {
         initializeFlipper(this); // Remove this line if you don't want Flipper enabled
 
         WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG);
+
+        ReactBridgeManager bridgeManager = ReactBridgeManager.get();
+        bridgeManager.install(getReactNativeHost());
+
+        DraweeView.setGlobalLegacyVisibilityHandlingEnabled(true);
+        FLog.setMinimumLoggingLevel(FLog.INFO);
 
     }
 
